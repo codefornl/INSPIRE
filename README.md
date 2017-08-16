@@ -1,5 +1,5 @@
 # INSPIRE
-INSpIRE harmonisatie projecten op basis van open data.
+INSPIRE harmonisatie projecten op basis van open data.
 
 ## Verantwoording
 
