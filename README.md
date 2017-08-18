@@ -8,3 +8,7 @@ Diverse Nederlandse overheidspartijen dienen aan [INSPIRE](http://inspire.ec.eur
 Voor dit project wordt gebruik gemaakt van [HALE Studio](https://www.wetransform.to/downloads/) dat beschikbaar is voor iOS, Windows en Linux.
 
 Alle subdirectories van deze repository bevatten .halex bestanden die vanuit HALE Studio kunnen worden geopend.
+
+## Disclaimer
+
+Dit project is een initiatief van Code For NL. De documentatie en project componenten vallen volledig onder de verantwoordelijkheid van Code For NL. De betrokken overheidsinstellingen hebben geen directe betrokkenheid bij deze repository.
