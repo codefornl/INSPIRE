@@ -7,8 +7,30 @@ Diverse Nederlandse overheidspartijen dienen aan [INSPIRE](http://inspire.ec.eur
 
 Voor dit project wordt gebruik gemaakt van [HALE Studio](https://www.wetransform.to/downloads/) dat beschikbaar is voor iOS, Windows en Linux.
 
+Op de INSPIRE website staan een aantal [best practices](https://inspire-reference.jrc.ec.europa.eu/implementations). Als uitgangspunt voor dit document is de instructie [dataset harmonizatie in Portugal met HALE](https://inspire-reference.jrc.ec.europa.eu/implementations/land-cover-spatial-datasets-harmonization-portugal-using-hale) als uitgangspunt genomen.
+
 Alle subdirectories van deze repository bevatten .halex bestanden die vanuit HALE Studio kunnen worden geopend.
 
+## Bronnen
+
+### Nationaal Hydrologisch Instrumentarium Rijkswaterstaat (NHI)
+* [Download](http://geodata.nationaalgeoregister.nl/nhi/extract/nhi.zip) of [WFS service](https://geodata.nationaalgeoregister.nl/nhi/wfs)
+* In de dataset vinden we 2 subsets.
+  * dmlinks
+  * dmnodes
+
+### Nationaal wegenbestand Rijkswaterstaat - wegen (nwbwegen)
+* [Download](http://geodata.nationaalgeoregister.nl/nwbwegen/extract/nwbwegen.zip) of [WFS service](https://geodata.nationaalgeoregister.nl/nwbwegen/wfs)
+* In de dataset vinden we 2 subsets.
+  * hectopunten
+  * wegvakken
+
+### Nationaal wegenbestand Rijkswaterstaat- vaarwegen (nwbvaarwegen)
+* [Download](http://geodata.nationaalgeoregister.nl/nwbvaarwegen/extract/nwbvaarwegen.zip) of [WFS service](https://geodata.nationaalgeoregister.nl/nwbvaarwegen/wfs)
+* In de dataset vinden we 2 subsets.
+  * kmmarkeringen
+  * vaarwegvakken
+  
 ## Disclaimer
 
-Dit project is een initiatief van Code For NL. De documentatie en project componenten vallen volledig onder de verantwoordelijkheid van Code For NL. De betrokken overheidsinstellingen hebben geen directe betrokkenheid bij deze repository.
+Dit project is een initiatief van Code For NL. De documentatie en project componenten vallen volledig onder de verantwoordelijkheid van Code For NL. De genoemde overheidsinstellingen hebben _geen_ directe betrokkenheid bij deze repository.
