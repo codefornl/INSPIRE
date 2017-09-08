@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<hale-project version="3.3.0.release">
+    <name>dmlinks</name>
+    <author>Code For NL</author>
+    <description>dmlinks transformatie voor Hydro networks</description>
+    <created>2017-09-01T08:41:59.247+02:00</created>
+    <modified>2017-09-01T08:46:43.573+02:00</modified>
+    <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
+        <setting name="charset">UTF-8</setting>
+        <setting name="projectFiles.separate">false</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.project.hale25.xml</setting>
+        <setting name="target">file:/home/miblon/NetBeansProjects/INSPIRE/nhi/dmlinks.halex</setting>
+    </save-config>
+    <resource action-id="eu.esdihumboldt.hale.io.schema.read.source" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="onlyElementsMappable">true</setting>
+        <setting name="resourceId">6c03a41e-c347-4fb3-86a2-7ea4b2c9951e</setting>
+        <complex-setting name="relevantElements">
+            <core:list xmlns:core="http://www.esdi-humboldt.eu/hale/core">
+                <core:entry>
+                    <core:name>dmlinks</core:name>
+                </core:entry>
+            </core:list>
+        </complex-setting>
+        <setting name="source">http://geoservices.rijkswaterstaat.nl/waterdienst_nhi?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=DescribeFeatureType&amp;TYPENAME=dmlinks</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="onlyElementsMappable">true</setting>
+        <setting name="resourceId">7fa0fec4-30ed-47b9-b406-2f65e13ec897</setting>
+        <setting name="source">http://inspire.ec.europa.eu/schemas/hy-n/4.0/HydroNetwork.xsd</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">19b926c4-ba92-48db-b2a5-256b61181636</setting>
+        <setting name="interpolation.grid.moveAllToGrid">false</setting>
+        <setting name="source">http://geoservices.rijkswaterstaat.nl/waterdienst_nhi?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;TYPENAME=dmlinks&amp;MAXFEATURES=1000</setting>
+        <setting name="interpolation.maxError">0.1</setting>
+        <setting name="strict">false</setting>
+        <setting name="interpolation.algorithm">segment</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+        <setting name="ignoreNamespaces">false</setting>
+        <setting name="paginateRequest">true</setting>
+        <setting name="featuresPerWfsRequest">1000</setting>
+        <setting name="ignoreRoot">true</setting>
+    </resource>
+    <file name="alignment.xml" location="dmlinks.halex.alignment.xml"/>
+    <file name="styles.sld" location="dmlinks.halex.styles.sld"/>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-n/4.0}HydroNodeType/1">{http://inspire.ec.europa.eu/schemas/net/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-n/4.0}HydroNodeType/2">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-n/4.0}HydroNodeType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-n/4.0}WatercourseLinkSequenceType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-n/4.0}WatercourseLinkSequenceType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-n/4.0}WatercourseLinkSequenceType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-n/4.0}WatercourseLinkType/1">{http://inspire.ec.europa.eu/schemas/net/4.0}centrelineGeometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-n/4.0}WatercourseLinkType/2">{http://www.opengis.net/gml/3.2/AbstractCurve}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-n/4.0}WatercourseLinkType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-n/4.0}WatercourseSeparatedCrossingType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-n/4.0}WatercourseSeparatedCrossingType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-n/4.0}WatercourseSeparatedCrossingType/count">2</property>
+    <property name="defaultGeometry:{http://mapserver.gis.umn.edu/mapserver}dmlinksType/1">{http://mapserver.gis.umn.edu/mapserver}GEOMETRY</property>
+    <property name="defaultGeometry:{http://mapserver.gis.umn.edu/mapserver}dmlinksType/2">{http://www.opengis.net/gml/_Curve}choice</property>
+    <property name="defaultGeometry:{http://mapserver.gis.umn.edu/mapserver}dmlinksType/count">2</property>
+</hale-project>
