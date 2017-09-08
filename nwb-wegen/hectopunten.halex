@@ -1,42 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <hale-project version="3.3.0.release">
-    <name>INSPIRE harmonisation NWB wegen</name>
+    <name>INSPIRE harmonisation NWB wegen - hectopunten</name>
     <author>Code For NL</author>
     <description>Harmonisatie van de NWB wegen WFS t.b.v. INSPIRE Road Transport Network</description>
-    <created>2017-08-16T19:54:27.175+02:00</created>
-    <modified>2017-08-16T19:55:39.432+02:00</modified>
+    <created>2017-09-08T17:25:46.308+02:00</created>
+    <modified>2017-09-08T17:27:50.473+02:00</modified>
     <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
         <setting name="charset">UTF-8</setting>
         <setting name="projectFiles.separate">false</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.project.hale25.xml</setting>
-        <setting name="target">file:/data/Development/INSPIRE/nwb-wegen/project.halex</setting>
+        <setting name="target">file:/home/miblon/data/Development/INSPIRE/nwb-wegen/hectopunten.halex</setting>
     </save-config>
     <resource action-id="eu.esdihumboldt.hale.io.schema.read.source" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
         <setting name="charset">UTF-8</setting>
         <setting name="onlyElementsMappable">true</setting>
-        <setting name="resourceId">0e0d210f-328c-4df9-94e5-d2abbc1e404b</setting>
+        <setting name="resourceId">641d408e-cf67-41ce-86aa-0f9343322b5f</setting>
         <complex-setting name="relevantElements">
             <core:list xmlns:core="http://www.esdi-humboldt.eu/hale/core">
                 <core:entry>
                     <core:name namespace="http://nwbwegen.geonovum.nl">hectopunten</core:name>
                 </core:entry>
-                <core:entry>
-                    <core:name namespace="http://nwbwegen.geonovum.nl">wegvakken</core:name>
-                </core:entry>
             </core:list>
         </complex-setting>
-        <setting name="source">http://geodata.nationaalgeoregister.nl/nwbwegen/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=DescribeFeatureType&amp;NAMESPACES=xmlns%28nwbwegen%2Chttp%3A%2F%2Fnwbwegen.geonovum.nl%29&amp;TYPENAMES=nwbwegen%3Ahectopunten%2Cnwbwegen%3Awegvakken</setting>
+        <setting name="source">http://geodata.nationaalgeoregister.nl/nwbwegen/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=DescribeFeatureType&amp;NAMESPACES=xmlns%28nwbwegen%2Chttp%3A%2F%2Fnwbwegen.geonovum.nl%29&amp;TYPENAMES=nwbwegen%3Ahectopunten</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
     </resource>
     <resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
         <setting name="charset">UTF-8</setting>
         <setting name="onlyElementsMappable">true</setting>
-        <setting name="resourceId">d6b4d2cd-ead8-4b48-b336-c306194703c1</setting>
+        <setting name="resourceId">60436db7-fccf-427c-acd8-8a937bae076b</setting>
         <setting name="source">http://inspire.ec.europa.eu/schemas/tn-ro/4.0/RoadTransportNetwork.xsd</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
     </resource>
-    <file name="alignment.xml" location="project.halex.alignment.xml"/>
-    <file name="styles.sld" location="project.halex.styles.sld"/>
+    <file name="alignment.xml" location="hectopunten.halex.alignment.xml"/>
+    <file name="styles.sld" location="hectopunten.halex.styles.sld"/>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn-ro/4.0}ERoadType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn-ro/4.0}ERoadType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn-ro/4.0}ERoadType/count">2</property>
@@ -88,7 +85,4 @@
     <property name="defaultGeometry:{http://nwbwegen.geonovum.nl}hectopuntenType/1">{http://nwbwegen.geonovum.nl}geom</property>
     <property name="defaultGeometry:{http://nwbwegen.geonovum.nl}hectopuntenType/2">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
     <property name="defaultGeometry:{http://nwbwegen.geonovum.nl}hectopuntenType/count">2</property>
-    <property name="defaultGeometry:{http://nwbwegen.geonovum.nl}wegvakkenType/1">{http://nwbwegen.geonovum.nl}geom</property>
-    <property name="defaultGeometry:{http://nwbwegen.geonovum.nl}wegvakkenType/2">{http://www.opengis.net/gml/3.2}MultiCurve</property>
-    <property name="defaultGeometry:{http://nwbwegen.geonovum.nl}wegvakkenType/count">2</property>
 </hale-project>

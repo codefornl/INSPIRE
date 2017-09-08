@@ -1,2 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<alignment xmlns="http://www.esdi-humboldt.eu/hale/alignment"/>
+<alignment xmlns="http://www.esdi-humboldt.eu/hale/alignment">
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cb896fc43-8e8f-49a5-9925-38b2eca6a157" priority="normal">
+        <target>
+            <property>
+                <type name="HydroNodeType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="2010-11-19 00:00:00.0" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C2d29b65a-d017-4271-88fd-8f5b4c7350f9" priority="normal">
+        <source>
+            <property>
+                <type name="dmnodesType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="NAME" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="HydroNodeType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.geometric.reproject_geometry" id="C9ce4b2c7-cbb6-48ea-9ce0-adaa3f972905" priority="normal">
+        <source name="source">
+            <property>
+                <type name="dmnodesType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="GEOMETRY" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target name="target">
+            <property>
+                <type name="HydroNodeType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="geometry" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="code:EPSG:4326" name="referenceSystem"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cc4cf4cea-51e1-4b74-8a3b-9985a06e6947" priority="normal">
+        <target>
+            <property>
+                <type name="HydroNodeType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="NL.RWS.NHI.NODE" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C6c8d9b8f-ff7a-454d-bde1-de50ff1535b9" priority="normal">
+        <target>
+            <property>
+                <type name="WatercourseSeparatedCrossingType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="2010-11-19 00:00:00.0" name="value"/>
+    </cell>
+</alignment>

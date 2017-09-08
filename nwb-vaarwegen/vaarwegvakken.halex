@@ -2,41 +2,38 @@
 <hale-project version="3.3.0.release">
     <name>INSPIRE harmonisation NWB vaarwegen</name>
     <author>Code For NL</author>
-    <description>Harmonisatie van de NWB vaarwegen WFS t.b.v. INSPIRE Water Transport Network</description>
-    <created>2017-08-16T19:49:51.151+02:00</created>
-    <modified>2017-08-16T19:52:56.678+02:00</modified>
+    <description>Harmonisatie van de NWB vaarwegen WFS t.b.v. INSPIRE Water Transport Network - Vaarwegvakken</description>
+    <created>2017-09-08T17:09:21.343+02:00</created>
+    <modified>2017-09-08T17:10:56.336+02:00</modified>
     <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
         <setting name="charset">UTF-8</setting>
         <setting name="projectFiles.separate">false</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.project.hale25.xml</setting>
-        <setting name="target">file:/data/Development/INSPIRE/nwb-vaarwegen/project.halex</setting>
+        <setting name="target">file:/home/miblon/data/Development/INSPIRE/nwb-vaarwegen/vaarwegvakken.halex</setting>
     </save-config>
     <resource action-id="eu.esdihumboldt.hale.io.schema.read.source" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
         <setting name="charset">UTF-8</setting>
         <setting name="onlyElementsMappable">true</setting>
-        <setting name="resourceId">722f09e6-89c0-46fb-bfaa-b64b2cb52fec</setting>
+        <setting name="resourceId">0711f194-8bd6-4c9e-8d4c-4c06057696fe</setting>
         <complex-setting name="relevantElements">
             <core:list xmlns:core="http://www.esdi-humboldt.eu/hale/core">
                 <core:entry>
                     <core:name namespace="http://nwbvaarwegen.geonovum.nl">vaarwegvakken</core:name>
                 </core:entry>
-                <core:entry>
-                    <core:name namespace="http://nwbvaarwegen.geonovum.nl">kmmarkeringen</core:name>
-                </core:entry>
             </core:list>
         </complex-setting>
-        <setting name="source">http://geodata.nationaalgeoregister.nl/nwbvaarwegen/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=DescribeFeatureType&amp;NAMESPACES=xmlns%28nwbvaarwegen%2Chttp%3A%2F%2Fnwbvaarwegen.geonovum.nl%29&amp;TYPENAMES=nwbvaarwegen%3Avaarwegvakken%2Cnwbvaarwegen%3Akmmarkeringen</setting>
+        <setting name="source">http://geodata.nationaalgeoregister.nl/nwbvaarwegen/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=DescribeFeatureType&amp;NAMESPACES=xmlns%28nwbvaarwegen%2Chttp%3A%2F%2Fnwbvaarwegen.geonovum.nl%29&amp;TYPENAMES=nwbvaarwegen%3Avaarwegvakken</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
     </resource>
     <resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
         <setting name="charset">UTF-8</setting>
         <setting name="onlyElementsMappable">true</setting>
-        <setting name="resourceId">c1c4a0ec-db3a-4ede-b747-3235b2fb6279</setting>
+        <setting name="resourceId">5684a687-d5a2-475a-a879-3f631f068369</setting>
         <setting name="source">http://inspire.ec.europa.eu/schemas/tn-w/4.0/WaterTransportNetwork.xsd</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
     </resource>
-    <file name="alignment.xml" location="project.halex.alignment.xml"/>
-    <file name="styles.sld" location="project.halex.styles.sld"/>
+    <file name="alignment.xml" location="vaarwegvakken.halex.alignment.xml"/>
+    <file name="styles.sld" location="vaarwegvakken.halex.styles.sld"/>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn-w/4.0}BeaconType/1">{http://inspire.ec.europa.eu/schemas/tn/4.0}geometry</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn-w/4.0}BeaconType/2">{http://www.opengis.net/gml/3.2}Point</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn-w/4.0}BeaconType/count">2</property>
@@ -109,13 +106,7 @@
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn-w/4.0}WaterwayType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn-w/4.0}WaterwayType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn-w/4.0}WaterwayType/count">2</property>
-    <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}kmmarkeringenType/1">{http://nwbvaarwegen.geonovum.nl}geom</property>
-    <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}kmmarkeringenType/2">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
-    <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}kmmarkeringenType/count">2</property>
     <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}vaarwegvakkenType/1">{http://nwbvaarwegen.geonovum.nl}geom</property>
     <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}vaarwegvakkenType/2">{http://www.opengis.net/gml/3.2}MultiCurve</property>
     <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}vaarwegvakkenType/count">2</property>
-    <property name="defaultGeometry:{http://nwbwegen.geonovum.nl}hectopuntenType/1">{http://nwbwegen.geonovum.nl}geom</property>
-    <property name="defaultGeometry:{http://nwbwegen.geonovum.nl}hectopuntenType/2">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
-    <property name="defaultGeometry:{http://nwbwegen.geonovum.nl}hectopuntenType/count">2</property>
 </hale-project>
