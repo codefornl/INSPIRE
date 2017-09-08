@@ -1,3 +1,7 @@
+## Disclaimer
+
+Dit project is een initiatief van Code For NL. De documentatie en project componenten vallen volledig onder de verantwoordelijkheid van Code For NL. De genoemde overheidsinstellingen hebben _geen_ directe betrokkenheid bij deze repository.
+
 # INSPIRE
 INSPIRE harmonisatie projecten op basis van open data.
 
@@ -30,7 +34,3 @@ Alle subdirectories van deze repository bevatten .halex bestanden die vanuit HAL
 * In de dataset vinden we 2 subsets.
   * kmmarkeringen
   * vaarwegvakken
-  
-## Disclaimer
-
-Dit project is een initiatief van Code For NL. De documentatie en project componenten vallen volledig onder de verantwoordelijkheid van Code For NL. De genoemde overheidsinstellingen hebben _geen_ directe betrokkenheid bij deze repository.
