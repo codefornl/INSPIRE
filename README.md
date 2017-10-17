@@ -1,3 +1,7 @@
+## Disclaimer
+
+Dit project is een initiatief van Code For NL. De documentatie en project componenten vallen volledig onder de verantwoordelijkheid van Code For NL. De genoemde overheidsinstellingen hebben _geen_ directe betrokkenheid bij deze repository.
+
 # INSPIRE
 INSPIRE harmonisatie projecten op basis van open data.
 
@@ -50,7 +54,3 @@ Alle subdirectories van deze repository bevatten .halex bestanden die vanuit HAL
 * Hoofdwatersysteem en regionale watersystemen kunnen momenteel in het NHI niet worden onderscheiden. De velden voor _inNetwork_ zullen niet worden gevuld en met _nilReason_ worden geduid.
 * _dmnodes_, hebben op dit moment geen duidelijk zichtbare knooppunten bij de landsgrenzen waarmee aansluitingen met b.v. Duitsland/België herkenbaar kunnen worden gemaakt.
 * Nederland is vlak en heeft variabele stroomrichtingen. In de INSPIRE directives wordt ruimte geboden voor stroomrichtingen, maar die zijn in ons land vaak variabel. We dienen na te vragen bij INSPIRE of deze variabele stroomrichting kan worden ingevoerd.
-
-# Disclaimer
-
-Dit project is een initiatief van Code For NL. De documentatie en project componenten vallen volledig onder de verantwoordelijkheid van Code For NL. De genoemde overheidsinstellingen hebben _geen_ directe betrokkenheid bij deze repository.
