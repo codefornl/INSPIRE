@@ -60,4 +60,22 @@
         </target>
         <parameter value="2010-11-19 00:00:00.0" name="value"/>
     </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cddc0de80-a526-423a-931e-e3cb99c63a9c" priority="normal">
+        <source>
+            <property>
+                <type name="dmnodesType" ns="http://mapserver.gis.umn.edu/mapserver">
+                    <condition lang="CQL">TYPE = 'HydroCrossing'</condition>
+                </type>
+                <child name="NAME" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseSeparatedCrossingType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
 </alignment>
