@@ -3,7 +3,7 @@
 <?xml-stylesheet href="http://www.rijkswaterstaat.nl/apps/geoservices/help/metadata/template.xsl" type="text/xsl"?>
 <gmd:MD_Metadata xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd">
 	<gmd:fileIdentifier>
-		<gco:CharacterString>eu-cc7af1e-472e-4752-9e8b-aaa13d1ea447</gco:CharacterString>
+		<gco:CharacterString>eu-75311f6-ffd0-404d-bb2e-8bdc8a106440</gco:CharacterString>
 	</gmd:fileIdentifier>
 	<gmd:language>
 		<gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="dut" codeSpace="dut">Nederlands</gmd:LanguageCode>
@@ -131,10 +131,10 @@
 			<gmd:citation>
 				<gmd:CI_Citation>
 					<gmd:title>
-						<gco:CharacterString>INSPIRE-NL Hydrografie - Sluice</gco:CharacterString>
+						<gco:CharacterString>INSPIRE-NL Hydrografie</gco:CharacterString>
 					</gmd:title>
 					<gmd:alternateTitle>
-						<gco:CharacterString>INSPIRE-NL Hydrography - Sluice</gco:CharacterString>
+						<gco:CharacterString>INSPIRE-NL Hydrography</gco:CharacterString>
 					</gmd:alternateTitle>
 					<gmd:date>
 						<gmd:CI_Date>
@@ -152,7 +152,7 @@
 					<gmd:identifier>
 						<gmd:MD_Identifier>
 							<gmd:code>
-								<gco:CharacterString>eu-cc7af1e-472e-4752-9e8b-aaa13d1ea447</gco:CharacterString>
+								<gco:CharacterString>eu-75311f6-ffd0-404d-bb2e-8bdc8a106440</gco:CharacterString>
 							</gmd:code>
 						</gmd:MD_Identifier>
 					</gmd:identifier>
@@ -166,7 +166,7 @@
 				</gmd:CI_Citation>
 			</gmd:citation>
 			<gmd:abstract>
-				<gco:CharacterString>An open, inclined conduit fitted with a gate for regulating water flow.  SOURCE [DFDD].</gco:CharacterString>
+				<gco:CharacterString>This package provides base classes used to identify real-world objects. These identities may be used to provide implicit semantic associations between different 'implementation views'.  EXAMPLE: A real-world object identified as the 'Rhine' may be realised through a Network view (as a set of links and nodes), a Physical Waters view (as a Watercourse), and a reporting view (as a WFDRiver).</gco:CharacterString>
 			</gmd:abstract>
 			<gmd:purpose>
 				<gco:CharacterString></gco:CharacterString>
