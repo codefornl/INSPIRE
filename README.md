@@ -15,7 +15,9 @@ Op de INSPIRE website staan een aantal [best practices](https://inspire-referenc
 
 Ivm met de internationale samenwerking is de informatie zoveel mogelijk in Engels en Nederlands beschikbaar.
 
-We onderscheiden de bron-data, de documenten, de metadata voor het de resultaten, de harmonisatie/mapping. We gaan er vanuit data de resultaten conform INSPIRE beschikbaar worden gesteld via Services. Hosting partijen voor Nederland zijn o.a. PDOK, WeTRansform.   
+We onderscheiden de bron-data, de documenten, de metadata voor de resultaten en de harmonisatie/mapping. We gaan er vanuit dat de resultaten conform INSPIRE beschikbaar worden gesteld via hosting van Services. Hosting partijen voor Nederland zijn o.a. PDOK, WeTRansform.
+
+In Metadata_INSPIRE.xlsx beheren we het overzicht van de gevraagde data.
 
 De subdirectories van de map harmonisation bevatten .halex bestanden en mapping tables. We streven ernaar dat de .halex bestanden kunnen vanuit HALE Studio worden geopend.
 
