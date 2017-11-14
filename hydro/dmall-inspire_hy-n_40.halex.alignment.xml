@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alignment xmlns="http://www.esdi-humboldt.eu/hale/alignment">
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="C9e2173a4-df8c-4b16-a45f-8aea23bafe33" priority="highest">
+        <source>
+            <class>
+                <type name="dmnodesType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="HydroNodeType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cad5b66fe-ba12-43ef-b6a2-6382ddc339b6" priority="normal">
+        <source>
+            <property>
+                <type name="dmnodesType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="NAME" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="HydroNodeType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C3fbad4bf-7bd6-4a6a-a243-6b8f715a3edd" priority="normal">
+        <source>
+            <property>
+                <type name="dmnodesType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="GEOMETRY" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="Point" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="HydroNodeType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="geometry" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Point" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C4c7617e2-7b45-47e8-bb6b-ddc029f060f1" priority="normal">
+        <source name="var">
+            <property>
+                <type name="dmnodesType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="ID" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="HydroNodeType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def id = ID&#xD;
+&#xD;
+// build the gml:id&#xD;
+id = "HydroNode_" + id&#xD;
+&#xD;
+// collect it&#xD;
+withTransformationContext {&#xD;
+  def c = _.context.collector(it)&#xD;
+  c.nodeIDs &lt;&lt; id&#xD;
+}&#xD;
+&#xD;
+// return it&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C01da8453-cfd7-4417-90bd-f9225006d729" priority="normal">
+        <target>
+            <property>
+                <type name="HydroNodeType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cbccfa30f-34f5-44b7-870e-7e891556704b" priority="normal">
+        <source name="var">
+            <property>
+                <type name="dmnodesType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="ID" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="HydroNodeType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="HydroNode_{ID}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C9599dad8-ff46-42aa-819d-09edd8524d39" priority="normal">
+        <target>
+            <property>
+                <type name="HydroNodeType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_NAMESPACE}}{{project:INSPIRE_DATASET_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.create" id="Cdbbb79ea-2f62-4c99-b590-9bda1546b4b1" priority="lowest">
+        <target>
+            <class>
+                <type name="NetworkType" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </class>
+        </target>
+        <parameter value="1" name="number"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.collector.assign" id="Cd42c0851-c055-4f3c-ab1e-a82b95dd901a" priority="normal">
+        <target>
+            <property>
+                <type name="NetworkType" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="elements" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="nodeIDs" name="collector"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C8c4fd33c-8d0e-41db-abe1-7a56fb14553a" priority="normal">
+        <target>
+            <property>
+                <type name="NetworkType" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="C313598c0-4e26-4652-9b3f-0ccbf76af6d5" priority="high">
+        <source>
+            <class>
+                <type name="dmlinksType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="WatercourseLinkType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cdd20d07f-407f-4a38-8f16-24cc6da5b1e2" priority="normal">
+        <source>
+            <property>
+                <type name="dmlinksType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="GEOMETRY" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="choice" ns="http://www.opengis.net/gml/_Curve"/>
+                <child name="LineString" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseLinkType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="centrelineGeometry" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractCurve"/>
+                <child name="LineString" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Ce349d3c3-fd6d-4c09-b801-120384221b99" priority="normal">
+        <source name="var">
+            <property>
+                <type name="dmlinksType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="ID_TO" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseLinkType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="endNode" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#HydroNode_{ID_TO}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C1f401594-a1be-4045-8a6f-9b33a6f98aeb" priority="normal">
+        <target>
+            <property>
+                <type name="WatercourseLinkType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="fictitious" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="true" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C40ca6244-0dae-4861-8ab1-1de071416164" priority="normal">
+        <target>
+            <property>
+                <type name="WatercourseLinkType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="flowDirection" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/codelist/LinkDirectionValue/bothDirections" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Ce216cebf-423f-4de9-895c-7ffe6165b249" priority="normal">
+        <source>
+            <property>
+                <type name="dmlinksType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="NAME" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseLinkType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Ce4996785-a3d9-488d-a91f-aeef5bd60fe7" priority="normal">
+        <source name="var">
+            <property>
+                <type name="dmlinksType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="ID" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseLinkType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="WatercourseLinks_{ID}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C5af6f861-ec06-414c-bff1-bb3a6ce2ba8f" priority="normal">
+        <target>
+            <property>
+                <type name="WatercourseLinkType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C18683206-7535-46fc-b02b-14cb14f6cc98" priority="normal">
+        <source name="var">
+            <property>
+                <type name="dmlinksType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="ID" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseLinkType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="WatercourseLinks_{ID}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C6efec172-2d01-4fee-8c46-96e508b589ac" priority="normal">
+        <target>
+            <property>
+                <type name="WatercourseLinkType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_NAMESPACE}}{{project:INSPIRE_DATASET_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C196dbfed-df28-4437-8e9c-e021ba24b8be" priority="normal">
+        <source>
+            <property>
+                <type name="dmlinksType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="LENGTH_MAP" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseLinkType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="length" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Ceb7e759a-0387-4618-ba78-f4a9c9326373" priority="normal">
+        <target>
+            <property>
+                <type name="WatercourseLinkType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="length" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="uom"/>
+            </property>
+        </target>
+        <parameter value="m" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cc15e8b76-5c35-456d-880b-405749c515f1" priority="normal">
+        <source name="var">
+            <property>
+                <type name="dmlinksType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="ID_FROM" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseLinkType" ns="http://inspire.ec.europa.eu/schemas/hy-n/4.0"/>
+                <child name="startNode" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#HydroNode_{ID_FROM}" name="pattern"/>
+    </cell>
+</alignment>
