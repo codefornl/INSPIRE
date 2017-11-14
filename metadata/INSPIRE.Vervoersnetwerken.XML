@@ -134,7 +134,7 @@
 						<gco:CharacterString>INSPIRE-NL Vervoersnetwerken</gco:CharacterString>
 					</gmd:title>
 					<gmd:alternateTitle>
-						<gco:CharacterString>INSPIRE-NL Transportation Network</gco:CharacterString>
+						<gco:CharacterString>Transport Networks</gco:CharacterString>
 					</gmd:alternateTitle>
 					<gmd:date>
 						<gmd:CI_Date>
@@ -166,7 +166,7 @@
 				</gmd:CI_Citation>
 			</gmd:citation>
 			<gmd:abstract>
-				<gco:CharacterString>A collection of road link sequences and or individual road links that represents a route that is part of the international E-road network, characterized by its European route number.</gco:CharacterString>
+				<gco:CharacterString>Netwerken voor vervoer over de weg, per spoor, in de lucht en over het water en de aanverwante infrastructuur met inbegrip van koppelingen tussen verschillende netwerken en het trans-Europees vervoersnetwerk, zoals gedefinieerd in Beschikking nr. 1692/96/EG van het Europees Parlement en de Raad van 23 juli 1996 betreffende communautaire richtsnoeren voor de ontwikkeling van een trans-Europees vervoersnet en de latere herzieningen van deze beschikking.</gco:CharacterString>
 			</gmd:abstract>
 			<gmd:purpose>
 				<gco:CharacterString></gco:CharacterString>
@@ -253,7 +253,7 @@
 			<gmd:descriptiveKeywords>
 				<gmd:MD_Keywords>
 					<gmd:keyword>
-						<gco:CharacterString>Transport Network</gco:CharacterString>
+						<gco:CharacterString>Vervoersnetwerken</gco:CharacterString>
 					</gmd:keyword>
 					<gmd:thesaurusName>
 						<gmd:CI_Citation>

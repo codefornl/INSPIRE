@@ -131,10 +131,10 @@
 			<gmd:citation>
 				<gmd:CI_Citation>
 					<gmd:title>
-						<gco:CharacterString>INSPIRE-NL Vervoersnetwerken Wegen - FunctionalRoadClass</gco:CharacterString>
+						<gco:CharacterString>INSPIRE-NL Vervoersnetwerken - Wegen - FunctionalRoadClass</gco:CharacterString>
 					</gmd:title>
 					<gmd:alternateTitle>
-						<gco:CharacterString>INSPIRE-NL Transportation Network Roads - FunctionalRoadClass</gco:CharacterString>
+						<gco:CharacterString>Transport Networks - Roads - FunctionalRoadClass</gco:CharacterString>
 					</gmd:alternateTitle>
 					<gmd:date>
 						<gmd:CI_Date>
@@ -166,7 +166,7 @@
 				</gmd:CI_Citation>
 			</gmd:citation>
 			<gmd:abstract>
-				<gco:CharacterString>Functional rank of the road link in the road network. Where functional classification systems are used that have fewer classes/ranks than the number provided by FunctionalRoadClassValues, classes with codes 1 to n will be used, where n corresponds to the number of classes that are used in the classification system. Values for the functional road classification. This classification is based on the importance of the role that the road performs in the road network.</gco:CharacterString>
+				<gco:CharacterString>Een classificatie op basis van de belangrijkheid van de rol die de weg vervult in het wegennetwerk. Where functional classification systems are used that have fewer classes/ranks than the number provided by FunctionalRoadClassValues, classes with codes 1 to n will be used, where n corresponds to the number of classes that are used in the classification system. Values for the functional road classification. This classification is based on the importance of the role that the road performs in the road network.</gco:CharacterString>
 			</gmd:abstract>
 			<gmd:purpose>
 				<gco:CharacterString></gco:CharacterString>
@@ -253,7 +253,7 @@
 			<gmd:descriptiveKeywords>
 				<gmd:MD_Keywords>
 					<gmd:keyword>
-						<gco:CharacterString>Transport Network</gco:CharacterString>
+						<gco:CharacterString>Vervoersnetwerken</gco:CharacterString>
 					</gmd:keyword>
 					<gmd:thesaurusName>
 						<gmd:CI_Citation>

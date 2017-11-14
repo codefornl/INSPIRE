@@ -131,10 +131,10 @@
 			<gmd:citation>
 				<gmd:CI_Citation>
 					<gmd:title>
-						<gco:CharacterString>INSPIRE-NL Vervoersnetwerken Wegen</gco:CharacterString>
+						<gco:CharacterString>INSPIRE-NL Vervoersnetwerken - Wegen</gco:CharacterString>
 					</gmd:title>
 					<gmd:alternateTitle>
-						<gco:CharacterString>INSPIRE-NL Transportation Network Roads</gco:CharacterString>
+						<gco:CharacterString>Transport Networks Roads</gco:CharacterString>
 					</gmd:alternateTitle>
 					<gmd:date>
 						<gmd:CI_Date>
@@ -166,7 +166,7 @@
 				</gmd:CI_Citation>
 			</gmd:citation>
 			<gmd:abstract>
-				<gco:CharacterString></gco:CharacterString>
+				<gco:CharacterString>Een verzameling weglinksequenties en/of individuele weglinks gekenmerkt door een of meer thematische identifiers en/of eigenschappen.</gco:CharacterString>
 			</gmd:abstract>
 			<gmd:purpose>
 				<gco:CharacterString></gco:CharacterString>
@@ -253,7 +253,7 @@
 			<gmd:descriptiveKeywords>
 				<gmd:MD_Keywords>
 					<gmd:keyword>
-						<gco:CharacterString>Transport Network</gco:CharacterString>
+						<gco:CharacterString>Vervoersnetwerken</gco:CharacterString>
 					</gmd:keyword>
 					<gmd:thesaurusName>
 						<gmd:CI_Citation>
