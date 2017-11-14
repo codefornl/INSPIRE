@@ -4,7 +4,7 @@
     <author>Thorsten Reitz</author>
     <description>dmlinks transformatie voor Hydro networks</description>
     <created>2017-09-01T08:41:59.247+02:00</created>
-    <modified>2017-11-14T19:27:47.902+01:00</modified>
+    <modified>2017-11-14T19:29:21.181+01:00</modified>
     <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
         <setting name="charset">UTF-8</setting>
         <setting name="projectFiles.separate">false</setting>
