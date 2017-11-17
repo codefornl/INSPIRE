@@ -1,2 +1,110 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<alignment xmlns="http://www.esdi-humboldt.eu/hale/alignment"/>
+<alignment xmlns="http://www.esdi-humboldt.eu/hale/alignment">
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="Cb81764ce-d395-446a-a58d-cb782ad8774a" priority="normal">
+        <source>
+            <class>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cf8b6a43f-3170-42ec-8b1f-04da738f9aa2" priority="normal">
+        <source>
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="vwk_begindatum" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cc4807f59-447c-4d74-a6b0-e8969b118925" priority="normal">
+        <source>
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="geom" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="MultiCurve" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="curveMember" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractCurve"/>
+                <child name="LineString" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="centrelineGeometry" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractCurve"/>
+                <child name="LineString" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C3bf13acc-bb58-4a75-8341-27bfbeb33e1d" priority="normal">
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="fictitious" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cbefbecfc-ad3d-45f8-b11c-8cac5aa394d1" priority="normal">
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="language" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="nld" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C713f8810-999c-4780-9ea2-c6cbf00c9746" priority="normal">
+        <source>
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="vwg_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cf52f4062-c9df-4a1d-bed2-a8e350dc692f" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="WaterwayLink_{vwk_id}" name="pattern"/>
+    </cell>
+</alignment>

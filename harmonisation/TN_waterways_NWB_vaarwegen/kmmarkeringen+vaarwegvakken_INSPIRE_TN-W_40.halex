@@ -4,7 +4,7 @@
     <author>Thorsten Reitz for CodeforNL/RWS</author>
     <description>Harmonisatie van de NWB vaarwegen WFS t.b.v. INSPIRE Water Transport Network - KmMarkeringen</description>
     <created>2017-11-17T14:30:35.650+01:00</created>
-    <modified>2017-11-17T15:17:28.069+01:00</modified>
+    <modified>2017-11-17T15:50:14.321+01:00</modified>
     <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
         <setting name="charset">UTF-8</setting>
         <setting name="projectFiles.separate">false</setting>
@@ -143,6 +143,14 @@
     <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}vaarwegvakkenType/1">{http://nwbvaarwegen.geonovum.nl}geom</property>
     <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}vaarwegvakkenType/2">{http://www.opengis.net/gml/3.2}MultiCurve</property>
     <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}vaarwegvakkenType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LineStringType/1">{http://www.opengis.net/gml/3.2/LineStringType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LineStringType/2">{http://www.opengis.net/gml/3.2/LineStringType/choice_1}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LineStringType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LineStringType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LineStringType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiCurveType/1">{http://www.opengis.net/gml/3.2}curveMember</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiCurveType/2">{http://www.opengis.net/gml/3.2/AbstractCurve}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiCurveType/count">2</property>
     <property name="resource-394c3a72-958f-497b-b5d4-3cd240d2e24a:defaultCRS:{http://nwbvaarwegen.geonovum.nl}vaarwegvakkenType/{http://nwbvaarwegen.geonovum.nl}geom/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
     <property name="resource-732b04ba-1c07-4669-90fe-b8e87df0942b:defaultCRS:{http://nwbvaarwegen.geonovum.nl}vaarwegvakkenType/{http://nwbvaarwegen.geonovum.nl}geom/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
 </hale-project>
