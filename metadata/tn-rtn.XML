@@ -68,7 +68,7 @@
 					<gmd:onlineResource>
 						<gmd:CI_OnlineResource>
 							<gmd:linkage>
-								<gmd:URL>https-//www.rijkswaterstaat.nl</gmd:URL>
+								<gmd:URL>https://www.rijkswaterstaat.nl</gmd:URL>
 							</gmd:linkage>
 						</gmd:CI_OnlineResource>
 					</gmd:onlineResource>
@@ -80,7 +80,7 @@
 		</gmd:CI_ResponsibleParty>
 	</gmd:contact>
 	<gmd:dateStamp>
-		<gco:Date>2017-11-23</gco:Date>
+		<gco:Date>2017-11-24</gco:Date>
 	</gmd:dateStamp>
 	<gmd:metadataStandardName>
 		<gco:CharacterString>ISO 19115</gco:CharacterString>
@@ -222,7 +222,7 @@
 							<gmd:onlineResource>
 								<gmd:CI_OnlineResource>
 									<gmd:linkage>
-										<gmd:URL>https-//www.rijkswaterstaat.nl</gmd:URL>
+										<gmd:URL>https://www.rijkswaterstaat.nl</gmd:URL>
 									</gmd:linkage>
 								</gmd:CI_OnlineResource>
 							</gmd:onlineResource>
@@ -375,7 +375,7 @@
 						<gco:CharacterString>Geen beperkingen</gco:CharacterString>
 					</gmd:otherConstraints>
 					<gmd:otherConstraints>
-						<gco:CharacterString>http-//creativecommons.org/publicdomain/zero/1.0/deed.nl</gco:CharacterString>
+						<gco:CharacterString>http://creativecommons.org/publicdomain/zero/1.0/deed.nl</gco:CharacterString>
 					</gmd:otherConstraints>
 				</gmd:MD_LegalConstraints>
 			</gmd:resourceConstraints>
@@ -507,7 +507,7 @@
 				</gmd:EX_Extent>
 			</gmd:extent>
 			<gmd:supplementalInformation>
-				<gco:CharacterString>https-//www.github.com/codeforNL/INSPIRE/</gco:CharacterString>
+				<gco:CharacterString>https://www.github.com/codeforNL/INSPIRE/</gco:CharacterString>
 			</gmd:supplementalInformation>
 		</gmd:MD_DataIdentification>
 	</gmd:identificationInfo>
@@ -609,81 +609,23 @@
 						<gco:CharacterString></gco:CharacterString>
 					</gmd:unitsOfDistribution>
 					<gmd:transferSize></gmd:transferSize>
-          <gmd:onLine>
+           <gmd:onLine>
             <gmd:CI_OnlineResource>
               <gmd:linkage>
-                <gmd:URL>https://geodata.nationaalgeoregister.nl/inspire/tn-ro/wms?</gmd:URL>
+                <gmd:URL>https://deegree.haleconnect.com/services/eu-48caf74-e4c2-433e-9a45-ee85442d26aa_wms?</gmd:URL>
               </gmd:linkage>
               <gmd:protocol>
                 <gco:CharacterString>OGC:WMS</gco:CharacterString>
               </gmd:protocol>
               <gmd:name>
-                <gco:CharacterString>NL.Roadtransportnetwork - WMS</gco:CharacterString>
-              </gmd:name>
-              <gmd:description>
-                <gco:CharacterString>Objecten die de geometrie en verbindingen beschrijven tussen punten in een netwerk. bijv. paden</gco:CharacterString>
-              </gmd:description>
-            </gmd:CI_OnlineResource>
-          </gmd:onLine>
-          <gmd:onLine>
-            <gmd:CI_OnlineResource>
-              <gmd:linkage>
-                <gmd:URL>https://www.wetransform.to/inspire/tn-ro/wms?</gmd:URL>
-              </gmd:linkage>
-              <gmd:protocol>
-                <gco:CharacterString>OGC:WMS</gco:CharacterString>
-              </gmd:protocol>
-              <gmd:name>
-                <gco:CharacterString>NL.TN.RoadTransportNetwork = WMS - RWS</gco:CharacterString>
+                <gco:CharacterString>NL.TN.RoadTransportNetwork = WMS</gco:CharacterString>
               </gmd:name>
             </gmd:CI_OnlineResource>
           </gmd:onLine>
-		  <gmd:onLine>
-            <gmd:CI_OnlineResource>
+	<gmd:onLine>
+	<gmd:CI_OnlineResource>
               <gmd:linkage>
-                <gmd:URL>https://geodata.nationaalgeoregister.nl/inspire/tn-ro/wms?</gmd:URL>
-              </gmd:linkage>
-              <gmd:protocol>
-                <gco:CharacterString>OGC:WMS</gco:CharacterString>
-              </gmd:protocol>
-              <gmd:name>
-                <gco:CharacterString>NL.TN.RoadTransportNetwork.RoadLink = WMS</gco:CharacterString>
-              </gmd:name>
-            </gmd:CI_OnlineResource>
-          </gmd:onLine>
-          <gmd:onLine>
-            <gmd:CI_OnlineResource>
-              <gmd:linkage>
-                <gmd:URL>https://geodata.nationaalgeoregister.nl/inspire/tn-ro/wfs?</gmd:URL>
-              </gmd:linkage>
-              <gmd:protocol>
-                <gco:CharacterString>OGC:WFS</gco:CharacterString>
-              </gmd:protocol>
-              <gmd:name>
-                <gco:CharacterString>NL.Roadtransportnetwork - WFS</gco:CharacterString>
-              </gmd:name>
-              <gmd:description>
-                <gco:CharacterString>Objecten die de geometrie en verbindingen beschrijven tussen punten in een netwerk. bijv. paden</gco:CharacterString>
-              </gmd:description>
-            </gmd:CI_OnlineResource>
-          </gmd:onLine>
-          <gmd:onLine>
-            <gmd:CI_OnlineResource>
-              <gmd:linkage>
-                <gmd:URL>https://geodata.nationaalgeoregister.nl/inspire/tn-ro/wfs?</gmd:URL>
-              </gmd:linkage>
-              <gmd:protocol>
-                <gco:CharacterString>OGC:WFS</gco:CharacterString>
-              </gmd:protocol>
-              <gmd:name>
-                <gco:CharacterString>TN.RoadTransportNetwork.RoadLink - WFS</gco:CharacterString>
-              </gmd:name>
-            </gmd:CI_OnlineResource>
-          </gmd:onLine>
-          <gmd:onLine>
-            <gmd:CI_OnlineResource>
-              <gmd:linkage>
-                <gmd:URL>https://www.wetransform.to/inspire/tn-ro/wfs?</gmd:URL>
+                <gmd:URL>https://deegree.haleconnect.com/services/eu-48caf74-e4c2-433e-9a45-ee85442d26aa_wfs?</gmd:URL>
               </gmd:linkage>
               <gmd:protocol>
                 <gco:CharacterString>OGC:WFS</gco:CharacterString>
@@ -843,7 +785,7 @@
 											<gmd:onlineResource>
 												<gmd:CI_OnlineResource>
 													<gmd:linkage>
-														<gmd:URL>https-//www.rijkswaterstaat.nl</gmd:URL>
+														<gmd:URL>https://www.rijkswaterstaat.nl</gmd:URL>
 													</gmd:linkage>
 												</gmd:CI_OnlineResource>
 											</gmd:onlineResource>

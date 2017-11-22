@@ -68,7 +68,7 @@
 					<gmd:onlineResource>
 						<gmd:CI_OnlineResource>
 							<gmd:linkage>
-								<gmd:URL>https-//www.rijkswaterstaat.nl</gmd:URL>
+								<gmd:URL>https://www.rijkswaterstaat.nl</gmd:URL>
 							</gmd:linkage>
 						</gmd:CI_OnlineResource>
 					</gmd:onlineResource>
@@ -80,7 +80,7 @@
 		</gmd:CI_ResponsibleParty>
 	</gmd:contact>
 	<gmd:dateStamp>
-		<gco:Date>2017-11-23</gco:Date>
+		<gco:Date>2017-11-24</gco:Date>
 	</gmd:dateStamp>
 	<gmd:metadataStandardName>
 		<gco:CharacterString>ISO 19115</gco:CharacterString>
@@ -221,7 +221,7 @@
 							<gmd:onlineResource>
 								<gmd:CI_OnlineResource>
 									<gmd:linkage>
-										<gmd:URL>https-//www.rijkswaterstaat.nl</gmd:URL>
+										<gmd:URL>https://www.rijkswaterstaat.nl</gmd:URL>
 									</gmd:linkage>
 								</gmd:CI_OnlineResource>
 							</gmd:onlineResource>
@@ -374,7 +374,7 @@
 						<gco:CharacterString>Geen beperkingen</gco:CharacterString>
 					</gmd:otherConstraints>
 					<gmd:otherConstraints>
-						<gco:CharacterString>http-//creativecommons.org/publicdomain/zero/1.0/deed.nl</gco:CharacterString>
+						<gco:CharacterString>http://creativecommons.org/publicdomain/zero/1.0/deed.nl</gco:CharacterString>
 					</gmd:otherConstraints>
 				</gmd:MD_LegalConstraints>
 			</gmd:resourceConstraints>
@@ -506,7 +506,7 @@
 				</gmd:EX_Extent>
 			</gmd:extent>
 			<gmd:supplementalInformation>
-				<gco:CharacterString>https-//www.github.com/codeforNL/INSPIRE/</gco:CharacterString>
+				<gco:CharacterString>https://www.github.com/codeforNL/INSPIRE/</gco:CharacterString>
 			</gmd:supplementalInformation>
 		</gmd:MD_DataIdentification>
 	</gmd:identificationInfo>
@@ -611,7 +611,7 @@
 		  <gmd:onLine>
             <gmd:CI_OnlineResource>
               <gmd:linkage>
-                <gmd:URL>https://https://www.wetransform.to/inspire/tn-ctn/wms?</gmd:URL>
+                <gmd:URL>https://deegree.haleconnect.com/services/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48_wms?</gmd:URL>
               </gmd:linkage>
               <gmd:protocol>
                 <gco:CharacterString>OGC:WMS</gco:CharacterString>
@@ -624,7 +624,7 @@
 		  <gmd:onLine>
             <gmd:CI_OnlineResource>
               <gmd:linkage>
-                <gmd:URL>https://https://www.wetransform.to/inspire/tn-w/wfs?</gmd:URL>
+                <gmd:URL>https://deegree.haleconnect.com/services/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48_wfs?</gmd:URL>
               </gmd:linkage>
               <gmd:protocol>
                 <gco:CharacterString>OGC:WFS</gco:CharacterString>
@@ -784,7 +784,7 @@
 											<gmd:onlineResource>
 												<gmd:CI_OnlineResource>
 													<gmd:linkage>
-														<gmd:URL>https-//www.rijkswaterstaat.nl</gmd:URL>
+														<gmd:URL>https://www.rijkswaterstaat.nl</gmd:URL>
 													</gmd:linkage>
 												</gmd:CI_OnlineResource>
 											</gmd:onlineResource>
