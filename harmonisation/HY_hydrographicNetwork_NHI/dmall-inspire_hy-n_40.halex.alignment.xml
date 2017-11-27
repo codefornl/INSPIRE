@@ -70,7 +70,7 @@
 def id = ID&#xD;
 &#xD;
 // build the gml:id&#xD;
-id = "HydroNode_" + id&#xD;
+id = "INSPIRE.Hydrografie_Netwerk_element_HydroNode." + id&#xD;
 &#xD;
 // collect it&#xD;
 withTransformationContext {&#xD;
@@ -196,7 +196,7 @@ return id
                 <child name="href" ns="http://www.w3.org/1999/xlink"/>
             </property>
         </target>
-        <parameter value="#HydroNode_{ID_TO}" name="pattern"/>
+        <parameter value="#INSPIRE.Hydrografie_Netwerk_element_HydroNode.{ID_TO}" name="pattern"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="C1f401594-a1be-4045-8a6f-9b33a6f98aeb" priority="normal">
         <target>
@@ -250,7 +250,7 @@ return id
                 <child name="id" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="WatercourseLinks_{ID}" name="pattern"/>
+        <parameter value="INSPIRE.Hydrografie_Netwerk_element_WaterCourseLink.{ID}" name="pattern"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="C5af6f861-ec06-414c-bff1-bb3a6ce2ba8f" priority="normal">
         <target>
@@ -330,6 +330,6 @@ return id
                 <child name="href" ns="http://www.w3.org/1999/xlink"/>
             </property>
         </target>
-        <parameter value="#HydroNode_{ID_FROM}" name="pattern"/>
+        <parameter value="#INSPIRE.Hydrografie_Netwerk_element_HydroNode.{ID_FROM}" name="pattern"/>
     </cell>
 </alignment>

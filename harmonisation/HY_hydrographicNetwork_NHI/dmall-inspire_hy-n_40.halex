@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<hale-project version="3.3.1.release">
+<hale-project version="3.4.0.SNAPSHOT">
     <name>dmlinks + dmnodes to INSPIRE HY-N 4.0</name>
     <author>Thorsten Reitz</author>
     <description>dmlinks transformatie voor Hydro networks</description>
     <created>2017-09-01T08:41:59.247+02:00</created>
-    <modified>2017-11-14T19:29:21.181+01:00</modified>
+    <modified>2017-11-27T09:24:52.137+01:00</modified>
     <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
         <setting name="charset">UTF-8</setting>
         <setting name="projectFiles.separate">false</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.project.hale25.xml</setting>
-        <setting name="target">file:/C:/wetransform/dev/INSPIRE/hydro/dmall-inspire_hy-n_40.halex</setting>
+        <setting name="target">file:/C:/wetransform/dev/INSPIRE/harmonisation/HY_hydrographicNetwork_NHI/dmall-inspire_hy-n_40.halex</setting>
     </save-config>
     <resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
         <setting name="charset">UTF-8</setting>
@@ -32,14 +32,14 @@
                 </core:entry>
             </core:list>
         </complex-setting>
-        <setting name="source">http://geoservices.rijkswaterstaat.nl/waterdienst_nhi?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=DescribeFeatureType&amp;TYPENAME=dmlinks%2Cdmnodes</setting>
+        <setting name="source">http://geoservices.rijkswaterstaat.nl/waterdienst_nhi?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=DescribeFeatureType&amp;TYPENAME=dmlinks,dmnodes</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
     </resource>
     <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
         <setting name="charset">UTF-8</setting>
         <setting name="resourceId">dfa69e58-9690-4645-8d0a-cb4ac0965a64</setting>
         <setting name="interpolation.grid.moveAllToGrid">false</setting>
-        <setting name="source">http://geoservices.rijkswaterstaat.nl/waterdienst_nhi?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;TYPENAME=dmlinks%2Cdmnodes</setting>
+        <setting name="source">http://geoservices.rijkswaterstaat.nl/waterdienst_nhi?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;TYPENAME=dmlinks,dmnodes</setting>
         <setting name="interpolation.maxError">0.1</setting>
         <setting name="strict">false</setting>
         <setting name="interpolation.algorithm">segment</setting>
@@ -1242,10 +1242,10 @@
                 <core:value value="DM_NL"/>
             </core:property>
             <core:property name="INSPIRE_DATASET_ID">
-                <core:value value="eu-75311f6-ffd0-404d-bb2e-8bdc8a106440"/>
+                <core:value value="INSPIRE.Hydrografie_Netwerk"/>
             </core:property>
             <core:property name="INSPIRE_NAMESPACE">
-                <core:value value="https://www.rijkswaterstaat.nl/inspire/hy-n/"/>
+                <core:value value="https://www.rijkswaterstaat.nl/"/>
             </core:property>
         </core:properties>
     </complex-property>
