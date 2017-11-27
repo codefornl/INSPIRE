@@ -68,7 +68,7 @@
 					<gmd:onlineResource>
 						<gmd:CI_OnlineResource>
 							<gmd:linkage>
-								<gmd:URL>https-//www.rijkswaterstaat.nl</gmd:URL>
+								<gmd:URL>https://www.rijkswaterstaat.nl</gmd:URL>
 							</gmd:linkage>
 						</gmd:CI_OnlineResource>
 					</gmd:onlineResource>
@@ -80,7 +80,7 @@
 		</gmd:CI_ResponsibleParty>
 	</gmd:contact>
 	<gmd:dateStamp>
-		<gco:Date>2017-11-23</gco:Date>
+		<gco:Date>2017-11-24</gco:Date>
 	</gmd:dateStamp>
 	<gmd:metadataStandardName>
 		<gco:CharacterString>ISO 19115</gco:CharacterString>
@@ -222,7 +222,7 @@
 							<gmd:onlineResource>
 								<gmd:CI_OnlineResource>
 									<gmd:linkage>
-										<gmd:URL>https-//www.rijkswaterstaat.nl</gmd:URL>
+										<gmd:URL>https://www.rijkswaterstaat.nl</gmd:URL>
 									</gmd:linkage>
 								</gmd:CI_OnlineResource>
 							</gmd:onlineResource>
@@ -375,7 +375,7 @@
 						<gco:CharacterString>Geen beperkingen</gco:CharacterString>
 					</gmd:otherConstraints>
 					<gmd:otherConstraints>
-						<gco:CharacterString>http-//creativecommons.org/publicdomain/zero/1.0/deed.nl</gco:CharacterString>
+						<gco:CharacterString>http://creativecommons.org/publicdomain/zero/1.0/deed.nl</gco:CharacterString>
 					</gmd:otherConstraints>
 				</gmd:MD_LegalConstraints>
 			</gmd:resourceConstraints>
@@ -507,7 +507,7 @@
 				</gmd:EX_Extent>
 			</gmd:extent>
 			<gmd:supplementalInformation>
-				<gco:CharacterString>https-//www.github.com/codeforNL/INSPIRE/</gco:CharacterString>
+				<gco:CharacterString>https://www.github.com/codeforNL/INSPIRE/</gco:CharacterString>
 			</gmd:supplementalInformation>
 		</gmd:MD_DataIdentification>
 	</gmd:identificationInfo>
@@ -606,68 +606,33 @@
 			</gmd:distributor>
 			<gmd:transferOptions>
 				<gmd:MD_DigitalTransferOptions>
-					<gmd:unitsOfDistribution>
-						<gco:CharacterString></gco:CharacterString>
-					</gmd:unitsOfDistribution>
+					<gmd:unitsOfDistribution></gmd:unitsOfDistribution>
 					<gmd:transferSize></gmd:transferSize>			
 			<gmd:onLine>
             <gmd:CI_OnlineResource>
               <gmd:linkage>
-                <gmd:URL>https://geodata.nationaalgeoregister.nl/inspire/hy-p/wms?</gmd:URL>
+                <gmd:URL>https://deegree.haleconnect.com/services/eu-f297898-2640-44c2-bbe9-c0480da83723_wms?</gmd:URL>
               </gmd:linkage>
               <gmd:protocol>
                 <gco:CharacterString>OGC:WMS</gco:CharacterString>
               </gmd:protocol>
               <gmd:name>
-                <gco:CharacterString>NL.HY.PhysicalWaters.Shore - WMS</gco:CharacterString>
+                <gco:CharacterString>NL.HY.PhysicalWaters - WMS</gco:CharacterString>
               </gmd:name>
               <gmd:description gco:nilReason="missing">
 			    <gco:CharacterString/>
               </gmd:description>
             </gmd:CI_OnlineResource>
-          </gmd:onLine>
-          <gmd:onLine>
+          </gmd:onLine> <gmd:onLine>
             <gmd:CI_OnlineResource>
               <gmd:linkage>
-                <gmd:URL>https://geodata.nationaalgeoregister.nl/inspire/hy-p/wms?</gmd:URL>
-              </gmd:linkage>
-              <gmd:protocol>
-                <gco:CharacterString>OGC:WMS</gco:CharacterString>
-              </gmd:protocol>
-              <gmd:name>
-                <gco:CharacterString>NL.HY.PhysicalWaters.Wetland - WMS</gco:CharacterString>
-              </gmd:name>
-			  <gmd:description gco:nilReason="missing">
-			    <gco:CharacterString/>
-              </gmd:description>
-            </gmd:CI_OnlineResource>
-          </gmd:onLine>
-		  <gmd:onLine>
-            <gmd:CI_OnlineResource>
-              <gmd:linkage>
-                <gmd:URL>https://geodata.nationaalgeoregister.nl/inspire/hy-p/wfs?</gmd:URL>
+                <gmd:URL>https://deegree.haleconnect.com/services/eu-f297898-2640-44c2-bbe9-c0480da83723_wfs?</gmd:URL>
               </gmd:linkage>
               <gmd:protocol>
                 <gco:CharacterString>OGC:WFS</gco:CharacterString>
               </gmd:protocol>
               <gmd:name>
-                <gco:CharacterString>NL.HY.PhysicalWaters.Shore - WFS</gco:CharacterString>
-              </gmd:name>
-              <gmd:description gco:nilReason="missing">
-                <gco:CharacterString/>
-              </gmd:description>
-            </gmd:CI_OnlineResource>
-          </gmd:onLine>
-          <gmd:onLine>
-            <gmd:CI_OnlineResource>
-              <gmd:linkage>
-                <gmd:URL>https://geodata.nationaalgeoregister.nl/inspire/hy-p/wfs?</gmd:URL>
-              </gmd:linkage>
-              <gmd:protocol>
-                <gco:CharacterString>OGC:WFS</gco:CharacterString>
-              </gmd:protocol>
-              <gmd:name>
-                <gco:CharacterString>NL.HY.PhysicalWaters.Wetland - WFS</gco:CharacterString>
+                <gco:CharacterString>NL.HY.PhysicalWaters - WFS</gco:CharacterString>
               </gmd:name>
 			  <gmd:description gco:nilReason="missing">
 			    <gco:CharacterString/>
@@ -824,7 +789,7 @@
 											<gmd:onlineResource>
 												<gmd:CI_OnlineResource>
 													<gmd:linkage>
-														<gmd:URL>https-//www.rijkswaterstaat.nl</gmd:URL>
+														<gmd:URL>https://www.rijkswaterstaat.nl</gmd:URL>
 													</gmd:linkage>
 												</gmd:CI_OnlineResource>
 											</gmd:onlineResource>
