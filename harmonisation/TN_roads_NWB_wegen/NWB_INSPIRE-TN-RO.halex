@@ -3,12 +3,12 @@
     <name>NL TN RO</name>
     <author>Johanna Ott</author>
     <created>2017-12-15T14:32:38.570+01:00</created>
-    <modified>2017-12-20T15:25:05.503+01:00</modified>
+    <modified>2017-12-22T16:56:51.939+01:00</modified>
     <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
         <setting name="charset">UTF-8</setting>
         <setting name="projectFiles.separate">false</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.project.hale25.xml</setting>
-        <setting name="target">file:/C:/Users/Johanna%20Ott/Box%20Sync/staff/Projects/2017-21%20RWS/TN-RO/NL%20TN%20RO.halex</setting>
+        <setting name="target">file:/C:/Users/Johanna%20Ott/eclipse/workspace/gits/INSPIRE/harmonisation/TN_roads_NWB_wegen/NWB_INSPIRE-TN-RO.halex</setting>
     </save-config>
     <resource action-id="eu.esdihumboldt.hale.io.schema.read.source" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
         <setting name="charset">UTF-8</setting>
@@ -16,20 +16,6 @@
         <setting name="resourceId">4b7f46b8-2d99-436a-b4e7-e03bcf103862</setting>
         <setting name="source">file:/C:/Users/Johanna%20Ott/Desktop/RWS/combinedxsd.xsd</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
-    </resource>
-    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
-        <setting name="charset">UTF-8</setting>
-        <setting name="resourceId">114a87c6-397a-4a75-9577-b6ae97bc6c9d</setting>
-        <setting name="interpolation.grid.moveAllToGrid">false</setting>
-        <setting name="source">http://geoservices.rijkswaterstaat.nl/weggeg?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;TYPENAME=ms_wv_n</setting>
-        <setting name="interpolation.maxError">0.1</setting>
-        <setting name="strict">false</setting>
-        <setting name="interpolation.algorithm">none</setting>
-        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
-        <setting name="ignoreNamespaces">false</setting>
-        <setting name="paginateRequest">false</setting>
-        <setting name="featuresPerWfsRequest">1000</setting>
-        <setting name="ignoreRoot">true</setting>
     </resource>
     <resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
         <setting name="charset">UTF-8</setting>
@@ -250,13 +236,41 @@
     </resource>
     <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.gdal.fgdb.instance.reader">
         <setting name="charset">UTF-8</setting>
-        <setting name="resourceId">fdd9f6fb-93bb-44bf-87bc-1348119acdf4</setting>
+        <setting name="resourceId">090c081f-75cf-4472-baee-09274b517b67</setting>
         <setting name="source">file:/C:/Users/Johanna%20Ott/Desktop/RWS/NWB_junctions.gdb/a0000000b.gdbtable</setting>
         <setting name="contentType">eu.esdihumboldt.hale.gdal.geodatabase</setting>
     </resource>
     <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
         <setting name="charset">UTF-8</setting>
-        <setting name="resourceId">d724a485-615a-49f7-8275-0f046641e91a</setting>
+        <setting name="resourceId">2ba25118-a1eb-4b0c-be1f-c6056f9bb326</setting>
+        <setting name="interpolation.grid.moveAllToGrid">false</setting>
+        <setting name="source">http://geodata.nationaalgeoregister.nl/nwbwegen/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;NAMESPACES=xmlns%28nwbwegen%2Chttp%3A%2F%2Fnwbwegen.geonovum.nl%29&amp;TYPENAMES=nwbwegen%3Awegvakken</setting>
+        <setting name="interpolation.maxError">0.1</setting>
+        <setting name="strict">false</setting>
+        <setting name="interpolation.algorithm">none</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+        <setting name="ignoreNamespaces">false</setting>
+        <setting name="paginateRequest">true</setting>
+        <setting name="featuresPerWfsRequest">1000</setting>
+        <setting name="ignoreRoot">true</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">c525041e-c80b-4608-be80-0afee2d0c5c1</setting>
+        <setting name="interpolation.grid.moveAllToGrid">false</setting>
+        <setting name="source">http://geoservices.rijkswaterstaat.nl/weggeg?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;TYPENAME=ms_wv_n</setting>
+        <setting name="interpolation.maxError">0.1</setting>
+        <setting name="strict">false</setting>
+        <setting name="interpolation.algorithm">none</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+        <setting name="ignoreNamespaces">false</setting>
+        <setting name="paginateRequest">false</setting>
+        <setting name="featuresPerWfsRequest">1000</setting>
+        <setting name="ignoreRoot">true</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">27476dea-1c44-4d6b-8e4d-c0e64cc099fe</setting>
         <setting name="interpolation.grid.moveAllToGrid">false</setting>
         <setting name="source">http://geoservices.rijkswaterstaat.nl/weggeg?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;TYPENAME=ms_wv_d</setting>
         <setting name="interpolation.maxError">0.1</setting>
@@ -270,7 +284,7 @@
     </resource>
     <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
         <setting name="charset">UTF-8</setting>
-        <setting name="resourceId">cf971a56-2c4f-479d-b4ce-1789cf4001c2</setting>
+        <setting name="resourceId">603fe005-4669-4dee-b0e3-4f8bf293214a</setting>
         <setting name="interpolation.grid.moveAllToGrid">false</setting>
         <setting name="source">http://geoservices.rijkswaterstaat.nl/weggeg?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;TYPENAME=rijstr_wv</setting>
         <setting name="interpolation.maxError">0.1</setting>
@@ -282,22 +296,8 @@
         <setting name="featuresPerWfsRequest">1000</setting>
         <setting name="ignoreRoot">true</setting>
     </resource>
-    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
-        <setting name="charset">UTF-8</setting>
-        <setting name="resourceId">c30794df-e353-4599-ba2d-b8f4a967ea1d</setting>
-        <setting name="interpolation.grid.moveAllToGrid">false</setting>
-        <setting name="source">http://geodata.nationaalgeoregister.nl/nwbwegen/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;NAMESPACES=xmlns%28nwbwegen%2Chttp%3A%2F%2Fnwbwegen.geonovum.nl%29&amp;TYPENAMES=nwbwegen%3Awegvakken&amp;COUNT=10000</setting>
-        <setting name="interpolation.maxError">0.1</setting>
-        <setting name="strict">false</setting>
-        <setting name="interpolation.algorithm">none</setting>
-        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
-        <setting name="ignoreNamespaces">false</setting>
-        <setting name="paginateRequest">true</setting>
-        <setting name="featuresPerWfsRequest">1000</setting>
-        <setting name="ignoreRoot">true</setting>
-    </resource>
-    <file name="alignment.xml" location="NL%20TN%20RO.halex.alignment.xml"/>
-    <file name="styles.sld" location="NL%20TN%20RO.halex.styles.sld"/>
+    <file name="alignment.xml" location="NWB_INSPIRE-TN-RO.halex.alignment.xml"/>
+    <file name="styles.sld" location="NWB_INSPIRE-TN-RO.halex.styles.sld"/>
     <property name="defaultGeometry:JTE_ID_BEG/1">Shape</property>
     <property name="defaultGeometry:JTE_ID_BEG/count">1</property>
     <property name="defaultGeometry:JTE_ID_END/1">Shape</property>
@@ -1695,9 +1695,9 @@
     <property name="defaultGeometry:{http://www.opengis.net/gml}VerticalDatumType/count">2</property>
     <property name="eu.esdihumboldt.hale.ui.function.new_relation.last_function">eu.esdihumboldt.hale.align.assign</property>
     <property name="instances.sampling.enabled">true</property>
-    <property name="instances.sampling.ov_complete">false</property>
+    <property name="instances.sampling.ov_complete">true</property>
     <property name="instances.sampling.sampler">first</property>
-    <property name="instances.sampling.settings.first">500</property>
+    <property name="instances.sampling.settings.first">1500</property>
     <property name="instances.sampling.settings.skip">10</property>
     <property name="mappableSourceType/1">{http://mapserver.gis.umn.edu/mapserver}rijstr_wvType</property>
     <property name="mappableSourceType/2">{http://nwbwegen.geonovum.nl}wegvakkenType</property>
@@ -1726,6 +1726,7 @@
     <property name="mappableTargetType/9">{http://inspire.ec.europa.eu/schemas/tn-ro/4.0}VehicleTrafficAreaType</property>
     <property name="mappableTargetType/count">18</property>
     <property name="resource-2330322c-1ba3-45d6-8174-79477c1ed99b:defaultCRS:{http://nwbwegen.geonovum.nl}wegvakkenType/{http://nwbwegen.geonovum.nl}geom/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
+    <property name="resource-2ba25118-a1eb-4b0c-be1f-c6056f9bb326:defaultCRS:{http://nwbwegen.geonovum.nl}wegvakkenType/{http://nwbwegen.geonovum.nl}geom/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
     <property name="resource-66520f31-2f1f-4ed6-a966-d74bab0780e2:defaultCRS:{http://nwbwegen.geonovum.nl}wegvakkenType/{http://nwbwegen.geonovum.nl}geom/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
     <property name="resource-c30794df-e353-4599-ba2d-b8f4a967ea1d:defaultCRS:{http://nwbwegen.geonovum.nl}wegvakkenType/{http://nwbwegen.geonovum.nl}geom/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
     <complex-property name="variables">

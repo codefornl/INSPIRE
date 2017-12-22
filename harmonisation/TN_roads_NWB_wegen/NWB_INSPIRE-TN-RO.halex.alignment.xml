@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <alignment xmlns="http://www.esdi-humboldt.eu/hale/alignment">
-    <cell relation="eu.esdihumboldt.hale.align.retype" id="C5445b866-3bb8-4545-b051-841ab11e1f1e" priority="normal">
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="Cf501bdb0-29fe-4a2b-ac00-09e88ea14102" priority="normal">
         <source>
             <class>
-                <type name="wegvakkenType" ns="http://nwbwegen.geonovum.nl">
-                    <condition lang="CQL">wegbehsrt = 'R' or wegbehsrt = 'G' or wegbehsrt = 'P'</condition>
-                </type>
+                <type name="wegvakkenType" ns="http://nwbwegen.geonovum.nl"/>
             </class>
         </source>
         <target>
@@ -15,13 +13,12 @@
         </target>
         <parameter value="false" name="ignoreNamespaces"/>
         <parameter value="false" name="structuralRename"/>
+        <documentation>No Geometry because FunctionalRoadClass is a TransportProperty that is referenced to a NetworkElement (e.g. RoadLink) containing a Geometry</documentation>
     </cell>
-    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C2b73845d-7f16-470d-b233-bbd378893612" priority="normal">
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cbac80237-5aae-48d6-b0f3-3ea10cd667cd" priority="normal">
         <source name="anchor">
             <property>
-                <type name="wegvakkenType" ns="http://nwbwegen.geonovum.nl">
-                    <condition lang="CQL">wegbehsrt = 'R' or wegbehsrt = 'G' or wegbehsrt = 'P'</condition>
-                </type>
+                <type name="wegvakkenType" ns="http://nwbwegen.geonovum.nl"/>
                 <child name="wegbehsrt" ns="http://nwbwegen.geonovum.nl">
                     <condition lang="CQL">value = 'G'</condition>
                 </child>
@@ -34,13 +31,12 @@
             </property>
         </target>
         <parameter value="secondClass" name="value"/>
+        <documentation>according to mail of Herzo van der Wal from 19.12.2017</documentation>
     </cell>
-    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C0793ab2f-6de5-4907-91a4-3a8bbf718062" priority="normal">
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cac47ee2c-7a6a-448c-8f22-aabb50bd7f10" priority="normal">
         <source name="anchor">
             <property>
-                <type name="wegvakkenType" ns="http://nwbwegen.geonovum.nl">
-                    <condition lang="CQL">wegbehsrt = 'R' or wegbehsrt = 'G' or wegbehsrt = 'P'</condition>
-                </type>
+                <type name="wegvakkenType" ns="http://nwbwegen.geonovum.nl"/>
                 <child name="wegbehsrt" ns="http://nwbwegen.geonovum.nl">
                     <condition lang="CQL">value = 'P'</condition>
                 </child>
@@ -53,13 +49,12 @@
             </property>
         </target>
         <parameter value="firstClass" name="value"/>
+        <documentation>according to mail of Herzo van der Wal from 19.12.2017</documentation>
     </cell>
-    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C810f8d38-c681-4a76-8450-31a524706cfd" priority="normal">
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C934d16a6-f4d4-4130-ad16-ed43a3ff536a" priority="normal">
         <source name="anchor">
             <property>
-                <type name="wegvakkenType" ns="http://nwbwegen.geonovum.nl">
-                    <condition lang="CQL">wegbehsrt = 'R' or wegbehsrt = 'G' or wegbehsrt = 'P'</condition>
-                </type>
+                <type name="wegvakkenType" ns="http://nwbwegen.geonovum.nl"/>
                 <child name="wegbehsrt" ns="http://nwbwegen.geonovum.nl">
                     <condition lang="CQL">value = 'R'</condition>
                 </child>
@@ -72,13 +67,30 @@
             </property>
         </target>
         <parameter value="mainRoad" name="value"/>
+        <documentation>according to mail of Herzo van der Wal from 19.12.2017</documentation>
     </cell>
-    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C8ce749ca-2d29-4172-9eef-f4310d414e6b" priority="normal">
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cbff369f0-2178-431f-b79d-727c50b5a550" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="wegvakkenType" ns="http://nwbwegen.geonovum.nl"/>
+                <child name="wegbehsrt" ns="http://nwbwegen.geonovum.nl">
+                    <condition lang="CQL">value = 'W' or value = 'T'</condition>
+                </child>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="FunctionalRoadClassType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="functionalClass" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </property>
+        </target>
+        <parameter value="thirdClass" name="value"/>
+        <documentation>according to call with Herzo van der Wal 20.12.2017</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Ca8f3d9c4-ccd2-45b8-adf1-e692022933c6" priority="normal">
         <source name="var">
             <property>
-                <type name="wegvakkenType" ns="http://nwbwegen.geonovum.nl">
-                    <condition lang="CQL">wegbehsrt = 'R' or wegbehsrt = 'G' or wegbehsrt = 'P'</condition>
-                </type>
+                <type name="wegvakkenType" ns="http://nwbwegen.geonovum.nl"/>
                 <child name="wvk_id" ns="http://nwbwegen.geonovum.nl"/>
             </property>
         </source>
@@ -90,12 +102,10 @@
         </target>
         <parameter value="FunctionalRoadClass.{wvk_id}" name="pattern"/>
     </cell>
-    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C977bcda1-7ba9-42a6-a208-4f1ca9d5f4b0" priority="normal">
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C2c7a369b-7e0e-4bfe-bd69-dc9ae363f342" priority="normal">
         <source name="var">
             <property>
-                <type name="wegvakkenType" ns="http://nwbwegen.geonovum.nl">
-                    <condition lang="CQL">wegbehsrt = 'R' or wegbehsrt = 'G' or wegbehsrt = 'P'</condition>
-                </type>
+                <type name="wegvakkenType" ns="http://nwbwegen.geonovum.nl"/>
                 <child name="wvk_id" ns="http://nwbwegen.geonovum.nl"/>
             </property>
         </source>
@@ -119,13 +129,12 @@
             </property>
         </target>
         <parameter value="{{project:INSPIRE_NAMESPACE_WEGGEG_TN-RO}}" name="value"/>
+        <documentation>according to Metadata Excel Sheet delivered by Herzo van der Wal via github</documentation>
     </cell>
-    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C0967c23f-d969-4272-8f3b-eb169afa27b3" priority="normal">
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C438bb2c7-5487-4ae3-b1e7-b202d750facc" priority="normal">
         <source name="var">
             <property>
-                <type name="wegvakkenType" ns="http://nwbwegen.geonovum.nl">
-                    <condition lang="CQL">wegbehsrt = 'R' or wegbehsrt = 'G' or wegbehsrt = 'P'</condition>
-                </type>
+                <type name="wegvakkenType" ns="http://nwbwegen.geonovum.nl"/>
                 <child name="wvk_id" ns="http://nwbwegen.geonovum.nl"/>
             </property>
         </source>
@@ -154,6 +163,7 @@
         </target>
         <parameter value="false" name="ignoreNamespaces"/>
         <parameter value="false" name="structuralRename"/>
+        <documentation>No Geometry because NumberOfLanes is a TransportProperty that is referenced to a NetworkElement (e.g. RoadLink) containing a Geometry</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C15ac7350-7f06-478c-a5fd-97c1280d9490" priority="normal">
         <source name="var">
@@ -197,6 +207,7 @@
             </property>
         </target>
         <parameter value="{{project:INSPIRE_NAMESPACE_WEGGEG_TN-RO}}" name="value"/>
+        <documentation>according to Metadata Excel Sheet delivered by Herzo van der Wal via github</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="Cd715953c-c2fd-4bbf-abdd-bb11259d7feb" priority="normal">
         <target>
@@ -244,6 +255,7 @@
         </target>
         <parameter value="false" name="ignoreNamespaces"/>
         <parameter value="false" name="structuralRename"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="C1f32171f-39aa-49c8-aa2e-758275d977ba" priority="normal">
         <target>
@@ -276,6 +288,7 @@
         </target>
         <parameter value="false" name="ignoreNamespaces"/>
         <parameter value="false" name="structuralRename"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="C18ec38f9-a0ac-44bc-9c21-cd5b1ef8049c" priority="normal">
         <target>
@@ -392,6 +405,7 @@
             </lookup-table>
         </complexParameter>
         <parameter value="null" name="notClassifiedAction"/>
+        <documentation>the highest number occuring in the source value is used - in combination with "minMaxNumberOfLanes" = "maximum"</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.retype" id="C81166e0b-ccea-4dbe-938f-7271272ea319" priority="normal">
         <source>
@@ -455,6 +469,7 @@
             </property>
         </target>
         <parameter value="#RoadNode.{jte_id_end}" name="pattern"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="Cd7463da7-8632-4c0d-baf5-4caf49cbaf3e" priority="normal">
         <target>
@@ -549,6 +564,7 @@ return id
 </core:text>
         </complexParameter>
         <parameter value="false" name="variablesAsInstances"/>
+        <documentation>ids are collected in order to reference them to created TransportNetwork</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="Cf08ac4ef-51a6-4054-b54e-a722fe697889" priority="normal">
         <target>
@@ -560,6 +576,7 @@ return id
             </property>
         </target>
         <parameter value="{{project:INSPIRE_NAMESPACE_RWS_TN-RTN}}" name="value"/>
+        <documentation>according to Metadata Excel Sheet delivered by Herzo van der Wal via github</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C1c171bc8-634d-44e1-a0e5-b47e4fe0ce86" priority="normal">
         <source name="var">
@@ -576,6 +593,7 @@ return id
             </property>
         </target>
         <parameter value="#RoadNode.{jte_id_beg}" name="pattern"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.retype" id="Cef162cfd-16f7-427f-9b70-8c2d8c6d46d5" priority="normal">
         <source>
@@ -620,6 +638,7 @@ return id
             </property>
         </target>
         <parameter value="http://inspire.ec.europa.eu/codelist/FormOfRoadNodeValue/junction" name="value"/>
+        <documentation>according to mail of Peter Schout from 08.12.2017</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cc8180c3c-14dc-4cc6-8498-c08cd48369aa" priority="normal">
         <source name="anchor">
@@ -636,6 +655,7 @@ return id
             </property>
         </target>
         <parameter value="http://inspire.ec.europa.eu/codelist/FormOfRoadNodeValue/roadEnd" name="value"/>
+        <documentation>according to mail of Peter Schout from 08.12.2017</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.rename" id="Cf18ade2c-10e9-41b3-b50c-c84368317d3e" priority="normal">
         <source>
@@ -739,6 +759,7 @@ return id
 </core:text>
         </complexParameter>
         <parameter value="false" name="variablesAsInstances"/>
+        <documentation>ids are collected in order to reference them to created TransportNetwork</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C51e775a3-1443-456a-8e75-1d1907abbafe" priority="normal">
         <source name="var">
@@ -768,6 +789,7 @@ return id
 </core:text>
         </complexParameter>
         <parameter value="false" name="variablesAsInstances"/>
+        <documentation>ids are collected in order to reference them to created TransportNetwork</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="C0d56b980-48a7-4917-a357-1f86d9fec194" priority="normal">
         <target>
@@ -779,6 +801,7 @@ return id
             </property>
         </target>
         <parameter value="{{project:INSPIRE_NAMESPACE_WEGGEG_TN-RO}}" name="value"/>
+        <documentation>according to Metadata Excel Sheet delivered by Herzo van der Wal via github</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.merge" id="C53b1c7d5-67b1-412c-9322-d573e480b7c9" priority="normal">
         <source>
@@ -794,6 +817,7 @@ return id
         <parameter value="true" name="auto_detect"/>
         <parameter value="{http://nwbwegen.geonovum.nl}stt_naam" name="property"/>
         <parameter value="{http://nwbwegen.geonovum.nl}gme_id" name="property"/>
+        <documentation>No Geometry because Road contains references to RoadLinks containing a Geometry</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="Cce17af23-42e4-43a8-9733-ee71612f38a6" priority="normal">
         <target>
@@ -859,6 +883,7 @@ return id
 </core:text>
         </complexParameter>
         <parameter value="false" name="variablesAsInstances"/>
+        <documentation>id for Road is to be created as it is consisting of several RoadLinks</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="C5cac8c6b-f0e1-4f98-9047-075f703dcc8d" priority="normal">
         <target>
@@ -910,6 +935,9 @@ return id
 </core:text>
         </complexParameter>
         <parameter value="false" name="variablesAsInstances"/>
+        <documentation>id for Road is to be created as it is consisting of several RoadLinks&#xD;
+&#xD;
+ids are collected in order to reference them to created TransportNetwork</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="Cde427026-2594-4ac4-855b-3f3bbb52ee88" priority="normal">
         <target>
@@ -921,6 +949,7 @@ return id
             </property>
         </target>
         <parameter value="{{project:INSPIRE_NAMESPACE_WEGGEG_TN-RO}}" name="value"/>
+        <documentation>according to Metadata Excel Sheet delivered by Herzo van der Wal via github</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C75a8ea54-4414-4ea4-872c-b80e5e08508d" priority="normal">
         <source name="var">
@@ -937,6 +966,7 @@ return id
             </property>
         </target>
         <parameter value="#RoadLink.{wvk_id}" name="pattern"/>
+        <documentation>wvk_ids of all RoadLinks contained in the Road are collected</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.rename" id="Cd91ea282-8957-4c10-92f8-4f45f3172b4d" priority="normal">
         <source>
@@ -967,6 +997,7 @@ return id
         </target>
         <parameter value="false" name="ignoreNamespaces"/>
         <parameter value="false" name="structuralRename"/>
+        <documentation>No Geometry because SpeedLimit is a TransportProperty that is referenced to a NetworkElement (e.g. RoadLink) containing a Geometry</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.retype" id="C38f2cd04-e14f-4388-badf-ba55a8ec4fe2" priority="normal">
         <source>
@@ -981,6 +1012,7 @@ return id
         </target>
         <parameter value="false" name="ignoreNamespaces"/>
         <parameter value="false" name="structuralRename"/>
+        <documentation>No Geometry because SpeedLimit is a TransportProperty that is referenced to a NetworkElement (e.g. RoadLink) containing a Geometry</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C4c383fd9-6f36-4fc6-9b36-d1ba802c6659" priority="normal">
         <source name="var">
@@ -1028,6 +1060,7 @@ return id
             </property>
         </target>
         <parameter value="SpeedLimit.{id}" name="pattern"/>
+        <documentation>ids are collected in order to reference them to created TransportNetwork</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C6c8af494-18c4-4b98-bcdc-cc540d300e69" priority="normal">
         <source name="var">
@@ -1056,6 +1089,7 @@ return id
             </property>
         </target>
         <parameter value="{{project:INSPIRE_NAMESPACE_WEGGEG_TN-RO}}" name="value"/>
+        <documentation>according to Metadata Excel Sheet delivered by Herzo van der Wal via github</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C357bf475-58ba-41b2-956d-f79022868a92" priority="normal">
         <source name="var">
@@ -1113,6 +1147,7 @@ return id
         </target>
         <parameter value="false" name="ignoreNamespaces"/>
         <parameter value="false" name="structuralRename"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.rename" id="Cd02f609c-d42f-4b95-8a1f-93c08246f1fd" priority="normal">
         <source>
@@ -1132,6 +1167,7 @@ return id
         </target>
         <parameter value="false" name="ignoreNamespaces"/>
         <parameter value="false" name="structuralRename"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="C643a7b24-9eea-4b53-9cfd-bac97c8056e2" priority="normal">
         <target>
@@ -1164,6 +1200,7 @@ return id
         </target>
         <parameter value="false" name="ignoreNamespaces"/>
         <parameter value="false" name="structuralRename"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.rename" id="C8457c4a2-db31-4109-9009-4742302463f7" priority="normal">
         <source>
@@ -1183,6 +1220,7 @@ return id
         </target>
         <parameter value="false" name="ignoreNamespaces"/>
         <parameter value="false" name="structuralRename"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="C63af8561-3cc0-4e34-99ff-bd2718829a28" priority="normal">
         <target>
@@ -1288,11 +1326,11 @@ return id
         </target>
         <parameter value="SpeedLimitValidityPeriodTimePeriodBeginTimeInstant.{id}" name="pattern"/>
     </cell>
-    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Ca518cc7c-7b74-4c73-987d-7fb1ef4b03b8" priority="normal">
-        <source name="anchor">
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C6f661830-d52f-481c-9953-6ff070c2e581" priority="normal">
+        <source>
             <property>
                 <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
-                <child name="id" ns="http://www.opengis.net/gml"/>
+                <child name="BEGINTIJD" ns="http://mapserver.gis.umn.edu/mapserver"/>
             </property>
         </source>
         <target>
@@ -1306,13 +1344,15 @@ return id
                 <child name="timePosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="sunrise" name="value"/>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>according to call with Herzo van der Wal 20.12.2017</documentation>
     </cell>
-    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cb5f1d43a-9315-44d2-9d42-b2c1be486e08" priority="normal">
-        <source name="anchor">
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cd2ed679f-e3e6-409d-87ef-4a2559ee91be" priority="normal">
+        <source>
             <property>
                 <type name="ms_wv_nType" ns="http://mapserver.gis.umn.edu/mapserver"/>
-                <child name="id" ns="http://www.opengis.net/gml"/>
+                <child name="BEGINTIJD" ns="http://mapserver.gis.umn.edu/mapserver"/>
             </property>
         </source>
         <target>
@@ -1326,7 +1366,9 @@ return id
                 <child name="timePosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="sunset" name="value"/>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>according to call with Herzo van der Wal 20.12.2017</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Ce512a133-896d-42f1-b274-f563b1974f09" priority="normal">
         <source name="var">
@@ -1388,11 +1430,11 @@ return id
         </target>
         <parameter value="sunset" name="value"/>
     </cell>
-    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C18210f06-2a70-4563-962d-669df06f6154" priority="normal">
-        <source name="anchor">
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cee7b22c6-5e46-4d59-9fa5-f96d865862ce" priority="normal">
+        <source>
             <property>
                 <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
-                <child name="id" ns="http://www.opengis.net/gml"/>
+                <child name="EINDTIJD" ns="http://mapserver.gis.umn.edu/mapserver"/>
             </property>
         </source>
         <target>
@@ -1406,13 +1448,15 @@ return id
                 <child name="timePosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="sunset" name="value"/>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>according to call with Herzo van der Wal 20.12.2017</documentation>
     </cell>
-    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C9e10ad76-2025-4ff4-b3be-3ac3d4619089" priority="normal">
-        <source name="anchor">
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C282fa8d0-b1a0-4ef1-b897-49891bba9852" priority="normal">
+        <source>
             <property>
                 <type name="ms_wv_nType" ns="http://mapserver.gis.umn.edu/mapserver"/>
-                <child name="id" ns="http://www.opengis.net/gml"/>
+                <child name="EINDTIJD" ns="http://mapserver.gis.umn.edu/mapserver"/>
             </property>
         </source>
         <target>
@@ -1426,7 +1470,9 @@ return id
                 <child name="timePosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="sunrise" name="value"/>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>according to call with Herzo van der Wal 20.12.2017</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C1f041335-9af2-4356-a8a4-b6ff17d358f0" priority="normal">
         <source name="var">
@@ -1469,6 +1515,9 @@ return id
             </class>
         </target>
         <parameter value="1" name="number"/>
+        <documentation>No Geometry because TransportNetwork contains references to NetworkElements (e.g. RoadLink, RoadNode,...) containing a Geometry&#xD;
+&#xD;
+lowest priority because ids of NetworkElements need to be collected first</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.cst.functions.collector.assign" id="C5797dd0c-fa6a-4583-a1b2-65ce67608150" priority="normal">
         <target>
@@ -1478,6 +1527,7 @@ return id
             </property>
         </target>
         <parameter value="network" name="collector"/>
+        <documentation>reference to ids collected during creation of all NetworkElements (RoadLinks, RoadNode, Road)</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="C124a3b8c-398e-40b2-a64d-fdd547a0d709" priority="normal">
         <target>
@@ -1522,6 +1572,7 @@ return id
             </property>
         </target>
         <parameter value="{{project:INSPIRE_NAMESPACE_NWBW_TN-RTN}}" name="value"/>
+        <documentation>according to Metadata Excel Sheet delivered by Herzo van der Wal via github</documentation>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="C4f6416b1-80c8-4914-bc17-b21060b25854" priority="normal">
         <target>
