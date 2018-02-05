@@ -272,7 +272,7 @@
         <setting name="charset">UTF-8</setting>
         <setting name="resourceId">2ba25118-a1eb-4b0c-be1f-c6056f9bb326</setting>
         <setting name="interpolation.grid.moveAllToGrid">false</setting>
-        <setting name="source">http://geodata.nationaalgeoregister.nl/nwbwegen/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;NAMESPACES=xmlns%28nwbwegen%2Chttp%3A%2F%2Fnwbwegen.geonovum.nl%29&amp;TYPENAMES=nwbwegen%3Awegvakken</setting>
+        <setting name="source">http://geodata.nationaalgeoregister.nl/nwbwegen/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;NAMESPACES=xmlns%28nwbwegen%2Chttp%3A%2F%2Fnwbwegen.geonovum.nl%29&amp;TYPENAMES=nwbwegen%3Awegvakken&amp;count=10000</setting>
         <setting name="interpolation.maxError">0.1</setting>
         <setting name="strict">false</setting>
         <setting name="interpolation.algorithm">none</setting>
