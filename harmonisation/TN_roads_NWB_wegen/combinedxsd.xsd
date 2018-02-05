@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:import1="http://nwbwegen.geonovum.nl"
+		xmlns:import2="http://weggeg_wegvak_stg"
+		elementFormDefault="qualified"
+		targetNamespace="http://yournamespace.com/combined">
+	<import
+		namespace="http://nwbwegen.geonovum.nl"
+		schemaLocation="schemaWEGVAKKEN.xsd" />
+	<import
+		namespace="http://weggeg_wegvak_stg"
+		schemaLocation="schemaWEGGEGRWS.xsd" />
+</schema>
