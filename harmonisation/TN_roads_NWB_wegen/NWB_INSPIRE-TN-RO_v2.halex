@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <hale-project version="3.3.1.release">
-    <name>NL TN RO</name>
+    <name>NWB_INSPIRE-TN-RO_v2</name>
     <author>Johanna Ott</author>
-    <created>2017-12-15T14:32:38.570+01:00</created>
-    <modified>2017-12-22T16:56:51.939+01:00</modified>
+    <created>2017-12-22T15:42:24.377+01:00</created>
+    <modified>2018-01-19T13:02:48.461+01:00</modified>
     <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
         <setting name="charset">UTF-8</setting>
         <setting name="projectFiles.separate">false</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.project.hale25.xml</setting>
-        <setting name="target">file:/C:/Users/Johanna%20Ott/eclipse/workspace/gits/INSPIRE/harmonisation/TN_roads_NWB_wegen/NWB_INSPIRE-TN-RO.halex</setting>
+        <setting name="target">file:/C:/Users/Johanna%20Ott/eclipse/workspace/gits/INSPIRE/harmonisation/TN_roads_NWB_wegen/NWB_INSPIRE-TN-RO_v2.halex</setting>
     </save-config>
-    <resource action-id="eu.esdihumboldt.hale.io.schema.read.source" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
-        <setting name="charset">UTF-8</setting>
-        <setting name="onlyElementsMappable">true</setting>
-        <setting name="resourceId">4b7f46b8-2d99-436a-b4e7-e03bcf103862</setting>
-        <setting name="source">file:/C:/Users/Johanna%20Ott/Desktop/RWS/combinedxsd.xsd</setting>
-        <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
-    </resource>
     <resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
         <setting name="charset">UTF-8</setting>
         <setting name="onlyElementsMappable">true</setting>
-        <setting name="resourceId">a4fefd2b-c1b5-4d98-842f-4b28c40e6093</setting>
+        <setting name="resourceId">8698b9fb-6448-4f1c-a434-8176304ff1f0</setting>
         <setting name="source">http://inspire.ec.europa.eu/schemas/tn-ro/4.0/RoadTransportNetwork.xsd</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.schema.read.source" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="onlyElementsMappable">true</setting>
+        <setting name="resourceId">d91157d5-d4fe-4f50-8f45-3068271f4cfe</setting>
+        <setting name="source">file:/C:/Users/Johanna%20Ott/eclipse/workspace/gits/INSPIRE/harmonisation/TN_roads_NWB_wegen/combinedxsd.xsd</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
     </resource>
     <resource action-id="eu.esdihumboldt.hale.io.schema.read.source" provider-id="eu.esdihumboldt.hale.gdal.fgdb.schema.reader">
         <setting name="charset">UTF-8</setting>
-        <setting name="resourceId">3dd4001b-3566-40ba-8d72-a9b9ef3dd417</setting>
+        <setting name="resourceId">181357ca-813e-4a88-bcf2-9be4dfbad400</setting>
         <setting name="source">file:/C:/Users/Johanna%20Ott/Desktop/RWS/NWB_junctions.gdb/a0000000b.gdbtable</setting>
         <setting name="contentType">eu.esdihumboldt.hale.gdal.geodatabase</setting>
         <cache>
@@ -236,9 +236,37 @@
     </resource>
     <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.gdal.fgdb.instance.reader">
         <setting name="charset">UTF-8</setting>
-        <setting name="resourceId">090c081f-75cf-4472-baee-09274b517b67</setting>
+        <setting name="resourceId">2027f0cd-0b1e-453d-839c-d37802e9db67</setting>
         <setting name="source">file:/C:/Users/Johanna%20Ott/Desktop/RWS/NWB_junctions.gdb/a0000000b.gdbtable</setting>
         <setting name="contentType">eu.esdihumboldt.hale.gdal.geodatabase</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">39bdf961-a3b4-4e20-a003-9e2a13810bdb</setting>
+        <setting name="interpolation.grid.moveAllToGrid">false</setting>
+        <setting name="source">https://demo-geoservices.rijkswaterstaat.nl/apps/geoserver/weggeg_wegvak_stg/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;NAMESPACES=xmlns%28weggeg_wegvak_stg%2Chttp%3A%2F%2Fweggeg_wegvak_stg%29&amp;TYPENAMES=weggeg_wegvak_stg%3Amaximum_snelheden__wegvak__nacht</setting>
+        <setting name="interpolation.maxError">0.1</setting>
+        <setting name="strict">false</setting>
+        <setting name="interpolation.algorithm">none</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+        <setting name="ignoreNamespaces">false</setting>
+        <setting name="paginateRequest">false</setting>
+        <setting name="featuresPerWfsRequest">1000</setting>
+        <setting name="ignoreRoot">true</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">7f1cb94c-24dc-45e1-8a5f-291353642c15</setting>
+        <setting name="interpolation.grid.moveAllToGrid">false</setting>
+        <setting name="source">https://demo-geoservices.rijkswaterstaat.nl/apps/geoserver/weggeg_wegvak_stg/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;NAMESPACES=xmlns%28weggeg_wegvak_stg%2Chttp%3A%2F%2Fweggeg_wegvak_stg%29&amp;TYPENAMES=weggeg_wegvak_stg%3Amaximum_snelheden__wegvak__overdag</setting>
+        <setting name="interpolation.maxError">0.1</setting>
+        <setting name="strict">false</setting>
+        <setting name="interpolation.algorithm">none</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+        <setting name="ignoreNamespaces">false</setting>
+        <setting name="paginateRequest">false</setting>
+        <setting name="featuresPerWfsRequest">1000</setting>
+        <setting name="ignoreRoot">true</setting>
     </resource>
     <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
         <setting name="charset">UTF-8</setting>
@@ -256,48 +284,20 @@
     </resource>
     <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
         <setting name="charset">UTF-8</setting>
-        <setting name="resourceId">c525041e-c80b-4608-be80-0afee2d0c5c1</setting>
+        <setting name="resourceId">5e701fc0-d9b1-4d07-a980-76e334961ea1</setting>
         <setting name="interpolation.grid.moveAllToGrid">false</setting>
-        <setting name="source">http://geoservices.rijkswaterstaat.nl/weggeg?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;TYPENAME=ms_wv_n</setting>
+        <setting name="source">https://geodata.nationaalgeoregister.nl/nwbwegen/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;NAMESPACES=xmlns%28nwbwegen%2Chttp%3A%2F%2Fnwbwegen.geonovum.nl%29&amp;TYPENAMES=nwbwegen%3Ahectopunten</setting>
         <setting name="interpolation.maxError">0.1</setting>
         <setting name="strict">false</setting>
         <setting name="interpolation.algorithm">none</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
         <setting name="ignoreNamespaces">false</setting>
-        <setting name="paginateRequest">false</setting>
+        <setting name="paginateRequest">true</setting>
         <setting name="featuresPerWfsRequest">1000</setting>
         <setting name="ignoreRoot">true</setting>
     </resource>
-    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
-        <setting name="charset">UTF-8</setting>
-        <setting name="resourceId">27476dea-1c44-4d6b-8e4d-c0e64cc099fe</setting>
-        <setting name="interpolation.grid.moveAllToGrid">false</setting>
-        <setting name="source">http://geoservices.rijkswaterstaat.nl/weggeg?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;TYPENAME=ms_wv_d</setting>
-        <setting name="interpolation.maxError">0.1</setting>
-        <setting name="strict">false</setting>
-        <setting name="interpolation.algorithm">none</setting>
-        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
-        <setting name="ignoreNamespaces">false</setting>
-        <setting name="paginateRequest">false</setting>
-        <setting name="featuresPerWfsRequest">1000</setting>
-        <setting name="ignoreRoot">true</setting>
-    </resource>
-    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
-        <setting name="charset">UTF-8</setting>
-        <setting name="resourceId">603fe005-4669-4dee-b0e3-4f8bf293214a</setting>
-        <setting name="interpolation.grid.moveAllToGrid">false</setting>
-        <setting name="source">http://geoservices.rijkswaterstaat.nl/weggeg?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;TYPENAME=rijstr_wv</setting>
-        <setting name="interpolation.maxError">0.1</setting>
-        <setting name="strict">false</setting>
-        <setting name="interpolation.algorithm">none</setting>
-        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
-        <setting name="ignoreNamespaces">false</setting>
-        <setting name="paginateRequest">false</setting>
-        <setting name="featuresPerWfsRequest">1000</setting>
-        <setting name="ignoreRoot">true</setting>
-    </resource>
-    <file name="alignment.xml" location="NWB_INSPIRE-TN-RO.halex.alignment.xml"/>
-    <file name="styles.sld" location="NWB_INSPIRE-TN-RO.halex.styles.sld"/>
+    <file name="alignment.xml" location="NWB_INSPIRE-TN-RO_v2.halex.alignment.xml"/>
+    <file name="styles.sld" location="NWB_INSPIRE-TN-RO_v2.halex.styles.sld"/>
     <property name="defaultGeometry:JTE_ID_BEG/1">Shape</property>
     <property name="defaultGeometry:JTE_ID_BEG/count">1</property>
     <property name="defaultGeometry:JTE_ID_END/1">Shape</property>
@@ -608,6 +608,12 @@
     <property name="defaultGeometry:{http://nwbwegen.geonovum.nl}wegvakkenType/1">{http://nwbwegen.geonovum.nl}geom</property>
     <property name="defaultGeometry:{http://nwbwegen.geonovum.nl}wegvakkenType/2">{http://www.opengis.net/gml/3.2}MultiCurve</property>
     <property name="defaultGeometry:{http://nwbwegen.geonovum.nl}wegvakkenType/count">2</property>
+    <property name="defaultGeometry:{http://weggeg_wegvak_stg}maximum_snelheden__wegvak__nachtType/1">{http://weggeg_wegvak_stg}SHAPE</property>
+    <property name="defaultGeometry:{http://weggeg_wegvak_stg}maximum_snelheden__wegvak__nachtType/2">{http://www.opengis.net/gml/3.2}MultiCurve</property>
+    <property name="defaultGeometry:{http://weggeg_wegvak_stg}maximum_snelheden__wegvak__nachtType/count">2</property>
+    <property name="defaultGeometry:{http://weggeg_wegvak_stg}maximum_snelheden__wegvak__overdagType/1">{http://weggeg_wegvak_stg}SHAPE</property>
+    <property name="defaultGeometry:{http://weggeg_wegvak_stg}maximum_snelheden__wegvak__overdagType/2">{http://www.opengis.net/gml/3.2}MultiCurve</property>
+    <property name="defaultGeometry:{http://weggeg_wegvak_stg}maximum_snelheden__wegvak__overdagType/count">2</property>
     <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_BoundingPolygon_Type/1">{http://www.isotc211.org/2005/gmd}polygon</property>
     <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_BoundingPolygon_Type/2">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
     <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_BoundingPolygon_Type/count">2</property>
@@ -646,8 +652,8 @@
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractFeatureType/count">2</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/1">{http://www.opengis.net/gml/3.2}rows</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/2">{http://www.opengis.net/gml/3.2}Row</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/3">{http://www.opengis.net/gml/3.2/geometricPositionListGroup}choice_1</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/4">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/3">{http://www.opengis.net/gml/3.2/geometricPositionListGroup}choice_2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/4">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_2</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/5">{http://www.opengis.net/gml/3.2}pointProperty</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/6">{http://www.opengis.net/gml/3.2}Point</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/count">6</property>
@@ -725,8 +731,8 @@
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CompositeValueType/count">2</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/1">{http://www.opengis.net/gml/3.2}rows</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/2">{http://www.opengis.net/gml/3.2}Row</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/3">{http://www.opengis.net/gml/3.2/geometricPositionListGroup}choice_1</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/4">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/3">{http://www.opengis.net/gml/3.2/geometricPositionListGroup}choice_2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/4">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_2</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/5">{http://www.opengis.net/gml/3.2}pointProperty</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/6">{http://www.opengis.net/gml/3.2}Point</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/count">6</property>
@@ -746,8 +752,8 @@
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CurveType/count">2</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/1">{http://www.opengis.net/gml/3.2}rows</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/2">{http://www.opengis.net/gml/3.2}Row</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/3">{http://www.opengis.net/gml/3.2/geometricPositionListGroup}choice_1</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/4">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/3">{http://www.opengis.net/gml/3.2/geometricPositionListGroup}choice_2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/4">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_2</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/5">{http://www.opengis.net/gml/3.2}pointProperty</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/6">{http://www.opengis.net/gml/3.2}Point</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/count">6</property>
@@ -796,25 +802,25 @@
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FaceType/2">{http://www.opengis.net/gml/3.2/AbstractSurface}choice</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FaceType/count">2</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureArrayPropertyType/1">{http://www.opengis.net/gml/3.2/AbstractFeature}choice</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureArrayPropertyType/2">{http://nwbwegen.geonovum.nl}wegvakken</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureArrayPropertyType/3">{http://nwbwegen.geonovum.nl}geom</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureArrayPropertyType/2">{http://weggeg_wegvak_stg}maximum_snelheden__wegvak__nacht</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureArrayPropertyType/3">{http://weggeg_wegvak_stg}SHAPE</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureArrayPropertyType/4">{http://www.opengis.net/gml/3.2}MultiCurve</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureArrayPropertyType/count">4</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureCollectionType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureCollectionType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureCollectionType/count">2</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeaturePropertyType/1">{http://www.opengis.net/gml/3.2/AbstractFeature}choice</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeaturePropertyType/2">{http://nwbwegen.geonovum.nl}wegvakken</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeaturePropertyType/3">{http://nwbwegen.geonovum.nl}geom</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeaturePropertyType/2">{http://weggeg_wegvak_stg}maximum_snelheden__wegvak__nacht</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeaturePropertyType/3">{http://weggeg_wegvak_stg}SHAPE</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeaturePropertyType/4">{http://www.opengis.net/gml/3.2}MultiCurve</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeaturePropertyType/count">4</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicStringType/1">{http://www.opengis.net/gml/3.2/GeodesicStringType}choice_1</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicStringType/2">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicStringType/2">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_2</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicStringType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicStringType/4">{http://www.opengis.net/gml/3.2}Point</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicStringType/count">4</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicType/1">{http://www.opengis.net/gml/3.2/GeodesicStringType}choice_1</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicType/2">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicType/2">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_2</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicType/4">{http://www.opengis.net/gml/3.2}Point</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicType/count">4</property>
@@ -904,8 +910,8 @@
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}PriorityLocationPropertyType/1">{http://www.opengis.net/gml/3.2/LocationPropertyType}choice_1</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}PriorityLocationPropertyType/count">1</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ProcedurePropertyType/1">{http://www.opengis.net/gml/3.2/AbstractFeature}choice</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ProcedurePropertyType/2">{http://nwbwegen.geonovum.nl}wegvakken</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ProcedurePropertyType/3">{http://nwbwegen.geonovum.nl}geom</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ProcedurePropertyType/2">{http://weggeg_wegvak_stg}maximum_snelheden__wegvak__nacht</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ProcedurePropertyType/3">{http://weggeg_wegvak_stg}SHAPE</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ProcedurePropertyType/4">{http://www.opengis.net/gml/3.2}MultiCurve</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ProcedurePropertyType/count">4</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}RangeSetType/1">{http://www.opengis.net/gml/3.2/RangeSetType}choice_1</property>
@@ -936,8 +942,8 @@
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SolidType/count">4</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/1">{http://www.opengis.net/gml/3.2}rows</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/2">{http://www.opengis.net/gml/3.2}Row</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/3">{http://www.opengis.net/gml/3.2/geometricPositionListGroup}choice_1</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/4">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/3">{http://www.opengis.net/gml/3.2/geometricPositionListGroup}choice_2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/4">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_2</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/5">{http://www.opengis.net/gml/3.2}pointProperty</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/6">{http://www.opengis.net/gml/3.2}Point</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/count">6</property>
@@ -1029,12 +1035,12 @@
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TriangleType/1">{http://www.opengis.net/gml/3.2}exterior</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TriangleType/2">{http://www.opengis.net/gml/3.2/AbstractRing}choice</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TriangleType/count">2</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValueArrayPropertyType/1">{http://www.opengis.net/gml/3.2/Value}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValueArrayPropertyType/1">{http://www.opengis.net/gml/3.2/Value}choice_2</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValueArrayPropertyType/count">1</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValueArrayType/1">{http://www.opengis.net/gml/3.2}valueComponent</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValueArrayType/2">{http://www.opengis.net/gml/3.2/Value}choice_1</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValueArrayType/count">2</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValuePropertyType/1">{http://www.opengis.net/gml/3.2/Value}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValuePropertyType/1">{http://www.opengis.net/gml/3.2/Value}choice_2</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValuePropertyType/count">1</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml}AbstractContinuousCoverageType/1">{http://www.opengis.net/gml/domainSet}choice</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml}AbstractContinuousCoverageType/2">{http://www.opengis.net/gml}gridDomain</property>
@@ -1693,19 +1699,20 @@
     <property name="defaultGeometry:{http://www.opengis.net/gml}VerticalDatumType/1">{http://www.opengis.net/gml}validArea</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml}VerticalDatumType/2">{http://www.opengis.net/gml}verticalExtent</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml}VerticalDatumType/count">2</property>
-    <property name="eu.esdihumboldt.hale.ui.function.new_relation.last_function">eu.esdihumboldt.hale.align.assign</property>
-    <property name="instances.sampling.enabled">true</property>
-    <property name="instances.sampling.ov_complete">true</property>
+    <property name="instances.sampling.enabled">false</property>
     <property name="instances.sampling.sampler">first</property>
-    <property name="instances.sampling.settings.first">1500</property>
+    <property name="instances.sampling.settings.first">10000</property>
     <property name="instances.sampling.settings.skip">10</property>
     <property name="mappableSourceType/1">{http://mapserver.gis.umn.edu/mapserver}rijstr_wvType</property>
-    <property name="mappableSourceType/2">{http://nwbwegen.geonovum.nl}wegvakkenType</property>
-    <property name="mappableSourceType/3">{http://mapserver.gis.umn.edu/mapserver}ms_wv_nType</property>
-    <property name="mappableSourceType/4">{http://mapserver.gis.umn.edu/mapserver}ms_wv_dType</property>
-    <property name="mappableSourceType/5">JTE_ID_END</property>
-    <property name="mappableSourceType/6">JTE_ID_BEG</property>
-    <property name="mappableSourceType/count">6</property>
+    <property name="mappableSourceType/2">{http://mapserver.gis.umn.edu/mapserver}ms_wv_nType</property>
+    <property name="mappableSourceType/3">{http://nwbwegen.geonovum.nl}wegvakkenType</property>
+    <property name="mappableSourceType/4">{http://weggeg_wegvak_stg}maximum_snelheden__wegvak__nachtType</property>
+    <property name="mappableSourceType/5">{http://mapserver.gis.umn.edu/mapserver}ms_wv_dType</property>
+    <property name="mappableSourceType/6">{http://weggeg_wegvak_stg}maximum_snelheden__wegvak__overdagType</property>
+    <property name="mappableSourceType/7">JTE_ID_END</property>
+    <property name="mappableSourceType/8">JTE_ID_BEG</property>
+    <property name="mappableSourceType/9">{http://nwbwegen.geonovum.nl}hectopuntenType</property>
+    <property name="mappableSourceType/count">9</property>
     <property name="mappableTargetType/1">{http://inspire.ec.europa.eu/schemas/tn-ro/4.0}RoadLinkSequenceType</property>
     <property name="mappableTargetType/10">{http://inspire.ec.europa.eu/schemas/tn-ro/4.0}RoadServiceTypeType</property>
     <property name="mappableTargetType/11">{http://inspire.ec.europa.eu/schemas/tn-ro/4.0}FunctionalRoadClassType</property>
@@ -1715,7 +1722,7 @@
     <property name="mappableTargetType/15">{http://inspire.ec.europa.eu/schemas/tn-ro/4.0}SpeedLimitType</property>
     <property name="mappableTargetType/16">{http://inspire.ec.europa.eu/schemas/tn-ro/4.0}FormOfWayType</property>
     <property name="mappableTargetType/17">{http://inspire.ec.europa.eu/schemas/tn-ro/4.0}RoadAreaType</property>
-    <property name="mappableTargetType/18">{http://inspire.ec.europa.eu/schemas/tn/4.0}TrafficFlowDirectionType</property>
+    <property name="mappableTargetType/18">{http://inspire.ec.europa.eu/schemas/tn/4.0}MarkerPostType</property>
     <property name="mappableTargetType/2">{http://inspire.ec.europa.eu/schemas/tn-ro/4.0}RoadNodeType</property>
     <property name="mappableTargetType/3">{http://inspire.ec.europa.eu/schemas/tn-ro/4.0}RoadServiceAreaType</property>
     <property name="mappableTargetType/4">{http://inspire.ec.europa.eu/schemas/tn-ro/4.0}RoadWidthType</property>
@@ -1725,10 +1732,13 @@
     <property name="mappableTargetType/8">{http://inspire.ec.europa.eu/schemas/tn-ro/4.0}RoadSurfaceCategoryType</property>
     <property name="mappableTargetType/9">{http://inspire.ec.europa.eu/schemas/tn-ro/4.0}VehicleTrafficAreaType</property>
     <property name="mappableTargetType/count">18</property>
-    <property name="resource-2330322c-1ba3-45d6-8174-79477c1ed99b:defaultCRS:{http://nwbwegen.geonovum.nl}wegvakkenType/{http://nwbwegen.geonovum.nl}geom/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
     <property name="resource-2ba25118-a1eb-4b0c-be1f-c6056f9bb326:defaultCRS:{http://nwbwegen.geonovum.nl}wegvakkenType/{http://nwbwegen.geonovum.nl}geom/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
-    <property name="resource-66520f31-2f1f-4ed6-a966-d74bab0780e2:defaultCRS:{http://nwbwegen.geonovum.nl}wegvakkenType/{http://nwbwegen.geonovum.nl}geom/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
-    <property name="resource-c30794df-e353-4599-ba2d-b8f4a967ea1d:defaultCRS:{http://nwbwegen.geonovum.nl}wegvakkenType/{http://nwbwegen.geonovum.nl}geom/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
+    <property name="resource-39bdf961-a3b4-4e20-a003-9e2a13810bdb:defaultCRS:{http://weggeg_wegvak_stg}maximum_snelheden__wegvak__nachtType/{http://weggeg_wegvak_stg}SHAPE/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
+    <property name="resource-4b0ad143-feae-4428-9448-26fba263b589:defaultCRS:{http://nwbwegen.geonovum.nl}wegvakkenType/{http://nwbwegen.geonovum.nl}geom/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
+    <property name="resource-69c9aa5b-4984-4d47-a7fb-200e463c5b95:defaultCRS:{http://weggeg_wegvak_stg}maximum_snelheden__wegvak__overdagType/{http://weggeg_wegvak_stg}SHAPE/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
+    <property name="resource-7f1cb94c-24dc-45e1-8a5f-291353642c15:defaultCRS:{http://weggeg_wegvak_stg}maximum_snelheden__wegvak__overdagType/{http://weggeg_wegvak_stg}SHAPE/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
+    <property name="resource-9a65cbc0-02d2-47b8-816c-fb7511d8a84f:defaultCRS:{http://nwbwegen.geonovum.nl}wegvakkenType/{http://nwbwegen.geonovum.nl}geom/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
+    <property name="resource-c9e85ff1-5f7e-4163-9a2a-193b092ae420:defaultCRS:{http://weggeg_wegvak_stg}maximum_snelheden__wegvak__nachtType/{http://weggeg_wegvak_stg}SHAPE/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
     <complex-property name="variables">
         <core:properties xmlns:core="http://www.esdi-humboldt.eu/hale/core">
             <core:property name="INSPIRE_NAMESPACE_NWBW_TN-RTN">
@@ -1737,11 +1747,11 @@
             <core:property name="INSPIRE_NAMESPACE_WEGGEG_TN-RO">
                 <core:value value="nl.rws.weggeg.tn-ro"/>
             </core:property>
+            <core:property name="INSPIRE_NAEMSPACE_WEGGEG_TN-RTN">
+                <core:value value="nl.rws.weggeg.tn-rtn"/>
+            </core:property>
             <core:property name="NETWORK_NAME">
                 <core:value value="RoadNetwork"/>
-            </core:property>
-            <core:property name="INSPIRE_NAMESPACE_WEGGEG_TN-RTN">
-                <core:value value="nl.rws.weggeg.tn-rtn"/>
             </core:property>
         </core:properties>
     </complex-property>
