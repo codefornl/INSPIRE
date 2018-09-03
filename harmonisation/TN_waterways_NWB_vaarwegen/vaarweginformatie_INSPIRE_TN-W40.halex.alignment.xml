@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alignment xmlns="http://www.esdi-humboldt.eu/hale/alignment">
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="C41a700fb-0964-441e-885c-cff9c109b1e6" priority="normal">
+        <source>
+            <class>
+                <type name="NavigabilityType" ns="http://www.deegree.org/app"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="InlandWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="C4183955c-6e7a-4f0f-b625-b552728ba193" priority="normal">
+        <source>
+            <class>
+                <type name="NwbHarbourType" ns="http://www.deegree.org/app"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="PortNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="Ca3cc4e06-d24c-40ea-a8a3-6f450cc9572b" priority="normal">
+        <source>
+            <class>
+                <type name="VinHarbourType" ns="http://www.deegree.org/app"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="PortNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="Cf8e6cb97-04d2-4ad3-9621-c40b79d5e3ea" priority="normal">
+        <source>
+            <class>
+                <type name="SectionType" ns="http://www.deegree.org/app"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="Cf61b4e37-8c8a-4322-bee3-cfab30c58aef" priority="normal">
+        <source>
+            <class>
+                <type name="SectionJunctionType" ns="http://www.deegree.org/app"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="WaterwayNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+</alignment>

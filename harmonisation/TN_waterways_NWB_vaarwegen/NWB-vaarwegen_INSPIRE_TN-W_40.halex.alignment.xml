@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <alignment xmlns="http://www.esdi-humboldt.eu/hale/alignment">
-    <cell relation="eu.esdihumboldt.hale.align.merge" id="C0ad34c1e-2bbf-4e3d-bbce-57bda8b7f15f" priority="normal">
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.merge" id="C4be45eab-593f-43e4-8075-3aae7809c2fd" priority="normal">
         <source>
             <class>
-                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
-                    <condition lang="CQL">vrt_naam not LIKE '%Scheepvaartroute%' and vrt_naam not LIKE '%Diepwaterroute%'</condition>
-                </type>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
             </class>
         </source>
         <target>
@@ -13,16 +11,33 @@
                 <type name="InlandWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
             </class>
         </target>
-        <parameter value="{http://nwbvaarwegen.geonovum.nl}vwg_naam" name="additional_property"/>
         <parameter value="false" name="auto_detect"/>
         <parameter value="{http://nwbvaarwegen.geonovum.nl}vrt_naam" name="property"/>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// Test if the geometry of the current object is not disjunct with the Binnenwateren shape&#xD;
+def candidates = _.geom.spatialIndexQuery(geometry: _source.p.geom.first())&#xD;
+&#xD;
+// find the Binnenwateren instance&#xD;
+def binnenwateren = candidates.find {&#xD;
+	it.definition.getDisplayName() == 'Binnenwateren'&#xD;
+}&#xD;
+&#xD;
+if (binnenwateren) {&#xD;
+	_target {&#xD;
+	&#xD;
+	}&#xD;
+}&#xD;
+else {&#xD;
+	_log.info("Dijunct object: " + _source.p.vrt_naam.value())&#xD;
+}
+</core:text>
+        </complexParameter>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.rename" id="Ca5c7b1c6-6270-4920-9c70-6246414b450f" priority="normal">
         <source>
             <property>
-                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
-                    <condition lang="CQL">vrt_naam not LIKE '%Scheepvaartroute%' and vrt_naam not LIKE '%Diepwaterroute%'</condition>
-                </type>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
                 <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
             </property>
         </source>
@@ -63,9 +78,7 @@
     <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C0a1c1245-5d39-4566-b101-9d1e3e271947" priority="normal">
         <source name="var">
             <property>
-                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
-                    <condition lang="CQL">vrt_naam not LIKE '%Scheepvaartroute%' and vrt_naam not LIKE '%Diepwaterroute%'</condition>
-                </type>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
                 <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
             </property>
         </source>
@@ -76,14 +89,12 @@
                 <child name="href" ns="http://www.w3.org/1999/xlink"/>
             </property>
         </target>
-        <parameter value="#INSPIRE.Vervoersnetwerken_Vaarwegen_Waterway.{vwk_id}" name="pattern"/>
+        <parameter value="#INSPIRE.Vervoersnetwerken_Vaarwegen.WaterwayLink.{vwk_id}" name="pattern"/>
     </cell>
-    <cell relation="eu.esdihumboldt.hale.align.merge" id="C3e1a5005-2f55-49e6-9174-83bf9b56c41c" priority="normal">
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.merge" id="Cb58d8711-51c2-4206-b6d8-6cba3c90c8f5" priority="normal">
         <source>
             <class>
-                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
-                    <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
-                </type>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
             </class>
         </source>
         <target>
@@ -91,19 +102,36 @@
                 <type name="MarineWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
             </class>
         </target>
-        <parameter value="{http://nwbvaarwegen.geonovum.nl}geom" name="additional_property"/>
+        <parameter value="{http://www.opengis.net/gml/3.2}name" name="additional_property"/>
         <parameter value="{http://nwbvaarwegen.geonovum.nl}vwg_naam" name="additional_property"/>
-        <parameter value="{http://nwbvaarwegen.geonovum.nl}vwg_nr" name="additional_property"/>
         <parameter value="false" name="auto_detect"/>
         <parameter value="{http://nwbvaarwegen.geonovum.nl}vrt_naam" name="property"/>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// Test if the geometry of the current object is not disjunct with the Binnenwateren shape&#xD;
+def candidates = _.geom.spatialIndexQuery(geometry: _source.p.geom.first())&#xD;
+&#xD;
+// find the Binnenwateren instance&#xD;
+def binnenwateren = candidates.find {&#xD;
+	it.definition.getDisplayName() == 'Binnenwateren'&#xD;
+}&#xD;
+&#xD;
+if (binnenwateren) {&#xD;
+	_log.info("InlandWaterway object: " + _source.p.vrt_naam.value())&#xD;
+}&#xD;
+else {&#xD;
+	_target {&#xD;
+	&#xD;
+	}&#xD;
+}
+</core:text>
+        </complexParameter>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.rename" id="Cee43276a-a670-4b6e-a8fc-8bfe8c364761" priority="normal">
         <source>
             <property>
-                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
-                    <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
-                </type>
-                <child name="vwg_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
             </property>
         </source>
         <target>
@@ -143,9 +171,7 @@
     <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C4282426d-8af9-473a-ae49-91b77f8db281" priority="normal">
         <source name="var">
             <property>
-                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
-                    <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
-                </type>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
                 <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
             </property>
         </source>
@@ -156,7 +182,7 @@
                 <child name="href" ns="http://www.w3.org/1999/xlink"/>
             </property>
         </target>
-        <parameter value="#INSPIRE.Vervoersnetwerken_Vaarwegen_Waterway.{vwk_id}" name="pattern"/>
+        <parameter value="#INSPIRE.Vervoersnetwerken_Vaarwegen.WaterwayLink.{vwk_id}" name="pattern"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.retype" id="C7fa6e111-5df9-4bf5-8a34-5e370c3a6b91" priority="normal">
         <source>
@@ -195,7 +221,7 @@
         <source name="var">
             <property>
                 <type name="kmmarkeringenType" ns="http://nwbvaarwegen.geonovum.nl"/>
-                <child name="gid" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </source>
         <target>
@@ -204,7 +230,7 @@
                 <child name="id" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="INSPIRE.Vervoersnetwerken_Vaarwegen_MarkerPost.{gid}" name="pattern"/>
+        <parameter value="INSPIRE.Vervoersnetwerken_Vaarwegen_MarkerPost.{id}" name="pattern"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="C9f970746-1fc1-4c5e-8776-e74573a7aba4" priority="normal">
         <target>
@@ -252,7 +278,7 @@
         <source name="var">
             <property>
                 <type name="kmmarkeringenType" ns="http://nwbvaarwegen.geonovum.nl"/>
-                <child name="gid" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </source>
         <target name="result">
@@ -326,6 +352,41 @@ return "#INSPIRE.Vervoersnetwerken_Vaarwegen_InlandWaterway." + routeID
         </target>
         <parameter value="water" name="value"/>
     </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.retype" id="C521b04d0-ca0d-4350-a7bf-cb3e3bfb0af8" priority="highest">
+        <source>
+            <class>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// This function collects the first and last points of each &#xD;
+// link and stores them in a map, where the points serve as &#xD;
+// keys, while the IDs of the links serve as values.&#xD;
+&#xD;
+// get collector&#xD;
+def c = _.context.collector()&#xD;
+def pointsIdsMap = c.nodes&#xD;
+&#xD;
+// get geometry and extract first and last point&#xD;
+def thisGeometry = _.geom.find(_source.p.geom.first())&#xD;
+def thisCoordinates = thisGeometry.geometry.getCoordinates()&#xD;
+def first = thisCoordinates[0]&#xD;
+def last = thisCoordinates[thisCoordinates.length - 1]&#xD;
+&#xD;
+// add ID of this waarwegvakken to map value list&#xD;
+def thisId =  _source.p.vwk_id.value()&#xD;
+&#xD;
+pointsIdsMap[first].start &lt;&lt; thisId&#xD;
+pointsIdsMap[last].stop &lt;&lt; thisId
+</core:text>
+        </complexParameter>
+    </cell>
     <cell relation="eu.esdihumboldt.hale.align.retype" id="Cb81764ce-d395-446a-a58d-cb782ad8774a" priority="normal">
         <source>
             <class>
@@ -377,6 +438,42 @@ return "#INSPIRE.Vervoersnetwerken_Vaarwegen_InlandWaterway." + routeID
         </target>
         <parameter value="false" name="ignoreNamespaces"/>
         <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C119a96d9-0c9a-4bf7-a82b-eafa8bc0fe6e" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="endNode" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// get the collector with the references from Links to Nodes&#xD;
+&#xD;
+def c = _.context.collector()&#xD;
+def linksIdsMap = c.links&#xD;
+def thisLinkID = vwk_id&#xD;
+&#xD;
+linksIdsMap[thisLinkID].eachCollector {&#xD;
+  key, child -&gt; &#xD;
+    if (key == "stop") {&#xD;
+	    child.each{&#xD;
+	      thisId -&gt;&#xD;
+	        _target {&#xD;
+	    	  href ("#" + thisId)&#xD;
+	        }&#xD;
+	    }&#xD;
+    }&#xD;
+}
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="C3bf13acc-bb58-4a75-8341-27bfbeb33e1d" priority="normal">
         <target>
@@ -431,7 +528,7 @@ return "#INSPIRE.Vervoersnetwerken_Vaarwegen_InlandWaterway." + routeID
                 <child name="id" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="INSPIRE.Vervoersnetwerken_Vaarwegen_Waterway.{vwk_id}" name="pattern"/>
+        <parameter value="INSPIRE.Vervoersnetwerken_Vaarwegen.WaterwayLink.{vwk_id}" name="pattern"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="Ce22566f4-d3c7-4661-b395-4ea8c6b68daa" priority="normal">
         <target>
@@ -442,6 +539,103 @@ return "#INSPIRE.Vervoersnetwerken_Vaarwegen_InlandWaterway." + routeID
             </property>
         </target>
         <parameter value="#{{project:TRANSPORT_NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C9b9521a9-2163-41db-b692-45fe28da378a" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="startNode" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// get the collector with the references from Links to Nodes&#xD;
+&#xD;
+def c = _.context.collector()&#xD;
+def linksIdsMap = c.links&#xD;
+&#xD;
+def idPrefix = "INSPIRE.Vervoersnetwerken_Vaarwegen."&#xD;
+def thisLinkID = vwk_id&#xD;
+&#xD;
+linksIdsMap[thisLinkID].eachCollector {&#xD;
+  key, child -&gt; &#xD;
+    if (key == "start") {&#xD;
+	    child.each{&#xD;
+	      thisId -&gt;&#xD;
+	        _target {&#xD;
+	    	  href ("#" + thisId)&#xD;
+	        }&#xD;
+	    }&#xD;
+    }&#xD;
+}
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.create" id="C49439785-afb6-45fb-a9d9-e7d5457950bc" priority="higher">
+        <target>
+            <class>
+                <type name="WaterwayNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// This function creates a WaterwayNode with references (Node -&gt; Links) for &#xD;
+// each collected coordinate object, and stores information to create &#xD;
+// inverse references (Link -&gt; Node)&#xD;
+&#xD;
+// get collector&#xD;
+def c = _.context.collector()&#xD;
+def pointsIdsMap = c.nodes&#xD;
+def linksIdsMap = c.links&#xD;
+&#xD;
+pointsIdsMap.eachCollector{&#xD;
+	key, child -&gt; &#xD;
+		// define ID&#xD;
+		def thisInspireId = "INSPIRE.Vervoersnetwerken_Vaarwegen.WaterwayNode." + UUID.nameUUIDFromBytes(key.toString().getBytes())&#xD;
+		def pointGeometry = _.geom.with(geometry: "POINT(" + key.x + " " + key.y + ")", crs: "EPSG:28992")&#xD;
+&#xD;
+		_target {&#xD;
+			geometry {&#xD;
+				Point (pointGeometry)&#xD;
+			}&#xD;
+			child.start.each{&#xD;
+				thisId -&gt;&#xD;
+					// Store Link ID with mapping to Node ID&#xD;
+					linksIdsMap[thisId].start &lt;&lt; thisInspireId&#xD;
+					&#xD;
+					// assign the spokeStart property&#xD;
+					spokeStart {&#xD;
+						href("#INSPIRE.Vervoersnetwerken_Vaarwegen.WaterwayLink." + thisId)&#xD;
+					}&#xD;
+			}&#xD;
+			child.stop.each{&#xD;
+				thisId -&gt;&#xD;
+					// Store Link ID with mapping to Node ID&#xD;
+					linksIdsMap[thisId].stop &lt;&lt; thisInspireId&#xD;
+					&#xD;
+					// assign the spokeEnd property&#xD;
+					spokeEnd {&#xD;
+						href("#INSPIRE.Vervoersnetwerken_Vaarwegen.WaterwayLink." + thisId)&#xD;
+					}&#xD;
+			}&#xD;
+			id (thisInspireId)&#xD;
+			inspireId {&#xD;
+				Identifier {&#xD;
+					localId( thisInspireId )&#xD;
+					namespace ( _project.vars.INSPIRE_DATASET_NAMESPACE )&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+}
+</core:text>
+        </complexParameter>
     </cell>
     <modifier cell="C0e79daf2-13e7-42c4-9539-a9305dd6cf24">
         <disable-for parent="C7fa6e111-5df9-4bf5-8a34-5e370c3a6b91"/>

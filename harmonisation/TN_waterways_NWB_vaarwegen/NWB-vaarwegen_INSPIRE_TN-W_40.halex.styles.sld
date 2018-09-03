@@ -17,6 +17,21 @@
   </sld:FeatureTypeStyle>
   <sld:FeatureTypeStyle>
     <sld:Name>name</sld:Name>
+    <sld:FeatureTypeName>WaterwayLink</sld:FeatureTypeName>
+    <sld:Rule>
+      <sld:PolygonSymbolizer>
+        <sld:Fill>
+          <sld:CssParameter name="fill">#5E991F</sld:CssParameter>
+          <sld:CssParameter name="fill-opacity">0.4</sld:CssParameter>
+        </sld:Fill>
+        <sld:Stroke>
+          <sld:CssParameter name="stroke">#5E991F</sld:CssParameter>
+        </sld:Stroke>
+      </sld:PolygonSymbolizer>
+    </sld:Rule>
+  </sld:FeatureTypeStyle>
+  <sld:FeatureTypeStyle>
+    <sld:Name>name</sld:Name>
     <sld:FeatureTypeName>vaarwegvakken</sld:FeatureTypeName>
     <sld:Rule>
       <sld:ElseFilter/>
@@ -28,6 +43,51 @@
         <sld:Stroke>
           <sld:CssParameter name="stroke">#3381CC</sld:CssParameter>
           <sld:CssParameter name="stroke-opacity">0.5</sld:CssParameter>
+        </sld:Stroke>
+      </sld:PolygonSymbolizer>
+    </sld:Rule>
+  </sld:FeatureTypeStyle>
+  <sld:FeatureTypeStyle>
+    <sld:Name>name</sld:Name>
+    <sld:FeatureTypeName>WaterwayNode</sld:FeatureTypeName>
+    <sld:Rule>
+      <sld:PolygonSymbolizer>
+        <sld:Fill>
+          <sld:CssParameter name="fill">#1F9983</sld:CssParameter>
+          <sld:CssParameter name="fill-opacity">0.4</sld:CssParameter>
+        </sld:Fill>
+        <sld:Stroke>
+          <sld:CssParameter name="stroke">#1F9983</sld:CssParameter>
+        </sld:Stroke>
+      </sld:PolygonSymbolizer>
+    </sld:Rule>
+  </sld:FeatureTypeStyle>
+  <sld:FeatureTypeStyle>
+    <sld:Name>name</sld:Name>
+    <sld:FeatureTypeName>Binnenwateren</sld:FeatureTypeName>
+    <sld:Rule>
+      <sld:PolygonSymbolizer>
+        <sld:Fill>
+          <sld:CssParameter name="fill">#B433CC</sld:CssParameter>
+          <sld:CssParameter name="fill-opacity">0.4</sld:CssParameter>
+        </sld:Fill>
+        <sld:Stroke>
+          <sld:CssParameter name="stroke">#B433CC</sld:CssParameter>
+        </sld:Stroke>
+      </sld:PolygonSymbolizer>
+    </sld:Rule>
+  </sld:FeatureTypeStyle>
+  <sld:FeatureTypeStyle>
+    <sld:Name>name</sld:Name>
+    <sld:FeatureTypeName>MarkerPost</sld:FeatureTypeName>
+    <sld:Rule>
+      <sld:PolygonSymbolizer>
+        <sld:Fill>
+          <sld:CssParameter name="fill">#991F97</sld:CssParameter>
+          <sld:CssParameter name="fill-opacity">0.4</sld:CssParameter>
+        </sld:Fill>
+        <sld:Stroke>
+          <sld:CssParameter name="stroke">#991F97</sld:CssParameter>
         </sld:Stroke>
       </sld:PolygonSymbolizer>
     </sld:Rule>

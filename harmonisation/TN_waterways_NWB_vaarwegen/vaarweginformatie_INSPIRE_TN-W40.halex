@@ -1,45 +1,311 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<hale-project version="3.4.0.SNAPSHOT">
-    <name>NWB vaarwegen to INSPIRE TN-W 4.0</name>
-    <author>Thorsten Reitz for CodeforNL/RWS</author>
-    <description>Harmonisatie van de NWB vaarwegen WFS t.b.v. INSPIRE Water Transport Network</description>
-    <created>2017-11-17T14:30:35.650+01:00</created>
-    <modified>2018-02-08T15:02:59.956+01:00</modified>
+<hale-project version="3.3.1.release">
+    <name>Vaarweginformatie to INSPIRE TN-Water 4.0</name>
+    <author>Thorsten Reitz (for RWS)</author>
+    <created>2017-12-08T08:27:09.108+01:00</created>
+    <modified>2017-12-08T11:26:05.284+01:00</modified>
     <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
         <setting name="charset">UTF-8</setting>
         <setting name="projectFiles.separate">false</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.project.hale25.xml</setting>
-        <setting name="target">file:/C:/wetransform/dev/INSPIRE/harmonisation/TN_waterways_NWB_vaarwegen/NWB-vaarwegen_INSPIRE_TN-W_40.halex</setting>
+        <setting name="target">file:/C:/wetransform/dev/INSPIRE/harmonisation/TN_waterways_NWB_vaarwegen/vaarweginformatie_INSPIRE_TN-W40.halex</setting>
     </save-config>
     <resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
         <setting name="charset">UTF-8</setting>
         <setting name="onlyElementsMappable">true</setting>
-        <setting name="resourceId">bdd9a6ed-b3d8-4e23-a08e-620aebf1c12d</setting>
+        <setting name="resourceId">230e3e35-82cf-4f6c-89ba-918bf2a8d107</setting>
         <setting name="source">http://inspire.ec.europa.eu/schemas/tn-w/4.0/WaterTransportNetwork.xsd</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
     </resource>
     <resource action-id="eu.esdihumboldt.hale.io.schema.read.source" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
         <setting name="charset">UTF-8</setting>
         <setting name="onlyElementsMappable">true</setting>
-        <setting name="resourceId">eba913c1-2884-4d09-97ff-b5ba75b557ef</setting>
+        <setting name="resourceId">7317da8e-5215-4fd1-a5ce-dfa59684e16b</setting>
         <complex-setting name="relevantElements">
             <core:list xmlns:core="http://www.esdi-humboldt.eu/hale/core">
                 <core:entry>
-                    <core:name>nwbvaarwegen</core:name>
+                    <core:name namespace="http://www.deegree.org/app">FishingHarbour</core:name>
                 </core:entry>
                 <core:entry>
-                    <core:name>kmmarkeringen</core:name>
+                    <core:name namespace="http://www.deegree.org/app">BunkerStation</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">FairwayClassification</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">OverheadPipe</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Particularity</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">SubInstance</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">GeoGeneration</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">FairwayConnection</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">TrajectoryAdministration</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Werm</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">FtmSource</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Buoy</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Route</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">GoodsTransShipment</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">FairwayType</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">RadioCallInPoint</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Navigability</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">OfficialLevel</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">AimedLevel</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">RefuseDump</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">WorkingArea</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Isrs</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">ClusterElement</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Subchamber</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Plov</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">WaterwayGauge</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">ServiceHarbour</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">WaterLevelNAP</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">CarDropoff</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">RelatedObject</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Municipality</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Chamber</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">SectionId</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Bridge</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Ftm</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">ShorelineConstruction</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">AimedWaterlevel</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">OperatingRule</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">MGDTrajectory</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">PilotRegion</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">TrajectoryTrait</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">AnchorageArea</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">FairwayStatus</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">KilometerMark</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">SectionJunction</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">PushTowAnchorage</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Hulk</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">WaitingArea</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Corridor</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">ExceptionalNavigationalStructure</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">VtsSector</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Identification</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">IsrsData</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Instance</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">SABCollectionPoint</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Icem</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">OperatingTimes</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">TrafficSignalStation</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Fairway</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">HeadOffice</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">GeoObject</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">IceTrajectory</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">ClassificationData</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Opening</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">PleasureCraftWaterwayClassification</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">VtsSubsector</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">MaximumSpeed</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">TurningBasin</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Wrm</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Section</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">TouristHarbour</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">FerryLandingPoint</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Lock</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Pontoon</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">OverheadCable</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">RouteJunction</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Administration</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">MaximumDimensions</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">FairwayDepth</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Regulation</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">NwbHarbour</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">OperatingPeriod</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">TrailerSlipway</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">SpecialProvision</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">AnchorageBerth</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Ferry</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Dam</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Berth</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">Checkpoint</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">PortArea</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="http://www.deegree.org/app">VinHarbour</core:name>
                 </core:entry>
             </core:list>
         </complex-setting>
-        <setting name="source">http://geodata.nationaalgeoregister.nl/nwbvaarwegen/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=DescribeFeatureType&amp;NAMESPACES=xmlns%28nwbvaarwegen%2Chttp%3A%2F%2Fnwbvaarwegen.geonovum.nl%29&amp;TYPENAMES=nwbvaarwegen,kmmarkeringen</setting>
+        <setting name="source">http://www.vaarweginformatie.nl/wfswms/services?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=DescribeFeatureType&amp;NAMESPACE=xmlns%28app%3Dhttp%3A%2F%2Fwww.deegree.org%2Fapp%29&amp;TYPENAME=app%3AFishingHarbour%2Capp%3ABunkerStation%2Capp%3AFairwayClassification%2Capp%3AOverheadPipe%2Capp%3AParticularity%2Capp%3ASubInstance%2Capp%3AGeoGeneration%2Capp%3AFairwayConnection%2Capp%3ATrajectoryAdministration%2Capp%3AWerm%2Capp%3AFtmSource%2Capp%3ABuoy%2Capp%3ARoute%2Capp%3AGoodsTransShipment%2Capp%3AFairwayType%2Capp%3ARadioCallInPoint%2Capp%3ANavigability%2Capp%3AOfficialLevel%2Capp%3AAimedLevel%2Capp%3ARefuseDump%2Capp%3AWorkingArea%2Capp%3AIsrs%2Capp%3AClusterElement%2Capp%3ASubchamber%2Capp%3APlov%2Capp%3AWaterwayGauge%2Capp%3AServiceHarbour%2Capp%3AWaterLevelNAP%2Capp%3ACarDropoff%2Capp%3ARelatedObject%2Capp%3AMunicipality%2Capp%3AChamber%2Capp%3ASectionId%2Capp%3ABridge%2Capp%3AFtm%2Capp%3AShorelineConstruction%2Capp%3AAimedWaterlevel%2Capp%3AOperatingRule%2Capp%3AMGDTrajectory%2Capp%3APilotRegion%2Capp%3ATrajectoryTrait%2Capp%3AAnchorageArea%2Capp%3AFairwayStatus%2Capp%3AKilometerMark%2Capp%3ASectionJunction%2Capp%3APushTowAnchorage%2Capp%3AHulk%2Capp%3AWaitingArea%2Capp%3ACorridor%2Capp%3AExceptionalNavigationalStructure%2Capp%3AVtsSector%2Capp%3AIdentification%2Capp%3AIsrsData%2Capp%3AInstance%2Capp%3ASABCollectionPoint%2Capp%3AIcem%2Capp%3AOperatingTimes%2Capp%3ATrafficSignalStation%2Capp%3AFairway%2Capp%3AHeadOffice%2Capp%3AGeoObject%2Capp%3AIceTrajectory%2Capp%3AClassificationData%2Capp%3AOpening%2Capp%3APleasureCraftWaterwayClassification%2Capp%3AVtsSubsector%2Capp%3AMaximumSpeed%2Capp%3ATurningBasin%2Capp%3AWrm%2Capp%3ASection%2Capp%3ATouristHarbour%2Capp%3AFerryLandingPoint%2Capp%3ALock%2Capp%3APontoon%2Capp%3AOverheadCable%2Capp%3ARouteJunction%2Capp%3AAdministration%2Capp%3AMaximumDimensions%2Capp%3AFairwayDepth%2Capp%3ARegulation%2Capp%3ANwbHarbour%2Capp%3AOperatingPeriod%2Capp%3ATrailerSlipway%2Capp%3ASpecialProvision%2Capp%3AAnchorageBerth%2Capp%3AFerry%2Capp%3ADam%2Capp%3ABerth%2Capp%3ACheckpoint%2Capp%3APortArea%2Capp%3AVinHarbour</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
     </resource>
     <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
         <setting name="charset">UTF-8</setting>
-        <setting name="resourceId">394c3a72-958f-497b-b5d4-3cd240d2e24a</setting>
+        <setting name="resourceId">0a37288c-a872-4c2c-b161-a7899f5f104b</setting>
         <setting name="interpolation.grid.moveAllToGrid">false</setting>
-        <setting name="source">http://geodata.nationaalgeoregister.nl/nwbvaarwegen/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;NAMESPACES=xmlns%28nwbvaarwegen%2Chttp%3A%2F%2Fnwbvaarwegen.geonovum.nl%29&amp;TYPENAMES=nwbvaarwegen%3Avaarwegvakken</setting>
+        <setting name="source">http://www.vaarweginformatie.nl/wfswms/services?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;NAMESPACE=xmlns%28app%3Dhttp%3A%2F%2Fwww.deegree.org%2Fapp%29&amp;TYPENAME=app%3ASection</setting>
         <setting name="interpolation.maxError">0.1</setting>
         <setting name="strict">false</setting>
         <setting name="interpolation.algorithm">none</setting>
@@ -51,9 +317,9 @@
     </resource>
     <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
         <setting name="charset">UTF-8</setting>
-        <setting name="resourceId">aabd6234-e697-40f8-8d29-ce5bd6c33acf</setting>
+        <setting name="resourceId">cde5264a-649e-48f8-b763-c56936e40312</setting>
         <setting name="interpolation.grid.moveAllToGrid">false</setting>
-        <setting name="source">http://geodata.nationaalgeoregister.nl/nwbvaarwegen/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;NAMESPACES=xmlns%28nwbvaarwegen%2Chttp%3A%2F%2Fnwbvaarwegen.geonovum.nl%29&amp;TYPENAMES=nwbvaarwegen%3Akmmarkeringen</setting>
+        <setting name="source">http://www.vaarweginformatie.nl/wfswms/services?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;NAMESPACE=xmlns%28app%3Dhttp%3A%2F%2Fwww.deegree.org%2Fapp%29&amp;TYPENAME=app%3ASectionJunction</setting>
         <setting name="interpolation.maxError">0.1</setting>
         <setting name="strict">false</setting>
         <setting name="interpolation.algorithm">none</setting>
@@ -63,89 +329,78 @@
         <setting name="featuresPerWfsRequest">1000</setting>
         <setting name="ignoreRoot">true</setting>
     </resource>
-    <resource action-id="eu.esdihumboldt.hale.io.schema.read.source" provider-id="eu.esdihumboldt.hale.io.shape.reader.schema">
-        <setting name="charset">ISO-8859-1</setting>
-        <setting name="resourceId">9ada7d5c-0ca6-4b71-bfcd-d172e29a5f7b</setting>
-        <setting name="source">../../source_data/Binnenwateren.shp</setting>
-        <setting name="contentType">eu.esdihumboldt.hale.io.shp</setting>
-        <cache>
-            <hsd:schema xmlns:hsd="http://www.esdi-humboldt.eu/hale/schema" namespace="http://www.esdi-humboldt.eu/hale/shp">
-                <hsd:type-index>
-                    <hsd:entry index="0">
-                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">Binnenwateren</hsd:name>
-                    </hsd:entry>
-                    <hsd:entry index="1">
-                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">Id</hsd:name>
-                    </hsd:entry>
-                    <hsd:entry index="2">
-                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">MultiPolygon</hsd:name>
-                    </hsd:entry>
-                </hsd:type-index>
-                <hsd:mapping-relevant>0</hsd:mapping-relevant>
-                <hsd:types>
-                    <hsd:type index="0">
-                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">Binnenwateren</hsd:name>
-                        <hsd:constraint type="abstract" value="false"/>
-                        <hsd:constraint type="binding" value="eu.esdihumboldt.hale.common.instance.model.Instance"/>
-                        <hsd:constraint type="has-value" value="false"/>
-                        <hsd:constraint type="mappable" value="true"/>
-                        <hsd:constraint type="mapping-relevant" value="true"/>
-                        <hsd:declares>
-                            <hsd:property>
-<hsd:name>the_geom</hsd:name>
-<hsd:constraint type="cardinality" value="0..1"/>
-<hsd:constraint type="nillable" value="true"/>
-<hsd:propertyType index="2"/>
-                            </hsd:property>
-                            <hsd:property>
-<hsd:name>Id</hsd:name>
-<hsd:constraint type="cardinality" value="0..1"/>
-<hsd:constraint type="nillable" value="true"/>
-<hsd:propertyType index="1"/>
-                            </hsd:property>
-                            <hsd:property>
-<hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp/augment">filename</hsd:name>
-<hsd:constraint type="cardinality" value="1..1"/>
-<hsd:constraint type="nillable" value="true"/>
-<hsd:propertyType>
-    <hsd:type>
-        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp/augment">filenameType</hsd:name>
-        <hsd:constraint type="binding" value="java.lang.String"/>
-        <hsd:constraint type="has-value" value="true"/>
-        <hsd:constraint type="mappable" value="false"/>
-        <hsd:constraint type="mapping-relevant" value="false"/>
-    </hsd:type>
-</hsd:propertyType>
-                            </hsd:property>
-                        </hsd:declares>
-                    </hsd:type>
-                    <hsd:type index="1">
-                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">Id</hsd:name>
-                        <hsd:constraint type="binding" value="java.lang.Integer"/>
-                        <hsd:constraint type="has-value" value="true"/>
-                        <hsd:constraint type="mappable" value="false"/>
-                        <hsd:constraint type="mapping-relevant" value="false"/>
-                    </hsd:type>
-                    <hsd:type index="2">
-                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">MultiPolygon</hsd:name>
-                        <hsd:constraint type="binding" value="eu.esdihumboldt.hale.common.schema.geometry.GeometryProperty"/>
-                        <hsd:constraint type="has-value" value="true"/>
-                        <hsd:constraint type="mappable" value="false"/>
-                        <hsd:constraint type="mapping-relevant" value="false"/>
-                    </hsd:type>
-                </hsd:types>
-            </hsd:schema>
-        </cache>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">7806b057-dc33-4fd9-ac1f-b57c76625903</setting>
+        <setting name="interpolation.grid.moveAllToGrid">false</setting>
+        <setting name="source">http://www.vaarweginformatie.nl/wfswms/services?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;NAMESPACE=xmlns%28app%3Dhttp%3A%2F%2Fwww.deegree.org%2Fapp%29&amp;TYPENAME=app%3ANavigability</setting>
+        <setting name="interpolation.maxError">0.1</setting>
+        <setting name="strict">false</setting>
+        <setting name="interpolation.algorithm">none</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+        <setting name="ignoreNamespaces">false</setting>
+        <setting name="paginateRequest">false</setting>
+        <setting name="featuresPerWfsRequest">1000</setting>
+        <setting name="ignoreRoot">true</setting>
     </resource>
-    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.shape.reader.instance">
-        <setting name="charset">ISO-8859-1</setting>
-        <setting name="resourceId">a915e5d3-e85b-4064-b5c6-90d4e702140c</setting>
-        <setting name="source">../../source_data/Binnenwateren.shp</setting>
-        <setting name="contentType">eu.esdihumboldt.hale.io.shp</setting>
-        <setting name="typename">{http://www.esdi-humboldt.eu/hale/shp}Binnenwateren</setting>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">14e2fd4a-b2c2-4a35-bc4c-3c66f6be6d31</setting>
+        <setting name="interpolation.grid.moveAllToGrid">false</setting>
+        <setting name="source">http://www.vaarweginformatie.nl/wfswms/services?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;NAMESPACE=xmlns%28app%3Dhttp%3A%2F%2Fwww.deegree.org%2Fapp%29&amp;TYPENAME=app%3AFairway</setting>
+        <setting name="interpolation.maxError">0.1</setting>
+        <setting name="strict">false</setting>
+        <setting name="interpolation.algorithm">segment</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+        <setting name="ignoreNamespaces">false</setting>
+        <setting name="paginateRequest">false</setting>
+        <setting name="featuresPerWfsRequest">1000</setting>
+        <setting name="ignoreRoot">true</setting>
     </resource>
-    <file name="alignment.xml" location="NWB-vaarwegen_INSPIRE_TN-W_40.halex.alignment.xml"/>
-    <file name="styles.sld" location="NWB-vaarwegen_INSPIRE_TN-W_40.halex.styles.sld"/>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">3b3c07cd-fa38-4e37-bfe1-c6cc4f0b0c58</setting>
+        <setting name="interpolation.grid.moveAllToGrid">false</setting>
+        <setting name="source">http://www.vaarweginformatie.nl/wfswms/services?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;NAMESPACE=xmlns%28app%3Dhttp%3A%2F%2Fwww.deegree.org%2Fapp%29&amp;TYPENAME=app%3ARoute</setting>
+        <setting name="interpolation.maxError">0.1</setting>
+        <setting name="strict">false</setting>
+        <setting name="interpolation.algorithm">segment</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+        <setting name="ignoreNamespaces">false</setting>
+        <setting name="paginateRequest">false</setting>
+        <setting name="featuresPerWfsRequest">1000</setting>
+        <setting name="ignoreRoot">true</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">79cdd913-2f05-4ccf-b285-f0a8f5a0e7a9</setting>
+        <setting name="interpolation.grid.moveAllToGrid">false</setting>
+        <setting name="source">http://www.vaarweginformatie.nl/wfswms/services?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;NAMESPACE=xmlns%28app%3Dhttp%3A%2F%2Fwww.deegree.org%2Fapp%29&amp;TYPENAME=app%3ATrajectoryTrait</setting>
+        <setting name="interpolation.maxError">0.1</setting>
+        <setting name="strict">false</setting>
+        <setting name="interpolation.algorithm">segment</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+        <setting name="ignoreNamespaces">false</setting>
+        <setting name="paginateRequest">false</setting>
+        <setting name="featuresPerWfsRequest">1000</setting>
+        <setting name="ignoreRoot">true</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">e978da74-0212-4455-b72b-dc92d9d59421</setting>
+        <setting name="interpolation.grid.moveAllToGrid">false</setting>
+        <setting name="source">http://www.vaarweginformatie.nl/wfswms/services?SERVICE=WFS&amp;VERSION=1.1.0&amp;REQUEST=GetFeature&amp;NAMESPACE=xmlns%28app%3Dhttp%3A%2F%2Fwww.deegree.org%2Fapp%29&amp;TYPENAME=app%3AFerryLandingPoint%2Capp%3AFerry</setting>
+        <setting name="interpolation.maxError">0.1</setting>
+        <setting name="strict">false</setting>
+        <setting name="interpolation.algorithm">segment</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+        <setting name="ignoreNamespaces">false</setting>
+        <setting name="paginateRequest">false</setting>
+        <setting name="featuresPerWfsRequest">1000</setting>
+        <setting name="ignoreRoot">true</setting>
+    </resource>
+    <file name="alignment.xml" location="vaarweginformatie_INSPIRE_TN-W40.halex.alignment.xml"/>
+    <file name="styles.sld" location="vaarweginformatie_INSPIRE_TN-W40.halex.styles.sld"/>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/base/3.3}SpatialDataSetType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/base/3.3}SpatialDataSetType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/base/3.3}SpatialDataSetType/count">2</property>
@@ -155,33 +410,15 @@
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}CrossReferenceType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}CrossReferenceType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}CrossReferenceType/count">2</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}GeneralisedLinkType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}GeneralisedLinkType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}GeneralisedLinkType/count">2</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}GradeSeparatedCrossingType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}GradeSeparatedCrossingType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}GradeSeparatedCrossingType/count">2</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}LinkSetType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}LinkSetType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}LinkSetType/count">2</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NetworkAreaType/1">{http://inspire.ec.europa.eu/schemas/net/4.0}geometry</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NetworkAreaType/2">{http://www.opengis.net/gml/3.2/AbstractSurface}choice</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NetworkAreaType/count">2</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NetworkConnectionType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NetworkConnectionType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NetworkConnectionType/count">2</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NetworkElementType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NetworkElementType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NetworkElementType/count">2</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NetworkPropertyType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NetworkPropertyType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NetworkPropertyType/count">2</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NetworkType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NetworkType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NetworkType/count">2</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NodeType/1">{http://inspire.ec.europa.eu/schemas/net/4.0}geometry</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NodeType/2">{http://www.opengis.net/gml/3.2}Point</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/net/4.0}NodeType/count">2</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn-w/4.0}BeaconType/1">{http://inspire.ec.europa.eu/schemas/tn/4.0}geometry</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn-w/4.0}BeaconType/2">{http://www.opengis.net/gml/3.2}Point</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn-w/4.0}BeaconType/count">2</property>
@@ -275,26 +512,285 @@
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn/4.0}TrafficFlowDirectionType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn/4.0}TrafficFlowDirectionType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn/4.0}TrafficFlowDirectionType/count">2</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn/4.0}TransportLinkSetType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn/4.0}TransportLinkSetType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn/4.0}TransportLinkSetType/count">2</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn/4.0}TransportNetworkType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn/4.0}TransportNetworkType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn/4.0}TransportNetworkType/count">2</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn/4.0}TransportPointType/1">{http://inspire.ec.europa.eu/schemas/tn/4.0}geometry</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn/4.0}TransportPointType/2">{http://www.opengis.net/gml/3.2}Point</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn/4.0}TransportPointType/count">2</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn/4.0}VerticalPositionType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn/4.0}VerticalPositionType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/tn/4.0}VerticalPositionType/count">2</property>
-    <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}kmmarkeringenType/1">{http://nwbvaarwegen.geonovum.nl}geom</property>
-    <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}kmmarkeringenType/2">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
-    <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}kmmarkeringenType/count">2</property>
-    <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}vaarwegvakkenType/1">{http://nwbvaarwegen.geonovum.nl}geom</property>
-    <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}vaarwegvakkenType/2">{http://www.opengis.net/gml/3.2}MultiCurve</property>
-    <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}vaarwegvakkenType/count">2</property>
-    <property name="defaultGeometry:{http://www.esdi-humboldt.eu/hale/shp}Binnenwateren/1">the_geom</property>
-    <property name="defaultGeometry:{http://www.esdi-humboldt.eu/hale/shp}Binnenwateren/count">1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}AdministrationType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}AdministrationType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}AdministrationType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}AimedLevelType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}AimedLevelType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}AimedLevelType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}AimedWaterlevelType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}AimedWaterlevelType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}AimedWaterlevelType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}AnchorageAreaType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}AnchorageAreaType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}AnchorageAreaType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}AnchorageBerthType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}AnchorageBerthType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}AnchorageBerthType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}BerthType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}BerthType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}BerthType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}BridgeType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}BridgeType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}BridgeType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}BunkerStationType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}BunkerStationType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}BunkerStationType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}BuoyType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}BuoyType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}BuoyType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}CarDropoffType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}CarDropoffType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}CarDropoffType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ChamberType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ChamberType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ChamberType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}CheckpointType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}CheckpointType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}CheckpointType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ClassificationDataType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ClassificationDataType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ClassificationDataType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ClusterElementType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ClusterElementType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ClusterElementType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}CorridorType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}CorridorType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}CorridorType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}DamType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}DamType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}DamType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ExceptionalNavigationalStructureType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ExceptionalNavigationalStructureType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ExceptionalNavigationalStructureType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayClassificationType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayClassificationType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayClassificationType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayConnectionType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayConnectionType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayConnectionType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayDepthType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayDepthType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayDepthType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayStatusType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayStatusType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayStatusType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayTypeType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayTypeType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FairwayTypeType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FerryLandingPointType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FerryLandingPointType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FerryLandingPointType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FerryType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FerryType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FerryType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FishingHarbourType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FishingHarbourType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FishingHarbourType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FtmSourceType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FtmSourceType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FtmSourceType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FtmType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FtmType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}FtmType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}GeoGenerationType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}GeoGenerationType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}GeoGenerationType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}GeoObjectType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}GeoObjectType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}GeoObjectType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}GoodsTransShipmentType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}GoodsTransShipmentType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}GoodsTransShipmentType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}HeadOfficeType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}HeadOfficeType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}HeadOfficeType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}HulkType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}HulkType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}HulkType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}IceTrajectoryType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}IceTrajectoryType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}IceTrajectoryType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}IcemType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}IcemType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}IcemType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}IdentificationType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}IdentificationType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}IdentificationType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}InstanceType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}InstanceType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}InstanceType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}IsrsDataType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}IsrsDataType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}IsrsDataType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}IsrsType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}IsrsType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}IsrsType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}KilometerMarkType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}KilometerMarkType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}KilometerMarkType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}LockType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}LockType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}LockType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}MGDTrajectoryType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}MGDTrajectoryType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}MGDTrajectoryType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}MaximumDimensionsType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}MaximumDimensionsType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}MaximumDimensionsType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}MaximumSpeedType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}MaximumSpeedType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}MaximumSpeedType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}MunicipalityType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}MunicipalityType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}MunicipalityType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}NavigabilityType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}NavigabilityType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}NavigabilityType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}NwbHarbourType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}NwbHarbourType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}NwbHarbourType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OfficialLevelType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OfficialLevelType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OfficialLevelType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OpeningType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OpeningType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OpeningType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OperatingPeriodType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OperatingPeriodType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OperatingPeriodType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OperatingRuleType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OperatingRuleType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OperatingRuleType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OperatingTimesType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OperatingTimesType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OperatingTimesType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OverheadCableType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OverheadCableType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OverheadCableType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OverheadPipeType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OverheadPipeType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}OverheadPipeType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ParticularityType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ParticularityType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ParticularityType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PilotRegionType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PilotRegionType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PilotRegionType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PleasureCraftWaterwayClassificationType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PleasureCraftWaterwayClassificationType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PleasureCraftWaterwayClassificationType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PlovType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PlovType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PlovType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PontoonType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PontoonType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PontoonType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PortAreaType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PortAreaType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PortAreaType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PushTowAnchorageType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PushTowAnchorageType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}PushTowAnchorageType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RadioCallInPointType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RadioCallInPointType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RadioCallInPointType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RefuseDumpType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RefuseDumpType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RefuseDumpType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RegulationType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RegulationType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RegulationType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RelatedObjectType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RelatedObjectType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RelatedObjectType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RouteJunctionType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RouteJunctionType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RouteJunctionType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RouteType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RouteType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}RouteType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SABCollectionPointType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SABCollectionPointType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SABCollectionPointType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SectionIdType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SectionIdType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SectionIdType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SectionJunctionType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SectionJunctionType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SectionJunctionType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SectionType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SectionType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SectionType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ServiceHarbourType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ServiceHarbourType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ServiceHarbourType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ShorelineConstructionType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ShorelineConstructionType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}ShorelineConstructionType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SpecialProvisionType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SpecialProvisionType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SpecialProvisionType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SubInstanceType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SubInstanceType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SubInstanceType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SubchamberType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SubchamberType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}SubchamberType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TouristHarbourType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TouristHarbourType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TouristHarbourType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TrafficSignalStationType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TrafficSignalStationType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TrafficSignalStationType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TrailerSlipwayType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TrailerSlipwayType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TrailerSlipwayType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TrajectoryAdministrationType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TrajectoryAdministrationType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TrajectoryAdministrationType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TrajectoryTraitType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TrajectoryTraitType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TrajectoryTraitType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TurningBasinType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TurningBasinType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}TurningBasinType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}VinHarbourType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}VinHarbourType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}VinHarbourType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}VtsSectorType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}VtsSectorType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}VtsSectorType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}VtsSubsectorType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}VtsSubsectorType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}VtsSubsectorType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WaitingAreaType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WaitingAreaType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WaitingAreaType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WaterLevelNAPType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WaterLevelNAPType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WaterLevelNAPType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WaterwayGaugeType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WaterwayGaugeType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WaterwayGaugeType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WermType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WermType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WermType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WorkingAreaType/1">{http://www.opengis.net/gml}boundedBy</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WorkingAreaType/2">{http://www.opengis.net/gml/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WorkingAreaType/count">2</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WrmType/1">{http://www.deegree.org/app}Geometry</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WrmType/2">{http://www.opengis.net/gml/_Geometry}choice</property>
+    <property name="defaultGeometry:{http://www.deegree.org/app}WrmType/count">2</property>
     <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_BoundingPolygon_Type/1">{http://www.isotc211.org/2005/gmd}polygon</property>
     <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_BoundingPolygon_Type/2">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
     <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_BoundingPolygon_Type/count">2</property>
@@ -319,25 +815,6 @@
     <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}MD_Metadata_Type/4">{http://www.isotc211.org/2005/gmd}cornerPoints</property>
     <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}MD_Metadata_Type/5">{http://www.opengis.net/gml/3.2}Point</property>
     <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}MD_Metadata_Type/count">5</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractContinuousCoverageType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractContinuousCoverageType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractContinuousCoverageType/count">2</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractCoverageType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractCoverageType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractCoverageType/count">2</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractFeatureCollectionType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractFeatureCollectionType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractFeatureCollectionType/count">2</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractFeatureType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractFeatureType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractFeatureType/count">2</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/1">{http://www.opengis.net/gml/3.2}rows</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/2">{http://www.opengis.net/gml/3.2}Row</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/3">{http://www.opengis.net/gml/3.2/geometricPositionListGroup}choice_1</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/4">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_1</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/5">{http://www.opengis.net/gml/3.2}pointProperty</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/6">{http://www.opengis.net/gml/3.2}Point</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractGriddedSurfaceType/count">6</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractRingPropertyType/1">{http://www.opengis.net/gml/3.2/AbstractRing}choice</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractRingPropertyType/count">1</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcByBulgeType/1">{http://www.opengis.net/gml/3.2/ArcByBulgeType}choice_1</property>
@@ -383,9 +860,6 @@
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BezierType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BezierType/4">{http://www.opengis.net/gml/3.2}Point</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BezierType/count">4</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BoundedFeatureType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BoundedFeatureType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
-    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BoundedFeatureType/count">2</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BoundingShapeType/1">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BoundingShapeType/count">1</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CircleByCenterPointType/1">{http://www.opengis.net/gml/3.2/CircleByCenterPointType}choice_1</property>
@@ -741,7 +1215,6 @@
     <property name="mappableTargetType/23">{http://inspire.ec.europa.eu/schemas/tn-w/4.0}WaterwayLinkType</property>
     <property name="mappableTargetType/24">{http://inspire.ec.europa.eu/schemas/tn-w/4.0}WaterLinkSequenceType</property>
     <property name="mappableTargetType/25">{http://inspire.ec.europa.eu/schemas/tn-w/4.0}InlandWaterwayType</property>
-    <property name="mappableTargetType/26">{http://inspire.ec.europa.eu/schemas/tn/4.0}MarkerPostType</property>
     <property name="mappableTargetType/3">{http://inspire.ec.europa.eu/schemas/tn-w/4.0}BuoyType</property>
     <property name="mappableTargetType/4">{http://inspire.ec.europa.eu/schemas/tn-w/4.0}MarineWaterwayType</property>
     <property name="mappableTargetType/5">{http://inspire.ec.europa.eu/schemas/tn-w/4.0}RestrictionForWaterVehiclesType</property>
@@ -749,34 +1222,5 @@
     <property name="mappableTargetType/7">{http://inspire.ec.europa.eu/schemas/tn-w/4.0}TrafficSeparationSchemeAreaType</property>
     <property name="mappableTargetType/8">{http://inspire.ec.europa.eu/schemas/tn-w/4.0}TrafficSeparationSchemeType</property>
     <property name="mappableTargetType/9">{http://inspire.ec.europa.eu/schemas/tn-w/4.0}TrafficSeparationSchemeCrossingType</property>
-    <property name="mappableTargetType/count">26</property>
-    <property name="resource-394c3a72-958f-497b-b5d4-3cd240d2e24a:defaultCRS:{http://nwbvaarwegen.geonovum.nl}vaarwegvakkenType/{http://nwbvaarwegen.geonovum.nl}geom/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
-    <property name="resource-732b04ba-1c07-4669-90fe-b8e87df0942b:defaultCRS:{http://nwbvaarwegen.geonovum.nl}vaarwegvakkenType/{http://nwbvaarwegen.geonovum.nl}geom/{http://www.opengis.net/gml/3.2}MultiCurve/{http://www.opengis.net/gml/3.2}curveMember/{http://www.opengis.net/gml/3.2}LineString">code:EPSG:28992</property>
-    <property name="resource-a915e5d3-e85b-4064-b5c6-90d4e702140c:defaultCRS:{http://www.esdi-humboldt.eu/hale/shp}Binnenwateren/the_geom">wkt:PROJCS["RD_New", &#xD;
-  GEOGCS["GCS_Amersfoort", &#xD;
-    DATUM["D_Amersfoort", &#xD;
-      SPHEROID["Bessel_1841", 6377397.155, 299.1528128]], &#xD;
-    PRIMEM["Greenwich", 0.0], &#xD;
-    UNIT["degree", 0.017453292519943295], &#xD;
-    AXIS["Longitude", EAST], &#xD;
-    AXIS["Latitude", NORTH]], &#xD;
-  PROJECTION["Oblique_Stereographic"], &#xD;
-  PARAMETER["central_meridian", 5.38763888888889], &#xD;
-  PARAMETER["latitude_of_origin", 52.15616055555555], &#xD;
-  PARAMETER["scale_factor", 0.9999079], &#xD;
-  PARAMETER["false_easting", 155000.0], &#xD;
-  PARAMETER["false_northing", 463000.0], &#xD;
-  UNIT["m", 1.0], &#xD;
-  AXIS["x", EAST], &#xD;
-  AXIS["y", NORTH]]</property>
-    <complex-property name="variables">
-        <core:properties xmlns:core="http://www.esdi-humboldt.eu/hale/core">
-            <core:property name="INSPIRE_DATASET_NAMESPACE">
-                <core:value value="http://www.rijkswaterstaat.nl/INSPIRE.Vervoersnetwerken_Vaarwegen/"/>
-            </core:property>
-            <core:property name="TRANSPORT_NETWORK_ID">
-                <core:value value="INSPIRE.Vervoersnetwerken_Vaarwegen_TransportNetwork"/>
-            </core:property>
-        </core:properties>
-    </complex-property>
+    <property name="mappableTargetType/count">25</property>
 </hale-project>
