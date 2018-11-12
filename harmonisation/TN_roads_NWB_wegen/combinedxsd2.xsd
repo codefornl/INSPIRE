@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:import1="http://example.org/pdok/nwbwegen"
+		xmlns:import2="http://mapserver.gis.umn.edu/mapserver"
+		xmlns:import3="http://digitaaltopografischbestand.geonovum.nl"
+		elementFormDefault="qualified"
+		targetNamespace="http://yournamespace.com/combined2">
+	<import
+		namespace="http://example.org/pdok/nwbwegen"
+		schemaLocation="schemaWEGVAKKEN.xsd" />
+	<import
+		namespace="http://mapserver.gis.umn.edu/mapserver"
+		schemaLocation="schemaWEGGEGRWS2.xsd" />
+	<import
+		namespace="http://digitaaltopografischbestand.geonovum.nl"
+		schemaLocation="schemaDTB.xsd" />
+</schema>

@@ -1,0 +1,2882 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alignment xmlns="http://www.esdi-humboldt.eu/hale/alignment">
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.create" id="Cf501bdb0-29fe-4a2b-ac00-09e88ea14102" priority="low">
+        <target>
+            <class>
+                <type name="FunctionalRoadClassType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+/*&#xD;
+//collectors to create references from FunctionalRoadClass to RoadLink&#xD;
+if( _source.p.wegbehsrt.value().equals('R')){&#xD;
+	c.mainRo &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+&#xD;
+if( _source.p.wegbehsrt.value().equals('P')){&#xD;
+	c.firstC &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+&#xD;
+if( _source.p.wegbehsrt.value().equals('G')){&#xD;
+	c.secondC &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+&#xD;
+if( _source.p.wegbehsrt.value().equals('W')||_source.p.wegbehsrt.value().equals('T')){&#xD;
+	c.thirdC &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+*/&#xD;
+&#xD;
+def c = _.context.collector()&#xD;
+&#xD;
+_target {&#xD;
+	beginLifespanVersion() {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	functionalClass( 'mainRoad' )&#xD;
+	id( 'INSPIRE.Vervoersnetwerken_Wegen_FunctionalRoadClass.mainRoad' )&#xD;
+	validFrom() {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	c.mainRo.each{ value -&gt;&#xD;
+		networkRef {&#xD;
+			NetworkReference {&#xD;
+				element {&#xD;
+					href('#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.' + value)&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+	} &#xD;
+	identifier(  _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_FunctionalRoadClass.mainRoad' ) {&#xD;
+		codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+	}&#xD;
+	inspireId {&#xD;
+		Identifier {&#xD;
+			namespace(  _project.vars['INSPIRE_DATASET_NAMESPACE'] )&#xD;
+			localId( 'INSPIRE.Vervoersnetwerken_Wegen_FunctionalRoadClass.mainRoad' )&#xD;
+		}&#xD;
+	}&#xD;
+}&#xD;
+&#xD;
+_target {&#xD;
+	beginLifespanVersion() {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	functionalClass( 'firstClass' )&#xD;
+	id( 'INSPIRE.Vervoersnetwerken_Wegen_FunctionalRoadClass.firstClass' )&#xD;
+	validFrom() {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	c.firstC.each{ value -&gt;&#xD;
+		networkRef {&#xD;
+			NetworkReference {&#xD;
+				element {&#xD;
+					href('#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.' + value)&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+	} &#xD;
+	identifier(  _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_FunctionalRoadClass.firstClass' ) {&#xD;
+		codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+	}&#xD;
+	inspireId {&#xD;
+		Identifier {&#xD;
+			namespace(  _project.vars['INSPIRE_DATASET_NAMESPACE'] )&#xD;
+			localId( 'INSPIRE.Vervoersnetwerken_Wegen_FunctionalRoadClass.firstClass' )&#xD;
+		}&#xD;
+	}&#xD;
+}&#xD;
+&#xD;
+_target {&#xD;
+	beginLifespanVersion() {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	functionalClass( 'secondClass' )&#xD;
+	id( 'INSPIRE.Vervoersnetwerken_Wegen_FunctionalRoadClass.secondClass' )&#xD;
+	validFrom() {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	c.secondC.each{ value -&gt;&#xD;
+		networkRef {&#xD;
+			NetworkReference {&#xD;
+				element {&#xD;
+					href('#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.' + value)&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+	} &#xD;
+	identifier(  _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_FunctionalRoadClass.secondClass' ) {&#xD;
+		codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+	}&#xD;
+	inspireId {&#xD;
+		Identifier {&#xD;
+			namespace(  _project.vars['INSPIRE_DATASET_NAMESPACE'] )&#xD;
+			localId( 'INSPIRE.Vervoersnetwerken_Wegen_FunctionalRoadClass.secondClass' )&#xD;
+		}&#xD;
+	}&#xD;
+}&#xD;
+&#xD;
+_target {&#xD;
+	beginLifespanVersion() {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	functionalClass( 'thirdClass' )&#xD;
+	id( 'INSPIRE.Vervoersnetwerken_Wegen_FunctionalRoadClass.thirdClass' )&#xD;
+	validFrom() {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	c.thirdC.each{ value -&gt;&#xD;
+		networkRef {&#xD;
+			NetworkReference {&#xD;
+				element {&#xD;
+					href('#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.' + value)&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+	} &#xD;
+	identifier(  _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_FunctionalRoadClass.thirdClass' ) {&#xD;
+		codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+	}&#xD;
+	inspireId {&#xD;
+		Identifier {&#xD;
+			namespace(  _project.vars['INSPIRE_DATASET_NAMESPACE'] )&#xD;
+			localId( 'INSPIRE.Vervoersnetwerken_Wegen_FunctionalRoadClass.thirdClass' )&#xD;
+		}&#xD;
+	}&#xD;
+}
+</core:text>
+        </complexParameter>
+        <documentation>No Geometry because FunctionalRoadClass is a TransportProperty that is referenced to a NetworkElement (e.g. RoadLink) containing a Geometry</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.create" id="C92f8cbc9-dbac-4067-b5e7-ae5e44976d04" priority="low">
+        <target>
+            <class>
+                <type name="MaintenanceAuthorityType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+/*&#xD;
+//collectors to create references from FunctionalRoadClass to RoadLink&#xD;
+if( _source.p.wegbehsrt.value().equals('R')){&#xD;
+	c.mainRo &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+&#xD;
+if( _source.p.wegbehsrt.value().equals('P')){&#xD;
+	c.firstC &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+&#xD;
+if( _source.p.wegbehsrt.value().equals('G')){&#xD;
+	c.secondC &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+&#xD;
+//collectors to create references from MaintenanceAuthority and OwnerAuthority to RoadLink - to be used additionally to the ones created for FunctionalRoadClass&#xD;
+if( _source.p.wegbehsrt.value().equals('W')){&#xD;
+	c.waters &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+&#xD;
+if( _source.p.wegbehsrt.value().equals('T')){&#xD;
+	c.andere &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+*/&#xD;
+&#xD;
+def c = _.context.collector()&#xD;
+&#xD;
+_target {&#xD;
+	authority {&#xD;
+		CI_Citation {&#xD;
+			date {&#xD;
+				nilReason( 'inapplicable' )&#xD;
+			}&#xD;
+			title {&#xD;
+				CharacterString('Rijk')&#xD;
+			}&#xD;
+		}&#xD;
+	}&#xD;
+	beginLifespanVersion( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	id( 'INSPIRE.Vervoersnetwerken_Wegen_Onderhoudsdienst.rijk' )&#xD;
+	validFrom( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	} &#xD;
+	c.mainRo.each{ value -&gt;&#xD;
+		networkRef {&#xD;
+			NetworkReference {&#xD;
+				element {&#xD;
+					href('#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.' + value)&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+	}&#xD;
+	identifier( _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_Onderhoudsdienst.rijk' ) {&#xD;
+		codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+	}&#xD;
+	inspireId {&#xD;
+		Identifier {&#xD;
+			namespace( _project.vars['INSPIRE_DATASET_NAMESPACE'] )&#xD;
+			localId( 'INSPIRE.Vervoersnetwerken_Wegen_Onderhoudsdienst.rijk' )&#xD;
+		}&#xD;
+	}&#xD;
+}&#xD;
+&#xD;
+_target {&#xD;
+	authority {&#xD;
+		CI_Citation {&#xD;
+			date {&#xD;
+				nilReason( 'inapplicable' )&#xD;
+			}&#xD;
+			title {&#xD;
+				CharacterString('Provincie')&#xD;
+			}&#xD;
+		}&#xD;
+	}&#xD;
+	beginLifespanVersion( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	id( 'INSPIRE.Vervoersnetwerken_Wegen_Onderhoudsdienst.provincie' )&#xD;
+	validFrom( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	} &#xD;
+	c.firstC.each{ value -&gt;&#xD;
+		networkRef {&#xD;
+			NetworkReference {&#xD;
+				element {&#xD;
+					href('#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.' + value)&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+	}&#xD;
+	identifier( _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_Onderhoudsdienst.provincie' ) {&#xD;
+		codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+	}&#xD;
+	inspireId {&#xD;
+		Identifier {&#xD;
+			namespace( _project.vars['INSPIRE_DATASET_NAMESPACE'] )&#xD;
+			localId( 'INSPIRE.Vervoersnetwerken_Wegen_Onderhoudsdienst.provincie' )&#xD;
+		}&#xD;
+	}&#xD;
+}&#xD;
+&#xD;
+_target {&#xD;
+	authority {&#xD;
+		CI_Citation {&#xD;
+			date {&#xD;
+				nilReason( 'inapplicable' )&#xD;
+			}&#xD;
+			title {&#xD;
+				CharacterString('Gemeente')&#xD;
+			}&#xD;
+		}&#xD;
+	}&#xD;
+	beginLifespanVersion( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	id( 'INSPIRE.Vervoersnetwerken_Wegen_Onderhoudsdienst.gemeente' )&#xD;
+	validFrom( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	} &#xD;
+	c.secondC.each{ value -&gt;&#xD;
+		networkRef {&#xD;
+			NetworkReference {&#xD;
+				element {&#xD;
+					href('#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.' + value)&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+	}&#xD;
+	identifier( _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_Onderhoudsdienst.gemeente' ) {&#xD;
+		codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+	}&#xD;
+	inspireId {&#xD;
+		Identifier {&#xD;
+			namespace( _project.vars['INSPIRE_DATASET_NAMESPACE'] )&#xD;
+			localId( 'INSPIRE.Vervoersnetwerken_Wegen_Onderhoudsdienst.gemeente' )&#xD;
+		}&#xD;
+	}&#xD;
+}&#xD;
+&#xD;
+_target {&#xD;
+	authority {&#xD;
+		CI_Citation {&#xD;
+			date {&#xD;
+				nilReason( 'inapplicable' )&#xD;
+			}&#xD;
+			title {&#xD;
+				CharacterString('Waterschap')&#xD;
+			}&#xD;
+		}&#xD;
+	}&#xD;
+	beginLifespanVersion( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	id( 'INSPIRE.Vervoersnetwerken_Wegen_Onderhoudsdienst.waterschap' )&#xD;
+	validFrom( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	} &#xD;
+	c.waters.each{ value -&gt;&#xD;
+		networkRef {&#xD;
+			NetworkReference {&#xD;
+				element {&#xD;
+					href('#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.' + value)&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+	}&#xD;
+	identifier( _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_Onderhoudsdienst.waterschap' ) {&#xD;
+		codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+	}&#xD;
+	inspireId {&#xD;
+		Identifier {&#xD;
+			namespace( _project.vars['INSPIRE_DATASET_NAMESPACE'] )&#xD;
+			localId( 'INSPIRE.Vervoersnetwerken_Wegen_Onderhoudsdienst.waterschap' )&#xD;
+		}&#xD;
+	}&#xD;
+}&#xD;
+&#xD;
+_target {&#xD;
+	authority {&#xD;
+		CI_Citation {&#xD;
+			date {&#xD;
+				nilReason( 'inapplicable' )&#xD;
+			}&#xD;
+			title {&#xD;
+				CharacterString('Andere wegbeheerder')&#xD;
+			}&#xD;
+		}&#xD;
+	}&#xD;
+	beginLifespanVersion( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	id( 'INSPIRE.Vervoersnetwerken_Wegen_Onderhoudsdienst.andereWegbeheerder' )&#xD;
+	validFrom( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	} &#xD;
+	c.andere.each{ value -&gt;&#xD;
+		networkRef {&#xD;
+			NetworkReference {&#xD;
+				element {&#xD;
+					href('#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.' + value)&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+	}&#xD;
+	identifier( _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_Onderhoudsdienst.andereWegbeheerder' ) {&#xD;
+		codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+	}&#xD;
+	inspireId {&#xD;
+		Identifier {&#xD;
+			namespace( _project.vars['INSPIRE_DATASET_NAMESPACE'] )&#xD;
+			localId( 'INSPIRE.Vervoersnetwerken_Wegen_Onderhoudsdienst.andereWegbeheerder' )&#xD;
+		}&#xD;
+	}&#xD;
+}
+</core:text>
+        </complexParameter>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="Cac2a9965-aaac-47cf-a3c7-787d860145db" priority="normal">
+        <source>
+            <class>
+                <type name="hectopuntenType" ns="http://example.org/pdok/nwbwegen"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cb4d5bc23-ff0b-4e2d-a27c-3f473a9bd33a" priority="normal">
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C2049e990-e565-4b44-9626-a6894d355023" priority="normal">
+        <source>
+            <property>
+                <type name="hectopuntenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="geom" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="Point" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="geometry" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="Point" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C00ba9b64-de87-41a0-a453-370d12e38d06" priority="normal">
+        <source name="var">
+            <property>
+                <type name="hectopuntenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Wegen_Markeerstok.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C60adb088-ca2f-4198-b96c-2a9c6dc7c7b5" priority="normal">
+        <source name="var">
+            <property>
+                <type name="hectopuntenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Vervoersnetwerken_Wegen_Markeerstok.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Ce0f99717-8548-49b6-8e49-4048b510b3c6" priority="normal">
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C3359bbbe-5c98-4290-b950-6e9ceea6d71d" priority="normal">
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:NETWORK_NAME}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="Cfc82d6fc-a806-4ee6-a52d-0f18f3f07f8f" priority="normal">
+        <source name="var">
+            <property>
+                <type name="hectopuntenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def id = 'INSPIRE.Vervoersnetwerken_Wegen_Markeerstok.' + id&#xD;
+&#xD;
+withTransformationContext {&#xD;
+  def c = _.context.collector(it)&#xD;
+  c.network &lt;&lt; id&#xD;
+}&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C517fd674-434d-4cbc-bfac-88571fefd4f5" priority="normal">
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C38c01837-cedb-42cb-b886-40486ae876a1" priority="normal">
+        <source>
+            <property>
+                <type name="hectopuntenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="afstand" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="location" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cd93d44ab-7b35-4eda-9669-2d861406db21" priority="normal">
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="location" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="uom"/>
+            </property>
+        </target>
+        <parameter value="m" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C5cd3a947-ad60-40ee-aea5-a567ae0ef45d" priority="normal">
+        <source name="var">
+            <property>
+                <type name="hectopuntenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="wvk_id" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="route" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.{wvk_id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C4c18cc23-9bd0-4206-be31-cdfc5b44d85d" priority="normal">
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="Cf7fa258d-182b-48f2-bbac-4eb6fe3c32a3" priority="normal">
+        <source>
+            <class>
+                <type name="rijstr_wvType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="NumberOfLanesType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>No Geometry because NumberOfLanes is a TransportProperty that is referenced to a NetworkElement (e.g. RoadLink) containing a Geometry</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cfc787bcf-1df0-48b2-b24c-7d3c562c2ca6" priority="normal">
+        <target>
+            <property>
+                <type name="NumberOfLanesType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C15ac7350-7f06-478c-a5fd-97c1280d9490" priority="normal">
+        <source name="var">
+            <property>
+                <type name="rijstr_wvType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="NumberOfLanesType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Wegen_AantalRijstroken.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C6116f5bf-1efb-46c1-8fb5-00ea48f1c4ff" priority="normal">
+        <source name="var">
+            <property>
+                <type name="rijstr_wvType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="NumberOfLanesType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Vervoersnetwerken_Wegen_AantalRijstroken.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cdccf491b-3beb-4baf-9976-5837bd328ccd" priority="normal">
+        <target>
+            <property>
+                <type name="NumberOfLanesType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C49eedd96-af46-49a0-8781-fde5db498bff" priority="normal">
+        <source name="var">
+            <property>
+                <type name="rijstr_wvType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="NumberOfLanesType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Wegen_AantalRijstroken.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C5070c22c-fd6b-4623-a0cf-92b164a84d0b" priority="normal">
+        <target>
+            <property>
+                <type name="NumberOfLanesType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+        <documentation>according to Metadata Excel Sheet delivered by Herzo van der Wal via github</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cd715953c-c2fd-4bbf-abdd-bb11259d7feb" priority="normal">
+        <target>
+            <property>
+                <type name="NumberOfLanesType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="minMaxNumberOfLanes" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </property>
+        </target>
+        <parameter value="maximum" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C97c98f76-2ea7-4113-a560-09a3f82b3763" priority="normal">
+        <source name="var">
+            <property>
+                <type name="rijstr_wvType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="WVK_ID" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="NumberOfLanesType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="networkRef" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://inspire.ec.europa.eu/schemas/net/4.0/NetworkReference"/>
+                <child name="SimpleLinearReference" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="element" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.{WVK_ID}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C842628ed-9c61-4f07-a855-844be8f9493e" priority="normal">
+        <source>
+            <property>
+                <type name="rijstr_wvType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="BEGAFSTAND" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="NumberOfLanesType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="networkRef" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://inspire.ec.europa.eu/schemas/net/4.0/NetworkReference"/>
+                <child name="SimpleLinearReference" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="fromPosition" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C1f32171f-39aa-49c8-aa2e-758275d977ba" priority="normal">
+        <target>
+            <property>
+                <type name="NumberOfLanesType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="networkRef" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://inspire.ec.europa.eu/schemas/net/4.0/NetworkReference"/>
+                <child name="SimpleLinearReference" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="fromPosition" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="uom"/>
+            </property>
+        </target>
+        <parameter value="m" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C21bec563-4734-4357-95b3-ff355463d037" priority="normal">
+        <source>
+            <property>
+                <type name="rijstr_wvType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="ENDAFSTAND" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="NumberOfLanesType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="networkRef" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://inspire.ec.europa.eu/schemas/net/4.0/NetworkReference"/>
+                <child name="SimpleLinearReference" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="toPosition" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C18ec38f9-a0ac-44bc-9c21-cd5b1ef8049c" priority="normal">
+        <target>
+            <property>
+                <type name="NumberOfLanesType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="networkRef" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://inspire.ec.europa.eu/schemas/net/4.0/NetworkReference"/>
+                <child name="SimpleLinearReference" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="toPosition" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="uom"/>
+            </property>
+        </target>
+        <parameter value="m" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.classification" id="C49985fb4-aa7a-49da-855c-5efa2326aba3" priority="normal">
+        <source>
+            <property>
+                <type name="rijstr_wvType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="OMSCHR" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="NumberOfLanesType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="numberOfLanes" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </property>
+        </target>
+        <complexParameter name="lookupTable">
+            <lookup-table xmlns:ns2="http://www.esdi-humboldt.eu/hale/alignment" xmlns="">
+                <entry>
+                    <key value="7 -&gt; 7"/>
+                    <value value="7"/>
+                </entry>
+                <entry>
+                    <key value="1 -&gt; 1"/>
+                    <value value="1"/>
+                </entry>
+                <entry>
+                    <key value="4 -&gt; 3"/>
+                    <value value="4"/>
+                </entry>
+                <entry>
+                    <key value="4 -&gt; 4"/>
+                    <value value="4"/>
+                </entry>
+                <entry>
+                    <key value="1 -&gt; 3"/>
+                    <value value="3"/>
+                </entry>
+                <entry>
+                    <key value="4 -&gt; 5"/>
+                    <value value="5"/>
+                </entry>
+                <entry>
+                    <key value="1 -&gt; 2"/>
+                    <value value="2"/>
+                </entry>
+                <entry>
+                    <key value="5 -&gt; 2"/>
+                    <value value="5"/>
+                </entry>
+                <entry>
+                    <key value="3 -&gt; 5"/>
+                    <value value="5"/>
+                </entry>
+                <entry>
+                    <key value="3 -&gt; 4"/>
+                    <value value="4"/>
+                </entry>
+                <entry>
+                    <key value="3 -&gt; 3"/>
+                    <value value="3"/>
+                </entry>
+                <entry>
+                    <key value="6 -&gt; 5"/>
+                    <value value="6"/>
+                </entry>
+                <entry>
+                    <key value="3 -&gt; 2"/>
+                    <value value="3"/>
+                </entry>
+                <entry>
+                    <key value="6 -&gt; 6"/>
+                    <value value="6"/>
+                </entry>
+                <entry>
+                    <key value="3 -&gt; 1"/>
+                    <value value="3"/>
+                </entry>
+                <entry>
+                    <key value="2 -&gt; 3"/>
+                    <value value="3"/>
+                </entry>
+                <entry>
+                    <key value="5 -&gt; 5"/>
+                    <value value="5"/>
+                </entry>
+                <entry>
+                    <key value="5 -&gt; 4"/>
+                    <value value="5"/>
+                </entry>
+                <entry>
+                    <key value="2 -&gt; 1"/>
+                    <value value="2"/>
+                </entry>
+                <entry>
+                    <key value="2 -&gt; 2"/>
+                    <value value="2"/>
+                </entry>
+                <entry>
+                    <key value="4 -&gt; 2"/>
+                    <value value="4"/>
+                </entry>
+            </lookup-table>
+        </complexParameter>
+        <parameter value="null" name="notClassifiedAction"/>
+        <documentation>the highest number occuring in the source value is used - in combination with "minMaxNumberOfLanes" = "maximum"</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C24d52f3d-720d-4654-8f13-a0368161c603" priority="normal">
+        <target>
+            <property>
+                <type name="NumberOfLanesType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.retype" id="C4e8ea8dc-4ff2-48ab-9cbe-f2687e8cf120" priority="normal">
+        <source>
+            <class>
+                <type name="vlakkenType" ns="http://digitaaltopografischbestand.geonovum.nl">
+                    <condition lang="ECQL">omschr LIKE '%verharding%'</condition>
+                </type>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="RoadAreaType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def c = _.context.collector()&#xD;
+&#xD;
+//collectors to create references from RoadSurfaceCategory and VerticalPosition to RoadArea&#xD;
+&#xD;
+c.allarea &lt;&lt; _source.p.id.value()&#xD;
+	&#xD;
+	&#xD;
+_target{}
+</core:text>
+        </complexParameter>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C22b159b3-7e01-43ad-8221-93b6eb48d7cd" priority="normal">
+        <target>
+            <property>
+                <type name="RoadAreaType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C8db8eb37-ffe8-4740-845d-b6ffee4a3fee" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vlakkenType" ns="http://digitaaltopografischbestand.geonovum.nl">
+                    <condition lang="ECQL">omschr LIKE '%verharding%'</condition>
+                </type>
+                <child name="geom" ns="http://digitaaltopografischbestand.geonovum.nl"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="RoadAreaType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="geometry" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractSurface"/>
+                <child name="Polygon" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+//quelle to simple geom ohne colelcton&#xD;
+//wenn liste länger als 1 ist --&gt; fehler&#xD;
+def geomlist = _.geom.findAll(geom.p.first())&#xD;
+def targeom = _.geom.toSimpleGeometries(geometries: geomlist, collections: false)&#xD;
+&#xD;
+if (targeom.size() &gt; 1){&#xD;
+	_log.error("this source MultiSurface has more than one geometry and need to be checked: " + geom.p.MultiSurface.id.value())&#xD;
+}&#xD;
+&#xD;
+_target(targeom[0])
+</core:text>
+        </complexParameter>
+        <parameter value="true" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C4ec58db2-d719-4b77-92cc-e72dfc4b3c80" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vlakkenType" ns="http://digitaaltopografischbestand.geonovum.nl">
+                    <condition lang="ECQL">omschr LIKE '%verharding%'</condition>
+                </type>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadAreaType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weggebied.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cb172f1be-489e-48f2-8454-a482b1d8f388" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vlakkenType" ns="http://digitaaltopografischbestand.geonovum.nl">
+                    <condition lang="ECQL">omschr LIKE '%verharding%'</condition>
+                </type>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadAreaType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weggebied.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C953ffe21-ab5d-4787-884c-1154e4503901" priority="normal">
+        <target>
+            <property>
+                <type name="RoadAreaType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C03830f0c-dd5b-4591-a347-eff072bc3f76" priority="normal">
+        <target>
+            <property>
+                <type name="RoadAreaType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:NETWORK_NAME}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cd4ecdf0a-45f2-41a4-b5ea-87b4665c0313" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vlakkenType" ns="http://digitaaltopografischbestand.geonovum.nl">
+                    <condition lang="ECQL">omschr LIKE '%verharding%'</condition>
+                </type>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadAreaType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weggebied.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C6da599fd-708e-468a-ae00-3ce3cfd3b56f" priority="normal">
+        <target>
+            <property>
+                <type name="RoadAreaType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C5e8c07f3-49ef-4097-9f99-0e22311968b0" priority="normal">
+        <target>
+            <property>
+                <type name="RoadAreaType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.retype" id="C81166e0b-ccea-4dbe-938f-7271272ea319" priority="normal">
+        <source>
+            <class>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="RoadLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def c = _.context.collector()&#xD;
+&#xD;
+//collectors to create references from TrafficFlowDirection to RoadLink&#xD;
+if( _source.p.rijrichtng.value().equals('H')){&#xD;
+	c.indir &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+&#xD;
+if( _source.p.rijrichtng.value().equals('T')){&#xD;
+	c.inopp &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+&#xD;
+//collectors to create references from FunctionalRoadClass to RoadLink&#xD;
+if( _source.p.wegbehsrt.value().equals('R')){&#xD;
+	c.mainRo &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+&#xD;
+if( _source.p.wegbehsrt.value().equals('P')){&#xD;
+	c.firstC &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+&#xD;
+if( _source.p.wegbehsrt.value().equals('G')){&#xD;
+	c.secondC &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+&#xD;
+if( _source.p.wegbehsrt.value().equals('W')||_source.p.wegbehsrt.value().equals('T')){&#xD;
+	c.thirdC &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+&#xD;
+//collectors to create references from MaintenanceAuthority and OwnerAuthority to RoadLink - to be used additionally to the ones created for FunctionalRoadClass&#xD;
+if( _source.p.wegbehsrt.value().equals('W')){&#xD;
+	c.waters &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+&#xD;
+if( _source.p.wegbehsrt.value().equals('T')){&#xD;
+	c.andere &lt;&lt; _source.p.wvk_id.value()&#xD;
+}&#xD;
+&#xD;
+_target{}
+</core:text>
+        </complexParameter>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cce042ebc-c79b-4f39-8b94-ad07c6108970" priority="normal">
+        <target>
+            <property>
+                <type name="RoadLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C6ed05f87-9967-4c6a-985f-1749db01afe8" priority="normal">
+        <source>
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="geom" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="LineString" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="centrelineGeometry" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractCurve"/>
+                <child name="LineString" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C458547e0-d083-49d6-b133-d31cf72e53f5" priority="normal">
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="jte_id_end" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="endNode" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#INSPIRE.Vervoersnetwerken_Wegen_Wegknooppunt.{jte_id_end}" name="pattern"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cd7463da7-8632-4c0d-baf5-4caf49cbaf3e" priority="normal">
+        <target>
+            <property>
+                <type name="RoadLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="fictitious" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Ca2513d86-fa9a-4290-9004-a3221a44cf34" priority="normal">
+        <target>
+            <property>
+                <type name="RoadLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="language" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="nl" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C70d17281-d429-4957-a202-c7f9571f4928" priority="normal">
+        <source>
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="stt_naam" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cc11fbed6-a19f-4793-a271-cebc5ef6eaf4" priority="normal">
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="wvk_id" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.{wvk_id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C4107ca85-56de-451b-88c9-908685fa1363" priority="normal">
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="wvk_id" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.{wvk_id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C07bd2706-9d9a-4a1f-afa6-1054c084114d" priority="normal">
+        <target>
+            <property>
+                <type name="RoadLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C3e40eec4-42c1-4471-a6b6-af23997355ba" priority="normal">
+        <target>
+            <property>
+                <type name="RoadLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:NETWORK_NAME}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C490f7f7e-4f16-47d6-84c8-a445a89cd82a" priority="normal">
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="wvk_id" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="RoadLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def id = 'INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.' + wvk_id&#xD;
+&#xD;
+withTransformationContext {&#xD;
+  def c = _.context.collector(it)&#xD;
+  c.network &lt;&lt; id&#xD;
+}&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+        <documentation>ids are collected in order to reference them to created TransportNetwork</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cf08ac4ef-51a6-4054-b54e-a722fe697889" priority="normal">
+        <target>
+            <property>
+                <type name="RoadLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+        <documentation>according to Metadata Excel Sheet delivered by Herzo van der Wal via github</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C1c171bc8-634d-44e1-a0e5-b47e4fe0ce86" priority="normal">
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="jte_id_beg" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="startNode" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#INSPIRE.Vervoersnetwerken_Wegen_Wegknooppunt.{jte_id_beg}" name="pattern"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C0a90618f-412d-4728-bcb9-ecbf0f8ca9f6" priority="normal">
+        <target>
+            <property>
+                <type name="RoadLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.merge" id="C73a16038-05eb-4f71-acb5-d2ef0b1681b1" priority="low">
+        <source>
+            <class>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="RoadNameType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="auto_detect"/>
+        <parameter value="{http://example.org/pdok/nwbwegen}gme_id" name="property"/>
+        <parameter value="{http://example.org/pdok/nwbwegen}stt_naam" name="property"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Ca481f8f8-77ea-4dfe-a499-2103e0200304" priority="normal">
+        <target>
+            <property>
+                <type name="RoadNameType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="Caaacd010-dc97-4e0a-a102-dcaaf426241e" priority="normal">
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="stt_naam" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="gme_id" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="RoadNameType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def c = _.context.collector()&#xD;
+return 'INSPIRE.Vervoersnetwerken_Wegen_Wegnaam.' + c.roads[gme_id + stt_naam].value()
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="Cc5dde278-a26b-48e2-8b5c-5cd8a2f3a7fe" priority="normal">
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="stt_naam" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="gme_id" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="RoadNameType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def c = _.context.collector()&#xD;
+return _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_Wegnaam.' + c.roads[gme_id + stt_naam].value()
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cf3550569-928c-45c8-b8e0-a7e8907b0b3a" priority="normal">
+        <target>
+            <property>
+                <type name="RoadNameType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C25001668-a949-415d-859f-d4efd52171f2" priority="normal">
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="stt_naam" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="gme_id" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="RoadNameType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def c = _.context.collector()&#xD;
+return 'INSPIRE.Vervoersnetwerken_Wegen_Wegnaam.' + c.roads[gme_id + stt_naam].value()
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cd029dfc2-52a9-4ef3-bb83-91a6d00d625c" priority="normal">
+        <target>
+            <property>
+                <type name="RoadNameType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C56c06f82-9bba-444e-83de-6b0d50bc1c9d" priority="normal">
+        <source>
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="stt_naam" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadNameType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="name" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="Ca9b43c36-5875-400d-9d7a-79be50f136f9" priority="normal">
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="gme_id" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="stt_naam" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="RoadNameType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="networkRef" ns="http://inspire.ec.europa.eu/schemas/net/4.0">
+                    <context>0</context>
+                </child>
+                <child name="choice" ns="http://inspire.ec.europa.eu/schemas/net/4.0/NetworkReference"/>
+                <child name="LinkReference" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="element" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def c = _.context.collector()&#xD;
+return '#INSPIRE.Vervoersnetwerken_Wegen_Weg.' + c.roads[gme_id + stt_naam].value()
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cdfb3b5fe-ea32-4b09-a473-cf9f4ef41077" priority="normal">
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="wvk_id" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadNameType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="networkRef" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://inspire.ec.europa.eu/schemas/net/4.0/NetworkReference"/>
+                <child name="LinkReference" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="element" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.{wvk_id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cd112a846-303f-464f-93fa-796b0a3de97c" priority="normal">
+        <target>
+            <property>
+                <type name="RoadNameType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="Cef162cfd-16f7-427f-9b70-8c2d8c6d46d5" priority="normal">
+        <source>
+            <class>
+                <type name="JTE_ID_BEG"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="C3d69d06f-ef02-40b5-916d-b09500aa8b3a" priority="normal">
+        <source>
+            <class>
+                <type name="JTE_ID_END"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Ca8acf25d-dc18-498b-bdbd-3a9b89662534" priority="normal">
+        <target>
+            <property>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cc28ce1f5-7a83-4c13-b7f8-a54d1f3565d4" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="JTE_ID_BEG"/>
+                <child name="Junction"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="formOfRoadNode" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/codelist/FormOfRoadNodeValue/junction" name="value"/>
+        <documentation>according to mail of Peter Schout from 08.12.2017</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cc8180c3c-14dc-4cc6-8498-c08cd48369aa" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="JTE_ID_END"/>
+                <child name="Junction_end"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="formOfRoadNode" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/codelist/FormOfRoadNodeValue/roadEnd" name="value"/>
+        <documentation>according to mail of Peter Schout from 08.12.2017</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cf18ade2c-10e9-41b3-b50c-c84368317d3e" priority="normal">
+        <source>
+            <property>
+                <type name="JTE_ID_BEG"/>
+                <child name="Shape"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="geometry" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Point" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C460351a5-ea60-4795-8278-12411f2f2f2d" priority="normal">
+        <source>
+            <property>
+                <type name="JTE_ID_END"/>
+                <child name="Shape"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="geometry" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Point" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C90faefb2-79c5-48f8-a490-1a32a5d7b77b" priority="normal">
+        <source name="var">
+            <property>
+                <type name="JTE_ID_BEG"/>
+                <child name="Junction"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Wegen_Wegknooppunt.{Junction}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C62df4a5b-1e9a-4a8f-a511-f78fc9c65b78" priority="normal">
+        <source name="var">
+            <property>
+                <type name="JTE_ID_END"/>
+                <child name="Junction_end"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Wegen_Wegknooppunt.{Junction_end}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C48efebe5-562b-466a-ab26-0c94c8a8b3b8" priority="normal">
+        <source name="var">
+            <property>
+                <type name="JTE_ID_BEG"/>
+                <child name="Junction"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Vervoersnetwerken_Wegen_Wegknooppunt.{Junction}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cc07a0e5d-2ed6-47ac-a6a1-2a9e6f3f2f28" priority="normal">
+        <source name="var">
+            <property>
+                <type name="JTE_ID_END"/>
+                <child name="Junction_end"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Vervoersnetwerken_Wegen_Wegknooppunt.{Junction_end}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cd1665a3e-e84d-46a3-943b-073b2c6d8a28" priority="normal">
+        <target>
+            <property>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C9befb5dd-7539-41b4-9a23-869e2a7f8934" priority="normal">
+        <target>
+            <property>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:NETWORK_NAME}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C53a93382-3427-411b-bdd4-f8641309ee1c" priority="normal">
+        <source name="var">
+            <property>
+                <type name="JTE_ID_BEG"/>
+                <child name="Junction"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def id = 'INSPIRE.Vervoersnetwerken_Wegen_Wegknooppunt.' + Junction&#xD;
+&#xD;
+withTransformationContext {&#xD;
+  def c = _.context.collector(it)&#xD;
+  c.network &lt;&lt; id&#xD;
+}&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+        <documentation>ids are collected in order to reference them to created TransportNetwork</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C51e775a3-1443-456a-8e75-1d1907abbafe" priority="normal">
+        <source name="var">
+            <property>
+                <type name="JTE_ID_END"/>
+                <child name="Junction_end"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def id = 'INSPIRE.Vervoersnetwerken_Wegen_Wegknooppunt.' + Junction_end&#xD;
+&#xD;
+withTransformationContext {&#xD;
+  def c = _.context.collector(it)&#xD;
+  c.network &lt;&lt; id&#xD;
+}&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+        <documentation>ids are collected in order to reference them to created TransportNetwork</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C0d56b980-48a7-4917-a357-1f86d9fec194" priority="normal">
+        <target>
+            <property>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+        <documentation>according to Metadata Excel Sheet delivered by Herzo van der Wal via github</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C6be0bcea-a830-4bb6-bb25-074e5b8410ff" priority="normal">
+        <target>
+            <property>
+                <type name="RoadNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.create" id="Cbdbca1e0-24df-4246-b55f-7094c9587f30" priority="low">
+        <target>
+            <class>
+                <type name="RoadSurfaceCategoryType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+/*&#xD;
+//collectors to create references from RoadSurfaceCategory and VerticalPosition to RoadArea&#xD;
+&#xD;
+c.allarea &lt;&lt; _source.p.id.value()&#xD;
+&#xD;
+*/&#xD;
+&#xD;
+def c = _.context.collector()&#xD;
+&#xD;
+_target {&#xD;
+	beginLifespanVersion( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	surfaceCategory {&#xD;
+		href( 'http://inspire.ec.europa.eu/codelist/RoadSurfaceCategoryValue/paved' )&#xD;
+	}&#xD;
+	id( 'INSPIRE.Vervoersnetwerken_Wegen_Wegdekcategorie.paved' )&#xD;
+	validFrom( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	} &#xD;
+	c.allarea.each{ value -&gt;&#xD;
+		networkRef {&#xD;
+			NetworkReference {&#xD;
+				element {&#xD;
+					href('#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weggebied.' + value)&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+	}&#xD;
+	identifier( _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_Wegdekcategorie.paved' ) {&#xD;
+		codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+	}&#xD;
+	inspireId {&#xD;
+		Identifier {&#xD;
+			namespace( _project.vars['INSPIRE_DATASET_NAMESPACE'] )&#xD;
+			localId( 'INSPIRE.Vervoersnetwerken_Wegen_Wegdekcategorie.paved' )&#xD;
+		}&#xD;
+	}&#xD;
+}
+</core:text>
+        </complexParameter>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.merge" id="C53b1c7d5-67b1-412c-9322-d573e480b7c9" priority="normal">
+        <source>
+            <class>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="RoadType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </class>
+        </target>
+        <parameter value="true" name="auto_detect"/>
+        <parameter value="{http://example.org/pdok/nwbwegen}gme_id" name="property"/>
+        <parameter value="{http://example.org/pdok/nwbwegen}stt_naam" name="property"/>
+        <documentation>No Geometry because Road contains references to RoadLinks containing a Geometry</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Ceb653580-48c3-4ddb-9476-e94108074f19" priority="normal">
+        <target>
+            <property>
+                <type name="RoadType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cce17af23-42e4-43a8-9733-ee71612f38a6" priority="normal">
+        <target>
+            <property>
+                <type name="RoadType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="language" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="nl" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C6c59a465-2146-431b-94f5-83c4cf390ffb" priority="normal">
+        <source>
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="stt_naam" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="Ce48961af-d426-4478-aeaf-f4238aea1fec" priority="normal">
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="stt_naam" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="gme_id" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="RoadType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+import  java.util.UUID&#xD;
+&#xD;
+def input = gme_id + stt_naam&#xD;
+&#xD;
+def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
+&#xD;
+def id = 'INSPIRE.Vervoersnetwerken_Wegen_Weg.' + result&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+        <documentation>id for Road is to be created as it is consisting of several RoadLinks</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C9e9972a9-ec2f-4b51-8b40-c9b13a1dd7d6" priority="normal">
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="gme_id" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="stt_naam" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="RoadType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+import  java.util.UUID&#xD;
+&#xD;
+def input = gme_id + stt_naam&#xD;
+&#xD;
+def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
+&#xD;
+return _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_Weg.' + result
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C753e820e-df9d-43a9-bc78-a45a1bd1beaa" priority="normal">
+        <target>
+            <property>
+                <type name="RoadType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C5cac8c6b-f0e1-4f98-9047-075f703dcc8d" priority="normal">
+        <target>
+            <property>
+                <type name="RoadType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:NETWORK_NAME}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C57ffbf6e-22a8-4410-b550-907412fdcd32" priority="normal">
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="stt_naam" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="gme_id" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="RoadType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+import  java.util.UUID&#xD;
+&#xD;
+def input = gme_id + stt_naam&#xD;
+&#xD;
+def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
+&#xD;
+def id = 'INSPIRE.Vervoersnetwerken_Wegen_Weg.' + result&#xD;
+&#xD;
+withTransformationContext {&#xD;
+  def c = _.context.collector(it)&#xD;
+  c.network &lt;&lt; id&#xD;
+  c.roads[input] &lt;&lt; result&#xD;
+}&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+        <documentation>id for Road is to be created as it is consisting of several RoadLinks&#xD;
+&#xD;
+ids are collected in order to reference them to created TransportNetwork</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cde427026-2594-4ac4-855b-3f3bbb52ee88" priority="normal">
+        <target>
+            <property>
+                <type name="RoadType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+        <documentation>according to Metadata Excel Sheet delivered by Herzo van der Wal via github</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C75a8ea54-4414-4ea4-872c-b80e5e08508d" priority="normal">
+        <source name="var">
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="wvk_id" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="link" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.{wvk_id}" name="pattern"/>
+        <documentation>wvk_ids of all RoadLinks contained in the Road are collected</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cd91ea282-8957-4c10-92f8-4f45f3172b4d" priority="normal">
+        <source>
+            <property>
+                <type name="wegvakkenType" ns="http://example.org/pdok/nwbwegen"/>
+                <child name="stt_naam" ns="http://example.org/pdok/nwbwegen"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RoadType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="name" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C7da035da-77eb-43c7-ab4c-a6f2c8dd3f65" priority="normal">
+        <target>
+            <property>
+                <type name="RoadType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="C6d153f50-3c7b-44ef-8bdd-2ac019e3c179" priority="normal">
+        <source>
+            <class>
+                <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>No Geometry because SpeedLimit is a TransportProperty that is referenced to a NetworkElement (e.g. RoadLink) containing a Geometry</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="C38f2cd04-e14f-4388-badf-ba55a8ec4fe2" priority="normal">
+        <source>
+            <class>
+                <type name="ms_wv_nType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>No Geometry because SpeedLimit is a TransportProperty that is referenced to a NetworkElement (e.g. RoadLink) containing a Geometry</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C4a68ffba-8059-4e18-aefb-676f548cf0ed" priority="normal">
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C4c383fd9-6f36-4fc6-9b36-d1ba802c6659" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Wegen_Snelheidslimiet.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C43b390b4-e16d-4ae8-b199-9b2fd5906029" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ms_wv_nType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Wegen_Snelheidslimiet.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C4e94bc20-613d-430c-b502-7002ab011c41" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Vervoersnetwerken_Wegen_Snelheidslimiet.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C4625e104-7909-43bc-87e5-8e1ae220fd12" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ms_wv_nType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Vervoersnetwerken_Wegen_Snelheidslimiet.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C872fd534-c692-48b6-9596-45b182cf0b51" priority="normal">
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C8694fdc6-ee16-4d34-82c2-d9858608139a" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Wegen_Snelheidslimiet.{id}" name="pattern"/>
+        <documentation>ids are collected in order to reference them to created TransportNetwork</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C6c8af494-18c4-4b98-bcdc-cc540d300e69" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ms_wv_nType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Wegen_Snelheidslimiet.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C7105402b-41b1-4755-bbd2-4873a1cd9fbd" priority="normal">
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+        <documentation>according to Metadata Excel Sheet delivered by Herzo van der Wal via github</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C357bf475-58ba-41b2-956d-f79022868a92" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="WVK_ID" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="networkRef" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://inspire.ec.europa.eu/schemas/net/4.0/NetworkReference"/>
+                <child name="SimpleLinearReference" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="element" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.{WVK_ID}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C25a87d4d-7e61-4181-a31e-9ce5cf0ef31f" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ms_wv_nType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="WVK_ID" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="networkRef" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://inspire.ec.europa.eu/schemas/net/4.0/NetworkReference"/>
+                <child name="SimpleLinearReference" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="element" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.{WVK_ID}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cf5e70d9b-7b85-4a61-a15d-239a6792a744" priority="normal">
+        <source>
+            <property>
+                <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="BEGAFSTAND" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="networkRef" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://inspire.ec.europa.eu/schemas/net/4.0/NetworkReference"/>
+                <child name="SimpleLinearReference" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="fromPosition" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cd02f609c-d42f-4b95-8a1f-93c08246f1fd" priority="normal">
+        <source>
+            <property>
+                <type name="ms_wv_nType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="BEGAFSTAND" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="networkRef" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://inspire.ec.europa.eu/schemas/net/4.0/NetworkReference"/>
+                <child name="SimpleLinearReference" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="fromPosition" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C643a7b24-9eea-4b53-9cfd-bac97c8056e2" priority="normal">
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="networkRef" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://inspire.ec.europa.eu/schemas/net/4.0/NetworkReference"/>
+                <child name="SimpleLinearReference" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="fromPosition" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="uom"/>
+            </property>
+        </target>
+        <parameter value="m" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C300124ba-002b-437b-95ee-3fbb48cfee6c" priority="normal">
+        <source>
+            <property>
+                <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="ENDAFSTAND" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="networkRef" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://inspire.ec.europa.eu/schemas/net/4.0/NetworkReference"/>
+                <child name="SimpleLinearReference" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="toPosition" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C8457c4a2-db31-4109-9009-4742302463f7" priority="normal">
+        <source>
+            <property>
+                <type name="ms_wv_nType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="ENDAFSTAND" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="networkRef" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://inspire.ec.europa.eu/schemas/net/4.0/NetworkReference"/>
+                <child name="SimpleLinearReference" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="toPosition" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>according to mail of Peter Schout from 15.12.2017</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C63af8561-3cc0-4e34-99ff-bd2718829a28" priority="normal">
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="networkRef" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://inspire.ec.europa.eu/schemas/net/4.0/NetworkReference"/>
+                <child name="SimpleLinearReference" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="toPosition" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="uom"/>
+            </property>
+        </target>
+        <parameter value="m" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C90a79e9a-9bd2-45dd-bc9a-afedbd559c1c" priority="normal">
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="speedLimitMinMaxType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </property>
+        </target>
+        <parameter value="maximum" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Ccc02f24b-8695-4c00-a0c6-2a83f176bb2e" priority="normal">
+        <source>
+            <property>
+                <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="OMSCHR" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="speedLimitValue" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cccf4cc00-0461-4be3-a72b-c8a35fab1768" priority="normal">
+        <source>
+            <property>
+                <type name="ms_wv_nType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="OMSCHR" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="speedLimitValue" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cc6b7483f-48d2-496a-b49a-89bc11a302f0" priority="normal">
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="speedLimitValue" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="uom"/>
+            </property>
+        </target>
+        <parameter value="km/h" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cfcf7003f-a1d7-430a-9bf1-6ab7dcd40ed5" priority="normal">
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C5ca28209-3db6-444f-8ee5-b3613a58186e" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validityPeriod" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="begin" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="TimeInstant" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="SpeedLimitValidityPeriodTimePeriodBeginTimeInstant.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C3f2c0af3-99b4-430b-ae9a-3bab9e563c61" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ms_wv_nType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validityPeriod" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="begin" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="TimeInstant" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="SpeedLimitValidityPeriodTimePeriodBeginTimeInstant.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C6f661830-d52f-481c-9953-6ff070c2e581" priority="normal">
+        <source>
+            <property>
+                <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="BEGINTIJD" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validityPeriod" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="begin" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="TimeInstant" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="timePosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>according to call with Herzo van der Wal 20.12.2017</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cd2ed679f-e3e6-409d-87ef-4a2559ee91be" priority="normal">
+        <source>
+            <property>
+                <type name="ms_wv_nType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="BEGINTIJD" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validityPeriod" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="begin" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="TimeInstant" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="timePosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>according to call with Herzo van der Wal 20.12.2017</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Ce512a133-896d-42f1-b274-f563b1974f09" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validityPeriod" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_2" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="end" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="TimeInstant" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="SpeedLimitValidityPeriodTimePeriodEndTimeInstant.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C7efd397a-b2b4-4b9a-a8f9-0bd329f1bf0d" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ms_wv_nType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validityPeriod" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_2" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="end" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="TimeInstant" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="SpeedLimitValidityPeriodTimePeriodEndTimeInstant.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cee7b22c6-5e46-4d59-9fa5-f96d865862ce" priority="normal">
+        <source>
+            <property>
+                <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="EINDTIJD" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validityPeriod" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_2" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="end" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="TimeInstant" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="timePosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>according to call with Herzo van der Wal 20.12.2017</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cb51722b0-3a04-4ede-8805-096bd33dfd12" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validityPeriod" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_2" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="end" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="TimeInstant" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="timePosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="sunset" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C282fa8d0-b1a0-4ef1-b897-49891bba9852" priority="normal">
+        <source>
+            <property>
+                <type name="ms_wv_nType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="EINDTIJD" ns="http://mapserver.gis.umn.edu/mapserver"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validityPeriod" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_2" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="end" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="TimeInstant" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="timePosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+        <documentation>according to call with Herzo van der Wal 20.12.2017</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C1f041335-9af2-4356-a8a4-b6ff17d358f0" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ms_wv_dType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validityPeriod" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="SpeedLimitValidityPeriodTimePeriod.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C86c128c2-2c8e-4e49-8616-fccbb1a0f5bd" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ms_wv_nType" ns="http://mapserver.gis.umn.edu/mapserver"/>
+                <child name="id" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="SpeedLimitType" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="validityPeriod" ns="http://inspire.ec.europa.eu/schemas/tn-ro/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="SpeedLimitValidityPeriodTimePeriod.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.create" id="C48fb23dc-9efb-4dff-a1ba-f2061a9b7406" priority="low">
+        <target>
+            <class>
+                <type name="TrafficFlowDirectionType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+/*&#xD;
+def c = _.context.collector()&#xD;
+&#xD;
+if( _source.p.rijrichtng.value().equals('H')){&#xD;
+	c.indir &lt;&lt; _source.p.id.value()&#xD;
+}&#xD;
+&#xD;
+if( _source.p.rijrichtng.value().equals('T')){&#xD;
+	c.inopp &lt;&lt; _source.p.id.value()&#xD;
+}&#xD;
+&#xD;
+_target{}&#xD;
+*/&#xD;
+def c = _.context.collector()&#xD;
+&#xD;
+_target {&#xD;
+	beginLifespanVersion( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	id( 'INSPIRE.Vervoersnetwerken_Wegen_RichtingvanVerkeersstroom.inDirection' )&#xD;
+	identifier( _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_RichtingvanVerkeersstroom.inDirection' ) {&#xD;
+		codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+	}&#xD;
+	direction {&#xD;
+		href( 'http://inspire.ec.europa.eu/codelist/LinkDirectionValue/inDirection' )&#xD;
+	}&#xD;
+	inspireId {&#xD;
+		Identifier {&#xD;
+			namespace( _project.vars['INSPIRE_DATASET_NAMESPACE'] )&#xD;
+			localId( 'INSPIRE.Vervoersnetwerken_Wegen_RichtingvanVerkeersstroom.inDirection' )&#xD;
+		}&#xD;
+	}&#xD;
+	c.indir.each{ value -&gt;&#xD;
+		networkRef {
+			NetworkReference {
+				element {
+					href('#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.' + value)
+				}
+			}
+		}&#xD;
+	}&#xD;
+	validFrom( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	} &#xD;
+}&#xD;
+&#xD;
+_target {&#xD;
+	beginLifespanVersion( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	id( 'INSPIRE.Vervoersnetwerken_Wegen_RichtingvanVerkeersstroom.inOppositeDirection' )&#xD;
+	identifier( _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_RichtingvanVerkeersstroom.inOppositeDirection' ) {&#xD;
+		codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+	}&#xD;
+	direction {&#xD;
+		href( 'http://inspire.ec.europa.eu/codelist/LinkDirectionValue/inOppositeDirection' )&#xD;
+	}&#xD;
+	inspireId {&#xD;
+		Identifier {&#xD;
+			namespace( _project.vars['INSPIRE_DATASET_NAMESPACE'] )&#xD;
+			localId( 'INSPIRE.Vervoersnetwerken_Wegen_RichtingvanVerkeersstroom.inOppositeDirection' )&#xD;
+		}&#xD;
+	}&#xD;
+	c.inopp.each{ value -&gt;&#xD;
+		networkRef {&#xD;
+			NetworkReference {&#xD;
+				element {&#xD;
+					href('#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weglink.' + value)&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+	} &#xD;
+	validFrom( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	} &#xD;
+}
+</core:text>
+        </complexParameter>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.create" id="C4bfba73e-c2cc-4fb2-9979-cadac6b270de" priority="lowest">
+        <target>
+            <class>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+            </class>
+        </target>
+        <parameter value="1" name="number"/>
+        <documentation>No Geometry because TransportNetwork contains references to NetworkElements (e.g. RoadLink, RoadNode,...) containing a Geometry&#xD;
+&#xD;
+lowest priority because ids of NetworkElements need to be collected first</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.collector.assign" id="C5797dd0c-fa6a-4583-a1b2-65ce67608150" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="elements" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="network" name="collector"/>
+        <documentation>reference to ids collected during creation of all NetworkElements (RoadLinks, RoadNode, Road)</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C124a3b8c-398e-40b2-a64d-fdd547a0d709" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="{{project:NETWORK_NAME}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cc3767c6c-1e19-4e02-8ce7-781e29a36f0e" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:NETWORK_NAME}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C97318675-c23e-4718-a74d-7a0f54e76d41" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}{{project:NETWORK_NAME}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cdf1485b6-cde6-4114-a178-761aa973fce6" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C74b6b830-cd2c-4ee6-bb40-40a0216c4ff6" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:NETWORK_NAME}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Ce49d9693-aa11-440d-be31-a8d39e993cea" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+        <documentation>according to Metadata Excel Sheet delivered by Herzo van der Wal via github</documentation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C86fc2dc3-56fe-4864-adcd-7d1048b748b9" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="name" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:NETWORK_NAME}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C4f6416b1-80c8-4914-bc17-b21060b25854" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="typeOfTransport" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+            </property>
+        </target>
+        <parameter value="road" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.create" id="Cdb1a7aff-490f-4f60-b26b-75588e638ac3" priority="low">
+        <target>
+            <class>
+                <type name="VerticalPositionType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+/*&#xD;
+//collectors to create references from RoadSurfaceCategory and VerticalPosition to RoadArea&#xD;
+&#xD;
+c.allarea &lt;&lt; _source.p.id.value()&#xD;
+&#xD;
+*/&#xD;
+&#xD;
+def c = _.context.collector()&#xD;
+&#xD;
+_target {&#xD;
+	beginLifespanVersion( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	}&#xD;
+	verticalPosition ('onGroundSurface')&#xD;
+	id( 'INSPIRE.Vervoersnetwerken_Wegen_VerticalePositie.onGroundSurface' )&#xD;
+	validFrom( ) {&#xD;
+		nilReason( 'other:unpopulated' )&#xD;
+	} &#xD;
+	c.allarea.each{ value -&gt;&#xD;
+		networkRef {&#xD;
+			NetworkReference {&#xD;
+				element {&#xD;
+					href('#INSPIRE.Vervoersnetwerken_Wegvervoernetwerk_Weggebied.' + value)&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+	}&#xD;
+	identifier( _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_VerticalePositie.onGroundSurface' ) {&#xD;
+		codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+	}&#xD;
+	inspireId {&#xD;
+		Identifier {&#xD;
+			namespace( _project.vars['INSPIRE_DATASET_NAMESPACE'] )&#xD;
+			localId( 'INSPIRE.Vervoersnetwerken_Wegen_VerticalePositie.onGroundSurface' )&#xD;
+		}&#xD;
+	}&#xD;
+}
+</core:text>
+        </complexParameter>
+    </cell>
+</alignment>
