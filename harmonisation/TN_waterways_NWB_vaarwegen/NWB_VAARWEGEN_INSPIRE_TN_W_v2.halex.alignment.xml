@@ -1,0 +1,1775 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alignment xmlns="http://www.esdi-humboldt.eu/hale/alignment">
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="C29dcd372-d091-4401-a117-d2f492623cdf" priority="normal">
+        <source>
+            <class>
+                <type name="markvastrdType" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="BeaconType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cfc4c6139-8da4-4176-ab3a-feb70d7865cb" priority="normal">
+        <target>
+            <property>
+                <type name="BeaconType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C20530328-7cde-4d57-802d-885b98a19d02" priority="normal">
+        <source>
+            <property>
+                <type name="markvastrdType" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
+                <child name="geom" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="BeaconType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="geometry" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C3de8b8fa-d951-46c6-873a-6bc261342854" priority="normal">
+        <source name="var">
+            <property>
+                <type name="markvastrdType" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="BeaconType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Waterwegen_Baken.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C7569b064-0885-467d-a24e-485f5ec03673" priority="normal">
+        <source name="var">
+            <property>
+                <type name="markvastrdType" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="BeaconType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Vervoersnetwerken_Waterwegen_Baken.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C5b5b7940-fef4-4e48-bfd6-e75e8dd1f7af" priority="normal">
+        <target>
+            <property>
+                <type name="BeaconType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C01e706d6-efc7-4af1-bd9c-584d07da1a06" priority="normal">
+        <target>
+            <property>
+                <type name="BeaconType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:TRANSPORT_NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="Cb8acbcf3-0392-4e4c-a35c-07916248166f" priority="normal">
+        <source name="var">
+            <property>
+                <type name="markvastrdType" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="BeaconType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def id = 'INSPIRE.Vervoersnetwerken_Waterwegen_Baken.' + id&#xD;
+&#xD;
+withTransformationContext {&#xD;
+  def c = _.context.collector(it)&#xD;
+  c.network &lt;&lt; id&#xD;
+}&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C0a40e761-3e1b-4714-8cbe-b01a6b9a7c30" priority="normal">
+        <target>
+            <property>
+                <type name="BeaconType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C20b066ec-2511-44aa-a19b-5af57cf039cc" priority="normal">
+        <target>
+            <property>
+                <type name="BeaconType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="Cd406e3f4-6208-4641-b987-44e62c38688b" priority="normal">
+        <source>
+            <class>
+                <type name="markdrijvendrdType" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="BuoyType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Ce34b6cea-9e24-4984-920a-6f0310f39f48" priority="normal">
+        <target>
+            <property>
+                <type name="BuoyType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C72a83cfe-951a-40d7-81f3-af448f9f7b05" priority="normal">
+        <source>
+            <property>
+                <type name="markdrijvendrdType" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
+                <child name="geom" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="BuoyType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="geometry" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cbcd1e73f-294f-4356-a85c-422e0554e705" priority="normal">
+        <source name="var">
+            <property>
+                <type name="markdrijvendrdType" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="BuoyType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Waterwegen_Boei.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cf2ea53a8-0ec3-404b-ba1a-cb63f35d0e9e" priority="normal">
+        <source name="var">
+            <property>
+                <type name="markdrijvendrdType" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="BuoyType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Vervoersnetwerken_Waterwegen_Boei.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C599f2bcc-e713-4bab-af89-28827fbfb666" priority="normal">
+        <target>
+            <property>
+                <type name="BuoyType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cbce353e7-10b0-4337-a0ff-f7134e82cca1" priority="normal">
+        <target>
+            <property>
+                <type name="BuoyType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:TRANSPORT_NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="Cbdbdb37a-30af-46c1-9c89-ba01ca46a584" priority="normal">
+        <source name="var">
+            <property>
+                <type name="markdrijvendrdType" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="BuoyType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def id = 'INSPIRE.Vervoersnetwerken_Waterwegen_Boei.' + id&#xD;
+&#xD;
+withTransformationContext {&#xD;
+  def c = _.context.collector(it)&#xD;
+  c.network &lt;&lt; id&#xD;
+}&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C40bec118-4e84-43e3-9e7f-bd149e2272c6" priority="normal">
+        <target>
+            <property>
+                <type name="BuoyType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C724d6a87-3623-4a0c-8c41-70dde39a9c2b" priority="normal">
+        <target>
+            <property>
+                <type name="BuoyType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.merge" id="C0ad34c1e-2bbf-4e3d-bbce-57bda8b7f15f" priority="normal">
+        <source>
+            <class>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam not LIKE '%Scheepvaartroute%' and vrt_naam not LIKE '%Diepwaterroute%'</condition>
+                </type>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="InlandWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <parameter value="{http://nwbvaarwegen.geonovum.nl}vwg_naam" name="additional_property"/>
+        <parameter value="false" name="auto_detect"/>
+        <parameter value="{http://nwbvaarwegen.geonovum.nl}vrt_naam" name="property"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cc2a36364-cf09-41c8-af49-2fae3296a724" priority="normal">
+        <target>
+            <property>
+                <type name="InlandWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Ca5c7b1c6-6270-4920-9c70-6246414b450f" priority="normal">
+        <source>
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam not LIKE '%Scheepvaartroute%' and vrt_naam not LIKE '%Diepwaterroute%'</condition>
+                </type>
+                <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="InlandWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C0170a851-4c0a-4ad4-aa27-ba9a11507e83" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam not LIKE '%Scheepvaartroute%' and vrt_naam not LIKE '%Diepwaterroute%'</condition>
+                </type>
+                <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="InlandWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+import  java.util.UUID&#xD;
+&#xD;
+def input = vrt_naam&#xD;
+&#xD;
+def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
+&#xD;
+def id = 'INSPIRE.Vervoersnetwerken_Waterwegen_Binnenwaterweg.' + result&#xD;
+&#xD;
+withTransformationContext {&#xD;
+  def c = _.context.collector(it)&#xD;
+  c.network &lt;&lt; id&#xD;
+}&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C028bc28d-c308-4faa-ab4b-2c145582f214" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam not LIKE '%Scheepvaartroute%' and vrt_naam not LIKE '%Diepwaterroute%'</condition>
+                </type>
+                <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="InlandWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+import  java.util.UUID&#xD;
+&#xD;
+def input = vrt_naam&#xD;
+&#xD;
+def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
+&#xD;
+def id =  _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Waterwegen_Binnenwaterweg.' + result&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C16f216b3-33c8-4ddb-8c9a-2f595ba494a7" priority="normal">
+        <target>
+            <property>
+                <type name="InlandWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cc614b0f3-9a48-495c-95b3-38e66cbafcb5" priority="normal">
+        <target>
+            <property>
+                <type name="InlandWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:TRANSPORT_NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C7679f472-dd02-4740-89f5-a3af50ebc44b" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam not LIKE '%Scheepvaartroute%' and vrt_naam not LIKE '%Diepwaterroute%'</condition>
+                </type>
+                <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="InlandWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+import  java.util.UUID&#xD;
+&#xD;
+def input = vrt_naam&#xD;
+&#xD;
+def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
+&#xD;
+def id = 'INSPIRE.Vervoersnetwerken_Waterwegen_Binnenwaterweg.' + result&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cef2240ad-412f-4ff7-9f9c-bf0152e29471" priority="normal">
+        <target>
+            <property>
+                <type name="InlandWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C0a1c1245-5d39-4566-b101-9d1e3e271947" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam not LIKE '%Scheepvaartroute%' and vrt_naam not LIKE '%Diepwaterroute%'</condition>
+                </type>
+                <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="InlandWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="link" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#INSPIRE.Vervoersnetwerken_Watervervoernetwerk_Waterweglink.{vwk_id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C2bb4eb33-164d-4ba3-8e9f-595a7595c0c8" priority="normal">
+        <target>
+            <property>
+                <type name="InlandWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.merge" id="C3e1a5005-2f55-49e6-9174-83bf9b56c41c" priority="normal">
+        <source>
+            <class>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
+                </type>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="MarineWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <parameter value="{http://nwbvaarwegen.geonovum.nl}geom" name="additional_property"/>
+        <parameter value="{http://nwbvaarwegen.geonovum.nl}vwg_naam" name="additional_property"/>
+        <parameter value="{http://nwbvaarwegen.geonovum.nl}vwg_nr" name="additional_property"/>
+        <parameter value="false" name="auto_detect"/>
+        <parameter value="{http://nwbvaarwegen.geonovum.nl}vrt_naam" name="property"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C1a644e9c-8c2c-478e-8f56-420f36da42bb" priority="normal">
+        <target>
+            <property>
+                <type name="MarineWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C0fdf09cb-7b99-4de1-a178-7489ca9eb234" priority="normal">
+        <target>
+            <property>
+                <type name="MarineWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="deepWaterRoute" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cee43276a-a670-4b6e-a8fc-8bfe8c364761" priority="normal">
+        <source>
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
+                </type>
+                <child name="vwg_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="MarineWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="Ce68c8606-533d-413a-9315-ccc86b980216" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
+                </type>
+                <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="MarineWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+import  java.util.UUID&#xD;
+&#xD;
+def input = vrt_naam&#xD;
+&#xD;
+def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
+&#xD;
+def id = 'INSPIRE.Vervoersnetwerken_Waterwegen_Zeewaterweg.' + result&#xD;
+&#xD;
+withTransformationContext {&#xD;
+  def c = _.context.collector(it)&#xD;
+  c.network &lt;&lt; id&#xD;
+}&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C9158fd95-e53b-4f42-9342-c09bc1af36c7" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
+                </type>
+                <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="MarineWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+import  java.util.UUID&#xD;
+&#xD;
+def input = vrt_naam&#xD;
+&#xD;
+def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
+&#xD;
+def id = _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Waterwegen_Zeewaterweg.' + result&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C39a120ee-30f2-41d0-802f-bb5741cdeb95" priority="normal">
+        <target>
+            <property>
+                <type name="MarineWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cd832edc9-aa6b-48ed-8d63-5cc5413154ce" priority="normal">
+        <target>
+            <property>
+                <type name="MarineWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:TRANSPORT_NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="Cd6c14dfd-2c46-483a-a754-b4d1426e6f4b" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
+                </type>
+                <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="MarineWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+import  java.util.UUID&#xD;
+&#xD;
+def input = vrt_naam&#xD;
+&#xD;
+def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
+&#xD;
+def id = 'INSPIRE.Vervoersnetwerken_Waterwegen_Zeewaterweg.' + result&#xD;
+&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C959cf042-b4a3-40b0-a701-058c9cebe8f0" priority="normal">
+        <target>
+            <property>
+                <type name="MarineWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C4282426d-8af9-473a-ae49-91b77f8db281" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
+                </type>
+                <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="MarineWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="link" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#INSPIRE.Vervoersnetwerken_Watervervoernetwerk_Waterweglink.{vwk_id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cb30d315c-d630-432f-9104-828e4e4d6b57" priority="normal">
+        <target>
+            <property>
+                <type name="MarineWaterwayType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="C7fa6e111-5df9-4bf5-8a34-5e370c3a6b91" priority="normal">
+        <source>
+            <class>
+                <type name="kmmarkeringenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cae7916ae-59ba-4b98-b7dd-3f62e04cd1c0" priority="normal">
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C973b6449-ce9e-421e-a448-de039895290c" priority="normal">
+        <source>
+            <property>
+                <type name="kmmarkeringenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="geom" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="Point" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="geometry" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="Point" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C8cde2d9f-1bac-439e-a2da-d72e1bf1ff85" priority="normal">
+        <source name="var">
+            <property>
+                <type name="kmmarkeringenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Waterwegen_Markeerstok.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C70678731-8059-4dbe-8235-449b606d3a08" priority="normal">
+        <source name="var">
+            <property>
+                <type name="kmmarkeringenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Vervoersnetwerken_Waterwegen_Markeerstok.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cf3ba5746-bd52-402a-817e-bf5e6600bb28" priority="normal">
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C9f970746-1fc1-4c5e-8776-e74573a7aba4" priority="normal">
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:TRANSPORT_NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C400b073b-6054-4368-863d-184d76d626c3" priority="normal">
+        <source name="var">
+            <property>
+                <type name="kmmarkeringenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def id = 'INSPIRE.Vervoersnetwerken_Waterwegen_Markeerstok.' + id&#xD;
+&#xD;
+withTransformationContext {&#xD;
+  def c = _.context.collector(it)&#xD;
+  c.network &lt;&lt; id&#xD;
+}&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C81a91c9b-9826-4c5d-989b-48381e586d3f" priority="normal">
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C4919f197-fadb-4c37-b077-559c8227ba67" priority="normal">
+        <source>
+            <property>
+                <type name="kmmarkeringenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="afstand" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="location" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cb89ebf54-728b-45d2-870c-cd759a684922" priority="normal">
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="location" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="uom"/>
+            </property>
+        </target>
+        <parameter value="m" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C0e79daf2-13e7-42c4-9539-a9305dd6cf24" priority="normal">
+        <source name="var">
+            <property>
+                <type name="kmmarkeringenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="kmmarkeringenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="route" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def routeID = vwk_id&#xD;
+def markerID = id&#xD;
+&#xD;
+withTransformationContext{&#xD;
+  def c = _.context.collector(it)&#xD;
+  // collect id&#xD;
+  c.markerIDs[markerID] &lt;&lt; routeID&#xD;
+}&#xD;
+&#xD;
+return "#INSPIRE.Vervoersnetwerken_Vaarwegen_InlandWaterway." + routeID
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cf9eccdb5-7e82-4f79-89b3-2be0bfda471e" priority="normal">
+        <target>
+            <property>
+                <type name="MarkerPostType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="C1f9fe466-527c-4d24-940b-05aad5fc427c" priority="normal">
+        <source>
+            <class>
+                <type name="separatiezonesType" ns="http://verkeersscheidingsstelsel_nz">
+                    <condition lang="ECQL">ENTITEIT_SEPARATIEZONE like 'Special area' AND NAAM_SEPARATIEZONE like '%Voorzorgsgebied%'</condition>
+                </type>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="TrafficSeparationSchemeCrossingType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C2de0d8a5-52fc-4fb8-8b0f-24f04595bb22" priority="normal">
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeCrossingType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C4c13cec4-8c50-4bfe-9a7f-136eb6ba911e" priority="normal">
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeCrossingType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="language" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="nld" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cc5dc6210-c40e-4b2c-ac9e-37be63d25c6d" priority="normal">
+        <source>
+            <property>
+                <type name="separatiezonesType" ns="http://verkeersscheidingsstelsel_nz">
+                    <condition lang="ECQL">ENTITEIT_SEPARATIEZONE like 'Special area' AND NAAM_SEPARATIEZONE like '%Voorzorgsgebied%'</condition>
+                </type>
+                <child name="NAAM_SEPARATIEZONE" ns="http://verkeersscheidingsstelsel_nz"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeCrossingType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cb998e26f-a816-4c01-a8bf-d7b6b7d706c9" priority="normal">
+        <source>
+            <property>
+                <type name="separatiezonesType" ns="http://verkeersscheidingsstelsel_nz">
+                    <condition lang="ECQL">ENTITEIT_SEPARATIEZONE like 'Special area' AND NAAM_SEPARATIEZONE like '%Voorzorgsgebied%'</condition>
+                </type>
+                <child name="SHAPE" ns="http://verkeersscheidingsstelsel_nz"/>
+                <child name="MultiSurface" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="surfaceMember" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractSurface"/>
+                <child name="Polygon" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeCrossingType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="geometry" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractSurface"/>
+                <child name="Polygon" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cd6b2c9c6-e328-4c06-8e59-952ef21cf4de" priority="normal">
+        <source name="var">
+            <property>
+                <type name="separatiezonesType" ns="http://verkeersscheidingsstelsel_nz">
+                    <condition lang="ECQL">ENTITEIT_SEPARATIEZONE like 'Special area' AND NAAM_SEPARATIEZONE like '%Voorzorgsgebied%'</condition>
+                </type>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeCrossingType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Waterwegen_Verkeersscheidingsstelselkruising.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C5e70b20c-09f6-4080-a807-327801ccadae" priority="normal">
+        <source name="var">
+            <property>
+                <type name="separatiezonesType" ns="http://verkeersscheidingsstelsel_nz">
+                    <condition lang="ECQL">ENTITEIT_SEPARATIEZONE like 'Special area' AND NAAM_SEPARATIEZONE like '%Voorzorgsgebied%'</condition>
+                </type>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeCrossingType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Vervoersnetwerken_Waterwegen_Verkeersscheidingsstelselkruising.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C87377278-931b-4edd-a5a2-162d84b2e1b4" priority="normal">
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeCrossingType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cfa0129b9-bc25-4118-bfe7-a1802d167b28" priority="normal">
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeCrossingType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:TRANSPORT_NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C80fb77f4-1b4e-447b-8fe5-c21897ee838f" priority="normal">
+        <source name="var">
+            <property>
+                <type name="separatiezonesType" ns="http://verkeersscheidingsstelsel_nz">
+                    <condition lang="ECQL">ENTITEIT_SEPARATIEZONE like 'Special area' AND NAAM_SEPARATIEZONE like '%Voorzorgsgebied%'</condition>
+                </type>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="TrafficSeparationSchemeCrossingType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def id = 'INSPIRE.Vervoersnetwerken_Waterwegen_Verkeersscheidingsstelselkruising.' + id&#xD;
+&#xD;
+withTransformationContext {&#xD;
+  def c = _.context.collector(it)&#xD;
+  c.network &lt;&lt; id&#xD;
+}&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C535b33d4-f2a2-4e82-ad86-f0bf86020f51" priority="normal">
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeCrossingType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C02a16318-b6dc-45c6-8727-ec95200dbba9" priority="normal">
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeCrossingType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="Cd7ab1b68-0b90-4e90-8ea8-539ee0efe788" priority="normal">
+        <source>
+            <class>
+                <type name="separatiezonesType" ns="http://verkeersscheidingsstelsel_nz">
+                    <condition lang="ECQL">ENTITEIT_SEPARATIEZONE like 'Seperatiezone'</condition>
+                </type>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="TrafficSeparationSchemeSeparatorType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C8819f5a6-2c87-4db5-9c99-9a05d714aa83" priority="normal">
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeSeparatorType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C6895278b-8ad0-4145-ae46-703cbb3dd91a" priority="normal">
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeSeparatorType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="language" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="nld" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C6df95623-87bf-4bc4-b8e5-ff7553d18c8b" priority="normal">
+        <source>
+            <property>
+                <type name="separatiezonesType" ns="http://verkeersscheidingsstelsel_nz">
+                    <condition lang="ECQL">ENTITEIT_SEPARATIEZONE like 'Seperatiezone'</condition>
+                </type>
+                <child name="NAAM_SEPARATIEZONE" ns="http://verkeersscheidingsstelsel_nz"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeSeparatorType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C466d5c9e-6e4c-43cd-8b8a-e4b2970f422f" priority="normal">
+        <source>
+            <property>
+                <type name="separatiezonesType" ns="http://verkeersscheidingsstelsel_nz">
+                    <condition lang="ECQL">ENTITEIT_SEPARATIEZONE like 'Seperatiezone'</condition>
+                </type>
+                <child name="SHAPE" ns="http://verkeersscheidingsstelsel_nz"/>
+                <child name="MultiSurface" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeSeparatorType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="geometry" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractSurface"/>
+                <child name="Polygon" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C842f9a53-9d1a-4a16-a2cc-22394634526c" priority="normal">
+        <source name="var">
+            <property>
+                <type name="separatiezonesType" ns="http://verkeersscheidingsstelsel_nz">
+                    <condition lang="ECQL">ENTITEIT_SEPARATIEZONE like 'Seperatiezone'</condition>
+                </type>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeSeparatorType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Waterwegen_Verkeersscheidingsstelselscheider.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C81a3efdf-1a66-44a3-b8d3-e5e642b5ecb3" priority="normal">
+        <source name="var">
+            <property>
+                <type name="separatiezonesType" ns="http://verkeersscheidingsstelsel_nz">
+                    <condition lang="ECQL">ENTITEIT_SEPARATIEZONE like 'Seperatiezone'</condition>
+                </type>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeSeparatorType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Vervoersnetwerken_Waterwegen_Verkeersscheidingsstelselscheider.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C92e9ba51-72e9-4fea-9ff7-d70e06c480fe" priority="normal">
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeSeparatorType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Ce0c81655-9faa-403c-aa9c-57b66db66e8d" priority="normal">
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeSeparatorType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:TRANSPORT_NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C6094f837-aadf-4982-b8bc-ee8c9bf2e2f1" priority="normal">
+        <source name="var">
+            <property>
+                <type name="separatiezonesType" ns="http://verkeersscheidingsstelsel_nz">
+                    <condition lang="ECQL">ENTITEIT_SEPARATIEZONE like 'Seperatiezone'</condition>
+                </type>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="TrafficSeparationSchemeSeparatorType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def id = 'INSPIRE.Vervoersnetwerken_Waterwegen_Verkeersscheidingsstelselscheider.' + id&#xD;
+&#xD;
+withTransformationContext {&#xD;
+  def c = _.context.collector(it)&#xD;
+  c.network &lt;&lt; id&#xD;
+}&#xD;
+&#xD;
+return id
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cf83d7704-12ed-42d2-b238-9873bceac45b" priority="normal">
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeSeparatorType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C50cb078c-7cd8-476f-8848-90600afbb892" priority="normal">
+        <target>
+            <property>
+                <type name="TrafficSeparationSchemeSeparatorType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.create" id="C53031400-67aa-4d33-bd4a-1688c6e1e024" priority="lowest">
+        <target>
+            <class>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+            </class>
+        </target>
+        <parameter value="1" name="number"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.collector.assign" id="Cd4b74493-60e3-47b0-b82e-57c4a785b2a2" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="elements" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="network" name="collector"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Ccdf048f9-b608-43e4-afa1-d3c61b7ff2da" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:TRANSPORT_NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C151d190d-92b3-4352-a27b-416e4aac1d0c" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}{{project:TRANSPORT_NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C9a0c57ea-a580-4249-ae15-8d20069fcac8" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cecc32755-bf31-4743-9b66-8a551b13b1ed" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:TRANSPORT_NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C664c506d-88ef-42c4-a5e6-938e16fffc7d" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Ca87808fb-f40b-4448-8774-ccbe48fcc5aa" priority="normal">
+        <target>
+            <property>
+                <type name="TransportNetworkType" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="typeOfTransport" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+            </property>
+        </target>
+        <parameter value="water" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.create" id="Cab5fd6af-4de3-45a3-ab44-0da274e74ae3" priority="normal">
+        <target>
+            <class>
+                <type name="WaterTrafficFlowDirectionType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def c = _.context.collector()&#xD;
+&#xD;
+_target {&#xD;
+	direction {&#xD;
+		href('http://inspire.ec.europa.eu/codelist/LinkDirectionValue/inDirection')&#xD;
+	}&#xD;
+	id('INSPIRE.Vervoersnetwerken_Waterwegen_Waterverkeersrichting.inDirection')&#xD;
+	c.linkIDs.each{ value -&gt;&#xD;
+		networkRef {&#xD;
+			NetworkReference {&#xD;
+				element {&#xD;
+					href('#' + value)&#xD;
+				}&#xD;
+			}&#xD;
+		}&#xD;
+}}
+</core:text>
+        </complexParameter>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C2ea9ca00-fbd6-4d16-8719-7a40ca9784c5" priority="normal">
+        <target>
+            <property>
+                <type name="WaterTrafficFlowDirectionType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C7140919c-90aa-44bb-8adc-bb204be08dd1" priority="normal">
+        <target>
+            <property>
+                <type name="WaterTrafficFlowDirectionType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Vervoersnetwerken_Waterwegen_Waterverkeersrichting.inDirection" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C0b069258-817d-4a03-a49d-3d7bf5e0289e" priority="normal">
+        <target>
+            <property>
+                <type name="WaterTrafficFlowDirectionType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C3e3ed92a-97fa-4c1a-99c9-bb32157442de" priority="normal">
+        <target>
+            <property>
+                <type name="WaterTrafficFlowDirectionType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Vervoersnetwerken_Waterwegen_Waterverkeersrichting.inDirection" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C8d437e6e-7505-417e-87a0-025eaa0c2176" priority="normal">
+        <target>
+            <property>
+                <type name="WaterTrafficFlowDirectionType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.retype" id="Cb81764ce-d395-446a-a58d-cb782ad8774a" priority="highest">
+        <source>
+            <class>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// This function collects the first and last points of each &#xD;
+// link and stores them in a map, where the points serve as &#xD;
+// keys, while the IDs of the links serve as values.&#xD;
+&#xD;
+// get collector&#xD;
+def c = _.context.collector()&#xD;
+def pointsIdsMap = c.nodes&#xD;
+&#xD;
+// get geometry and extract first and last point&#xD;
+def thisGeometry = _.geom.find(_source.p.geom.first())&#xD;
+def thisCoordinates = thisGeometry.geometry.getCoordinates()&#xD;
+def first = thisCoordinates[0]&#xD;
+def last = thisCoordinates[thisCoordinates.length - 1]&#xD;
+&#xD;
+// add ID of this waarwegvakken to map value list&#xD;
+def thisId =  _source.p.vwk_id.value()&#xD;
+&#xD;
+pointsIdsMap[first].start &lt;&lt; thisId&#xD;
+pointsIdsMap[last].stop &lt;&lt; thisId&#xD;
+&#xD;
+_target{}
+</core:text>
+        </complexParameter>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cf8b6a43f-3170-42ec-8b1f-04da738f9aa2" priority="normal">
+        <source>
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="vwk_begindatum" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cc4807f59-447c-4d74-a6b0-e8969b118925" priority="normal">
+        <source>
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="geom" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="MultiCurve" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="curveMember" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractCurve"/>
+                <child name="LineString" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="centrelineGeometry" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractCurve"/>
+                <child name="LineString" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C3bf13acc-bb58-4a75-8341-27bfbeb33e1d" priority="normal">
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="fictitious" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cbefbecfc-ad3d-45f8-b11c-8cac5aa394d1" priority="normal">
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="language" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="nld" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C713f8810-999c-4780-9ea2-c6cbf00c9746" priority="normal">
+        <source>
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="Cf52f4062-c9df-4a1d-bed2-a8e350dc692f" priority="high">
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def id = 'INSPIRE.Vervoersnetwerken_Watervervoernetwerk_Waterweglink.' + vwk_id&#xD;
+&#xD;
+withTransformationContext{&#xD;
+	def c = _.context.collector(it)&#xD;
+	//collect id&#xD;
+	c.linkIDs &lt;&lt; id&#xD;
+}&#xD;
+return id;
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C6f427716-f439-4e46-9525-655b677aed57" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Vervoersnetwerken_Watervervoernetwerk_Waterweglink.{vwk_id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C926e3105-6301-442b-9691-3f661537788f" priority="normal">
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Ce22566f4-d3c7-4661-b395-4ea8c6b68daa" priority="normal">
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:TRANSPORT_NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C98e5c8fb-1f09-4000-a9d3-54a0175306e4" priority="normal">
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def id = 'INSPIRE.Vervoersnetwerken_Watervervoernetwerk_Waterweglink.' + vwk_id&#xD;
+&#xD;
+withTransformationContext {&#xD;
+  def c = _.context.collector(it)&#xD;
+  c.network &lt;&lt; id&#xD;
+}&#xD;
+&#xD;
+return id&#xD;
+
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C2d12c9e4-5b6f-4f18-b4a1-0647e696b3ff" priority="normal">
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C2ae4c302-000b-49c3-b7d7-95638b504ca0" priority="normal">
+        <target>
+            <property>
+                <type name="WaterwayLinkType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.create" id="C59368f63-90d6-45ca-82be-03a7ec44722e" priority="higher">
+        <target>
+            <class>
+                <type name="WaterwayNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// This function creates a WaterwayNode with references (Node -&gt; Links) for &#xD;
+// each collected coordinate object, and stores information to create &#xD;
+// inverse references (Link -&gt; Node)&#xD;
+&#xD;
+// get collector&#xD;
+def c = _.context.collector()&#xD;
+def pointsIdsMap = c.nodes&#xD;
+def linksIdsMap = c.links&#xD;
+&#xD;
+pointsIdsMap.eachCollector{&#xD;
+	key, child -&gt; &#xD;
+		// define ID&#xD;
+		def thisInspireId = "INSPIRE.Vervoersnetwerken_Waterwegen_Waterwegknooppunt." + UUID.nameUUIDFromBytes(key.toString().getBytes())&#xD;
+		def pointGeometry = _.geom.with(geometry: "POINT(" + key.x + " " + key.y + ")", crs: "EPSG:28992")&#xD;
+&#xD;
+		_target {&#xD;
+			geometry {&#xD;
+				Point (pointGeometry)&#xD;
+			}&#xD;
+			child.start.each{&#xD;
+				thisId -&gt;&#xD;
+					// Store Link ID with mapping to Node ID&#xD;
+					linksIdsMap[thisId].start &lt;&lt; thisInspireId&#xD;
+					&#xD;
+					// assign the spokeStart property&#xD;
+					spokeStart {&#xD;
+						href("#INSPIRE.Vervoersnetwerken_Watervervoernetwerk_Waterweglink." + thisId)&#xD;
+					}&#xD;
+			}&#xD;
+			child.stop.each{&#xD;
+				thisId -&gt;&#xD;
+					// Store Link ID with mapping to Node ID&#xD;
+					linksIdsMap[thisId].stop &lt;&lt; thisInspireId&#xD;
+					&#xD;
+					// assign the spokeEnd property&#xD;
+					spokeEnd {&#xD;
+						href("#INSPIRE.Vervoersnetwerken_Watervervoernetwerk_Waterweglink." + thisId)&#xD;
+					}&#xD;
+			}&#xD;
+			c.network &lt;&lt; thisInspireId&#xD;
+			id (thisInspireId)&#xD;
+			identifier (_project.vars.INSPIRE_DATASET_NAMESPACE + thisInspireId ){&#xD;
+				codeSpace("http://inspire.ec.europa.eu/ids")&#xD;
+			}&#xD;
+			inspireId {&#xD;
+				Identifier {&#xD;
+					localId( thisInspireId )&#xD;
+					namespace ( _project.vars.INSPIRE_DATASET_NAMESPACE )&#xD;
+				}&#xD;
+			}&#xD;
+			&#xD;
+		}&#xD;
+}
+</core:text>
+        </complexParameter>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C8009b3d2-25f5-4ae1-8598-1a16325714b9" priority="normal">
+        <target>
+            <property>
+                <type name="WaterwayNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cd29641a3-ea02-497d-bff1-6587ffd6a712" priority="normal">
+        <target>
+            <property>
+                <type name="WaterwayNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="formOfWaterwayNode" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cbfe0c3b5-f1d7-4bd2-8ac0-b7370e44b798" priority="normal">
+        <target>
+            <property>
+                <type name="WaterwayNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="inNetwork" ns="http://inspire.ec.europa.eu/schemas/net/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="#{{project:TRANSPORT_NETWORK_ID}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cfecaaf52-897f-49e5-a5b5-7115a97aee11" priority="normal">
+        <target>
+            <property>
+                <type name="WaterwayNodeType" ns="http://inspire.ec.europa.eu/schemas/tn-w/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/tn/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <modifier cell="C0e79daf2-13e7-42c4-9539-a9305dd6cf24">
+        <disable-for parent="C7fa6e111-5df9-4bf5-8a34-5e370c3a6b91"/>
+    </modifier>
+</alignment>

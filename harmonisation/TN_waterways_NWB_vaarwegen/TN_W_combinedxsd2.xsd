@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:import1="http://nwbvaarwegen.geonovum.nl"		
+		xmlns:import2="http://noordzeevaarwegmarkeringenrd.geonovum.nl"
+		xmlns:import3="http://verkeersscheidingsstelsel_nz"
+		elementFormDefault="qualified"
+		targetNamespace="http://yournamespace.com/combined2">
+	<import
+		namespace="http://nwbvaarwegen.geonovum.nl"
+		schemaLocation="RWS_TN_W_nwbvaarwegen_kmarkeringen.xsd" />
+	<import
+		namespace="http://noordzeevaarwegmarkeringenrd.geonovum.nl"
+		schemaLocation= "beaconsbuoysschema.xsd"
+		/>
+	<import
+		namespace="http://verkeersscheidingsstelsel_nz"
+		schemaLocation= "verkeersSchema.xsd"
+		/>
+</schema>
