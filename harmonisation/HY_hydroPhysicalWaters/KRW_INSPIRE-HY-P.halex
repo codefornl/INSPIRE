@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<hale-project version="3.5.0.SNAPSHOT">
+    <name>KRW to INSPIRE HY-P 4.0 </name>
+    <author>KL</author>
+    <description>KRW transformatie voor Hydrography</description>
+    <created>2018-10-01T13:16:17.620+02:00</created>
+    <modified>2018-11-05T15:26:32.968+01:00</modified>
+    <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
+        <setting name="charset">UTF-8</setting>
+        <setting name="projectFiles.separate">false</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.project.hale25.xml</setting>
+        <setting name="target">file:/C:/Users/KL/Box%20Sync/staff/Projects/2018-07%20RWS%20Phase%20II/Transformation%20Projects/HY-P/KRW_INSPIRE-HY-P.halex</setting>
+    </save-config>
+    <resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="onlyElementsMappable">true</setting>
+        <setting name="resourceId">e7785b95-9270-499f-b07e-499828170479</setting>
+        <setting name="source">http://inspire.ec.europa.eu/schemas/hy-p/4.0/HydroPhysicalWaters.xsd</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.schema.read.source" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="onlyElementsMappable">true</setting>
+        <setting name="resourceId">22f19c4d-1c5c-45f6-af5f-43062069ca71</setting>
+        <complex-setting name="relevantElements">
+            <core:list xmlns:core="http://www.esdi-humboldt.eu/hale/core">
+                <core:entry>
+                    <core:name namespace="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">krw_oppervlaktewaterlichamen_vlakken_rws_2006</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">krw_stroomgebieddistricten_rws_2018</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">krw_deelstroomgebieden_rws_2018</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">krw_oppervlaktewaterlichamen_lijnen_rws_2006</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">krw_oppervlaktewaterlichamen_lijnen_rws_2018</core:name>
+                </core:entry>
+                <core:entry>
+                    <core:name namespace="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">krw_oppervlaktewaterlichamen_vlakken_rws_2018</core:name>
+                </core:entry>
+            </core:list>
+        </complex-setting>
+        <setting name="source">http://geodata.nationaalgeoregister.nl/kaderrichtlijnwater/wfs?language=dut&amp;SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=DescribeFeatureType&amp;NAMESPACES=xmlns(kaderrichtlijnwater,https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater)&amp;TYPENAMES=kaderrichtlijnwater:krw_oppervlaktewaterlichamen_vlakken_rws_2006,kaderrichtlijnwater:krw_stroomgebieddistricten_rws_2018,kaderrichtlijnwater:krw_deelstroomgebieden_rws_2018,kaderrichtlijnwater:krw_oppervlaktewaterlichamen_lijnen_rws_2006,kaderrichtlijnwater:krw_oppervlaktewaterlichamen_lijnen_rws_2018,kaderrichtlijnwater:krw_oppervlaktewaterlichamen_vlakken_rws_2018</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">f45850cd-b8b3-4606-ad87-63cefa08a373</setting>
+        <setting name="source">http://geodata.nationaalgeoregister.nl/kaderrichtlijnwater/wfs?language=dut&amp;SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;NAMESPACES=xmlns(kaderrichtlijnwater,https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater)&amp;TYPENAMES=kaderrichtlijnwater:krw_stroomgebieddistricten_rws_2018</setting>
+        <setting name="interpolation.maxError">0.1</setting>
+        <setting name="interpolation.algorithm">segment</setting>
+        <setting name="ignoreNamespaces">false</setting>
+        <setting name="paginateRequest">true</setting>
+        <setting name="featuresPerWfsRequest">1000</setting>
+        <setting name="ignoreRoot">true</setting>
+        <setting name="ignoreNumberMatched">false</setting>
+        <setting name="interpolation.grid.moveAllToGrid">false</setting>
+        <setting name="strict">false</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">e62445ec-f41b-4db7-8d71-97252e0aa209</setting>
+        <setting name="source">http://geodata.nationaalgeoregister.nl/kaderrichtlijnwater/wfs?language=dut&amp;SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;NAMESPACES=xmlns(kaderrichtlijnwater,https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater)&amp;TYPENAMES=kaderrichtlijnwater:krw_oppervlaktewaterlichamen_lijnen_rws_2018</setting>
+        <setting name="interpolation.maxError">0.1</setting>
+        <setting name="interpolation.algorithm">segment</setting>
+        <setting name="ignoreNamespaces">false</setting>
+        <setting name="paginateRequest">true</setting>
+        <setting name="featuresPerWfsRequest">1000</setting>
+        <setting name="ignoreRoot">true</setting>
+        <setting name="ignoreNumberMatched">false</setting>
+        <setting name="interpolation.grid.moveAllToGrid">false</setting>
+        <setting name="strict">false</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">0974afb1-408c-4e65-914e-6d0536d351be</setting>
+        <setting name="source">http://geodata.nationaalgeoregister.nl/kaderrichtlijnwater/wfs?language=dut&amp;SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;NAMESPACES=xmlns(kaderrichtlijnwater,https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater)&amp;TYPENAMES=kaderrichtlijnwater:krw_deelstroomgebieden_rws_2018</setting>
+        <setting name="interpolation.maxError">0.1</setting>
+        <setting name="interpolation.algorithm">segment</setting>
+        <setting name="ignoreNamespaces">false</setting>
+        <setting name="paginateRequest">true</setting>
+        <setting name="featuresPerWfsRequest">1000</setting>
+        <setting name="ignoreRoot">true</setting>
+        <setting name="ignoreNumberMatched">false</setting>
+        <setting name="interpolation.grid.moveAllToGrid">false</setting>
+        <setting name="strict">false</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">eb65336a-4897-4b99-ab83-8ef00fc542c8</setting>
+        <setting name="source">http://geodata.nationaalgeoregister.nl/kaderrichtlijnwater/wfs?language=dut&amp;SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;NAMESPACES=xmlns(kaderrichtlijnwater,https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater)&amp;TYPENAMES=kaderrichtlijnwater:krw_oppervlaktewaterlichamen_vlakken_rws_2018</setting>
+        <setting name="interpolation.maxError">0.1</setting>
+        <setting name="interpolation.algorithm">segment</setting>
+        <setting name="ignoreNamespaces">false</setting>
+        <setting name="paginateRequest">true</setting>
+        <setting name="featuresPerWfsRequest">1000</setting>
+        <setting name="ignoreRoot">true</setting>
+        <setting name="ignoreNumberMatched">false</setting>
+        <setting name="interpolation.grid.moveAllToGrid">false</setting>
+        <setting name="strict">false</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.codelist.read" provider-id="eu.esdihumboldt.hale.io.codelist.inspire.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">970a2163-674d-42dc-9895-f60a9bc687d0</setting>
+        <setting name="source">http://inspire.ec.europa.eu/codelist/CountryCode</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.codelist.inspire</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.codelist.read" provider-id="eu.esdihumboldt.hale.io.codelist.inspire.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">785571d9-0cf6-4b40-9ac8-8e1b07019551</setting>
+        <setting name="source">http://inspire.ec.europa.eu/codelist/HydrologicalPersistenceValue</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.codelist.inspire</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.codelist.read" provider-id="eu.esdihumboldt.hale.io.codelist.inspire.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">4be217a2-5e81-458d-81ac-56b0a49f7599</setting>
+        <setting name="source">http://inspire.ec.europa.eu/codelist/ZoneTypeCode</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.codelist.inspire</setting>
+    </resource>
+    <file name="alignment.xml" location="KRW_INSPIRE-HY-P.halex.alignment.xml"/>
+    <file name="styles.sld" location="KRW_INSPIRE-HY-P.halex.styles.sld"/>
+    <complex-property name="codelists">
+        <associations>
+            <codeList identifier="//inspire.ec.europa.eu/codelist/ZoneTypeCode" namespace="http://inspire.ec.europa.eu/codelist/ZoneTypeCode">
+                <entity>
+                    <type name="WatercourseType" namespace="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                    <property name="hydroId" namespace="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                    <property name="HydroIdentifier" namespace="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+                    <property name="classificationScheme" namespace="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+                </entity>
+                <entity>
+                    <type name="RiverBasinType" namespace="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                    <property name="hydroId" namespace="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                    <property name="HydroIdentifier" namespace="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+                    <property name="classificationScheme" namespace="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+                </entity>
+            </codeList>
+        </associations>
+    </complex-property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}CrossingType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}CrossingType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}CrossingType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}DamOrWeirType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}DamOrWeirType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}DamOrWeirType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}DrainageBasinType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}DrainageBasinType/2">{http://www.opengis.net/gml/3.2/AbstractSurface}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}DrainageBasinType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}EmbankmentType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}EmbankmentType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}EmbankmentType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}FallsType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}FallsType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}FallsType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}FluvialPointType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}FluvialPointType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}FluvialPointType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}FordType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}FordType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}FordType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}HydroPointOfInterestType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}HydroPointOfInterestType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}HydroPointOfInterestType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}LandWaterBoundaryType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}LandWaterBoundaryType/2">{http://www.opengis.net/gml/3.2/AbstractCurve}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}LandWaterBoundaryType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}LockType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}LockType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}LockType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}ManMadeObjectType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}ManMadeObjectType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}ManMadeObjectType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}RapidsType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}RapidsType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}RapidsType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}RiverBasinType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}RiverBasinType/count">1</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}ShoreType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}ShoreType/2">{http://www.opengis.net/gml/3.2}MultiSurface</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}ShoreType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}ShorelineConstructionType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}ShorelineConstructionType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}ShorelineConstructionType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}SluiceType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}SluiceType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}SluiceType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}StandingWaterType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}StandingWaterType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}StandingWaterType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}SurfaceWaterType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}SurfaceWaterType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}SurfaceWaterType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}WatercourseType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}WatercourseType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}WatercourseType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}WetlandType/1">{http://inspire.ec.europa.eu/schemas/hy-p/4.0}geometry</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}WetlandType/2">{http://www.opengis.net/gml/3.2/AbstractSurface}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/hy-p/4.0}WetlandType/count">2</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_BoundingPolygon_Type/1">{http://www.isotc211.org/2005/gmd}polygon</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_BoundingPolygon_Type/2">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_BoundingPolygon_Type/count">2</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_Extent_Type/1">{http://www.isotc211.org/2005/gmd}geographicElement</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_Extent_Type/2">{http://www.isotc211.org/2005/gmd/AbstractEX_GeographicExtent}choice</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_Extent_Type/3">{http://www.isotc211.org/2005/gmd}EX_BoundingPolygon</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_Extent_Type/4">{http://www.isotc211.org/2005/gmd}polygon</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_Extent_Type/5">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_Extent_Type/count">5</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_SpatialTemporalExtent_Type/1">{http://www.isotc211.org/2005/gmd}spatialExtent</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_SpatialTemporalExtent_Type/2">{http://www.isotc211.org/2005/gmd/AbstractEX_GeographicExtent}choice</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_SpatialTemporalExtent_Type/3">{http://www.isotc211.org/2005/gmd}EX_BoundingPolygon</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_SpatialTemporalExtent_Type/4">{http://www.isotc211.org/2005/gmd}polygon</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_SpatialTemporalExtent_Type/5">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}EX_SpatialTemporalExtent_Type/count">5</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}MD_Georectified_Type/1">{http://www.isotc211.org/2005/gmd}cornerPoints</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}MD_Georectified_Type/2">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}MD_Georectified_Type/count">2</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}MD_Metadata_Type/1">{http://www.isotc211.org/2005/gmd}spatialRepresentationInfo</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}MD_Metadata_Type/2">{http://www.isotc211.org/2005/gmd/AbstractMD_SpatialRepresentation}choice</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}MD_Metadata_Type/3">{http://www.isotc211.org/2005/gmd}MD_Georectified</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}MD_Metadata_Type/4">{http://www.isotc211.org/2005/gmd}cornerPoints</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}MD_Metadata_Type/5">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.isotc211.org/2005/gmd}MD_Metadata_Type/count">5</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractRingPropertyType/1">{http://www.opengis.net/gml/3.2/AbstractRing}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}AbstractRingPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcByBulgeType/1">{http://www.opengis.net/gml/3.2/ArcByBulgeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcByBulgeType/2">{http://www.opengis.net/gml/3.2/ArcByBulgeType/choice_1}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcByBulgeType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcByBulgeType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcByBulgeType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcByCenterPointType/1">{http://www.opengis.net/gml/3.2/ArcByCenterPointType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcByCenterPointType/2">{http://www.opengis.net/gml/3.2/ArcByCenterPointType/choice_1}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcByCenterPointType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcByCenterPointType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcByCenterPointType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcStringByBulgeType/1">{http://www.opengis.net/gml/3.2/ArcStringByBulgeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcStringByBulgeType/2">{http://www.opengis.net/gml/3.2/ArcStringByBulgeType/choice_1}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcStringByBulgeType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcStringByBulgeType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcStringByBulgeType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcStringType/1">{http://www.opengis.net/gml/3.2/ArcStringType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcStringType/2">{http://www.opengis.net/gml/3.2/ArcStringType/choice_1}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcStringType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcStringType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcStringType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcType/1">{http://www.opengis.net/gml/3.2/ArcType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcType/2">{http://www.opengis.net/gml/3.2/ArcType/choice_1}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArcType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArrayAssociationType/1">{http://www.opengis.net/gml/3.2/AbstractObject}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArrayAssociationType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArrayType/1">{http://www.opengis.net/gml/3.2}members</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArrayType/2">{http://www.opengis.net/gml/3.2/AbstractObject}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ArrayType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BSplineType/1">{http://www.opengis.net/gml/3.2/BSplineType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BSplineType/2">{http://www.opengis.net/gml/3.2/BSplineType/choice_1}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BSplineType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BSplineType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BSplineType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BagType/1">{http://www.opengis.net/gml/3.2}members</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BagType/2">{http://www.opengis.net/gml/3.2/AbstractObject}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BagType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BezierType/1">{http://www.opengis.net/gml/3.2/BezierType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BezierType/2">{http://www.opengis.net/gml/3.2/BezierType/choice_1}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BezierType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BezierType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BezierType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BoundingShapeType/1">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}BoundingShapeType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CircleByCenterPointType/1">{http://www.opengis.net/gml/3.2/CircleByCenterPointType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CircleByCenterPointType/2">{http://www.opengis.net/gml/3.2/CircleByCenterPointType/choice_1}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CircleByCenterPointType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CircleByCenterPointType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CircleByCenterPointType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CircleType/1">{http://www.opengis.net/gml/3.2/ArcStringType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CircleType/2">{http://www.opengis.net/gml/3.2/ArcStringType/choice_1}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CircleType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CircleType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CircleType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CompositeCurveType/1">{http://www.opengis.net/gml/3.2}curveMember</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CompositeCurveType/2">{http://www.opengis.net/gml/3.2/AbstractCurve}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CompositeCurveType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CompositeSolidType/1">{http://www.opengis.net/gml/3.2}solidMember</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CompositeSolidType/2">{http://www.opengis.net/gml/3.2/AbstractSolid}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CompositeSolidType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CompositeSurfaceType/1">{http://www.opengis.net/gml/3.2}surfaceMember</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CompositeSurfaceType/2">{http://www.opengis.net/gml/3.2/AbstractSurface}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CompositeSurfaceType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CompositeValueType/1">{http://www.opengis.net/gml/3.2}valueComponent</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CompositeValueType/2">{http://www.opengis.net/gml/3.2/Value}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CompositeValueType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/1">{http://www.opengis.net/gml/3.2}rows</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/2">{http://www.opengis.net/gml/3.2}Row</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/3">{http://www.opengis.net/gml/3.2/geometricPositionListGroup}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/4">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/5">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/6">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ConeType/count">6</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CubicSplineType/1">{http://www.opengis.net/gml/3.2/CubicSplineType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CubicSplineType/2">{http://www.opengis.net/gml/3.2/CubicSplineType/choice_1}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CubicSplineType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CubicSplineType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CubicSplineType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CurveArrayPropertyType/1">{http://www.opengis.net/gml/3.2/AbstractCurve}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CurveArrayPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CurvePropertyType/1">{http://www.opengis.net/gml/3.2/AbstractCurve}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CurvePropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CurveSegmentArrayPropertyType/1">{http://www.opengis.net/gml/3.2/AbstractCurveSegment}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CurveSegmentArrayPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CurveType/1">{http://www.opengis.net/gml/3.2}segments</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CurveType/2">{http://www.opengis.net/gml/3.2/AbstractCurveSegment}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CurveType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/1">{http://www.opengis.net/gml/3.2}rows</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/2">{http://www.opengis.net/gml/3.2}Row</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/3">{http://www.opengis.net/gml/3.2/geometricPositionListGroup}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/4">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/5">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/6">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}CylinderType/count">6</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedEdgePropertyType/1">{http://www.opengis.net/gml/3.2}Edge</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedEdgePropertyType/2">{http://www.opengis.net/gml/3.2}curveProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedEdgePropertyType/3">{http://www.opengis.net/gml/3.2/AbstractCurve}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedEdgePropertyType/count">3</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedFacePropertyType/1">{http://www.opengis.net/gml/3.2}Face</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedFacePropertyType/2">{http://www.opengis.net/gml/3.2}surfaceProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedFacePropertyType/3">{http://www.opengis.net/gml/3.2/AbstractSurface}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedFacePropertyType/count">3</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedNodePropertyType/1">{http://www.opengis.net/gml/3.2}Node</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedNodePropertyType/2">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedNodePropertyType/3">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedNodePropertyType/count">3</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedObservationAtDistanceType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedObservationAtDistanceType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedObservationAtDistanceType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedObservationType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedObservationType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedObservationType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedTopoSolidPropertyType/1">{http://www.opengis.net/gml/3.2}TopoSolid</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedTopoSolidPropertyType/2">{http://www.opengis.net/gml/3.2}solidProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedTopoSolidPropertyType/3">{http://www.opengis.net/gml/3.2/AbstractSolid}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DirectedTopoSolidPropertyType/count">3</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DiscreteCoverageType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DiscreteCoverageType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DiscreteCoverageType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DomainSetType/1">{http://www.opengis.net/gml/3.2/DomainSetType/sequence_1}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DomainSetType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DynamicFeatureCollectionType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DynamicFeatureCollectionType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DynamicFeatureCollectionType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DynamicFeatureMemberType/1">{http://www.opengis.net/gml/3.2/DynamicFeature}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DynamicFeatureMemberType/2">{http://www.opengis.net/gml/3.2}DynamicFeature</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DynamicFeatureMemberType/3">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DynamicFeatureMemberType/4">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DynamicFeatureMemberType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DynamicFeatureType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DynamicFeatureType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}DynamicFeatureType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}EdgeType/1">{http://www.opengis.net/gml/3.2}curveProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}EdgeType/2">{http://www.opengis.net/gml/3.2/AbstractCurve}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}EdgeType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FaceType/1">{http://www.opengis.net/gml/3.2}surfaceProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FaceType/2">{http://www.opengis.net/gml/3.2/AbstractSurface}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FaceType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureArrayPropertyType/1">{http://www.opengis.net/gml/3.2/AbstractFeature}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureArrayPropertyType/2">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_deelstroomgebieden_rws_2018</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureArrayPropertyType/3">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}msGeometry</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureArrayPropertyType/4">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureArrayPropertyType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureCollectionType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureCollectionType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeatureCollectionType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeaturePropertyType/1">{http://www.opengis.net/gml/3.2/AbstractFeature}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeaturePropertyType/2">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_deelstroomgebieden_rws_2018</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeaturePropertyType/3">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}msGeometry</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeaturePropertyType/4">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}FeaturePropertyType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicStringType/1">{http://www.opengis.net/gml/3.2/GeodesicStringType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicStringType/2">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicStringType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicStringType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicStringType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicType/1">{http://www.opengis.net/gml/3.2/GeodesicStringType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicType/2">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeodesicType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeometricComplexType/1">{http://www.opengis.net/gml/3.2}element</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeometricComplexType/2">{http://www.opengis.net/gml/3.2/AbstractGeometricPrimitive}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeometricComplexType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeometryArrayPropertyType/1">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeometryArrayPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeometryPropertyType/1">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}GeometryPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}HistoryPropertyType/1">{http://www.opengis.net/gml/3.2}MovingObjectStatus</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}HistoryPropertyType/2">{http://www.opengis.net/gml/3.2/MovingObjectStatusType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}HistoryPropertyType/3">{http://www.opengis.net/gml/3.2}position</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}HistoryPropertyType/4">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}HistoryPropertyType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LineStringSegmentType/1">{http://www.opengis.net/gml/3.2/LineStringSegmentType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LineStringSegmentType/2">{http://www.opengis.net/gml/3.2/LineStringSegmentType/choice_1}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LineStringSegmentType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LineStringSegmentType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LineStringSegmentType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LineStringType/1">{http://www.opengis.net/gml/3.2/LineStringType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LineStringType/2">{http://www.opengis.net/gml/3.2/LineStringType/choice_1}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LineStringType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LineStringType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LineStringType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LinearRingType/1">{http://www.opengis.net/gml/3.2/LinearRingType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LinearRingType/2">{http://www.opengis.net/gml/3.2/LinearRingType/choice_1}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LinearRingType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LinearRingType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LinearRingType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LocationPropertyType/1">{http://www.opengis.net/gml/3.2/LocationPropertyType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}LocationPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MovingObjectStatusType/1">{http://www.opengis.net/gml/3.2/MovingObjectStatusType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MovingObjectStatusType/2">{http://www.opengis.net/gml/3.2}position</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MovingObjectStatusType/3">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MovingObjectStatusType/count">3</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiCurvePropertyType/1">{http://www.opengis.net/gml/3.2}MultiCurve</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiCurvePropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiCurveType/1">{http://www.opengis.net/gml/3.2}curveMember</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiCurveType/2">{http://www.opengis.net/gml/3.2/AbstractCurve}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiCurveType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiGeometryPropertyType/1">{http://www.opengis.net/gml/3.2/AbstractGeometricAggregate}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiGeometryPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiGeometryType/1">{http://www.opengis.net/gml/3.2}geometryMember</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiGeometryType/2">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiGeometryType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiPointPropertyType/1">{http://www.opengis.net/gml/3.2}MultiPoint</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiPointPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiPointType/1">{http://www.opengis.net/gml/3.2}pointMember</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiPointType/2">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiPointType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiSolidPropertyType/1">{http://www.opengis.net/gml/3.2}MultiSolid</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiSolidPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiSolidType/1">{http://www.opengis.net/gml/3.2}solidMember</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiSolidType/2">{http://www.opengis.net/gml/3.2/AbstractSolid}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiSolidType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiSurfacePropertyType/1">{http://www.opengis.net/gml/3.2}MultiSurface</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiSurfacePropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiSurfaceType/1">{http://www.opengis.net/gml/3.2}surfaceMember</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiSurfaceType/2">{http://www.opengis.net/gml/3.2/AbstractSurface}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}MultiSurfaceType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}NodeType/1">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}NodeType/2">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}NodeType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ObservationType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ObservationType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ObservationType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}OffsetCurveType/1">{http://www.opengis.net/gml/3.2}offsetBase</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}OffsetCurveType/2">{http://www.opengis.net/gml/3.2/AbstractCurve}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}OffsetCurveType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}OrientableCurveType/1">{http://www.opengis.net/gml/3.2}baseCurve</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}OrientableCurveType/2">{http://www.opengis.net/gml/3.2/AbstractCurve}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}OrientableCurveType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}OrientableSurfaceType/1">{http://www.opengis.net/gml/3.2}baseSurface</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}OrientableSurfaceType/2">{http://www.opengis.net/gml/3.2/AbstractSurface}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}OrientableSurfaceType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}PointArrayPropertyType/1">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}PointArrayPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}PointPropertyType/1">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}PointPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}PolygonPatchType/1">{http://www.opengis.net/gml/3.2}exterior</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}PolygonPatchType/2">{http://www.opengis.net/gml/3.2/AbstractRing}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}PolygonPatchType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}PolygonType/1">{http://www.opengis.net/gml/3.2}exterior</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}PolygonType/2">{http://www.opengis.net/gml/3.2/AbstractRing}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}PolygonType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}PriorityLocationPropertyType/1">{http://www.opengis.net/gml/3.2/LocationPropertyType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}PriorityLocationPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ProcedurePropertyType/1">{http://www.opengis.net/gml/3.2/AbstractFeature}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ProcedurePropertyType/2">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_deelstroomgebieden_rws_2018</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ProcedurePropertyType/3">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}msGeometry</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ProcedurePropertyType/4">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ProcedurePropertyType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}RangeSetType/1">{http://www.opengis.net/gml/3.2/RangeSetType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}RangeSetType/2">{http://www.opengis.net/gml/3.2}ValueArray</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}RangeSetType/3">{http://www.opengis.net/gml/3.2}valueComponent</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}RangeSetType/4">{http://www.opengis.net/gml/3.2/Value}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}RangeSetType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}RectangleType/1">{http://www.opengis.net/gml/3.2}exterior</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}RectangleType/2">{http://www.opengis.net/gml/3.2/AbstractRing}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}RectangleType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}RectifiedGridType/1">{http://www.opengis.net/gml/3.2}origin</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}RectifiedGridType/2">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}RectifiedGridType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}RingType/1">{http://www.opengis.net/gml/3.2}curveMember</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}RingType/2">{http://www.opengis.net/gml/3.2/AbstractCurve}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}RingType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ShellType/1">{http://www.opengis.net/gml/3.2}surfaceMember</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ShellType/2">{http://www.opengis.net/gml/3.2/AbstractSurface}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ShellType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SolidArrayPropertyType/1">{http://www.opengis.net/gml/3.2/AbstractSolid}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SolidArrayPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SolidPropertyType/1">{http://www.opengis.net/gml/3.2/AbstractSolid}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SolidPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SolidType/1">{http://www.opengis.net/gml/3.2}exterior</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SolidType/2">{http://www.opengis.net/gml/3.2}Shell</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SolidType/3">{http://www.opengis.net/gml/3.2}surfaceMember</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SolidType/4">{http://www.opengis.net/gml/3.2/AbstractSurface}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SolidType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/1">{http://www.opengis.net/gml/3.2}rows</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/2">{http://www.opengis.net/gml/3.2}Row</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/3">{http://www.opengis.net/gml/3.2/geometricPositionListGroup}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/4">{http://www.opengis.net/gml/3.2/geometricPositionGroup}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/5">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/6">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SphereType/count">6</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SurfaceArrayPropertyType/1">{http://www.opengis.net/gml/3.2/AbstractSurface}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SurfaceArrayPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SurfacePatchArrayPropertyType/1">{http://www.opengis.net/gml/3.2/AbstractSurfacePatch}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SurfacePatchArrayPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SurfacePropertyType/1">{http://www.opengis.net/gml/3.2/AbstractSurface}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SurfacePropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SurfaceType/1">{http://www.opengis.net/gml/3.2/patches}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SurfaceType/2">{http://www.opengis.net/gml/3.2}patches</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SurfaceType/3">{http://www.opengis.net/gml/3.2/AbstractSurfacePatch}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}SurfaceType/count">3</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TargetPropertyType/1">{http://www.opengis.net/gml/3.2/TargetPropertyType}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TargetPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TinType/1">{http://www.opengis.net/gml/3.2}stopLines</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TinType/2">{http://www.opengis.net/gml/3.2}LineStringSegment</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TinType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoComplexPropertyType/1">{http://www.opengis.net/gml/3.2}TopoComplex</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoComplexPropertyType/2">{http://www.opengis.net/gml/3.2}topoPrimitiveMember</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoComplexPropertyType/3">{http://www.opengis.net/gml/3.2/AbstractTopoPrimitive}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoComplexPropertyType/4">{http://www.opengis.net/gml/3.2}Node</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoComplexPropertyType/5">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoComplexPropertyType/6">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoComplexPropertyType/count">6</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoComplexType/1">{http://www.opengis.net/gml/3.2}topoPrimitiveMember</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoComplexType/2">{http://www.opengis.net/gml/3.2/AbstractTopoPrimitive}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoComplexType/3">{http://www.opengis.net/gml/3.2}Node</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoComplexType/4">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoComplexType/5">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoComplexType/count">5</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoCurvePropertyType/1">{http://www.opengis.net/gml/3.2}TopoCurve</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoCurvePropertyType/2">{http://www.opengis.net/gml/3.2}directedEdge</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoCurvePropertyType/3">{http://www.opengis.net/gml/3.2}Edge</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoCurvePropertyType/4">{http://www.opengis.net/gml/3.2}curveProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoCurvePropertyType/5">{http://www.opengis.net/gml/3.2/AbstractCurve}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoCurvePropertyType/count">5</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoCurveType/1">{http://www.opengis.net/gml/3.2}directedEdge</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoCurveType/2">{http://www.opengis.net/gml/3.2}Edge</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoCurveType/3">{http://www.opengis.net/gml/3.2}curveProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoCurveType/4">{http://www.opengis.net/gml/3.2/AbstractCurve}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoCurveType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPointPropertyType/1">{http://www.opengis.net/gml/3.2}TopoPoint</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPointPropertyType/2">{http://www.opengis.net/gml/3.2}directedNode</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPointPropertyType/3">{http://www.opengis.net/gml/3.2}Node</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPointPropertyType/4">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPointPropertyType/5">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPointPropertyType/count">5</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPointType/1">{http://www.opengis.net/gml/3.2}directedNode</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPointType/2">{http://www.opengis.net/gml/3.2}Node</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPointType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPointType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPointType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPrimitiveArrayAssociationType/1">{http://www.opengis.net/gml/3.2/AbstractTopoPrimitive}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPrimitiveArrayAssociationType/2">{http://www.opengis.net/gml/3.2}Node</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPrimitiveArrayAssociationType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPrimitiveArrayAssociationType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPrimitiveArrayAssociationType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPrimitiveMemberType/1">{http://www.opengis.net/gml/3.2/AbstractTopoPrimitive}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPrimitiveMemberType/2">{http://www.opengis.net/gml/3.2}Node</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPrimitiveMemberType/3">{http://www.opengis.net/gml/3.2}pointProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPrimitiveMemberType/4">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoPrimitiveMemberType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoSolidType/1">{http://www.opengis.net/gml/3.2}solidProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoSolidType/2">{http://www.opengis.net/gml/3.2/AbstractSolid}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoSolidType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoSurfacePropertyType/1">{http://www.opengis.net/gml/3.2}TopoSurface</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoSurfacePropertyType/2">{http://www.opengis.net/gml/3.2}directedFace</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoSurfacePropertyType/3">{http://www.opengis.net/gml/3.2}Face</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoSurfacePropertyType/4">{http://www.opengis.net/gml/3.2}surfaceProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoSurfacePropertyType/5">{http://www.opengis.net/gml/3.2/AbstractSurface}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoSurfacePropertyType/count">5</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoSurfaceType/1">{http://www.opengis.net/gml/3.2}directedFace</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoSurfaceType/2">{http://www.opengis.net/gml/3.2}Face</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoSurfaceType/3">{http://www.opengis.net/gml/3.2}surfaceProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoSurfaceType/4">{http://www.opengis.net/gml/3.2/AbstractSurface}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoSurfaceType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoVolumePropertyType/1">{http://www.opengis.net/gml/3.2}TopoVolume</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoVolumePropertyType/2">{http://www.opengis.net/gml/3.2}directedTopoSolid</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoVolumePropertyType/3">{http://www.opengis.net/gml/3.2}TopoSolid</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoVolumePropertyType/4">{http://www.opengis.net/gml/3.2}solidProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoVolumePropertyType/5">{http://www.opengis.net/gml/3.2/AbstractSolid}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoVolumePropertyType/count">5</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoVolumeType/1">{http://www.opengis.net/gml/3.2}directedTopoSolid</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoVolumeType/2">{http://www.opengis.net/gml/3.2}TopoSolid</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoVolumeType/3">{http://www.opengis.net/gml/3.2}solidProperty</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoVolumeType/4">{http://www.opengis.net/gml/3.2/AbstractSolid}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TopoVolumeType/count">4</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TriangleType/1">{http://www.opengis.net/gml/3.2}exterior</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TriangleType/2">{http://www.opengis.net/gml/3.2/AbstractRing}choice</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}TriangleType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValueArrayPropertyType/1">{http://www.opengis.net/gml/3.2/Value}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValueArrayPropertyType/count">1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValueArrayType/1">{http://www.opengis.net/gml/3.2}valueComponent</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValueArrayType/2">{http://www.opengis.net/gml/3.2/Value}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValueArrayType/count">2</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValuePropertyType/1">{http://www.opengis.net/gml/3.2/Value}choice_1</property>
+    <property name="defaultGeometry:{http://www.opengis.net/gml/3.2}ValuePropertyType/count">1</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_deelstroomgebieden_rws_2018Type/1">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}msGeometry</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_deelstroomgebieden_rws_2018Type/count">1</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_oppervlaktewaterlichamen_lijnen_rws_2006Type/1">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}msGeometry</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_oppervlaktewaterlichamen_lijnen_rws_2006Type/count">1</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_oppervlaktewaterlichamen_lijnen_rws_2018Type/1">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}msGeometry</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_oppervlaktewaterlichamen_lijnen_rws_2018Type/2">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_oppervlaktewaterlichamen_lijnen_rws_2018Type/3">{http://www.opengis.net/gml/3.2}MultiCurve</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_oppervlaktewaterlichamen_lijnen_rws_2018Type/count">3</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_oppervlaktewaterlichamen_vlakken_rws_2006Type/1">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}msGeometry</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_oppervlaktewaterlichamen_vlakken_rws_2006Type/2">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_oppervlaktewaterlichamen_vlakken_rws_2006Type/count">2</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_oppervlaktewaterlichamen_vlakken_rws_2018Type/1">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}msGeometry</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_oppervlaktewaterlichamen_vlakken_rws_2018Type/count">1</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_stroomgebieddistricten_rws_2018Type/1">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}msGeometry</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_stroomgebieddistricten_rws_2018Type/2">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_stroomgebieddistricten_rws_2018Type/count">2</property>
+    <property name="mappableSourceType/1">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_oppervlaktewaterlichamen_lijnen_rws_2018Type</property>
+    <property name="mappableSourceType/2">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_deelstroomgebieden_rws_2018Type</property>
+    <property name="mappableSourceType/3">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_oppervlaktewaterlichamen_vlakken_rws_2018Type</property>
+    <property name="mappableSourceType/4">{https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater}krw_stroomgebieddistricten_rws_2018Type</property>
+    <property name="mappableSourceType/count">4</property>
+    <complex-property name="variables">
+        <core:properties xmlns:core="http://www.esdi-humboldt.eu/hale/core">
+            <core:property name="INSPIRE_DATASET_NAMESPACE">
+                <core:value value="http://www.rijkswaterstaat.nl/INSPIRE.Hydrografie_Hydro-Fysieke/"/>
+            </core:property>
+        </core:properties>
+    </complex-property>
+</hale-project>
