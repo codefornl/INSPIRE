@@ -1,0 +1,1425 @@
+<?xml version='1.0' encoding="ISO-8859-1" ?>
+<schema
+   targetNamespace="http://mapserver.gis.umn.edu/mapserver" 
+   xmlns:rws="http://mapserver.gis.umn.edu/mapserver" 
+   xmlns:ogc="http://www.opengis.net/ogc"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns="http://www.w3.org/2001/XMLSchema"
+   xmlns:gml="http://www.opengis.net/gml"
+   elementFormDefault="qualified" version="0.1" >
+
+  <import namespace="http://www.opengis.net/gml"
+          schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd" />
+
+  <element name="AAA71" 
+           type="rws:AAA71Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA71Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA72" 
+           type="rws:AAA72Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA72Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="INVENT_OMS" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA73" 
+           type="rws:AAA73Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA73Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="TYPE_CONV" type="string"/>
+          <element name="DOSEERINST" type="string"/>
+          <element name="HECTOBORD" type="string"/>
+          <element name="TOERITNR" type="string"/>
+          <element name="TOERITNAAM" type="string"/>
+          <element name="WEGDEELLTR" type="string"/>
+          <element name="KMTR" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA74" 
+           type="rws:AAA74Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA74Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="TYPE_DIV" type="string"/>
+          <element name="HECTOBORD" type="string"/>
+          <element name="AFRITNR" type="string"/>
+          <element name="AFRITNAAM" type="string"/>
+          <element name="WEGDEELLTR" type="string"/>
+          <element name="KMTR" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA75" 
+           type="rws:AAA75Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA75Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="AANT_DGK" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA76" 
+           type="rws:AAA76Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA76Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="AFST_GLG" type="string"/>
+          <element name="HGTE_GLG" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA77" 
+           type="rws:AAA77Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA77Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA78" 
+           type="rws:AAA78Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA78Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA79" 
+           type="rws:AAA79Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA79Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="VOORZ_VOP" type="string"/>
+          <element name="VOORZ_FOP" type="string"/>
+          <element name="VOORZ_VRI" type="string"/>
+          <element name="RIJRTNGHRB" type="string"/>
+          <element name="RIJRTNGZIJ" type="string"/>
+          <element name="AFBUIGING" type="string"/>
+          <element name="INVENT_OMS" type="string"/>
+          <element name="WEGDEELLTR" type="string"/>
+          <element name="KMTR" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA80" 
+           type="rws:AAA80Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA80Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="DOORRIJHGT" type="string"/>
+          <element name="INVENT_OMS" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA81" 
+           type="rws:AAA81Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA81Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="DOORRIJHGT" type="string"/>
+          <element name="INVENT_OMS" type="string"/>
+          <element name="WEGDEELLTR" type="string"/>
+          <element name="KMTR" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA82" 
+           type="rws:AAA82Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA82Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="WEGDEELLTR" type="string"/>
+          <element name="KMTR" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="ms_km_n" 
+           type="rws:ms_km_nType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="ms_km_nType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="BEGINTIJD" type="string"/>
+          <element name="EINDTIJD" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="ms_km_d" 
+           type="rws:ms_km_dType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="ms_km_dType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="BEGINTIJD" type="string"/>
+          <element name="EINDTIJD" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA85" 
+           type="rws:AAA85Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA85Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="AANT_MSK" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA86" 
+           type="rws:AAA86Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA86Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="PORTAALNR" type="string"/>
+          <element name="WEGDEELLTR" type="string"/>
+          <element name="KMTR" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA87" 
+           type="rws:AAA87Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA87Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA88" 
+           type="rws:AAA88Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA88Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="VOLGNRSTRK" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA89" 
+           type="rws:AAA89Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA89Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA203" 
+           type="rws:AAA203Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA203Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="WEGDEELLTR" type="string"/>
+          <element name="KMTR" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="str_sign" 
+           type="rws:str_signType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="str_signType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="CODE" type="string"/>
+          <element name="RIJSTRKNRS" type="string"/>
+          <element name="WEGDEELLTR" type="string"/>
+          <element name="KMTR" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA91" 
+           type="rws:AAA91Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA91Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA92" 
+           type="rws:AAA92Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA92Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA93" 
+           type="rws:AAA93Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA93Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA94" 
+           type="rws:AAA94Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA94Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="AFST_OBST" type="string"/>
+          <element name="POS_OMSCHR" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA96" 
+           type="rws:AAA96Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA96Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="AAA97" 
+           type="rws:AAA97Type" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="AAA97Type">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="BEGINWDL" type="string"/>
+          <element name="BEGINKM" type="string"/>
+          <element name="EINDWDL" type="string"/>
+          <element name="EINDKM" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WEGNUMMER" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="adv_wv" 
+           type="rws:adv_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="adv_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="beb_wv" 
+           type="rws:beb_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="beb_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="INVENT_OMS" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="conv_wv" 
+           type="rws:conv_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="conv_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="TYPE_CONV" type="string"/>
+          <element name="DOSEERINST" type="string"/>
+          <element name="HECTOBORD" type="string"/>
+          <element name="TOERITNR" type="string"/>
+          <element name="TOERITNAAM" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="AFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="div_wv" 
+           type="rws:div_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="div_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="TYPE_DIV" type="string"/>
+          <element name="HECTOBORD" type="string"/>
+          <element name="AFRITNR" type="string"/>
+          <element name="AFRITNAAM" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="AFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="doelgr_wv" 
+           type="rws:doelgr_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="doelgr_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="AANT_DGK" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="gel_bep_wv" 
+           type="rws:gel_bep_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="gel_bep_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="AFST_GLG" type="string"/>
+          <element name="HGTE_GLG" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="inh_wv" 
+           type="rws:inh_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="inh_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="kantstr_wv" 
+           type="rws:kantstr_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="kantstr_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="kruisp_wv" 
+           type="rws:kruisp_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="kruisp_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="VOORZ_VOP" type="string"/>
+          <element name="VOORZ_FOP" type="string"/>
+          <element name="VOORZ_VRI" type="string"/>
+          <element name="RIJRTNGHRB" type="string"/>
+          <element name="RIJRTNGZIJ" type="string"/>
+          <element name="AFBUIGING" type="string"/>
+          <element name="INVENT_OMS" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="AFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="ku_i_w_wv" 
+           type="rws:ku_i_w_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="ku_i_w_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="DOORRIJHGT" type="string"/>
+          <element name="INVENT_OMS" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="ku_o_w_wv" 
+           type="rws:ku_o_w_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="ku_o_w_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="DOORRIJHGT" type="string"/>
+          <element name="INVENT_OMS" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="AFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="lm_wv" 
+           type="rws:lm_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="lm_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="AFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="ms_wv_n" 
+           type="rws:ms_wv_nType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="ms_wv_nType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="BEGINTIJD" type="string"/>
+          <element name="EINDTIJD" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="ms_wv_d" 
+           type="rws:ms_wv_dType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="ms_wv_dType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="BEGINTIJD" type="string"/>
+          <element name="EINDTIJD" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="meng_wv" 
+           type="rws:meng_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="meng_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="AANT_MSK" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="port_wv" 
+           type="rws:port_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="port_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="PORTAALNR" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="AFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="rijbaan_wv" 
+           type="rws:rijbaan_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="rijbaan_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="rijstr_wv" 
+           type="rws:rijstr_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="rijstr_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="VOLGNRSTRK" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="sign_wv" 
+           type="rws:sign_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="sign_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="sp_ov_wv" 
+           type="rws:sp_ov_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="sp_ov_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="AFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="str_sign_wv" 
+           type="rws:str_sign_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="str_sign_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="CODE" type="string"/>
+          <element name="RIJSTRKNRS" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="AFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="verh_wv" 
+           type="rws:verh_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="verh_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="verl_wv" 
+           type="rws:verl_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="verl_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="vrw_wv" 
+           type="rws:vrw_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="vrw_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="wegb_wv" 
+           type="rws:wegb_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="wegb_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="AFST_OBST" type="string"/>
+          <element name="POS_OMSCHR" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="wc_b_wv" 
+           type="rws:wc_b_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="wc_b_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="wc_f_wv" 
+           type="rws:wc_f_wvType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="wc_f_wvType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="OMSCHR" type="string"/>
+          <element name="KANTCODE" type="string"/>
+          <element name="WVK_ID" type="string"/>
+          <element name="WVK_BEGDAT" type="string"/>
+          <element name="BEGAFSTAND" type="string"/>
+          <element name="ENDAFSTAND" type="string"/>
+          <element name="FK_VELD1" type="string"/>
+          <element name="FK_VELD4" type="string"/>
+          <element name="IZI_SIDE" type="string"/>
+          <element name="IBN" type="string"/>
+          <element name="SHAPE" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+</schema>

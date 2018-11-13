@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:nwbvaarwegen="http://nwbvaarwegen.geonovum.nl" 
+xmlns:wfs="http://www.opengis.net/wfs/2.0"
+ elementFormDefault="qualified" targetNamespace="http://nwbvaarwegen.geonovum.nl"> 
+ <xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://geodata.nationaalgeoregister.nl/schemas/gml/3.2.1/gml.xsd"/>
+  <xsd:complexType name="kmmarkeringenType">
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractFeatureType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="vwk_id" nillable="true" type="xsd:decimal"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="vwk_begindatum" nillable="true" type="xsd:dateTime"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="pos_tov_as" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="gtlwaarde" nillable="true" type="xsd:double"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ltrwaarde" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="afstand" nillable="true" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="mst_code" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="geom" nillable="true" type="gml:GeometryPropertyType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="kmmarkeringen" substitutionGroup="gml:AbstractFeature" type="nwbvaarwegen:kmmarkeringenType"/>
+  <xsd:complexType name="vaarwegvakkenType">
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractFeatureType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="vwk_id" nillable="true" type="xsd:decimal"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="vwk_begindatum" nillable="true" type="xsd:dateTime"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="vwj_id_beg" nillable="true" type="xsd:decimal"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="vwj_id_end" nillable="true" type="xsd:decimal"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="vaktype" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="vrt_code" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="vrt_naam" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="vwg_nr" nillable="true" type="xsd:short"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="vwg_naam" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="begkm" nillable="true" type="xsd:double"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="endkm" nillable="true" type="xsd:double"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="geom" nillable="true" type="gml:MultiCurvePropertyType"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="vaarwegvakken" substitutionGroup="gml:AbstractFeature" type="nwbvaarwegen:vaarwegvakkenType"/>
+</xsd:schema>
+

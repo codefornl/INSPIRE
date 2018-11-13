@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding="ISO-8859-1" ?>
+<schema
+   targetNamespace="http://mapserver.gis.umn.edu/mapserver" 
+   xmlns:rws="http://mapserver.gis.umn.edu/mapserver" 
+   xmlns:ogc="http://www.opengis.net/ogc"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns="http://www.w3.org/2001/XMLSchema"
+   xmlns:gml="http://www.opengis.net/gml"
+   elementFormDefault="qualified" version="0.1" >
+
+  <import namespace="http://www.opengis.net/gml"
+          schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd" />
+
+  <element name="dmnodes" 
+           type="rws:dmnodesType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="dmnodesType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:PointPropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="ID" type="string"/>
+          <element name="NAME" type="string"/>
+          <element name="TYPE" type="string"/>
+          <element name="PARENTID" type="string"/>
+          <element name="USERID" type="string"/>
+          <element name="X" type="string"/>
+          <element name="Y" type="string"/>
+          <element name="Z" type="string"/>
+          <element name="COLOR" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <element name="dmlinks" 
+           type="rws:dmlinksType" 
+           substitutionGroup="gml:_Feature" />
+
+  <complexType name="dmlinksType">
+    <complexContent>
+      <extension base="gml:AbstractFeatureType">
+        <sequence>
+          <element name="GEOMETRY" type="gml:CurvePropertyType" minOccurs="0" maxOccurs="1"/>
+          <element name="OBJECTID" type="string"/>
+          <element name="ID" type="string"/>
+          <element name="NAME" type="string"/>
+          <element name="TYPE" type="string"/>
+          <element name="PARENTID" type="string"/>
+          <element name="USERID" type="string"/>
+          <element name="ID_FROM" type="string"/>
+          <element name="ID_TO" type="string"/>
+          <element name="LENGTH_MAP" type="string"/>
+          <element name="Z_FROM" type="string"/>
+          <element name="Z_TO" type="string"/>
+          <element name="WIDTH" type="string"/>
+          <element name="HEIGHT" type="string"/>
+          <element name="COLOR" type="string"/>
+          <element name="VOORNAAM" type="string"/>
+          <element name="ACHTERNAAM" type="string"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+</schema>

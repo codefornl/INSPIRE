@@ -1,0 +1,1350 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alignment xmlns="http://www.esdi-humboldt.eu/hale/alignment">
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.retype" id="C480aea42-f93d-49b2-9e37-26c4abe4854e" priority="highest">
+        <source>
+            <class>
+                <type name="krw_deelstroomgebieden_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// Geometrien aufteilen in einzelne Simple Feature Geometrien&#xD;
+def geometries = _.geom.toSimpleGeometries(geometries: _source.p.msGeometry.first(), collections: false)&#xD;
+&#xD;
+// Identifier des Quell-Objekts&#xD;
+def sourceId = _source.p.id.value()&#xD;
+&#xD;
+// Builder konfigurieren&#xD;
+// - Zuweisung der Geometrie auf Ebene von geometry zulassen&#xD;
+_b.strictValueFlags = false&#xD;
+&#xD;
+// Add collector to add collect ids and geometries&#xD;
+def c = _.context.collector()&#xD;
+&#xD;
+// Ziel Objekt je Geometrie erstellen&#xD;
+int num = 1&#xD;
+geometries.each { geom -&gt;&#xD;
+	// ID bestimmen&#xD;
+	def _id&#xD;
+	if (geometries.size() &gt; 1) {&#xD;
+	  _id = "INSPIRE.Hydrografie_Bekken_${sourceId}_${num}"&#xD;
+	}&#xD;
+	else {&#xD;
+	  _id = "INSPIRE.Hydrografie_Bekken_${sourceId}"&#xD;
+	}&#xD;
+	&#xD;
+	def _ns = _project.vars.INSPIRE_DATASET_NAMESPACE&#xD;
+&#xD;
+	// Ziel-Objekt erstellen mit IDs und Geometrie&#xD;
+	_target {&#xD;
+		id( _id )&#xD;
+		inspireId {&#xD;
+			Identifier {&#xD;
+				localId( _id )&#xD;
+				namespace( _ns )&#xD;
+			}&#xD;
+		}&#xD;
+		identifier( _ns ? (_ns.endsWith('/') ? _ns : _ns + '/') + _id : _id ) {&#xD;
+			codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+		}&#xD;
+		geometry(geom)&#xD;
+	}&#xD;
+	&#xD;
+	// collect ID and geometry based on zone&#xD;
+	c.basinParts[_source.p.rZoneId.value()] &lt;&lt; [_id, geom]&#xD;
+&#xD;
+	num++&#xD;
+}&#xD;
+
+</core:text>
+        </complexParameter>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.retype" id="C6009f5da-d2dd-4894-95cc-0294b4c6b9e1" priority="normal">
+        <source>
+            <class>
+                <type name="krw_stroomgebieddistricten_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// Geometrien aufteilen in einzelne Simple Feature Geometrien&#xD;
+def geometries = _.geom.toSimpleGeometries(geometries: _source.p.msGeometry.first(), collections: false)&#xD;
+&#xD;
+// Identifier des Quell-Objekts&#xD;
+def sourceId = _source.p.id.value()&#xD;
+&#xD;
+// Builder konfigurieren&#xD;
+// - Zuweisung der Geometrie auf Ebene von geometry zulassen&#xD;
+_b.strictValueFlags = false&#xD;
+&#xD;
+// Add collector to get part ids and geometries&#xD;
+def c = _.context.collector()&#xD;
+&#xD;
+// Ziel Objekt je Geometrie erstellen&#xD;
+int num = 1&#xD;
+geometries.each { geom -&gt;&#xD;
+	// ID bestimmen&#xD;
+	def _id&#xD;
+	boolean split = geometries.size() &gt; 1&#xD;
+	if (split) {&#xD;
+	  _id = "INSPIRE.Hydrografie_Bekken_${sourceId}_${num}"&#xD;
+	}&#xD;
+	else {&#xD;
+	  _id = "INSPIRE.Hydrografie_Bekken_${sourceId}"&#xD;
+	}&#xD;
+	&#xD;
+	def _ns = _project.vars.INSPIRE_DATASET_NAMESPACE&#xD;
+	&#xD;
+	// get list of parts based on zone&#xD;
+	def parts = c.basinParts[_source.p.thematicId.value()].values()&#xD;
+&#xD;
+	// Ziel-Objekt erstellen mit IDs und Geometrie&#xD;
+	_target {&#xD;
+		id( _id )&#xD;
+		inspireId {&#xD;
+			Identifier {&#xD;
+				localId( _id )&#xD;
+				namespace( _ns )&#xD;
+			}&#xD;
+		}&#xD;
+		identifier( _ns ? (_ns.endsWith('/') ? _ns : _ns + '/') + _id : _id ) {&#xD;
+			codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+		}&#xD;
+		geometry(geom)&#xD;
+		&#xD;
+		if (!split) {&#xD;
+			// every part is part of the zone&#xD;
+	  		parts.each { part -&gt;&#xD;
+	  			containsBasin {
+	  				href( '#' + part[0] )
+	  			}&#xD;
+	  		}&#xD;
+		}&#xD;
+		else {&#xD;
+			// we need to determine based on the geometry, which part belongs here&#xD;
+			parts.findAll { part -&gt;&#xD;
+				// part geometry&#xD;
+				def partGeom = part[1].geometry&#xD;
+				def zoneGeom = geom.geometry&#xD;
+				&#xD;
+				zoneGeom.covers(partGeom)&#xD;
+			}.each { part -&gt;&#xD;
+	  			containsBasin {&#xD;
+	  				href( '#' + part[0] )&#xD;
+	  			}&#xD;
+	  		}&#xD;
+		}&#xD;
+	}&#xD;
+&#xD;
+	num++&#xD;
+}&#xD;
+
+</core:text>
+        </complexParameter>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Ca0f7b2d6-874b-4ba2-9417-16228a95f639" priority="normal">
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="area" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="uom"/>
+            </property>
+        </target>
+        <parameter value="km2" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C8e8f849b-7046-4833-bdb6-b1f78dc04da7" priority="normal">
+        <source>
+            <property>
+                <type name="krw_deelstroomgebieden_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="beginLife" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C4bf5bb72-3958-4675-a6d0-0780ad486722" priority="normal">
+        <source>
+            <property>
+                <type name="krw_stroomgebieddistricten_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="beginLife" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Ce0632f65-ae2f-4b80-b092-4a5f461fe38b" priority="normal">
+        <source>
+            <property>
+                <type name="krw_deelstroomgebieden_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="lowerCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="lowerCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C333cd42b-3431-4925-84a7-524ed15e5d9a" priority="normal">
+        <source>
+            <property>
+                <type name="krw_stroomgebieddistricten_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="lowerCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="lowerCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Ce8387ffc-3765-4cb1-8e05-8729f16877de" priority="normal">
+        <source>
+            <property>
+                <type name="krw_deelstroomgebieden_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="upperCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="upperCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C60a21500-1a7b-49f6-8657-2497152c16eb" priority="normal">
+        <source>
+            <property>
+                <type name="krw_stroomgebieddistricten_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="upperCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="upperCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cea3d19c8-fd0d-4ed7-9406-54bf622ef6d9" priority="normal">
+        <source>
+            <property>
+                <type name="krw_deelstroomgebieden_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="srsName"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="srsName"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C8748c821-229b-40c3-bcbb-4aee4d5d74d9" priority="normal">
+        <source>
+            <property>
+                <type name="krw_stroomgebieddistricten_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="srsName"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="srsName"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C135e21ae-fba9-4ffa-952f-5f412e7819a6" priority="normal">
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="language" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="nld" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cc4883a2c-4269-4c2a-8b15-81d5f622e3ac" priority="normal">
+        <source>
+            <property>
+                <type name="krw_deelstroomgebieden_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="nameText" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C60a9fa19-d148-4a79-87bc-f1c3786a0623" priority="normal">
+        <source>
+            <property>
+                <type name="krw_stroomgebieddistricten_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="nameText" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cbe38bd30-e881-4c72-8f13-15861f660056" priority="normal">
+        <source>
+            <property>
+                <type name="krw_deelstroomgebieden_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="msGeometry" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="Polygon" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="geometry" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractSurface"/>
+                <child name="Polygon" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C1e974a70-94b2-4a3a-ab7d-c7017eaa836d" priority="normal">
+        <source>
+            <property>
+                <type name="krw_stroomgebieddistricten_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="msGeometry" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="Polygon" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="geometry" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractSurface"/>
+                <child name="Polygon" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C9b1d0bf9-2d15-46a2-bb79-c85860a87278" priority="normal">
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="hydroId" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="HydroIdentifier" ns="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+                <child name="classificationScheme" ns="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/codelist/ZoneTypeCode/riverBasinDistrict" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C75d008ea-bb06-422c-bada-a8a17994dd62" priority="normal">
+        <source>
+            <property>
+                <type name="krw_deelstroomgebieden_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="thematicId" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="hydroId" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="HydroIdentifier" ns="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Ca4e2d9ae-c524-4238-ad49-a7d8b805cc86" priority="normal">
+        <source>
+            <property>
+                <type name="krw_stroomgebieddistricten_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="thematicId" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="hydroId" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="HydroIdentifier" ns="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cf5e8c886-e9a8-4347-b9d1-d71e88bdd46a" priority="normal">
+        <source name="var">
+            <property>
+                <type name="krw_deelstroomgebieden_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="RiverBasin_{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cb35d356c-0f4a-4cf0-94c6-94d2d6c52621" priority="normal">
+        <source name="var">
+            <property>
+                <type name="krw_stroomgebieddistricten_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="RiverBasin_{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C7be931c9-41a5-4686-bf21-17bc50d85dac" priority="normal">
+        <source name="var">
+            <property>
+                <type name="krw_deelstroomgebieden_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="RiverBasin_{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C1515595b-d6c3-4506-a946-e605a2b004d2" priority="normal">
+        <source name="var">
+            <property>
+                <type name="krw_stroomgebieddistricten_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="RiverBasin_{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C56279906-f072-4939-8c43-4ac155da0135" priority="normal">
+        <target>
+            <property>
+                <type name="RiverBasinType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATATSET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.retype" id="Cc38a58cc-cdb9-4405-b35d-98fc352de0b5" priority="normal">
+        <source>
+            <class>
+                <type name="krw_oppervlaktewaterlichamen_vlakken_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">
+                    <condition lang="ECQL">spZoneType='lakeWaterBody'</condition>
+                </type>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// Geometrien aufteilen in einzelne Simple Feature Geometrien&#xD;
+def geometries = _.geom.toSimpleGeometries(geometries: _source.p.msGeometry.first(), collections: false)&#xD;
+&#xD;
+// Identifier des Quell-Objekts&#xD;
+def sourceId = _source.p.id.value()&#xD;
+&#xD;
+// Builder konfigurieren&#xD;
+// - Zuweisung der Geometrie auf Ebene von geometry zulassen&#xD;
+_b.strictValueFlags = false&#xD;
+&#xD;
+// Add collector to get part ids and geometries&#xD;
+def c = _.context.collector()&#xD;
+&#xD;
+// Ziel Objekt je Geometrie erstellen&#xD;
+int num = 1&#xD;
+geometries.each { geom -&gt;&#xD;
+	// ID bestimmen&#xD;
+	def _id&#xD;
+	boolean split = geometries.size() &gt; 1&#xD;
+	if (split) {&#xD;
+	  _id = "INSPIRE.Hydrografie_StilstaandWater_${sourceId}_${num}"&#xD;
+	}&#xD;
+	else {&#xD;
+	  _id = "INSPIRE.Hydrografie_StilstaandWater_${sourceId}"&#xD;
+	}&#xD;
+	&#xD;
+	def _ns = _project.vars.INSPIRE_DATASET_NAMESPACE&#xD;
+&#xD;
+	// Ziel-Objekt erstellen mit IDs und Geometrie&#xD;
+	_target {&#xD;
+		id( _id )&#xD;
+		inspireId {&#xD;
+			Identifier {&#xD;
+				localId( _id )&#xD;
+				namespace( _ns )&#xD;
+			}&#xD;
+		}&#xD;
+		identifier( _ns ? (_ns.endsWith('/') ? _ns : _ns + '/') + _id : _id ) {&#xD;
+			codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+		}&#xD;
+		geometry(geom)&#xD;
+		&#xD;
+		}&#xD;
+&#xD;
+	num++&#xD;
+}
+</core:text>
+        </complexParameter>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Ca9d3492c-e1a4-41d0-b41d-a4d6ebb2d211" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_vlakken_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">
+                    <condition lang="ECQL">spZoneType='lakeWaterBody'</condition>
+                </type>
+                <child name="beginLife" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C346fbb57-69f6-450a-8eb3-3e0abe4ed776" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_vlakken_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">
+                    <condition lang="ECQL">spZoneType='lakeWaterBody'</condition>
+                </type>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="lowerCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="lowerCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C887409d2-e942-482a-98c3-69c751fa7b24" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_vlakken_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">
+                    <condition lang="ECQL">spZoneType='lakeWaterBody'</condition>
+                </type>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="upperCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="upperCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C0297fabc-8786-4a24-a73e-4aa0a4b6690c" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_vlakken_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">
+                    <condition lang="ECQL">spZoneType='lakeWaterBody'</condition>
+                </type>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="srsName"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="srsName"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C50ebe64e-8fef-44d0-a138-bb2cedbf5313" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_vlakken_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">
+                    <condition lang="ECQL">spZoneType='lakeWaterBody'</condition>
+                </type>
+                <child name="rZoneId" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="drainsBasin" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="title" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cbf2767ad-c063-480f-a6cf-a7f1fffeb1d5" priority="normal">
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="elevation" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="uom"/>
+            </property>
+        </target>
+        <parameter value="m" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C9dd4dee8-12e6-4511-9a5b-42a4881ad478" priority="normal">
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="language" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="nld" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C62b014a2-b4f4-44f1-bfb4-7a3b0ab71428" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_vlakken_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">
+                    <condition lang="ECQL">spZoneType='lakeWaterBody'</condition>
+                </type>
+                <child name="nameText" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cc32f5d74-bfbd-4817-8841-33c47993dc5f" priority="normal">
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="hydroId" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="HydroIdentifier" ns="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+                <child name="classificationScheme" ns="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/codelist/ZoneTypeCode/waterBodyForWFD" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C2f3a0391-2183-4962-857c-0385e320f339" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_vlakken_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">
+                    <condition lang="ECQL">spZoneType='lakeWaterBody'</condition>
+                </type>
+                <child name="rZoneId" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="hydroId" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="HydroIdentifier" ns="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cca0c9272-1160-4cd6-9d56-640e3f0d6508" priority="normal">
+        <source name="var">
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_vlakken_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">
+                    <condition lang="ECQL">spZoneType='lakeWaterBody'</condition>
+                </type>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Hydrografie_StilstaandWater _{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cd137abac-988a-49aa-8537-2b3bdb423fd9" priority="normal">
+        <source name="var">
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_vlakken_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">
+                    <condition lang="ECQL">spZoneType='lakeWaterBody'</condition>
+                </type>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Hydrografie_StilstaandWater.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C6ef3df8f-7296-430f-a27c-b95a7b793336" priority="normal">
+        <source name="var">
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_vlakken_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">
+                    <condition lang="ECQL">spZoneType='lakeWaterBody'</condition>
+                </type>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Hydrografie_StilstaandWater _{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cc140d8af-834c-4674-bf49-dbe8674e4564" priority="normal">
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATATSET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C7d0641a4-848d-4a67-80c5-cfcb2354a1bc" priority="normal">
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="meanDepth" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="uom"/>
+            </property>
+        </target>
+        <parameter value="m" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cc9995c24-c315-484f-9280-eb01735ad18d" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_vlakken_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater">
+                    <condition lang="ECQL">spZoneType='lakeWaterBody'</condition>
+                </type>
+                <child name="sizeValue" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="surfaceArea" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C5daa7629-6ef1-444b-8de2-d291c032dc49" priority="normal">
+        <target>
+            <property>
+                <type name="StandingWaterType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="surfaceArea" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="uom"/>
+            </property>
+        </target>
+        <parameter value="km2" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy.retype" id="C518ea5d4-2a15-450e-b1b3-b9ccc8006aca" priority="normal">
+        <source>
+            <class>
+                <type name="krw_oppervlaktewaterlichamen_lijnen_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+            </class>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+// Geometrien aufteilen in einzelne Simple Feature Geometrien&#xD;
+def geometries = _.geom.toSimpleGeometries(geometries: _source.p.msGeometry.first(), collections: false)&#xD;
+&#xD;
+// Identifier des Quell-Objekts&#xD;
+def sourceId = _source.p.id.value()&#xD;
+&#xD;
+// Builder konfigurieren&#xD;
+// - Zuweisung der Geometrie auf Ebene von geometry zulassen&#xD;
+_b.strictValueFlags = false&#xD;
+&#xD;
+// Add collector to get part ids and geometries&#xD;
+def c = _.context.collector()&#xD;
+&#xD;
+// Ziel Objekt je Geometrie erstellen&#xD;
+int num = 1&#xD;
+geometries.each { geom -&gt;&#xD;
+	// ID bestimmen&#xD;
+	def _id&#xD;
+	boolean split = geometries.size() &gt; 1&#xD;
+	if (split) {&#xD;
+	  _id = "INSPIRE.Hydrografie_Waterloop_${sourceId}_${num}"&#xD;
+	}&#xD;
+	else {&#xD;
+	  _id = "INSPIRE.Hydrografie_Waterloop_${sourceId}"&#xD;
+	}&#xD;
+	&#xD;
+	def _ns = _project.vars.INSPIRE_DATASET_NAMESPACE&#xD;
+	&#xD;
+	// Ziel-Objekt erstellen mit IDs und Geometrie&#xD;
+	_target {&#xD;
+		id( _id )&#xD;
+		inspireId {&#xD;
+			Identifier {&#xD;
+				localId( _id )&#xD;
+				namespace( _ns )&#xD;
+			}&#xD;
+		}&#xD;
+		identifier( _ns ? (_ns.endsWith('/') ? _ns : _ns + '/') + _id : _id ) {&#xD;
+			codeSpace( 'http://inspire.ec.europa.eu/ids' )&#xD;
+		}&#xD;
+		geometry(geom)&#xD;
+		&#xD;
+		}&#xD;
+&#xD;
+	num++&#xD;
+}&#xD;
+
+</core:text>
+        </complexParameter>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C7a9027fb-c39d-47fe-8464-79d6c7d1a867" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_lijnen_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="beginLife" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cd7f4d450-a8d6-485f-8a8d-03bdce61c9d0" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_lijnen_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="lowerCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="lowerCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C4cbce52a-8ea4-4ab1-a6ed-361519fc9053" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_lijnen_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="upperCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType"/>
+                <child name="sequence_1" ns="http://www.opengis.net/gml/3.2/EnvelopeType/choice_1"/>
+                <child name="upperCorner" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C70c2144b-a6d0-4090-94a5-9045630df3e0" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_lijnen_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="srsName"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="boundedBy" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/BoundingShapeType"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/Envelope"/>
+                <child name="Envelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="srsName"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C2995fdc1-8585-4612-9ec0-e834a6c39391" priority="normal">
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="delineationKnown" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+            </property>
+        </target>
+        <parameter value="true" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C1f7c4faf-b229-4e2e-b616-bdfb67680acc" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_lijnen_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="rZoneId" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="drainsBasin" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="title" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cdf9be00c-5a88-4d59-a406-ca88889d54ba" priority="normal">
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="language" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="nld" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C69c94e19-806f-4e38-9374-e4955638af80" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_lijnen_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="nameText" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="geographicalName" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="GeographicalName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="spelling" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="SpellingOfName" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+                <child name="text" ns="http://inspire.ec.europa.eu/schemas/gn/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C94d4215e-ac10-4934-b6d4-c986a2f3cdf2" priority="normal">
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="hydroId" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="HydroIdentifier" ns="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+                <child name="classificationScheme" ns="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/codelist/ZoneTypeCode/waterBodyForWFD" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C48a4e6ac-f885-401e-a145-c9be31f8b6c3" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_lijnen_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="rZoneId" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="hydroId" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="HydroIdentifier" ns="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/hy/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Ceef24c6f-fd97-4b9c-8444-61f12a1312b0" priority="normal">
+        <source name="var">
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_lijnen_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Hydrografie_Waterloop_{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cd9c9fc77-eb95-482f-a632-6479f72ecd4e" priority="normal">
+        <source name="var">
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_lijnen_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATASET_NAMESPACE}}INSPIRE.Hydrografie_Waterloop.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C660e06cd-4db8-4be2-bc8f-bbb7f356a413" priority="normal">
+        <source name="var">
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_lijnen_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="INSPIRE.Hydrografie_Waterloop_{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C73ca86de-5fbf-427f-87e5-39a24820b15a" priority="normal">
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_DATATSET_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Ca52efb55-8136-440a-852b-ea26e1fdbb1f" priority="normal">
+        <source>
+            <property>
+                <type name="krw_oppervlaktewaterlichamen_lijnen_rws_2018Type" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+                <child name="sizeValue" ns="https://geodata.nationaalgeoregister.nl/kaderrichtlijnwater"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="length" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C005c43f0-14f7-4cf8-b69d-3c5e8800c949" priority="normal">
+        <target>
+            <property>
+                <type name="WatercourseType" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="length" ns="http://inspire.ec.europa.eu/schemas/hy-p/4.0"/>
+                <child name="uom"/>
+            </property>
+        </target>
+        <parameter value="km" name="value"/>
+    </cell>
+    <modifier cell="C0297fabc-8786-4a24-a73e-4aa0a4b6690c">
+        <disable-for parent="Cc38a58cc-cdb9-4405-b35d-98fc352de0b5"/>
+    </modifier>
+    <modifier cell="C1515595b-d6c3-4506-a946-e605a2b004d2">
+        <disable-for parent="C6009f5da-d2dd-4894-95cc-0294b4c6b9e1"/>
+    </modifier>
+    <modifier cell="C1e974a70-94b2-4a3a-ab7d-c7017eaa836d">
+        <disable-for parent="C6009f5da-d2dd-4894-95cc-0294b4c6b9e1"/>
+    </modifier>
+    <modifier cell="C333cd42b-3431-4925-84a7-524ed15e5d9a">
+        <disable-for parent="C6009f5da-d2dd-4894-95cc-0294b4c6b9e1"/>
+    </modifier>
+    <modifier cell="C346fbb57-69f6-450a-8eb3-3e0abe4ed776">
+        <disable-for parent="Cc38a58cc-cdb9-4405-b35d-98fc352de0b5"/>
+    </modifier>
+    <modifier cell="C4cbce52a-8ea4-4ab1-a6ed-361519fc9053">
+        <disable-for parent="C518ea5d4-2a15-450e-b1b3-b9ccc8006aca"/>
+    </modifier>
+    <modifier cell="C56279906-f072-4939-8c43-4ac155da0135">
+        <disable-for parent="C480aea42-f93d-49b2-9e37-26c4abe4854e"/>
+        <disable-for parent="C6009f5da-d2dd-4894-95cc-0294b4c6b9e1"/>
+    </modifier>
+    <modifier cell="C60a21500-1a7b-49f6-8657-2497152c16eb">
+        <disable-for parent="C6009f5da-d2dd-4894-95cc-0294b4c6b9e1"/>
+    </modifier>
+    <modifier cell="C660e06cd-4db8-4be2-bc8f-bbb7f356a413">
+        <disable-for parent="C518ea5d4-2a15-450e-b1b3-b9ccc8006aca"/>
+    </modifier>
+    <modifier cell="C6ef3df8f-7296-430f-a27c-b95a7b793336">
+        <disable-for parent="Cc38a58cc-cdb9-4405-b35d-98fc352de0b5"/>
+    </modifier>
+    <modifier cell="C70c2144b-a6d0-4090-94a5-9045630df3e0">
+        <disable-for parent="C518ea5d4-2a15-450e-b1b3-b9ccc8006aca"/>
+    </modifier>
+    <modifier cell="C73ca86de-5fbf-427f-87e5-39a24820b15a">
+        <disable-for parent="C518ea5d4-2a15-450e-b1b3-b9ccc8006aca"/>
+    </modifier>
+    <modifier cell="C7be931c9-41a5-4686-bf21-17bc50d85dac">
+        <disable-for parent="C480aea42-f93d-49b2-9e37-26c4abe4854e"/>
+    </modifier>
+    <modifier cell="C8748c821-229b-40c3-bcbb-4aee4d5d74d9">
+        <disable-for parent="C6009f5da-d2dd-4894-95cc-0294b4c6b9e1"/>
+    </modifier>
+    <modifier cell="C887409d2-e942-482a-98c3-69c751fa7b24">
+        <disable-for parent="Cc38a58cc-cdb9-4405-b35d-98fc352de0b5"/>
+    </modifier>
+    <modifier cell="Ca52efb55-8136-440a-852b-ea26e1fdbb1f">
+        <disable-for parent="C518ea5d4-2a15-450e-b1b3-b9ccc8006aca"/>
+    </modifier>
+    <modifier cell="Cb35d356c-0f4a-4cf0-94c6-94d2d6c52621">
+        <disable-for parent="C6009f5da-d2dd-4894-95cc-0294b4c6b9e1"/>
+    </modifier>
+    <modifier cell="Cbe38bd30-e881-4c72-8f13-15861f660056">
+        <disable-for parent="C480aea42-f93d-49b2-9e37-26c4abe4854e"/>
+    </modifier>
+    <modifier cell="Cc140d8af-834c-4674-bf49-dbe8674e4564">
+        <disable-for parent="Cc38a58cc-cdb9-4405-b35d-98fc352de0b5"/>
+    </modifier>
+    <modifier cell="Cc9995c24-c315-484f-9280-eb01735ad18d">
+        <disable-for parent="Cc38a58cc-cdb9-4405-b35d-98fc352de0b5"/>
+    </modifier>
+    <modifier cell="Cca0c9272-1160-4cd6-9d56-640e3f0d6508">
+        <disable-for parent="Cc38a58cc-cdb9-4405-b35d-98fc352de0b5"/>
+    </modifier>
+    <modifier cell="Cd137abac-988a-49aa-8537-2b3bdb423fd9">
+        <disable-for parent="Cc38a58cc-cdb9-4405-b35d-98fc352de0b5"/>
+    </modifier>
+    <modifier cell="Cd7f4d450-a8d6-485f-8a8d-03bdce61c9d0">
+        <disable-for parent="C518ea5d4-2a15-450e-b1b3-b9ccc8006aca"/>
+    </modifier>
+    <modifier cell="Cd9c9fc77-eb95-482f-a632-6479f72ecd4e">
+        <disable-for parent="C518ea5d4-2a15-450e-b1b3-b9ccc8006aca"/>
+    </modifier>
+    <modifier cell="Ce0632f65-ae2f-4b80-b092-4a5f461fe38b">
+        <disable-for parent="C480aea42-f93d-49b2-9e37-26c4abe4854e"/>
+    </modifier>
+    <modifier cell="Ce8387ffc-3765-4cb1-8e05-8729f16877de">
+        <disable-for parent="C480aea42-f93d-49b2-9e37-26c4abe4854e"/>
+    </modifier>
+    <modifier cell="Cea3d19c8-fd0d-4ed7-9406-54bf622ef6d9">
+        <disable-for parent="C480aea42-f93d-49b2-9e37-26c4abe4854e"/>
+    </modifier>
+    <modifier cell="Ceef24c6f-fd97-4b9c-8444-61f12a1312b0">
+        <disable-for parent="C518ea5d4-2a15-450e-b1b3-b9ccc8006aca"/>
+    </modifier>
+    <modifier cell="Cf5e8c886-e9a8-4347-b9d1-d71e88bdd46a">
+        <disable-for parent="C480aea42-f93d-49b2-9e37-26c4abe4854e"/>
+    </modifier>
+</alignment>
