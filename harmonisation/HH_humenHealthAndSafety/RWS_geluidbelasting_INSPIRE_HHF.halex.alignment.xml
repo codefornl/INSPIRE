@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alignment xmlns="http://www.esdi-humboldt.eu/hale/alignment">
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="C4592d873-f664-4d55-a454-cbe152d51329" priority="normal">
+        <source>
+            <class>
+                <type name="Lden_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="C88287a06-2875-4072-8fee-b30c3187b682" priority="normal">
+        <source>
+            <class>
+                <type name="Lden_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="C3557aab7-fa5e-4edc-91d1-347fcbc0fe68" priority="normal">
+        <source>
+            <class>
+                <type name="Lden_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="C73960fa5-f1d8-44e8-8a3b-38c07a2f438c" priority="normal">
+        <source>
+            <class>
+                <type name="Lnight_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="Ce227df32-d927-451f-a53d-b016b256b093" priority="normal">
+        <source>
+            <class>
+                <type name="Lnight_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="Ca755a2c3-1b70-4080-adf0-bb77f96e39ba" priority="normal">
+        <source>
+            <class>
+                <type name="Lnight_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C2946585e-973b-4b6c-abd8-369afa8686fa" priority="normal">
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="beginLifespanVersion" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C036481b1-878a-4e4a-b819-8e9e2c9b6ab2" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lden_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="EnvHealthDeterminantMeasure.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C856884bc-3ab1-4f2d-aadf-a49785539073" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lden_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="EnvHealthDeterminantMeasure.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C87a14846-6983-4b52-b222-fa02a0229eae" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lden_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="EnvHealthDeterminantMeasure.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C7ca9a7f9-642e-4079-8de3-a8a6fdc10a0f" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lnight_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="EnvHealthDeterminantMeasure.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C5a6ae3fe-b50b-440f-b44f-e1e9b08fd0ea" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lnight_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="EnvHealthDeterminantMeasure.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cc8d99c6b-d005-44a2-8ee6-788976243c64" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lnight_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="EnvHealthDeterminantMeasure.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C476c8c71-9595-4413-89f1-034b175d5674" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lden_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_NAMESPACE}}EnvHealthDeterminantMeasure.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cf2d1be42-d663-4213-b013-a60d89adc40d" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lden_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_NAMESPACE}}EnvHealthDeterminantMeasure.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C6b251310-21c4-4beb-be5f-d49d8ee61911" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lden_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_NAMESPACE}}EnvHealthDeterminantMeasure.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C5c79a627-2c19-4ade-a068-76a106b741fe" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lnight_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_NAMESPACE}}EnvHealthDeterminantMeasure.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cc5043e0b-a81f-4a26-97ab-01dcdbdf01c7" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lnight_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_NAMESPACE}}EnvHealthDeterminantMeasure.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C13dbdfab-20ee-4570-95a4-b84d6ec0f1aa" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lnight_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_NAMESPACE}}EnvHealthDeterminantMeasure.{id}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C6ec94acb-e800-461c-9bf9-de7529409b0f" priority="normal">
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cc45f27bb-1880-41f2-8e9d-5bad23747902" priority="normal">
+        <source>
+            <property>
+                <type name="Lden_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="geom" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="MultiSurface" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="location" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="MultiSurface" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cddaabc10-ef87-4435-a3de-cacf5141288b" priority="normal">
+        <source>
+            <property>
+                <type name="Lden_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="geom" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="MultiSurface" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="location" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="MultiSurface" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cfc4aa48b-3e61-48b0-b203-4819b7a5f5ba" priority="normal">
+        <source>
+            <property>
+                <type name="Lden_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="geom" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="MultiSurface" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="location" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="MultiSurface" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C61a6a3b2-2117-4dc7-8182-f4f2554a09c6" priority="normal">
+        <source>
+            <property>
+                <type name="Lnight_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="geom" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="MultiSurface" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="location" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="MultiSurface" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cb1e4df54-cf05-4e3f-9d1d-14ad7e2fc4c6" priority="normal">
+        <source>
+            <property>
+                <type name="Lnight_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="geom" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="MultiSurface" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="location" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="MultiSurface" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C8f65ddb0-239a-43eb-a17c-81eb49e5d8fb" priority="normal">
+        <source>
+            <property>
+                <type name="Lnight_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="geom" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="MultiSurface" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="location" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="MultiSurface" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C3a967a2e-bf54-40f9-bc36-3d34a54c4fb2" priority="normal">
+        <source>
+            <property>
+                <type name="Lden_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="class_min" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measure" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C3f66d513-4f7e-4664-b509-cf269f5b4715" priority="normal">
+        <source>
+            <property>
+                <type name="Lden_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="class_min" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measure" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C54b81ec0-e3df-4fd2-9915-78a5eae2ecde" priority="normal">
+        <source>
+            <property>
+                <type name="Lden_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="ondergrens" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measure" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C8d91df67-5063-4fe2-971f-de3778c91071" priority="normal">
+        <source>
+            <property>
+                <type name="Lnight_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="class_min" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measure" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Cee324643-a8f7-48e5-b2aa-c26cf291d904" priority="normal">
+        <source>
+            <property>
+                <type name="Lnight_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="class_min" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measure" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="Ca3e84add-e893-4964-9305-86f9a74ca560" priority="normal">
+        <source>
+            <property>
+                <type name="Lnight_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="ondergrens" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measure" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Ca0e46ed1-12e0-482e-b31a-a950e2ec5027" priority="normal">
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measure" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="uom"/>
+            </property>
+        </target>
+        <parameter value="dB" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C1a30e5ec-4729-485d-8b3d-5aced87f5113" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="Lden_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="beginPosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="2006-01-01T00:00:00" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C82c08adf-aec5-4914-86de-e60fe9c6d7e8" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="Lden_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="beginPosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="2011-01-01T00:00:00" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cb554a452-91ea-4ab7-8863-9a5376155d07" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="Lden_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="beginPosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="2016-01-01T00:00:00" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C4b26d23c-a05b-4d0e-b9e7-6154f7435bea" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="Lnight_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="beginPosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="2006-01-01T00:00:00" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cc6bb6ca2-7836-45b4-9c9d-057f10a624b1" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="Lnight_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="beginPosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="2011-01-01T00:00:00" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Ca97e473c-7a34-4ff0-bf80-57facafa2478" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="Lnight_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="beginPosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="2016-01-01T00:00:00" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C13855279-79a8-4004-a281-0de2c45c72a4" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="Lden_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_2" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="endPosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="2006-12-31T23:59:59" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cba72f208-ed4a-45fc-b789-f232bb7df8c7" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="Lden_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_2" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="endPosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="2011-12-31T23:59:59" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C766744fa-6ef6-4943-8856-e724f1bd46af" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="Lden_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_2" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="endPosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="2016-12-31T23:59:59" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cd522a926-e22d-4b0e-a192-02bd74e7615b" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="Lnight_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_2" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="endPosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="2006-12-31T23:59:59" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C47475846-4b22-401d-9a5f-62341e914dd3" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="Lnight_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_2" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="endPosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="2011-12-31T23:59:59" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C68d569b4-0008-48bf-9428-b65a7108623a" priority="normal">
+        <source name="anchor">
+            <property>
+                <type name="Lnight_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_2" ns="http://www.opengis.net/gml/3.2/TimePeriodType"/>
+                <child name="endPosition" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="2016-12-31T23:59:59" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C67c48b1a-910b-4e97-83f7-0deb0e75dc29" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lden_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="EnvHealthDeterminantMeasure.{id}.TimePeriod" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cc198400e-a15e-4539-894c-af63dd7f914a" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lden_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="EnvHealthDeterminantMeasure.{id}.TimePeriod" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C7c9b4c9f-9272-4f7d-93a1-b4d6b003ad2e" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lden_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="EnvHealthDeterminantMeasure.{id}.TimePeriod" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C6049c99a-b20b-48fb-96cf-908f842e3196" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lnight_2006Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="EnvHealthDeterminantMeasure.{id}.TimePeriod" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="Cd084d4a0-8c60-4c54-92ef-83665b626b2f" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lnight_2011Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="EnvHealthDeterminantMeasure.{id}.TimePeriod" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C7f68b6f5-87e3-40c1-88c3-0e542e518df2" priority="normal">
+        <source name="var">
+            <property>
+                <type name="Lnight_2016Type" ns="http://rwsgeluidskaarten.geonovum.nl"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="measureTime" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="TimePeriod" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="EnvHealthDeterminantMeasure.{id}.TimePeriod" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cf7866cce-126a-49c4-8e83-6d2ebefa6029" priority="normal">
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="type" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/codelist/EnvHealthDeterminantTypeValue/noise" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C5d899627-e3b6-43df-bfc5-f02c928198a3" priority="normal">
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="validFrom" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C1d6a4487-42ad-4442-88da-54582db1a0d4" priority="normal">
+        <target>
+            <property>
+                <type name="EnvHealthDeterminantMeasureType" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="validTo" ns="http://inspire.ec.europa.eu/schemas/hh/4.0"/>
+                <child name="nilReason"/>
+            </property>
+        </target>
+        <parameter value="other:unpopulated" name="value"/>
+    </cell>
+</alignment>
