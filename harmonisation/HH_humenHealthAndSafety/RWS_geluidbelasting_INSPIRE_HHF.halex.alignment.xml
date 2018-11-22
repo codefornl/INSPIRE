@@ -520,7 +520,7 @@
                 <child name="beginPosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="2006-01-01T00:00:00" name="value"/>
+        <parameter value="2006-01-01T00:00:00+01:00" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C82c08adf-aec5-4914-86de-e60fe9c6d7e8" priority="normal">
         <source name="anchor">
@@ -538,7 +538,7 @@
                 <child name="beginPosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="2011-01-01T00:00:00" name="value"/>
+        <parameter value="2011-01-01T00:00:00+01:00" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cb554a452-91ea-4ab7-8863-9a5376155d07" priority="normal">
         <source name="anchor">
@@ -556,7 +556,7 @@
                 <child name="beginPosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="2016-01-01T00:00:00" name="value"/>
+        <parameter value="2016-01-01T00:00:00+01:00" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C4b26d23c-a05b-4d0e-b9e7-6154f7435bea" priority="normal">
         <source name="anchor">
@@ -574,7 +574,7 @@
                 <child name="beginPosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="2006-01-01T00:00:00" name="value"/>
+        <parameter value="2006-01-01T00:00:00+01:00" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cc6bb6ca2-7836-45b4-9c9d-057f10a624b1" priority="normal">
         <source name="anchor">
@@ -592,7 +592,7 @@
                 <child name="beginPosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="2011-01-01T00:00:00" name="value"/>
+        <parameter value="2011-01-01T00:00:00+01:00" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Ca97e473c-7a34-4ff0-bf80-57facafa2478" priority="normal">
         <source name="anchor">
@@ -610,7 +610,7 @@
                 <child name="beginPosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="2016-01-01T00:00:00" name="value"/>
+        <parameter value="2016-01-01T00:00:00+01:00" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C13855279-79a8-4004-a281-0de2c45c72a4" priority="normal">
         <source name="anchor">
@@ -628,7 +628,7 @@
                 <child name="endPosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="2006-12-31T23:59:59" name="value"/>
+        <parameter value="2006-12-31T23:59:59+01:00" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cba72f208-ed4a-45fc-b789-f232bb7df8c7" priority="normal">
         <source name="anchor">
@@ -646,7 +646,7 @@
                 <child name="endPosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="2011-12-31T23:59:59" name="value"/>
+        <parameter value="2011-12-31T23:59:59+01:00" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C766744fa-6ef6-4943-8856-e724f1bd46af" priority="normal">
         <source name="anchor">
@@ -664,7 +664,7 @@
                 <child name="endPosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="2016-12-31T23:59:59" name="value"/>
+        <parameter value="2016-12-31T23:59:59+01:00" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="Cd522a926-e22d-4b0e-a192-02bd74e7615b" priority="normal">
         <source name="anchor">
@@ -682,7 +682,7 @@
                 <child name="endPosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="2006-12-31T23:59:59" name="value"/>
+        <parameter value="2006-12-31T23:59:59+01:00" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C47475846-4b22-401d-9a5f-62341e914dd3" priority="normal">
         <source name="anchor">
@@ -700,7 +700,7 @@
                 <child name="endPosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="2011-12-31T23:59:59" name="value"/>
+        <parameter value="2011-12-31T23:59:59+01:00" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign.bound" id="C68d569b4-0008-48bf-9428-b65a7108623a" priority="normal">
         <source name="anchor">
@@ -718,7 +718,7 @@
                 <child name="endPosition" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="2016-12-31T23:59:59" name="value"/>
+        <parameter value="2016-12-31T23:59:59+01:00" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C67c48b1a-910b-4e97-83f7-0deb0e75dc29" priority="normal">
         <source name="var">
