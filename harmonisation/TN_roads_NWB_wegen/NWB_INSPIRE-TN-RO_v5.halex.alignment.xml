@@ -1891,14 +1891,9 @@ _target {&#xD;
         </target>
         <complexParameter name="script">
             <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
-import  java.util.UUID&#xD;
-&#xD;
 def input = gme_id + stt_naam&#xD;
-&#xD;
-def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
-&#xD;
+def result = _.crypto.sha256(input)&#xD;
 def id = 'INSPIRE.Vervoersnetwerken_Wegen_Weg.' + result&#xD;
-&#xD;
 return id
 </core:text>
         </complexParameter>
@@ -1926,11 +1921,8 @@ return id
         </target>
         <complexParameter name="script">
             <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
-import  java.util.UUID&#xD;
-&#xD;
 def input = gme_id + stt_naam&#xD;
-&#xD;
-def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
+def result = _.crypto.sha256(input)&#xD;
 &#xD;
 return _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Wegen_Weg.' + result
 </core:text>
@@ -1980,11 +1972,8 @@ return _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_W
         </target>
         <complexParameter name="script">
             <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
-import  java.util.UUID&#xD;
-&#xD;
 def input = gme_id + stt_naam&#xD;
-&#xD;
-def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
+def result = _.crypto.sha256(input)&#xD;
 &#xD;
 def id = 'INSPIRE.Vervoersnetwerken_Wegen_Weg.' + result&#xD;
 &#xD;

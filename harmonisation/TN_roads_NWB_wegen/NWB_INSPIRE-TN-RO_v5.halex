@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<hale-project version="3.4.0.release">
+<hale-project version="3.4.1.release">
     <name>NWB_INSPIRE-TN-RO_v5</name>
     <author>Johanna Ott</author>
     <created>2017-12-22T15:42:24.377+01:00</created>
-    <modified>2018-11-12T11:40:14.723+01:00</modified>
+    <modified>2018-12-06T12:42:07.778+01:00</modified>
     <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
         <setting name="charset">UTF-8</setting>
         <setting name="projectFiles.separate">false</setting>
@@ -27,7 +27,7 @@
     <resource action-id="eu.esdihumboldt.hale.io.schema.read.source" provider-id="eu.esdihumboldt.hale.gdal.fgdb.schema.reader">
         <setting name="charset">UTF-8</setting>
         <setting name="resourceId">181357ca-813e-4a88-bcf2-9be4dfbad400</setting>
-        <setting name="source">file:/C:/Users/Johanna/Box%20Sync/staff/Projects/2018-07%20RWS%20Phase%20II/Data/NWB_junctions.gdb/a0000000b.gdbtable</setting>
+        <setting name="source">file:/C:/Users/Johanna/Box%20Sync/staff/Projects/2018-07%20RWS%20Phase%20II/Data/NWB_junctions.gdb/a00000001.gdbtable</setting>
         <setting name="contentType">eu.esdihumboldt.hale.gdal.geodatabase</setting>
         <cache>
             <hsd:schema xmlns:hsd="http://www.esdi-humboldt.eu/hale/schema" namespace="C:/Users/Johanna/Box Sync/staff/Projects/2018-07 RWS Phase II/Data/NWB_junctions.gdb/a00000001.gdbtable">
@@ -264,7 +264,7 @@
     <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.gdal.fgdb.instance.reader">
         <setting name="charset">UTF-8</setting>
         <setting name="resourceId">2027f0cd-0b1e-453d-839c-d37802e9db67</setting>
-        <setting name="source">file:/C:/Users/Johanna/Box%20Sync/staff/Projects/2018-07%20RWS%20Phase%20II/Data/NWB_junctions.gdb/a0000000b.gdbtable</setting>
+        <setting name="source">file:/C:/Users/Johanna/Box%20Sync/staff/Projects/2018-07%20RWS%20Phase%20II/Data/NWB_junctions.gdb/a00000001.gdbtable</setting>
         <setting name="contentType">eu.esdihumboldt.hale.gdal.geodatabase</setting>
     </resource>
     <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
@@ -1780,7 +1780,7 @@
     <property name="instances.sampling.enabled">true</property>
     <property name="instances.sampling.ov_complete">false</property>
     <property name="instances.sampling.sampler">first</property>
-    <property name="instances.sampling.settings.first">100</property>
+    <property name="instances.sampling.settings.first">10000</property>
     <property name="instances.sampling.settings.skip">10</property>
     <property name="mappableSourceType/1">{http://mapserver.gis.umn.edu/mapserver}rijstr_wvType</property>
     <property name="mappableSourceType/10">{http://example.org/pdok/nwbwegen}wegvakkenType</property>
