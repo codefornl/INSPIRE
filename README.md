@@ -136,9 +136,9 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
  * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
 
 
-# Human Health (HH)
-## Human Health - Noise (HH-RON)
-### Source - HH-RON
+# Human Health and Safety(HH)
+## Human Health and Safety - Noise (HH-N)
+### Source - HH-N
 [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset HH-N staan de featuretypes:
   * Biomarker
@@ -150,6 +150,6 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
   * Disease
 
  
- ### Target - HH-RON
+ ### Target - HH-N
  * Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
  * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
