@@ -17,35 +17,39 @@ Ivm met de internationale samenwerking is de informatie zoveel mogelijk in Engel
 
 We onderscheiden de bron-data, de documenten, de metadata voor de resultaten en de harmonisatie/mapping. We gaan er vanuit dat de resultaten conform INSPIRE beschikbaar worden gesteld via hosting van Services. Hosting partijen voor Nederland zijn o.a. PDOK, WeTRansform.
 
-In Metadata_INSPIRE.xlsx beheren we het overzicht van de gevraagde data.
+In Metadata_INSPIRE.xlsx beheren we het een gecombineerd overzicht van de gevraagde feauturetypes per thema gekoppeld aan de aangeboden data (As-Is).
 
-De subdirectories van de map harmonisation bevatten .halex bestanden en mapping tables. We streven ernaar dat de .halex bestanden kunnen vanuit HALE Studio worden geopend.
+De subdirectories van de map harmonisation bevatten .halex bestanden en mapping tables. De .halex bestanden kunnen vanuit HALE-Studio worden geopend.
+
+Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nationaal Georegister.    
 
 # Physical waters
 
-## Nationaal Hydrologisch Instrumentarium Rijkswaterstaat (NHI)
-* [Download](http://geodata.nationaalgeoregister.nl/nhi/extract/nhi.zip) of [WFS service](https://geodata.nationaalgeoregister.nl/nhi/wfs)
-* In de dataset vinden we 2 subsets.
-  * dmlinks
-  * dmnodes
+# Transport Networks (TN)
+## TN - Common Transport Elements (TN-CTN)
+### Source - TN-CTN
+ * [Download](https://www.haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
+ * In de dataset vinden data voor de featuretypes.
+  * Markerpost
+  * Measure
+  * TransportArea
+  * TransportLink
+  * TransportLinkSequence
+  * TransportLinkSet
+  * TransportNetwork (type)
+  * TransportNode
+  * TransportPoint
+  * TransportProperty
+  * VertivalPosition
+### Target - TN-CTN
+ * Data (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
+ * Services  [Download](https://www.haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
 
-## Opmerkingen
-* Waterschappen in Nederland leveren de afvoergebieden, deze afvoergebieden sluiten aan op de _rijkswateren_.
-* Het NHI biedt geen informatie over fysieke wateren.
-* Duikers kunnen indien relevant worden vertaald naar _siphon_
+# Transport Networks - Roads (TN-RO)
 
-# Transport Networks - Roads
 
-## Nationaal wegenbestand Rijkswaterstaat - wegen (nwbwegen)
-* [Download](http://geodata.nationaalgeoregister.nl/nwbwegen/extract/nwbwegen.zip) of [WFS service](https://geodata.nationaalgeoregister.nl/nwbwegen/wfs)
-* In de dataset vinden we 2 subsets.
-  * hectopunten
-  * wegvakken
+# Transport Networks - Waterways (TN-WW)
 
-# Transport Networks - Water
-
-## Nationaal wegenbestand Rijkswaterstaat- vaarwegen (nwbvaarwegen)
-* [Download](http://geodata.nationaalgeoregister.nl/nwbvaarwegen/extract/nwbvaarwegen.zip) of [WFS service](https://geodata.nationaalgeoregister.nl/nwbvaarwegen/wfs)
-* In de dataset vinden we 2 subsets.
-  * kmmarkeringen
-  * vaarwegvakken
+# Hydrography
+## Hydrography - Network
+## Hydrography - Physical Objects
