@@ -48,7 +48,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 * Services Kadaster [Download](http://geodata.nationaalgeoregister.nl/inspire_tn/atom/inspire_tn.xml) of Kadaster [WFS service](https://geodata.nationaalgeoregister.nl/tn/wfs?&request=GetCapabilities&service=WFS)
 
 
-## Transport Networks - RoadTransportNetwork (TN-RTN)
+## TN - RoadTransportNetwork (TN-RTN)
 ### Source - TN-RTN
 [Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
  * In de dataset TN-RTN staan de featuretypes:
@@ -61,7 +61,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 * Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-cb527d-f6db-4835-b0cd-deb245241254), Kadaster(http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
 * Services  Kadaster [Download](http://geodata.nationaalgeoregister.nl/inspire_tn_ro_roadlinksequences/atom/inspire_tn_ro_roadlinksequences.xml) of [WFS service](http://www.nationaalgeoregister.nl/)
 
-## Transport Networks - Roads (TN-RO)
+## TN - Roads (TN-RO)
 ### Source - TN-RO
 [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset TN-RO staan de featuretypes:
@@ -93,7 +93,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 * Services Kadaster [Download](http://geodata.nationaalgeoregister.nl/inspire_tn_ro/atom/inspire_tn_ro.xml) of RWS [WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/018a28a5-1019-4747-b031-f66ffc1c6ae7), Kadaster [WFS service] (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/18bcfb8c-b73d-4e9c-8348-7ee6cd49ec79)
 
 
-## Transport Networks - WaterTransportNetwork (TN-WTN)
+## TN - WaterTransportNetwork (TN-WTN)
 ### Source - TN-WTN
 [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset TN-WTN staan de featuretypes:
@@ -111,7 +111,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
   
   
-## Transport Networks - Waterways (TN-W)
+## TN - Waterways (TN-W)
 ### Source - TN-W
 [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset TN-W staan de featuretypes:
@@ -131,7 +131,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 * Services  RWS [Download](http://geodata.nationaalgeoregister.nl/inspire_rws_tn_w/atom/inspire_rws_tn_w.xml) en Kadaster [Download] (http://geodata.nationaalgeoregister.nl/inspire_tn_w/atom/inspire_tn_w.xml) of RWS [WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/a84f9836-9111-4e45-a311-3dab39019e15), Kadaster [WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/ec73f245-66ce-4144-ac27-5966c80a4b3a)
 
 # Hydrography (HY)
-## Hydrography - Network (HY-N)
+## HY - Network (HY-N)
 ### Source - HY-N
 [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset HY-N staan de featuretypes:
@@ -140,7 +140,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
  * Services  [Download](http://www.nationaalgeoregister.nl/) of Kadaster[WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/d467c2cc-4026-b80a-d4e1a9d2bf79), RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/d467c2cc-4026-b80a-d4e1a9d2bf79)
 
 
-## Hydrography - Physical Waters (HY-P)
+## HY - Physical Waters (HY-P)
 ### Source - HY-P
 [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset HY-P staan de featuretypes:
@@ -153,7 +153,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 * Description Kadaster (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/1c3afc74-cc34-44b7-938a-963e2350795a) 
 * Services Kadaster [Download](http://geodata.nationaalgeoregister.nl/inspire_hy_p/atom/inspire_hy_p.xml) of Kadaster [WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/58353cdf-b3a1-454e-9284-932a7e815e57)
 
-## Hydrography - Physical Waters - ManMadeObject (HY-PMO)
+## HY-P - ManMadeObject (HY-PMO)
 ### Source - HY-PMO
 [Download](?Kadaster) of [WFS service](?Kadaster)
  * In de dataset HY-PMO staan de featuretypes:
@@ -164,7 +164,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 
 
 # Elevation (EL)
-## Elevation - Terrain (EL-T)
+## EL - Terrain (EL-T)
 ### Source - EL-T
 [Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
  * In de dataset EL-T staan de featuretypes:
@@ -174,7 +174,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 * Description (http://www.nationaalgeoregister.nl/)
 * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
  
-## Elevation - InlandWater (EL-I)
+## EL - InlandWater (EL-I)
 ### Source - EL-I
 [Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
  * In de dataset EL-I staan de featuretypes:
@@ -184,7 +184,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 * Description (http://www.nationaalgeoregister.nl/)
 * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
 
-## Elevation - MarienWater (EL-M)
+## EL - MarienWater (EL-M)
 ### Source - EL-M
 [Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
  * In de dataset EL-M staan de featuretypes:
@@ -196,7 +196,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 
 
 # Human Health and Safety(HH)
-## Human Health and Safety - Noise (HH-N)
+## HH - Noise (HH-N)
 ### Source - HH-N
 [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset HH-N staan de featuretypes:
