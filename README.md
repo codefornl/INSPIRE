@@ -131,7 +131,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
  * In de dataset EL-M staan de featuretypes:
   * ...
  
- ### Target - EL-MW
+ ### Target - EL-M
  * Description (http://www.nationaalgeoregister.nl/)
  * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
 
