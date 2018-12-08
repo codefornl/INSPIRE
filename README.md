@@ -94,11 +94,11 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 
 
 ## Hydrography - Physical Objects (HY-PO)
-### Source - HY-PW
+### Source - HY-PO
 [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
- * In de dataset HY-PW staan de featuretypes:
+ * In de dataset HY-PO staan de featuretypes:
  
- ### Target - HY-PW
+ ### Target - HY-PO
  * Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
  * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
 
@@ -108,27 +108,27 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 ## Elevation - Terrain (EL-T)
 ### Source - EL-T
 [Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
- * In de dataset HH-N staan de featuretypes:
+ * In de dataset EL-T staan de featuretypes:
   * ...
  
  ### Target - EL-T
  * Description (http://www.nationaalgeoregister.nl/)
  * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
  
-## Elevation - InlandWater (EL-IW)
-### Source - EL-T
+## Elevation - InlandWater (EL-I)
+### Source - EL-I
 [Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
- * In de dataset HH-N staan de featuretypes:
+ * In de dataset EL-I staan de featuretypes:
   * ...
  
- ### Target - EL-IW
+ ### Target - EL-I
  * Description (http://www.nationaalgeoregister.nl/)
  * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
 
-## Elevation - MarienWater (EL-MW)
-### Source - EL-MW
+## Elevation - MarienWater (EL-M)
+### Source - EL-M
 [Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
- * In de dataset HH-N staan de featuretypes:
+ * In de dataset EL-M staan de featuretypes:
   * ...
  
  ### Target - EL-MW
