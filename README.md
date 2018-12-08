@@ -26,7 +26,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 # Transport Networks (TN)
 ## TN - Common Transport Elements (TN-CTN)
 ### Source - TN-CTN
- * [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
+[Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset TN-CTN staan de featuretypes:
   * Markerpost
   * Measure
@@ -46,7 +46,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 
 ## Transport Networks - Roads (TN-RO)
 ### Source - TN-RO
- * [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
+[Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset TN-RO staan de featuretypes:
   * FormOfWay
   * SpeedLimit
@@ -66,7 +66,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 
 ## Transport Networks - Waterways (TN-WW)
 ### Source - TN-WW
- * [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
+[Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset TN-WW staan de featuretypes:
   * BeaconType
   * InlandWaterwayType
@@ -86,7 +86,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 # Hydrography (HY)
 ## Hydrography - Network (HY-NT)
 ### Source - HY-NT
- * [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
+[Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset HY-NT staan de featuretypes:
 ### Target - HY-NT
  * Data (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
@@ -95,7 +95,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 
 ## Hydrography - Physical Objects (HY-PO)
 ### Source - HY-PW
- * [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
+[Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset HY-PW staan de featuretypes:
  
  ### Target - HY-PW
@@ -107,7 +107,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 # Elevation (EL)
 ## Elevation - Terrain (EL-T)
 ### Source - EL-T
- * [Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
+[Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
  * In de dataset HH-N staan de featuretypes:
   * ...
  
@@ -117,7 +117,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
  
 ## Elevation - InlandWater (EL-IW)
 ### Source - EL-T
- * [Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
+[Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
  * In de dataset HH-N staan de featuretypes:
   * ...
  
@@ -127,7 +127,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 
 ## Elevation - MarienWater (EL-MW)
 ### Source - EL-MW
- * [Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
+[Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
  * In de dataset HH-N staan de featuretypes:
   * ...
  
@@ -139,7 +139,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 # Human Health (HH)
 ## Human Health - Noise (HH-RON)
 ### Source - HH-RON
- * [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
+[Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset HH-N staan de featuretypes:
   * Biomarker
   * EnvHealthDeterminantMeasure
