@@ -28,7 +28,9 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 ### Source - TN-CTN
 [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset TN-CTN staan de featuretypes:
+  * ConditionOfFacility (Kadaster)
   * Markerpost
+  * MarkerPost (Kadaster)
   * Measure
   * TransportArea
   * TransportLink
@@ -38,36 +40,79 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
   * TransportNode
   * TransportPoint
   * TransportProperty
-  * VertivalPosition
+  * VerticalPosition
+  * VerticalPosition (Kadaster)  
+  
 ### Target - TN-CTN
 Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
 Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
 
 
+## Transport Networks - RoadTransportNetwork (TN-RTN)
+### Source - TN-RTN
+[Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
+ * In de dataset TN-RTN staan de featuretypes:
+  * RoadArea
+  * RoadLink  
+  * RoadLinkSequence
+  * RoadNode
+
+### Target - TN-RTN
+Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
+Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+
 ## Transport Networks - Roads (TN-RO)
 ### Source - TN-RO
 [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset TN-RO staan de featuretypes:
+  * ERoad (Kadaster)
   * FormOfWay
-  * SpeedLimit
-  * RoadNode
-  * RoadSurfaceCategory
+  * FormOfWay (Kadaster)
   * FunctionalRoadClass
-  * ERoad (Kadaster aangemerkt)
-  * RoadServiceType
-  * Road
-  * RoadWidth
+  * FunctionalRoadClass (Kadaster)
   * NumberOfLanes
-  * RoadName
+  * Road
+  * Road (Kadaster)
+  * RoadArea (Kadaster = TN-RTN)
+  * RoadLink (Kadaster = TN-RTN)
+  * RoadName 
+  * RoadName (Kadaster)
+  * RoadNode (Kadaster = TN-RTN)
+  * RoadServiceType
+  * RoadSurfaceCategory
+  * RoadSurfaceCategory (Kadaster)
+  * RoadWidth
+  * RoadWidth (Kadaster)
+  * SpeedLimit
+  * VehicleTrafficArea (Kadaster)
+
 ### Target - TN-RO
 Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
 Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
 
 
-## Transport Networks - Waterways (TN-WW)
-### Source - TN-WW
+## Transport Networks - WaterTransportNetwork (TN-WTN)
+### Source - TN-WTN
 [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
- * In de dataset TN-WW staan de featuretypes:
+ * In de dataset TN-WTN staan de featuretypes:
+  * FairwayArea
+  * PortArea (Bron:Kadaster)
+  * PortNode (Bron:Kadaster)
+  * FerryUse (Bron:Kadaster)
+  * FerryCrossing (Bron:Kadaster)
+  * WaterwayLinkSequence
+  * WaterwayLink
+  * WaterwayNode
+
+### Target - TN-WTN
+Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
+Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+  
+  
+## Transport Networks - Waterways (TN-W)
+### Source - TN-W
+[Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
+ * In de dataset TN-W staan de featuretypes:
   * BeaconType
   * InlandWaterwayType
   * MarineWaterwayType
@@ -78,27 +123,36 @@ Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http:
   * WaterTrafficFlowDirectionType
   * WaterwayLinkType
   * WaterwayNodeType
-### Target - TN-WW
+  
+### Target - TN-W
 Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
 Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
 
-
 # Hydrography (HY)
-## Hydrography - Network (HY-NT)
-### Source - HY-NT
+## Hydrography - Network (HY-N)
+### Source - HY-N
 [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
- * In de dataset HY-NT staan de featuretypes:
-### Target - HY-NT
+ * In de dataset HY-N staan de featuretypes:
+### Target - HY-N
  * Data (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
  * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
 
 
-## Hydrography - Physical Objects (HY-PO)
-### Source - HY-PO
+## Hydrography - Physical Objects (HY-P)
+### Source - HY-P
 [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
- * In de dataset HY-PO staan de featuretypes:
+ * In de dataset HY-P staan de featuretypes:
  
-### Target - HY-PO
+### Target - HY-P
+Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
+Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+
+## Hydrography - Physical Objects - ManMadeObject (HY-PMO)
+### Source - HY-PMO
+[Download](?Kadaster) of [WFS service](?Kadaster)
+ * In de dataset HY-PMO staan de featuretypes:
+  
+### Target - HY-PMO
 Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
 Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
 
