@@ -23,13 +23,11 @@ De subdirectories van de map harmonisation bevatten .halex bestanden en mapping 
 
 Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nationaal Georegister.    
 
-# Physical waters
-
 # Transport Networks (TN)
 ## TN - Common Transport Elements (TN-CTN)
 ### Source - TN-CTN
- * [Download](https://www.haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
- * In de dataset vinden data voor de featuretypes.
+ * [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
+ * In de dataset TN-CTN staan de featuretypes:
   * Markerpost
   * Measure
   * TransportArea
@@ -43,13 +41,115 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
   * VertivalPosition
 ### Target - TN-CTN
  * Data (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
- * Services  [Download](https://www.haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
-
-# Transport Networks - Roads (TN-RO)
+ * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
 
 
-# Transport Networks - Waterways (TN-WW)
+## Transport Networks - Roads (TN-RO)
+### Source - TN-RO
+ * [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
+ * In de dataset TN-RO staan de featuretypes:
+  * FormOfWay
+  * SpeedLimit
+  * RoadNode
+  * RoadSurfaceCategory
+  * FunctionalRoadClass
+  * ERoad (Kadaster aangemerkt)
+  * RoadServiceType
+  * Road
+  * RoadWidth
+  * NumberOfLanes
+  * RoadName
+### Target - TN-RO
+ * Data (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
+ * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
 
-# Hydrography
-## Hydrography - Network
-## Hydrography - Physical Objects
+
+## Transport Networks - Waterways (TN-WW)
+### Source - TN-WW
+ * [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
+ * In de dataset TN-WW staan de featuretypes:
+  * BeaconType
+  * InlandWaterwayType
+  * MarineWaterwayType
+  * MarkerPostType
+  * TrafficSeparationSchemeCrossingType
+  * TrafficSeparationSchemeSeparatorType
+  * TransportNetworkType
+  * WaterTrafficFlowDirectionType
+  * WaterwayLinkType
+  * WaterwayNodeType
+### Target - TN-WW
+ * Data (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
+ * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+
+
+# Hydrography (HY)
+## Hydrography - Network (HY-NT)
+### Source - HY-NT
+ * [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
+ * In de dataset HY-NT staan de featuretypes:
+### Target - HY-NT
+ * Data (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
+ * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+
+
+## Hydrography - Physical Objects (HY-PO)
+### Source - HY-PW
+ * [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
+ * In de dataset HY-PW staan de featuretypes:
+ 
+ ### Target - HY-PW
+ * Data (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
+ * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+
+
+
+# Elevation (EL)
+## Elevation - Terrain (EL-T)
+### Source - EL-T
+ * [Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
+ * In de dataset HH-N staan de featuretypes:
+  * ...
+ 
+ ### Target - EL-T
+ * Data (http://www.nationaalgeoregister.nl/)
+ * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+ 
+## Elevation - InlandWater (EL-IW)
+### Source - EL-T
+ * [Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
+ * In de dataset HH-N staan de featuretypes:
+  * ...
+ 
+ ### Target - EL-IW
+ * Data (http://www.nationaalgeoregister.nl/)
+ * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+
+## Elevation - MarienWater (EL-MW)
+### Source - EL-MW
+ * [Download](https://haleconnect.com/) of [WFS service](https://www.haleconnect.com/)
+ * In de dataset HH-N staan de featuretypes:
+  * ...
+ 
+ ### Target - EL-MW
+ * Data (http://www.nationaalgeoregister.nl/)
+ * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+
+
+# Human Health (HH)
+## Human Health - Noise (HH-RON)
+### Source - HH-RON
+ * [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
+ * In de dataset HH-N staan de featuretypes:
+  * Biomarker
+  * EnvHealthDeterminantMeasure
+  * GeneralHealthStatistics
+  * HealthStatisticalData
+  * EnvHealthDeterminantStatisticalData
+  * HealthServicesStatistic
+  * Disease
+
+ 
+ ### Target - HH-RON
+ * Data (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
+ * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
