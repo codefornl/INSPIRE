@@ -44,8 +44,8 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
   * VerticalPosition (Kadaster)  
   
 ### Target - TN-CTN
-Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
-Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+* Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48), Kadaster (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/14657c9b-91e4-4355-8563-2911ad0e78e4) 
+Services Kadaster [Download](http://geodata.nationaalgeoregister.nl/inspire_tn/atom/inspire_tn.xml) of Kadaster [WFS service](https://geodata.nationaalgeoregister.nl/tn/wfs?&request=GetCapabilities&service=WFS)
 
 
 ## Transport Networks - RoadTransportNetwork (TN-RTN)
@@ -58,8 +58,8 @@ Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http:
   * RoadNode
 
 ### Target - TN-RTN
-Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
-Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+* Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-cb527d-f6db-4835-b0cd-deb245241254), Kadaster(http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
+Services  Kadaster [Download](http://geodata.nationaalgeoregister.nl/inspire_tn_ro_roadlinksequences/atom/inspire_tn_ro_roadlinksequences.xml) of [WFS service](http://www.nationaalgeoregister.nl/)
 
 ## Transport Networks - Roads (TN-RO)
 ### Source - TN-RO
@@ -87,8 +87,10 @@ Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http:
   * VehicleTrafficArea (Kadaster)
 
 ### Target - TN-RO
-Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
-Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/4fb15e0d-d88f-40f1-b407-3d3edcf7e184)
+
+(http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
+Services Kadaster [Download](http://geodata.nationaalgeoregister.nl/inspire_tn_ro/atom/inspire_tn_ro.xml) of RWS [WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/018a28a5-1019-4747-b031-f66ffc1c6ae7), Kadaster [WFS service] (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/18bcfb8c-b73d-4e9c-8348-7ee6cd49ec79)
 
 
 ## Transport Networks - WaterTransportNetwork (TN-WTN)
@@ -105,7 +107,7 @@ Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http:
   * WaterwayNode
 
 ### Target - TN-WTN
-Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
+Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-2c7040b-c448-451b-bf15-f2416ecaadd1)
 Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
   
   
@@ -125,8 +127,8 @@ Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http:
   * WaterwayNodeType
   
 ### Target - TN-W
-Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
-Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+* Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-2c7040b-c448-451b-bf15-f2416ecaadd1), Kadaster (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/5951efa2-1ff3-4763-a966-a2f5497679ee)
+* Services  RWS [Download](http://geodata.nationaalgeoregister.nl/inspire_rws_tn_w/atom/inspire_rws_tn_w.xml) en Kadaster [Download] (http://geodata.nationaalgeoregister.nl/inspire_tn_w/atom/inspire_tn_w.xml) of RWS [WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/a84f9836-9111-4e45-a311-3dab39019e15), Kadaster [WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/ec73f245-66ce-4144-ac27-5966c80a4b3a)
 
 # Hydrography (HY)
 ## Hydrography - Network (HY-N)
@@ -134,27 +136,31 @@ Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http:
 [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset HY-N staan de featuretypes:
 ### Target - HY-N
- * Data (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
- * Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+ * Data RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-f297898-2640-44c2-bbe9-c0480da83794)
+ * Services  [Download](http://www.nationaalgeoregister.nl/) of Kadaster[WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/d467c2cc-4026-b80a-d4e1a9d2bf79), RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/d467c2cc-4026-b80a-d4e1a9d2bf79)
 
 
-## Hydrography - Physical Objects (HY-P)
+## Hydrography - Physical Waters (HY-P)
 ### Source - HY-P
 [Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
  * In de dataset HY-P staan de featuretypes:
+  * Wetland
+  * Shore
+  * HydroPointOfInterest
+  * ManMadeObject
  
 ### Target - HY-P
-Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
-Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+Description Kadaster (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/1c3afc74-cc34-44b7-938a-963e2350795a) 
+Services Kadaster [Download](http://geodata.nationaalgeoregister.nl/inspire_hy_p/atom/inspire_hy_p.xml) of Kadaster [WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/58353cdf-b3a1-454e-9284-932a7e815e57)
 
-## Hydrography - Physical Objects - ManMadeObject (HY-PMO)
+## Hydrography - Physical Waters - ManMadeObject (HY-PMO)
 ### Source - HY-PMO
 [Download](?Kadaster) of [WFS service](?Kadaster)
  * In de dataset HY-PMO staan de featuretypes:
   
 ### Target - HY-PMO
 Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
-Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+Services Kadaster [Download](http://geodata.nationaalgeoregister.nl/inspire_hy_p/atom/inspire_hy_p.xml) of Kadaster [WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/58353cdf-b3a1-454e-9284-932a7e815e57)
 
 
 # Elevation (EL)
@@ -205,3 +211,4 @@ Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http:
 ### Target - HH-N
 Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
 Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+
