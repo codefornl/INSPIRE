@@ -133,7 +133,7 @@ Lijst met AccesPoints naar geharmoniseerde data (HaleConnect) en Accespoints Nat
 # Hydrography (HY)
 ## HY - Network (HY-N)
 ### Source - HY-N
-[Download](https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa) of [WFS service](https://www.haleconnect.com/)
+[Download](https://haleconnect.com/) of [WFS service] RWS (https://haleconnect.com/#/dataset/org/292/2885ef73-e044-4da4-b9b6-8a461a5353aa-73a3-4c16-a15c-f3869487a1e3_wfs?SERVICE=WFS&REQUEST=GetCapabilities&VERSION=2.0.0)
  * In de dataset HY-N staan de featuretypes:
 ### Target - HY-N
  * Data RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-f297898-2640-44c2-bbe9-c0480da83794)
