@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<hale-project version="3.5.0.SNAPSHOT">
+<hale-project version="3.4.1.release">
     <name>NWB vaarwegen to INSPIRE TN-W 4.0</name>
     <author>Thorsten Reitz for CodeforNL/RWS</author>
     <description>Harmonisatie van de NWB vaarwegen WFS t.b.v. INSPIRE Water Transport Network</description>
     <created>2017-11-17T14:30:35.650+01:00</created>
-    <modified>2018-11-06T10:45:17.788+01:00</modified>
+    <modified>2018-12-17T15:32:56.793+01:00</modified>
     <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
         <setting name="charset">UTF-8</setting>
         <setting name="projectFiles.separate">false</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.project.hale25.xml</setting>
-        <setting name="target">file:/C:/Users/KL/Box%20Sync/staff/Projects/2018-07%20RWS%20Phase%20II/Transformation%20Projects/TN-W/NWB_VAARWEGEN_INSPIRE_TN_W_v2_Online.halex</setting>
+        <setting name="target">file:/C:/Users/KL/Box%20Sync/staff/Projects/2018-07%20RWS%20Phase%20II/Transformation%20Projects/TN-W/NWB_VAARWEGEN_INSPIRE_TN_W_v2.halex</setting>
     </save-config>
     <resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
         <setting name="charset">UTF-8</setting>
@@ -181,8 +181,23 @@
         <setting name="source">http://inspire.ec.europa.eu/codelist/ConnectionTypeValue</setting>
         <setting name="contentType">eu.esdihumboldt.hale.io.codelist.inspire</setting>
     </resource>
-    <file name="alignment.xml" location="NWB_VAARWEGEN_INSPIRE_TN_W_v2_Online.halex.alignment.xml"/>
-    <file name="styles.sld" location="NWB_VAARWEGEN_INSPIRE_TN_W_v2_Online.halex.styles.sld"/>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.gml.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="resourceId">860bb178-0576-43f0-b8ae-4a48781edcb4</setting>
+        <setting name="source">https://geodata.nationaalgeoregister.nl/vin/wfs?SERVICE=WFS&amp;VERSION=2.0.0&amp;REQUEST=GetFeature&amp;NAMESPACES=xmlns%28vin%2Chttp%3A%2F%2Fvin.geonovum.nl%29&amp;TYPENAMES=vin%3Abevaarbaarheid</setting>
+        <setting name="interpolation.maxError">0.1</setting>
+        <setting name="interpolation.algorithm">segment</setting>
+        <setting name="ignoreNamespaces">false</setting>
+        <setting name="paginateRequest">true</setting>
+        <setting name="featuresPerWfsRequest">1000</setting>
+        <setting name="ignoreRoot">true</setting>
+        <setting name="ignoreNumberMatched">false</setting>
+        <setting name="interpolation.grid.moveAllToGrid">false</setting>
+        <setting name="strict">false</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.gml</setting>
+    </resource>
+    <file name="alignment.xml" location="NWB_VAARWEGEN_INSPIRE_TN_W_v2.halex.alignment.xml"/>
+    <file name="styles.sld" location="NWB_VAARWEGEN_INSPIRE_TN_W_v2.halex.styles.sld"/>
     <complex-property name="codelists">
         <associations>
             <codeList identifier="//inspire.ec.europa.eu/codelist/LinkDirectionValue" namespace="http://inspire.ec.europa.eu/codelist/LinkDirectionValue">
@@ -372,8 +387,7 @@
     <property name="defaultGeometry:{http://noordzeevaarwegmarkeringenrd.geonovum.nl}markdrijvendrdType/2">{http://www.opengis.net/gml/3.2}Point</property>
     <property name="defaultGeometry:{http://noordzeevaarwegmarkeringenrd.geonovum.nl}markdrijvendrdType/count">2</property>
     <property name="defaultGeometry:{http://noordzeevaarwegmarkeringenrd.geonovum.nl}markvastrdType/1">{http://noordzeevaarwegmarkeringenrd.geonovum.nl}geom</property>
-    <property name="defaultGeometry:{http://noordzeevaarwegmarkeringenrd.geonovum.nl}markvastrdType/2">{http://www.opengis.net/gml/3.2}Point</property>
-    <property name="defaultGeometry:{http://noordzeevaarwegmarkeringenrd.geonovum.nl}markvastrdType/count">2</property>
+    <property name="defaultGeometry:{http://noordzeevaarwegmarkeringenrd.geonovum.nl}markvastrdType/count">1</property>
     <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}kmmarkeringenType/1">{http://nwbvaarwegen.geonovum.nl}geom</property>
     <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}kmmarkeringenType/2">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
     <property name="defaultGeometry:{http://nwbvaarwegen.geonovum.nl}kmmarkeringenType/count">2</property>
