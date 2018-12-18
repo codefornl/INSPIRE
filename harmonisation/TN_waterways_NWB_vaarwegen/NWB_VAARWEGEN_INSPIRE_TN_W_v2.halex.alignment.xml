@@ -29,6 +29,7 @@
             <property>
                 <type name="markvastrdType" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
                 <child name="geom" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
+                <child name="Point" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </source>
         <target>
@@ -169,6 +170,7 @@ return id
             <property>
                 <type name="markdrijvendrdType" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
                 <child name="geom" ns="http://noordzeevaarwegmarkeringenrd.geonovum.nl"/>
+                <child name="Point" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </source>
         <target>
@@ -335,6 +337,14 @@ return id
                 <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
                     <condition lang="CQL">vrt_naam not LIKE '%Scheepvaartroute%' and vrt_naam not LIKE '%Diepwaterroute%'</condition>
                 </type>
+                <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam not LIKE '%Scheepvaartroute%' and vrt_naam not LIKE '%Diepwaterroute%'</condition>
+                </type>
                 <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
             </property>
         </source>
@@ -346,12 +356,8 @@ return id
         </target>
         <complexParameter name="script">
             <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
-import  java.util.UUID&#xD;
-&#xD;
-def input = vrt_naam&#xD;
-&#xD;
-def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
-&#xD;
+def input = vwk_id + vrt_naam&#xD;
+def result = _.crypto.sha256(input)&#xD;
 def id = 'INSPIRE.Vervoersnetwerken_Waterwegen_Binnenwaterweg.' + result&#xD;
 &#xD;
 withTransformationContext {&#xD;
@@ -370,6 +376,14 @@ return id
                 <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
                     <condition lang="CQL">vrt_naam not LIKE '%Scheepvaartroute%' and vrt_naam not LIKE '%Diepwaterroute%'</condition>
                 </type>
+                <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam not LIKE '%Scheepvaartroute%' and vrt_naam not LIKE '%Diepwaterroute%'</condition>
+                </type>
                 <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
             </property>
         </source>
@@ -381,12 +395,8 @@ return id
         </target>
         <complexParameter name="script">
             <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
-import  java.util.UUID&#xD;
-&#xD;
-def input = vrt_naam&#xD;
-&#xD;
-def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
-&#xD;
+def input = vwk_id + vrt_naam&#xD;
+def result = _.crypto.sha256(input)&#xD;
 def id =  _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Waterwegen_Binnenwaterweg.' + result&#xD;
 &#xD;
 return id
@@ -420,6 +430,14 @@ return id
                 <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
                     <condition lang="CQL">vrt_naam not LIKE '%Scheepvaartroute%' and vrt_naam not LIKE '%Diepwaterroute%'</condition>
                 </type>
+                <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam not LIKE '%Scheepvaartroute%' and vrt_naam not LIKE '%Diepwaterroute%'</condition>
+                </type>
                 <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
             </property>
         </source>
@@ -433,12 +451,8 @@ return id
         </target>
         <complexParameter name="script">
             <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
-import  java.util.UUID&#xD;
-&#xD;
-def input = vrt_naam&#xD;
-&#xD;
-def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
-&#xD;
+def input = vwk_id + vrt_naam&#xD;
+def result = _.crypto.sha256(input)&#xD;
 def id = 'INSPIRE.Vervoersnetwerken_Waterwegen_Binnenwaterweg.' + result&#xD;
 &#xD;
 return id
@@ -530,7 +544,7 @@ return id
                 <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
                     <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
                 </type>
-                <child name="vwg_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
+                <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
             </property>
         </source>
         <target>
@@ -552,6 +566,14 @@ return id
                 <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
                     <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
                 </type>
+                <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
+                </type>
                 <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
             </property>
         </source>
@@ -563,12 +585,8 @@ return id
         </target>
         <complexParameter name="script">
             <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
-import  java.util.UUID&#xD;
-&#xD;
-def input = vrt_naam&#xD;
-&#xD;
-def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
-&#xD;
+def input = vwk_id + vrt_naam&#xD;
+def result = _.crypto.sha256(input)&#xD;
 def id = 'INSPIRE.Vervoersnetwerken_Waterwegen_Zeewaterweg.' + result&#xD;
 &#xD;
 withTransformationContext {&#xD;
@@ -587,6 +605,14 @@ return id
                 <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
                     <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
                 </type>
+                <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
+                </type>
                 <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
             </property>
         </source>
@@ -598,12 +624,8 @@ return id
         </target>
         <complexParameter name="script">
             <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
-import  java.util.UUID&#xD;
-&#xD;
-def input = vrt_naam&#xD;
-&#xD;
-def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
-&#xD;
+def input = vwk_id + vrt_naam&#xD;
+def result = _.crypto.sha256(input)&#xD;
 def id = _project.vars['INSPIRE_DATASET_NAMESPACE'] + 'INSPIRE.Vervoersnetwerken_Waterwegen_Zeewaterweg.' + result&#xD;
 &#xD;
 return id
@@ -637,6 +659,14 @@ return id
                 <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
                     <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
                 </type>
+                <child name="vwk_id" ns="http://nwbvaarwegen.geonovum.nl"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="vaarwegvakkenType" ns="http://nwbvaarwegen.geonovum.nl">
+                    <condition lang="CQL">vrt_naam LIKE '%Scheepvaartroute%' OR vrt_naam LIKE '%Diepwaterroute%'</condition>
+                </type>
                 <child name="vrt_naam" ns="http://nwbvaarwegen.geonovum.nl"/>
             </property>
         </source>
@@ -650,12 +680,8 @@ return id
         </target>
         <complexParameter name="script">
             <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
-import  java.util.UUID&#xD;
-&#xD;
-def input = vrt_naam&#xD;
-&#xD;
-def result = UUID.nameUUIDFromBytes(input.getBytes()).toString();&#xD;
-&#xD;
+def input = vwk_id + vrt_naam&#xD;
+def result = _.crypto.sha256(input)&#xD;
 def id = 'INSPIRE.Vervoersnetwerken_Waterwegen_Zeewaterweg.' + result&#xD;
 &#xD;
 &#xD;
@@ -1685,7 +1711,7 @@ def linksIdsMap = c.links&#xD;
 pointsIdsMap.eachCollector{&#xD;
 	key, child -&gt; &#xD;
 		// define ID&#xD;
-		def thisInspireId = "INSPIRE.Vervoersnetwerken_Waterwegen_Waterwegknooppunt." + UUID.nameUUIDFromBytes(key.toString().getBytes())&#xD;
+		def thisInspireId = "INSPIRE.Vervoersnetwerken_Waterwegen_Waterwegknooppunt." + _.crypto.sha256(key.toString())&#xD;
 		def pointGeometry = _.geom.with(geometry: "POINT(" + key.x + " " + key.y + ")", crs: "EPSG:28992")&#xD;
 &#xD;
 		_target {&#xD;
