@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<hale-project version="3.5.0.release">
+    <name>AHN2INSPIRE_EL</name>
+    <author>Johanna</author>
+    <created>2019-01-08T11:31:08.885+01:00</created>
+    <modified>2019-01-16T15:22:25.796+01:00</modified>
+    <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
+        <setting name="charset">UTF-8</setting>
+        <setting name="projectFiles.separate">false</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.project.hale25.xml</setting>
+        <setting name="target">file:/C:/Users/Johanna/Box%20Sync/staff/Projects/2018-07%20RWS%20Phase%20II/Transformation%20Projects/EL/AHN2INSPIRE_EL.halex</setting>
+    </save-config>
+    <resource action-id="eu.esdihumboldt.hale.io.schema.read.target" provider-id="eu.esdihumboldt.hale.io.xsd.reader">
+        <setting name="charset">UTF-8</setting>
+        <setting name="onlyElementsMappable">true</setting>
+        <setting name="resourceId">2a4544e5-b353-48db-95b6-00c99503b7a8</setting>
+        <complex-setting name="customTypeContent">
+            <xsd:typeContentConfig xmlns:xsd="http://www.esdi-humboldt.eu/hale/io/xsd">
+                <core:list xmlns:core="http://www.esdi-humboldt.eu/hale/core">
+                    <core:entry>
+                        <xsd:association>
+                            <xsd:property>
+<core:list>
+    <core:entry>
+        <core:name namespace="http://inspire.ec.europa.eu/schemas/el-cov/4.0">ElevationGridCoverageType</core:name>
+									</core:entry>
+    <core:entry>
+        <core:name namespace="http://www.opengis.net/gmlcov/1.0">metadata</core:name>
+									</core:entry>
+								</core:list>
+							</xsd:property>
+                            <xsd:config>
+<xsd:typeContent mode="elements">
+    <xsd:elements>
+        <core:list>
+            <core:entry>
+                <core:name namespace="http://www.isotc211.org/2005/gmd">MD_Metadata</core:name>
+											</core:entry>
+										</core:list>
+									</xsd:elements>
+								</xsd:typeContent>
+							</xsd:config>
+						</xsd:association>
+					</core:entry>
+				</core:list>
+			</xsd:typeContentConfig>
+        </complex-setting>
+        <setting name="source">http://inspire.ec.europa.eu/schemas/el-cov/4.0/ElevationGridCoverage.xsd</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.xsd</setting>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.schema.read.source" provider-id="eu.esdihumboldt.hale.io.shape.reader.schema">
+        <setting name="charset">ISO-8859-1</setting>
+        <setting name="resourceId">6e29b66b-4f9b-4c37-acff-8c70da0b84ab</setting>
+        <setting name="source">file:/C:/Users/Johanna/Box%20Sync/staff/Projects/2018-07%20RWS%20Phase%20II/Transformation%20Projects/EL/ahn_units/ahn_units.shp</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.shp</setting>
+        <cache>
+            <hsd:schema xmlns:hsd="http://www.esdi-humboldt.eu/hale/schema" namespace="http://www.esdi-humboldt.eu/hale/shp">
+                <hsd:type-index>
+                    <hsd:entry index="0">
+                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">ahn_units</hsd:name>
+                    </hsd:entry>
+                    <hsd:entry index="1">
+                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">LO_X</hsd:name>
+                    </hsd:entry>
+                    <hsd:entry index="2">
+                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">LO_Y</hsd:name>
+                    </hsd:entry>
+                    <hsd:entry index="3">
+                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">MultiPolygon</hsd:name>
+                    </hsd:entry>
+                    <hsd:entry index="4">
+                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">UNIT</hsd:name>
+                    </hsd:entry>
+                </hsd:type-index>
+                <hsd:mapping-relevant>0</hsd:mapping-relevant>
+                <hsd:types>
+                    <hsd:type index="0">
+                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">ahn_units</hsd:name>
+                        <hsd:constraint type="abstract" value="false"/>
+                        <hsd:constraint type="binding" value="eu.esdihumboldt.hale.common.instance.model.Instance"/>
+                        <hsd:constraint type="has-value" value="false"/>
+                        <hsd:constraint type="mappable" value="true"/>
+                        <hsd:constraint type="mapping-relevant" value="true"/>
+                        <hsd:declares>
+                            <hsd:property>
+<hsd:name>the_geom</hsd:name>
+<hsd:constraint type="cardinality" value="0..1"/>
+<hsd:constraint type="nillable" value="true"/>
+<hsd:propertyType index="3"/>
+                            </hsd:property>
+                            <hsd:property>
+<hsd:name>LO_X</hsd:name>
+<hsd:constraint type="cardinality" value="0..1"/>
+<hsd:constraint type="nillable" value="true"/>
+<hsd:propertyType index="1"/>
+                            </hsd:property>
+                            <hsd:property>
+<hsd:name>LO_Y</hsd:name>
+<hsd:constraint type="cardinality" value="0..1"/>
+<hsd:constraint type="nillable" value="true"/>
+<hsd:propertyType index="2"/>
+                            </hsd:property>
+                            <hsd:property>
+<hsd:name>UNIT</hsd:name>
+<hsd:constraint type="cardinality" value="0..1"/>
+<hsd:constraint type="nillable" value="true"/>
+<hsd:propertyType index="4"/>
+                            </hsd:property>
+                            <hsd:property>
+<hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp/augment">filename</hsd:name>
+<hsd:constraint type="cardinality" value="1..1"/>
+<hsd:constraint type="nillable" value="true"/>
+<hsd:propertyType>
+    <hsd:type>
+        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp/augment">filenameType</hsd:name>
+        <hsd:constraint type="binding" value="java.lang.String"/>
+        <hsd:constraint type="has-value" value="true"/>
+        <hsd:constraint type="mappable" value="false"/>
+        <hsd:constraint type="mapping-relevant" value="false"/>
+    </hsd:type>
+</hsd:propertyType>
+                            </hsd:property>
+                        </hsd:declares>
+                    </hsd:type>
+                    <hsd:type index="1">
+                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">LO_X</hsd:name>
+                        <hsd:constraint type="binding" value="java.lang.String"/>
+                        <hsd:constraint type="has-value" value="true"/>
+                        <hsd:constraint type="mappable" value="false"/>
+                        <hsd:constraint type="mapping-relevant" value="false"/>
+                    </hsd:type>
+                    <hsd:type index="2">
+                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">LO_Y</hsd:name>
+                        <hsd:constraint type="binding" value="java.lang.String"/>
+                        <hsd:constraint type="has-value" value="true"/>
+                        <hsd:constraint type="mappable" value="false"/>
+                        <hsd:constraint type="mapping-relevant" value="false"/>
+                    </hsd:type>
+                    <hsd:type index="3">
+                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">MultiPolygon</hsd:name>
+                        <hsd:constraint type="binding" value="eu.esdihumboldt.hale.common.schema.geometry.GeometryProperty"/>
+                        <hsd:constraint type="has-value" value="true"/>
+                        <hsd:constraint type="mappable" value="false"/>
+                        <hsd:constraint type="mapping-relevant" value="false"/>
+                    </hsd:type>
+                    <hsd:type index="4">
+                        <hsd:name namespace="http://www.esdi-humboldt.eu/hale/shp">UNIT</hsd:name>
+                        <hsd:constraint type="binding" value="java.lang.String"/>
+                        <hsd:constraint type="has-value" value="true"/>
+                        <hsd:constraint type="mappable" value="false"/>
+                        <hsd:constraint type="mapping-relevant" value="false"/>
+                    </hsd:type>
+                </hsd:types>
+            </hsd:schema>
+        </cache>
+    </resource>
+    <resource action-id="eu.esdihumboldt.hale.io.instance.read.source" provider-id="eu.esdihumboldt.hale.io.shape.reader.instance">
+        <setting name="charset">ISO-8859-1</setting>
+        <setting name="matchShortPropertyNames">false</setting>
+        <setting name="resourceId">ca39bfe8-162e-490f-87ff-94acbc03538f</setting>
+        <setting name="source">file:/C:/Users/Johanna/Box%20Sync/staff/Projects/2018-07%20RWS%20Phase%20II/Transformation%20Projects/EL/ahn_units/ahn_units.shp</setting>
+        <setting name="contentType">eu.esdihumboldt.hale.io.shp</setting>
+        <setting name="typename">{http://www.esdi-humboldt.eu/hale/shp}ahn_units</setting>
+    </resource>
+    <file name="alignment.xml" location="AHN2INSPIRE_EL.halex.alignment.xml"/>
+    <file name="styles.sld" location="AHN2INSPIRE_EL.halex.styles.sld"/>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageAggregationType/1">{http://inspire.ec.europa.eu/schemas/el-cov/4.0}contributingFootprint</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageAggregationType/2">{http://www.opengis.net/gml/3.2}MultiSurface</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageAggregationType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageType/1">{http://www.opengis.net/gml/3.2}boundedBy</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageType/2">{http://www.opengis.net/gml/3.2/BoundingShapeType}choice_1</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageType/count">2</property>
+    <property name="defaultGeometry:{http://www.esdi-humboldt.eu/hale/shp}ahn_units/1">the_geom</property>
+    <property name="defaultGeometry:{http://www.esdi-humboldt.eu/hale/shp}ahn_units/count">1</property>
+    <property name="resource-4fb394e3-161e-4efe-b371-534ba9e76cad:defaultCRS:{http://www.esdi-humboldt.eu/hale/shp}ahn_units/the_geom">code:EPSG:4258</property>
+    <property name="resource-ca39bfe8-162e-490f-87ff-94acbc03538f:defaultCRS:{http://www.esdi-humboldt.eu/hale/shp}ahn_units/the_geom">code:EPSG:28992</property>
+    <complex-property name="variables">
+        <core:properties xmlns:core="http://www.esdi-humboldt.eu/hale/core">
+            <core:property name="INSPIRE_NAMESPACE">
+                <core:value value="http://www.rijkswaterstaat.nl/INSPIRE.Hoogte/"/>
+            </core:property>
+        </core:properties>
+    </complex-property>
+</hale-project>
