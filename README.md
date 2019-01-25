@@ -45,7 +45,6 @@ In de dataset TN-CTN staan de featuretypes:
   
 ### Target - TN-CTN
 * Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48), Kadaster (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/14657c9b-91e4-4355-8563-2911ad0e78e4) 
-* Services Kadaster [Download](http://geodata.nationaalgeoregister.nl/inspire_tn/atom/inspire_tn.xml) of Kadaster [WFS service](https://geodata.nationaalgeoregister.nl/tn/wfs?&request=GetCapabilities&service=WFS)
 
 ## TN - RoadTransportNetwork (TN-RTN)
 ### Source - TN-RTN
@@ -57,7 +56,6 @@ In de dataset TN-RTN staan de featuretypes:
 
 ### Target - TN-RTN
 * Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-cb527d-f6db-4835-b0cd-deb245241254), Kadaster(http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
-* Services  Kadaster [Download](http://geodata.nationaalgeoregister.nl/inspire_tn_ro_roadlinksequences/atom/inspire_tn_ro_roadlinksequences.xml) of [WFS service](http://www.nationaalgeoregister.nl/)
 
 ## TN - Roads (TN-RO)
 ### Source - TN-RO
@@ -85,9 +83,8 @@ In de dataset TN-RO staan de featuretypes:
 
 ### Target - TN-RO
 * Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/4fb15e0d-d88f-40f1-b407-3d3edcf7e184)
+, (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
 
-(http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
-* Services Kadaster [Download](http://geodata.nationaalgeoregister.nl/inspire_tn_ro/atom/inspire_tn_ro.xml) of RWS [WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/018a28a5-1019-4747-b031-f66ffc1c6ae7), Kadaster [WFS service] (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/18bcfb8c-b73d-4e9c-8348-7ee6cd49ec79)
 
 
 ## TN - WaterTransportNetwork (TN-WTN)
@@ -104,8 +101,7 @@ In de dataset TN-WTN staan de featuretypes:
 
 ### Target - TN-WTN
 * Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-2c7040b-c448-451b-bf15-f2416ecaadd1)
-* Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
-  
+
   
 ## TN - Waterways (TN-W)
 ### Source - TN-W
@@ -123,7 +119,6 @@ In de dataset TN-W staan de featuretypes:
   
 ### Target - TN-W
 * Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-2c7040b-c448-451b-bf15-f2416ecaadd1), Kadaster (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/5951efa2-1ff3-4763-a966-a2f5497679ee)
-* Services  RWS [Download](http://geodata.nationaalgeoregister.nl/inspire_rws_tn_w/atom/inspire_rws_tn_w.xml) en Kadaster [Download] (http://geodata.nationaalgeoregister.nl/inspire_tn_w/atom/inspire_tn_w.xml) of RWS [WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/a84f9836-9111-4e45-a311-3dab39019e15), Kadaster [WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/ec73f245-66ce-4144-ac27-5966c80a4b3a)
 
 # Hydrography (HY)
 ## HY - Network (HY-N)
@@ -133,8 +128,6 @@ In de dataset HY-N staan de featuretypes:
 
 ### Target - HY-N
  * Data RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-f297898-2640-44c2-bbe9-c0480da83794)
- * Services  [Download](http://www.nationaalgeoregister.nl/) of Kadaster[WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/d467c2cc-4026-b80a-d4e1a9d2bf79), RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/d467c2cc-4026-b80a-d4e1a9d2bf79)
-
 
 ## HY - Physical Waters (HY-P)
 ### Source - HY-P
@@ -146,7 +139,6 @@ In de dataset HY-P staan de featuretypes:
  
 ### Target - HY-P
 * Description Kadaster (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/1c3afc74-cc34-44b7-938a-963e2350795a) 
-* Services Kadaster [Download](http://geodata.nationaalgeoregister.nl/inspire_hy_p/atom/inspire_hy_p.xml) of Kadaster [WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/58353cdf-b3a1-454e-9284-932a7e815e57)
 
 ## HY-P - ManMadeObject (HY-PMO)
 ### Source - HY-PMO
@@ -155,7 +147,6 @@ In de dataset HY-PMO staan de featuretypes:
   
 ### Target - HY-PMO
 * Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
-* Services Kadaster [Download](http://geodata.nationaalgeoregister.nl/inspire_hy_p/atom/inspire_hy_p.xml) of Kadaster [WFS service](http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/58353cdf-b3a1-454e-9284-932a7e815e57)
 
 
 # Elevation (EL)
@@ -175,7 +166,6 @@ In de dataset EL-I staan de featuretypes:
  
 ### Target - EL-I
 * Description (http://www.nationaalgeoregister.nl/)
-* Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
 
 ## EL - MarienWater (EL-M)
 ### Source - EL-M
@@ -184,7 +174,6 @@ In de dataset EL-M staan de featuretypes:
  
 ### Target - EL-M
 * Description (http://www.nationaalgeoregister.nl/)
-* Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
 
 # Human Health and Safety(HH)
 ## HH - Noise (HH-N)
@@ -200,4 +189,3 @@ In de dataset HH-N staan de featuretypes:
 
 ### Target - HH-N
 * Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
-* Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
