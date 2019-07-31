@@ -4,7 +4,7 @@ Dit project is een initiatief van Code For NL. De documentatie en project compon
 INSPIRE
 INSPIRE harmonisatie projecten op basis van open data.
 
-The data
+De data
 Alle services/accespoints van onze organisatie kunnen benaderd worden via: https://haleconnect.com/services/bsp/metadata/org/292?preview=true of zoeken via https://haleconnect.com.
 
 Verantwoording
@@ -16,7 +16,7 @@ Op de INSPIRE website staan een aantal best practices. Als uitgangspunt voor dit
 
 Ivm met de internationale samenwerking is de informatie zoveel mogelijk in Engels en Nederlands beschikbaar.
 
-We onderscheiden de bron-data, de documenten, de metadata voor de resultaten en de harmonisatie/mapping. We gaan er vanuit dat de resultaten conform INSPIRE beschikbaar worden gesteld via hosting van Services. Hosting partijen voor Nederland zijn o.a. PDOK, WeTRansform.
+We hebben bron-data, documenten en metadata voor de resultaten en de harmonisatie/mapping. We gaan er vanuit dat de resultaten conform INSPIRE beschikbaar worden gesteld via hosting van Services. Hosting partijen voor Nederland zijn o.a. PDOK, wetransform GmbH.
 
 In Metadata_INSPIRE.xlsx beheren we een gecombineerd overzicht van de gevraagde feauturetypes per thema gekoppeld aan de aangeboden data (As-Is).
 
