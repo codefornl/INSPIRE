@@ -1,13 +1,13 @@
-Disclaimer
+##Disclaimer
 Dit project is een initiatief van Code For NL. De documentatie en project componenten vallen volledig onder de verantwoordelijkheid van Code For NL. De genoemde overheidsinstellingen hebben een betrokkenheid bij deze repository.
 
-INSPIRE
+##INSPIRE
 INSPIRE harmonisatie projecten op basis van open data.
 
-De data
+##De data
 Alle services/accespoints van onze organisatie kunnen benaderd worden via: https://haleconnect.com/services/bsp/metadata/org/292?preview=true of zoeken via https://haleconnect.com.
 
-Verantwoording
+##Verantwoording
 Diverse Nederlandse overheidspartijen dienen aan INSPIRE open data op te leveren in een door de lidstaten afgestemd formaat, een Europees geodata initiatief. In deze repository proberen we gebruik te maken van open data bronnen van Nederlandse overheden en deze direct naar INSPIRE te vertalen (harmoniseren). Daar waar hiaten optreden in de harmonisatie zullen deze worden geïdentificeerd waarna de betrokken Nederlandse bronhouders zullen worden gecontacteerd om te proberen niet alleen aan INSPIRE alle vereiste, afgesproken entiteiten op te leveren, maar om ook direct de al in Nederland geldende open datasets dusdanig aan te passen of uit te breiden dat ook voor de (publieke) gebruikers van b.v. het nationaal georegister of PDOK dezelfde data beschikbaar komt. Deze synchronisatie vinden wij belangrijk om nationaal en internationaal dezelfde beeldvorming te ondersteunen.
 
 Voor dit project wordt gebruik gemaakt van HALE Studio dat beschikbaar is voor iOS, Windows en Linux.
@@ -22,7 +22,7 @@ In Metadata_INSPIRE.xlsx beheren we een gecombineerd overzicht van de gevraagde 
 
 De subdirectories van de map harmonisation bevatten .halex bestanden en mapping tables. De .halex bestanden kunnen vanuit HALE-Studio worden geopend.
 
-Lijst met Accespoints van formeel gepubliceerde INSPIRE-services in Nationaal Georegister.
+##Lijst met Accespoints van formeel gepubliceerde INSPIRE-services in Nationaal Georegister.
 
 Transport Networks (TN)
 TN - Common Transport Elements (TN-CTN)
