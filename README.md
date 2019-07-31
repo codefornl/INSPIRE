@@ -8,7 +8,7 @@ INSPIRE harmonization projects based on open data.
 All services / access points of our organization can be accessed by: https://haleconnect.com/services/bsp/metadata/org/292?preview=true or search via https://haleconnect.com.
 
 ## Accountability
-Various Dutch government parties must provide INSPIRE with open data in a format coordinated by the member states, a European geodata initiative. In this repository we try to use open data sources from Dutch governments and translate them directly into INSPIRE (harmonization). Where there are gaps in harmonization, these will be identified. After which the relevant Dutch source holders will be motivated to not only to deliver all required entities to INSPIRE, but also to immediately extend the open datasets with mandattorie data, already available in the Netherlands. We think this synchronization is important to support the same data nationally and internationally for the (public) users of the national georegister or PDOK.
+Various Dutch government parties must provide INSPIRE with open data in a format coordinated by the member states, a European geodata initiative. In this repository we try to use open data sources from Dutch governments and translate them directly into INSPIRE (harmonization). Where there are gaps in harmonization, these will be identified. After which the relevant Dutch source holders will be motivated to not only to deliver all required entities to INSPIRE, but also to immediately extend the open datasets with mandattorie data, already available in the Netherlands. We think this synchronization is important to support the same data nationally and internationally for the (public) users.
 
 This project uses HALE Studio that is available for iOS, Windows and Linux.
 
