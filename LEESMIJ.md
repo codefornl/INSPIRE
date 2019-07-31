@@ -24,9 +24,9 @@ De subdirectories van de map harmonisation bevatten .halex bestanden en mapping 
 
 ## Lijst met Accespoints van formeel gepubliceerde INSPIRE-services in Nationaal Georegister.
 
-Transport Networks (TN)
-TN - Common Transport Elements (TN-CTN)
-Source - TN-CTN
+# Transport Networks (TN)
+## TN - Common Transport Elements (TN-CTN)
+### Source - TN-CTN
 In de dataset TN-CTN staan de featuretypes:
 
 ConditionOfFacility (Kadaster)
@@ -45,8 +45,8 @@ VerticalPosition
 VerticalPosition (Kadaster)
 Target - TN-CTN
 Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48), Kadaster (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/14657c9b-91e4-4355-8563-2911ad0e78e4)
-TN - RoadTransportNetwork (TN-RTN)
-Source - TN-RTN
+## TN - RoadTransportNetwork (TN-RTN)
+### Source - TN-RTN
 In de dataset TN-RTN staan de featuretypes:
 
 RoadArea
@@ -81,8 +81,8 @@ SpeedLimit
 VehicleTrafficArea (Kadaster)
 Target - TN-RO
 Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/4fb15e0d-d88f-40f1-b407-3d3edcf7e184) , (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
-TN - WaterTransportNetwork (TN-WTN)
-Source - TN-WTN
+## TN - WaterTransportNetwork (TN-WTN)
+### Source - TN-WTN
 In de dataset TN-WTN staan de featuretypes:
 
 FairwayArea
@@ -95,8 +95,8 @@ WaterwayLink
 WaterwayNode
 Target - TN-WTN
 Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-2c7040b-c448-451b-bf15-f2416ecaadd1)
-TN - Waterways (TN-W)
-Source - TN-W
+## TN - Waterways (TN-W)
+### Source - TN-W
 In de dataset TN-W staan de featuretypes:
 
 BeaconType
@@ -111,9 +111,9 @@ WaterwayLinkType
 WaterwayNodeType
 Target - TN-W
 Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-2c7040b-c448-451b-bf15-f2416ecaadd1), Kadaster (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/5951efa2-1ff3-4763-a966-a2f5497679ee)
-Hydrography (HY)
-HY - Network (HY-N)
-Source - HY-N
+# Hydrography (HY)
+## HY - Network (HY-N)
+### Source - HY-N
 In de dataset HY-N staan de featuretypes:
 
 ...
@@ -129,8 +129,8 @@ HydroPointOfInterest
 ManMadeObject
 Target - HY-P
 Description Kadaster (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/1c3afc74-cc34-44b7-938a-963e2350795a)
-HY-P - ManMadeObject (HY-PMO)
-Source - HY-PMO
+## HY-P - ManMadeObject (HY-PMO)
+### Source - HY-PMO
 In de dataset HY-PMO staan de featuretypes:
 
 ...
@@ -159,9 +159,9 @@ In de dataset EL-M staan de featuretypes:
 ...
 Target - EL-M
 Description (http://www.nationaalgeoregister.nl/)
-Human Health and Safety(HH)
-HH - Noise (HH-N)
-Source - HH-N
+# Human Health and Safety(HH)
+## HH - Noise (HH-N)
+### Source - HH-N
 In de dataset HH-N staan de featuretypes:
 
 Biomarker
