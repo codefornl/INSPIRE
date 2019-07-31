@@ -173,7 +173,7 @@ In de dataset EL-M staan de featuretypes:
   * ...
  
 ### Target - EL-M
-* Description (http://www.nationaalgeoregister.nl/)
+* Description (http://www.nationaalgeoregister.nl/) 
 
 # Human Health and Safety(HH)
 ## HH - Noise (HH-N)
