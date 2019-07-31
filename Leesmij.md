@@ -1,14 +1,14 @@
-##Disclaimer
+## Disclaimer
 Dit project is een initiatief van Code For NL. De documentatie en project componenten vallen volledig onder de verantwoordelijkheid van Code For NL. De genoemde overheidsinstellingen hebben een betrokkenheid bij deze repository.
 
-##INSPIRE
+## INSPIRE
 INSPIRE harmonisatie projecten op basis van open data.
 
-##De data
+## De data
 Alle services/accespoints van onze organisatie kunnen benaderd worden via: https://haleconnect.com/services/bsp/metadata/org/292?preview=true of zoeken via https://haleconnect.com.
 
-##Verantwoording
-Diverse Nederlandse overheidspartijen dienen aan INSPIRE open data op te leveren in een door de lidstaten afgestemd formaat, een Europees geodata initiatief. In deze repository proberen we gebruik te maken van open data bronnen van Nederlandse overheden en deze direct naar INSPIRE te vertalen (harmoniseren). Daar waar hiaten optreden in de harmonisatie zullen deze worden geïdentificeerd waarna de betrokken Nederlandse bronhouders zullen worden gecontacteerd om te proberen niet alleen aan INSPIRE alle vereiste, afgesproken entiteiten op te leveren, maar om ook direct de al in Nederland geldende open datasets dusdanig aan te passen of uit te breiden dat ook voor de (publieke) gebruikers van b.v. het nationaal georegister of PDOK dezelfde data beschikbaar komt. Deze synchronisatie vinden wij belangrijk om nationaal en internationaal dezelfde beeldvorming te ondersteunen.
+## Verantwoording
+Verschillende Nederlandse overheidspartijen moeten INSPIRE open data verstrekken in een formaat dat wordt gecoördineerd door de lidstaten, een Europees geodata-initiatief. In deze repository proberen we open databronnen van Nederlandse overheden te gebruiken en deze direct te vertalen in INSPIRE (harmonisatie). Waar er hiaten in harmonisatie zijn, zullen deze worden geïdentificeerd. Hierna zullen de relevante Nederlandse bronhouders worden gemotiveerd om niet alleen alle vereiste entiteiten aan INSPIRE te leveren, maar ook om de open datasets onmiddellijk uit te breiden met gewenste gegevens, die al in Nederland beschikbaar zijn. Wij vinden deze synchronisatie belangrijk om dezelfde gegevens nationaal en internationaal beschikbaar te stellen voor (publieke) gebruikers o.a. van het nationale georegister en PDOK.
 
 Voor dit project wordt gebruik gemaakt van HALE Studio dat beschikbaar is voor iOS, Windows en Linux.
 
@@ -22,7 +22,7 @@ In Metadata_INSPIRE.xlsx beheren we een gecombineerd overzicht van de gevraagde 
 
 De subdirectories van de map harmonisation bevatten .halex bestanden en mapping tables. De .halex bestanden kunnen vanuit HALE-Studio worden geopend.
 
-##Lijst met Accespoints van formeel gepubliceerde INSPIRE-services in Nationaal Georegister.
+## Lijst met Accespoints van formeel gepubliceerde INSPIRE-services in Nationaal Georegister.
 
 Transport Networks (TN)
 TN - Common Transport Elements (TN-CTN)
