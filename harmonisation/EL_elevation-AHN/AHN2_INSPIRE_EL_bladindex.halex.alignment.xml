@@ -91,24 +91,21 @@
         </target>
         <complexParameter name="script">
             <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
-// currently disabled as coordinates given in DescribeCoverage request don't seem to be in EPSG:28992 as indicated there (e.g. https://geodata.nationaalgeoregister.nl/ahn2/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=describecoverage&amp;coverageid=ahn2_05m_int)&#xD;
+// coordinates given in DescribeCoverage for AHN 2 are differentiating strongly from the ones for AHN3 (e.g. https://geodata.nationaalgeoregister.nl/ahn2/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=describecoverage&amp;coverageid=ahn2_05m_int)&#xD;
 def coverageid = _project.vars.COVERAGE_ID&#xD;
-def list = []&#xD;
+def list = [] as List&lt;Double&gt;&#xD;
 &#xD;
 if (coverageid[5].equals('5')){&#xD;
-	//list = [0.0000756, 0.0000014]&#xD;
-	list &lt;&lt; 0.0&#xD;
-	list &lt;&lt; -33.875000&#xD;
+	list &lt;&lt; 0.0000155&#xD;
+	list &lt;&lt; -0.0003041&#xD;
 	return list&#xD;
 }&#xD;
 &#xD;
 if (coverageid[5].equals('0')){&#xD;
-	//list = [0.0000075, 0.0000001‬]&#xD;
-	list &lt;&lt; 0.0 &#xD;
-	list &lt;&lt; -33.725000&#xD;
+	list &lt;&lt; 0.0000151&#xD;
+	list &lt;&lt; -0.0003028&#xD;
 	return list&#xD;
-}&#xD;
-
+}
 </core:text>
         </complexParameter>
         <parameter value="false" name="variablesAsInstances"/>
@@ -162,7 +159,7 @@ if (coverageid[5].equals('0')){&#xD;
                 <child name="srsName"/>
             </property>
         </target>
-        <parameter value="http://www.opengis.net/def/crs/EPSG/0/28992" name="value"/>
+        <parameter value="http://www.opengis.net/def/crs/EPSG/0/4258" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="C46f444da-37ea-4e63-b300-90e14144a0ef" priority="normal">
         <target>
@@ -179,7 +176,7 @@ if (coverageid[5].equals('0')){&#xD;
                 <child name="uomLabels"/>
             </property>
         </target>
-        <parameter value="m m" name="value"/>
+        <parameter value="degree degree" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C9564970f-c9b5-4b2f-bbaf-395451b3e27d" priority="normal">
         <target name="result">
@@ -195,21 +192,23 @@ if (coverageid[5].equals('0')){&#xD;
         </target>
         <complexParameter name="script">
             <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
-// currently disabled as coordinates given in DescribeCoverage request don't seem to be in EPSG:28992 as indicated there (e.g. https://geodata.nationaalgeoregister.nl/ahn2/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=describecoverage&amp;coverageid=ahn2_05m_int)&#xD;
+// coordinates given in DescribeCoverage request for AHN 2 differentiate very strongly from the one in AHN 3 (e.g. https://geodata.nationaalgeoregister.nl/ahn2/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=describecoverage&amp;coverageid=ahn2_05m_int)&#xD;
+&#xD;
+&#xD;
 def coverageid = _project.vars.COVERAGE_ID&#xD;
 def list = [] as List&lt;Double&gt;&#xD;
 &#xD;
 if (coverageid[5].equals('5')){&#xD;
 	//list = [0.0000756, 0.0000014]&#xD;
-	list &lt;&lt; 29.625000&#xD;
-	list &lt;&lt; 0.0&#xD;
+	list &lt;&lt; 0.0004465&#xD;
+	list &lt;&lt; 0.0000081&#xD;
 	return list&#xD;
 }&#xD;
 &#xD;
 if (coverageid[5].equals('0')){&#xD;
 	//list = [0.0000075, 0.0000001‬]&#xD;
-	list &lt;&lt; 29.325000&#xD;
-	list &lt;&lt; 0.0&#xD;
+	list &lt;&lt; 0.0004418&#xD;
+	list &lt;&lt; 0.0000079&#xD;
 	return list&#xD;
 }
 </core:text>
@@ -259,7 +258,7 @@ if (coverageid[5].equals('0')){&#xD;
                 <child name="srsName"/>
             </property>
         </target>
-        <parameter value="http://www.opengis.net/def/crs/EPSG/0/28992" name="value"/>
+        <parameter value="http://www.opengis.net/def/crs/EPSG/0/4258" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="Cb66c59f6-1aab-413f-bbec-7dbe07b481c9" priority="normal">
         <target>
@@ -274,7 +273,7 @@ if (coverageid[5].equals('0')){&#xD;
                 <child name="uomLabels"/>
             </property>
         </target>
-        <parameter value="m m" name="value"/>
+        <parameter value="degree degree" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C25adf1f1-aa1a-47d3-b21e-4dc9dc0589e2" priority="normal">
         <target name="result">
@@ -650,34 +649,4 @@ else {&#xD;
         </complexParameter>
         <parameter value="false" name="variablesAsInstances"/>
     </cell>
-    <modifier cell="C13090579-d0ac-41b9-a1fb-1c6cd507416c">
-        <disable-for parent="C7db9d2e3-85dc-4b57-8aad-5bddd0dc4505"/>
-    </modifier>
-    <modifier cell="C33ff4828-96e3-43f2-ab2b-5ec41419d1d4">
-        <disable-for parent="C7db9d2e3-85dc-4b57-8aad-5bddd0dc4505"/>
-    </modifier>
-    <modifier cell="C3cb8572b-ad1b-4746-9e6d-90a5e21084ba">
-        <disable-for parent="C7db9d2e3-85dc-4b57-8aad-5bddd0dc4505"/>
-    </modifier>
-    <modifier cell="C46f444da-37ea-4e63-b300-90e14144a0ef">
-        <disable-for parent="C7db9d2e3-85dc-4b57-8aad-5bddd0dc4505"/>
-    </modifier>
-    <modifier cell="C8dd9ce28-2331-44cd-b981-2bbfe3754be8">
-        <disable-for parent="C7db9d2e3-85dc-4b57-8aad-5bddd0dc4505"/>
-    </modifier>
-    <modifier cell="C9564970f-c9b5-4b2f-bbaf-395451b3e27d">
-        <disable-for parent="C7db9d2e3-85dc-4b57-8aad-5bddd0dc4505"/>
-    </modifier>
-    <modifier cell="C9a7fc92d-5f57-4c6b-a386-4f6ff4981e6f">
-        <disable-for parent="C7db9d2e3-85dc-4b57-8aad-5bddd0dc4505"/>
-    </modifier>
-    <modifier cell="C9a832fad-559b-4cd8-9be1-d4769204ccfd">
-        <disable-for parent="C7db9d2e3-85dc-4b57-8aad-5bddd0dc4505"/>
-    </modifier>
-    <modifier cell="Cb66c59f6-1aab-413f-bbec-7dbe07b481c9">
-        <disable-for parent="C7db9d2e3-85dc-4b57-8aad-5bddd0dc4505"/>
-    </modifier>
-    <modifier cell="Cea47226a-eb7f-4b53-89a6-cb907b2dac04">
-        <disable-for parent="C7db9d2e3-85dc-4b57-8aad-5bddd0dc4505"/>
-    </modifier>
 </alignment>
