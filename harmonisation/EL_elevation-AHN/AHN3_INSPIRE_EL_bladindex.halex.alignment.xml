@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alignment xmlns="http://www.esdi-humboldt.eu/hale/alignment">
+    <cell relation="eu.esdihumboldt.hale.align.retype" id="Cd211a657-bf3a-4d5c-918d-4b8cedd0abe1" priority="normal">
+        <source>
+            <class>
+                <type name="ahn3_bladindexType" ns="http://ahn3.geonovum.nl"/>
+            </class>
+        </source>
+        <target>
+            <class>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+            </class>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C5a7af098-56cc-45e6-a405-0e04995067ad" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/domainSet"/>
+                <child name="rectifiedGridDomain" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/DomainSetType/sequence_1"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="RectifiedGrid" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/GridType"/>
+                <child name="axisName" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="x, y" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C64d192b1-1102-4e13-be6b-73a6630e5217" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/domainSet"/>
+                <child name="rectifiedGridDomain" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/DomainSetType/sequence_1"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="RectifiedGrid" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="dimension"/>
+            </property>
+        </target>
+        <parameter value="2" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C436c7702-f6ca-494f-895f-b9d8eac6380c" priority="normal">
+        <target name="result">
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/domainSet"/>
+                <child name="rectifiedGridDomain" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/DomainSetType/sequence_1"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="RectifiedGrid" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="limits" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="GridEnvelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="high" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def coverageid = _project.vars.COVERAGE_ID&#xD;
+def list = []&#xD;
+&#xD;
+if (coverageid[5].equals('5')){&#xD;
+	//list = [69249, 73749]&#xD;
+	list &lt;&lt; 69249&#xD;
+	list &lt;&lt; 73749&#xD;
+	return list&#xD;
+}&#xD;
+&#xD;
+if (coverageid[5].equals('0')){&#xD;
+	//list = [692499, 737499‬]&#xD;
+	list &lt;&lt; 692499&#xD;
+	list &lt;&lt; 737499&#xD;
+	return list&#xD;
+}&#xD;
+
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C6ebabc60-0ab4-47b2-9f28-c235eb3f7ba6" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/domainSet"/>
+                <child name="rectifiedGridDomain" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/DomainSetType/sequence_1"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="RectifiedGrid" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="limits" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="GridEnvelope" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="low" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="0,0" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C3cb8572b-ad1b-4746-9e6d-90a5e21084ba" priority="normal">
+        <target name="result">
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/domainSet"/>
+                <child name="rectifiedGridDomain" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/DomainSetType/sequence_1"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="RectifiedGrid" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="offsetVector" ns="http://www.opengis.net/gml/3.2">
+                    <context>0</context>
+                </child>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def coverageid = _project.vars.COVERAGE_ID&#xD;
+def list = [] as List&lt;Double&gt;&#xD;
+&#xD;
+if (coverageid[5].equals('5')){&#xD;
+	//list = [0.0000025, -0.0000449‬]&#xD;
+	list &lt;&lt; 0.0000025&#xD;
+	list &lt;&lt; -0.0000449&#xD;
+	return list&#xD;
+}&#xD;
+&#xD;
+if (coverageid[5].equals('0')){&#xD;
+	//list = [0.0000002‬, -0.0000045‬]&#xD;
+	list &lt;&lt; 0.0000002&#xD;
+	list &lt;&lt; -0.0000045&#xD;
+	return list&#xD;
+}&#xD;
+&#xD;
+//else _log.warn('There is no offsetVector defined for the coverage id indicated in the project variable')
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C9a832fad-559b-4cd8-9be1-d4769204ccfd" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/domainSet"/>
+                <child name="rectifiedGridDomain" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/DomainSetType/sequence_1"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="RectifiedGrid" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="offsetVector" ns="http://www.opengis.net/gml/3.2">
+                    <context>0</context>
+                </child>
+                <child name="axisLabels"/>
+            </property>
+        </target>
+        <parameter value="east north" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C8dd9ce28-2331-44cd-b981-2bbfe3754be8" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/domainSet"/>
+                <child name="rectifiedGridDomain" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/DomainSetType/sequence_1"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="RectifiedGrid" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="offsetVector" ns="http://www.opengis.net/gml/3.2">
+                    <context>0</context>
+                </child>
+                <child name="srsDimension"/>
+            </property>
+        </target>
+        <parameter value="2" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C13090579-d0ac-41b9-a1fb-1c6cd507416c" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/domainSet"/>
+                <child name="rectifiedGridDomain" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/DomainSetType/sequence_1"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="RectifiedGrid" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="offsetVector" ns="http://www.opengis.net/gml/3.2">
+                    <context>0</context>
+                </child>
+                <child name="srsName"/>
+            </property>
+        </target>
+        <parameter value="http://www.opengis.net/def/crs/EPSG/0/4258" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C46f444da-37ea-4e63-b300-90e14144a0ef" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/domainSet"/>
+                <child name="rectifiedGridDomain" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/DomainSetType/sequence_1"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="RectifiedGrid" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="offsetVector" ns="http://www.opengis.net/gml/3.2">
+                    <context>0</context>
+                </child>
+                <child name="uomLabels"/>
+            </property>
+        </target>
+        <parameter value="degree degree" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C9564970f-c9b5-4b2f-bbaf-395451b3e27d" priority="normal">
+        <target name="result">
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/domainSet"/>
+                <child name="rectifiedGridDomain" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/DomainSetType/sequence_1"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="RectifiedGrid" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="offsetVector" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def coverageid = _project.vars.COVERAGE_ID&#xD;
+def list = [] as List&lt;Double&gt;&#xD;
+&#xD;
+if (coverageid[5].equals('5')){&#xD;
+	//list = [0.0000756, 0.0000014]&#xD;
+	list &lt;&lt; 0.0000756&#xD;
+	list &lt;&lt; 0.0000014&#xD;
+	return list&#xD;
+}&#xD;
+&#xD;
+if (coverageid[5].equals('0')){&#xD;
+	//list = [0.0000075, 0.0000001‬]&#xD;
+	list &lt;&lt; 0.0000075&#xD;
+	list &lt;&lt; 0.0000001&#xD;
+	return list&#xD;
+}&#xD;
+&#xD;
+//else _log.warn('There is no offsetVector defined for the coverage id indicated in the project variable')
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C9a7fc92d-5f57-4c6b-a386-4f6ff4981e6f" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/domainSet"/>
+                <child name="rectifiedGridDomain" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/DomainSetType/sequence_1"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="RectifiedGrid" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="offsetVector" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="axisLabels"/>
+            </property>
+        </target>
+        <parameter value="east north" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cea47226a-eb7f-4b53-89a6-cb907b2dac04" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/domainSet"/>
+                <child name="rectifiedGridDomain" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/DomainSetType/sequence_1"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="RectifiedGrid" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="offsetVector" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="srsDimension"/>
+            </property>
+        </target>
+        <parameter value="2" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C33ff4828-96e3-43f2-ab2b-5ec41419d1d4" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/domainSet"/>
+                <child name="rectifiedGridDomain" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/DomainSetType/sequence_1"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="RectifiedGrid" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="offsetVector" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="srsName"/>
+            </property>
+        </target>
+        <parameter value="http://www.opengis.net/def/crs/EPSG/0/4258" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cb66c59f6-1aab-413f-bbec-7dbe07b481c9" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/domainSet"/>
+                <child name="rectifiedGridDomain" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/DomainSetType/sequence_1"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="RectifiedGrid" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="offsetVector" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="uomLabels"/>
+            </property>
+        </target>
+        <parameter value="degree degree" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C4c04bd79-5e44-44c2-a23a-e977616bfb41" priority="normal">
+        <target name="result">
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/domainSet"/>
+                <child name="rectifiedGridDomain" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/DomainSetType/sequence_1"/>
+                <child name="choice" ns="http://www.opengis.net/gml/3.2/AbstractGeometry"/>
+                <child name="RectifiedGrid" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="origin" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="Point" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def coverageid = _project.vars.COVERAGE_ID&#xD;
+&#xD;
+if (coverageid[5].equals('5')){&#xD;
+	return _.geom.with(geometry:"POINT(10002.5 618747.5)", crs:28992)&#xD;
+	//_.geom.with(geometry:"POINT(10002 618747)", crs:28992)&#xD;
+}&#xD;
+&#xD;
+if (coverageid[5].equals('0')){&#xD;
+	return _.geom.with(geometry:"POINT(10000.25 618749.75)", crs:28992)&#xD;
+	//_.geom.with(geometry:"POINT(10000 618749)", crs:28992)&#xD;
+}
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C51f182a7-7b7e-4225-89e5-c680c9df3751" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="coverageFunction" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/CoverageFunctionType"/>
+                <child name="GridFunction" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="sequenceRule" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="Linear" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C68a158b4-cedb-4b63-b6fe-1bfe48e593cb" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="coverageFunction" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/CoverageFunctionType"/>
+                <child name="GridFunction" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="sequenceRule" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="axisOrder"/>
+            </property>
+        </target>
+        <parameter value="+1 +2" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C2b5ca596-3fd9-4919-a87a-053bb4dc9049" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="coverageFunction" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/CoverageFunctionType"/>
+                <child name="GridFunction" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="startPoint" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="0,0" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cc242fed7-1120-4860-babe-ce8530c30ca2" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="description" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="Het Actueel Hoogtebestand Nederland (AHN) is de digitale hoogtekaart voor heel Nederland. Het bevat gedetailleerde en precieze hoogtegegevens met gemiddeld acht hoogtemetingen per vierkante meter. Find more information here http://www.ahn.nl " name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.rename" id="C8c368f60-80b4-4943-b9c9-797f92832a34" priority="normal">
+        <source>
+            <property>
+                <type name="ahn3_bladindexType" ns="http://ahn3.geonovum.nl"/>
+                <child name="geom" ns="http://ahn3.geonovum.nl"/>
+                <child name="MultiSurface" ns="http://www.opengis.net/gml"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="domainExtent" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="EX_Extent" ns="http://www.isotc211.org/2005/gmd"/>
+                <child name="geographicElement" ns="http://www.isotc211.org/2005/gmd"/>
+                <child name="choice" ns="http://www.isotc211.org/2005/gmd/AbstractEX_GeographicExtent"/>
+                <child name="EX_BoundingPolygon" ns="http://www.isotc211.org/2005/gmd"/>
+                <child name="polygon" ns="http://www.isotc211.org/2005/gmd"/>
+            </property>
+        </target>
+        <parameter value="false" name="ignoreNamespaces"/>
+        <parameter value="false" name="structuralRename"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C2003d6fd-52d3-4893-babd-6e0a5d85927a" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ahn3_bladindexType" ns="http://ahn3.geonovum.nl"/>
+                <child name="bladnr" ns="http://ahn3.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="id" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:COVERAGE_ID}}.ElevationGridCoverage.{bladnr}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C777da5af-73d2-4713-aaf3-b6d9b6fd3ad1" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ahn3_bladindexType" ns="http://ahn3.geonovum.nl"/>
+                <child name="bladnr" ns="http://ahn3.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_NAMESPACE}}{{project:COVERAGE_ID}}.ElevationGridCoverage.{bladnr}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Ce7af3acd-2ca1-482f-944e-f8a46d77afda" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="identifier" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="codeSpace"/>
+            </property>
+        </target>
+        <parameter value="http://inspire.ec.europa.eu/ids" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.formattedstring" id="C281414a1-45e2-4781-9bd0-0149cf536003" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ahn3_bladindexType" ns="http://ahn3.geonovum.nl"/>
+                <child name="bladnr" ns="http://ahn3.geonovum.nl"/>
+            </property>
+        </source>
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="localId" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:COVERAGE_ID}}.ElevationGridCoverage.{bladnr}" name="pattern"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cba24962e-beb8-416c-8e74-f2b48777ba68" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="inspireId" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="Identifier" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+                <child name="namespace" ns="http://inspire.ec.europa.eu/schemas/base/3.3"/>
+            </property>
+        </target>
+        <parameter value="{{project:INSPIRE_NAMESPACE}}" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cbc9458d5-da3b-4edb-a046-c3bf784f1519" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="propertyType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+            </property>
+        </target>
+        <parameter value="height" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C3ec6c664-3dc8-4d0f-8d08-be33c66aa8a1" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ahn3_bladindexType" ns="http://ahn3.geonovum.nl"/>
+                <child name="lo_y" ns="http://ahn3.geonovum.nl"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="ahn3_bladindexType" ns="http://ahn3.geonovum.nl"/>
+                <child name="lo_x" ns="http://ahn3.geonovum.nl"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="rangeSet" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/RangeSetType"/>
+                <child name="File" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/FileType"/>
+                <child name="fileReference" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def x_left = lo_x&#xD;
+def x_right = (lo_x as double) + 5000&#xD;
+def y_low = lo_y&#xD;
+def y_high = (lo_y as double) + 6250&#xD;
+&#xD;
+return "https://geodata.nationaalgeoregister.nl/ahn3/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=getcoverage&amp;COVERAGEID=" + _project.vars.COVERAGE_ID + "&amp;FORMAT=image/tiff&amp;CRS=EPSG:28992&amp;SUBSET=x(${x_left},${x_right})&amp;SUBSET=y(${y_low},${y_high})"
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+        <annotation type="message">
+            <core:message xmlns:core="http://www.esdi-humboldt.eu/hale/core" category="migration">
+                <core:content>
+                    <core:text xml:space="preserve">The cell's entities have been replaced, the new entities may have a different structure and/or names and may require updating the Groovy script accordingly</core:text>
+                </core:content>
+            </core:message>
+        </annotation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cea08ff22-e990-4139-acaf-4705237497ae" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="rangeSet" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/RangeSetType"/>
+                <child name="File" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="fileStructure" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="inapplicable" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C6fb9c604-9b3a-4cf4-9e61-3c0fbb5367b7" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="rangeSet" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/RangeSetType"/>
+                <child name="File" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="mimeType" ns="http://www.opengis.net/gml/3.2"/>
+            </property>
+        </target>
+        <parameter value="image/tiff" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cd7bcf952-f889-4388-9fd7-2115f21a7a91" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="rangeSet" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/RangeSetType"/>
+                <child name="File" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="rangeParameters" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="arcrole" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="fileReference" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="Cf3431f6a-c81a-45e9-b945-ba393ac5e819" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ahn3_bladindexType" ns="http://ahn3.geonovum.nl"/>
+                <child name="lo_y" ns="http://ahn3.geonovum.nl"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="ahn3_bladindexType" ns="http://ahn3.geonovum.nl"/>
+                <child name="lo_x" ns="http://ahn3.geonovum.nl"/>
+            </property>
+        </source>
+        <target name="result">
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="rangeSet" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/RangeSetType"/>
+                <child name="File" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="rangeParameters" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="href" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def x_left = lo_x&#xD;
+def x_right = (lo_x as double) + 5000&#xD;
+def y_low = lo_y&#xD;
+def y_high = (lo_y as double) + 6250&#xD;
+&#xD;
+return "https://geodata.nationaalgeoregister.nl/ahn3/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=getcoverage&amp;COVERAGEID=" + _project.vars.COVERAGE_ID + "&amp;FORMAT=image/tiff&amp;CRS=EPSG:28992&amp;SUBSET=x(${x_left},${x_right})&amp;SUBSET=y(${y_low},${y_high})"
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+        <annotation type="message">
+            <core:message xmlns:core="http://www.esdi-humboldt.eu/hale/core" category="migration">
+                <core:content>
+                    <core:text xml:space="preserve">The cell's entities have been replaced, the new entities may have a different structure and/or names and may require updating the Groovy script accordingly</core:text>
+                </core:content>
+            </core:message>
+        </annotation>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C84815ca0-4889-4c6e-8abf-4db6456640f6" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="rangeSet" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="choice_1" ns="http://www.opengis.net/gml/3.2/RangeSetType"/>
+                <child name="File" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="rangeParameters" ns="http://www.opengis.net/gml/3.2"/>
+                <child name="role" ns="http://www.w3.org/1999/xlink"/>
+            </property>
+        </target>
+        <parameter value="http://www.opengis.net/spec/WCS_coverage-encoding_geotiff/1.0/" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="Cd8299805-77ec-4d59-ac90-10cde3c732c3" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="rangeType" ns="http://www.opengis.net/gmlcov/1.0"/>
+                <child name="DataRecord" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="field" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="choice" ns="http://www.opengis.net/swe/2.0/AbstractDataComponent"/>
+                <child name="Quantity" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="constraint" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="AllowedValues" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="interval" ns="http://www.opengis.net/swe/2.0"/>
+            </property>
+        </target>
+        <parameter value="-3.4028e+38,3.4028e+38" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C9bdf2939-279a-43a7-9001-b62676d37ff9" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="rangeType" ns="http://www.opengis.net/gmlcov/1.0"/>
+                <child name="DataRecord" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="field" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="choice" ns="http://www.opengis.net/swe/2.0/AbstractDataComponent"/>
+                <child name="Quantity" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="constraint" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="AllowedValues" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="significantFigures" ns="http://www.opengis.net/swe/2.0"/>
+            </property>
+        </target>
+        <parameter value="12" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C902be0ba-da4b-4b77-8fb2-11f4c06c012c" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="rangeType" ns="http://www.opengis.net/gmlcov/1.0"/>
+                <child name="DataRecord" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="field" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="choice" ns="http://www.opengis.net/swe/2.0/AbstractDataComponent"/>
+                <child name="Quantity" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="uom" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="code"/>
+            </property>
+        </target>
+        <parameter value="W.m-2.Sr-1" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.hale.align.assign" id="C7e84147a-ab1f-4854-8917-3a119c8f731d" priority="normal">
+        <target>
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="rangeType" ns="http://www.opengis.net/gmlcov/1.0"/>
+                <child name="DataRecord" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="field" ns="http://www.opengis.net/swe/2.0"/>
+                <child name="name"/>
+            </property>
+        </target>
+        <parameter value="band" name="value"/>
+    </cell>
+    <cell relation="eu.esdihumboldt.cst.functions.groovy" id="Cf49b86f2-f101-4fdc-ac94-de6a07371b1d" priority="normal">
+        <target name="result">
+            <property>
+                <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+                <child name="surfaceType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
+            </property>
+        </target>
+        <complexParameter name="script">
+            <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
+def surface = _project.vars.COVERAGE_ID&#xD;
+&#xD;
+if (surface[-3..-1].equals('dsm')){&#xD;
+	return 'DSM'&#xD;
+}&#xD;
+&#xD;
+if (surface[-3..-1].equals('dtm')){&#xD;
+	return 'DTM'&#xD;
+}
+</core:text>
+        </complexParameter>
+        <parameter value="false" name="variablesAsInstances"/>
+    </cell>
+</alignment>
