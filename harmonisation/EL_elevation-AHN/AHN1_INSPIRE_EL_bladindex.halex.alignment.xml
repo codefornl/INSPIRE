@@ -537,7 +537,7 @@ if(x_left &amp;&amp; y_low){&#xD;
 	def x_right = (x_left as double) + 5000&#xD;
 	def y_high = (y_low as double) + 6250&#xD;
 &#xD;
-	return "https://geodata.nationaalgeoregister.nl/ahn3/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=getcoverage&amp;COVERAGEID=" + _project.vars.COVERAGE_ID + "&amp;FORMAT=image/tiff&amp;CRS=EPSG:28992&amp;SUBSET=x(${x_left},${x_right})&amp;SUBSET=y(${y_low},${y_high})"&#xD;
+	return "https://geodata.nationaalgeoregister.nl/ahn1/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=getcoverage&amp;COVERAGEID=" + _project.vars.COVERAGE_ID + "&amp;FORMAT=image/tiff&amp;CRS=EPSG:28992&amp;SUBSET=x(${x_left},${x_right})&amp;SUBSET=y(${y_low},${y_high})"&#xD;
 }
 </core:text>
         </complexParameter>
@@ -635,7 +635,7 @@ if(x_left &amp;&amp; y_low){&#xD;
 	def x_right = (x_left as double) + 5000&#xD;
 	def y_high = (y_low as double) + 6250&#xD;
 &#xD;
-	return "https://geodata.nationaalgeoregister.nl/ahn3/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=getcoverage&amp;COVERAGEID=" + _project.vars.COVERAGE_ID + "&amp;FORMAT=image/tiff&amp;CRS=EPSG:28992&amp;SUBSET=x(${x_left},${x_right})&amp;SUBSET=y(${y_low},${y_high})"&#xD;
+	return "https://geodata.nationaalgeoregister.nl/ahn1/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=getcoverage&amp;COVERAGEID=" + _project.vars.COVERAGE_ID + "&amp;FORMAT=image/tiff&amp;CRS=EPSG:28992&amp;SUBSET=x(${x_left},${x_right})&amp;SUBSET=y(${y_low},${y_high})"&#xD;
 }
 </core:text>
         </complexParameter>

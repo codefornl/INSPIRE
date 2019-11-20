@@ -3,7 +3,7 @@
     <name>AHN1_INSPIRE_EL_bladindex</name>
     <author>Johanna</author>
     <created>2019-01-08T11:31:08.885+01:00</created>
-    <modified>2019-11-15T10:28:29.805+01:00</modified>
+    <modified>2019-11-20T14:31:45.336+01:00</modified>
     <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
         <setting name="charset">UTF-8</setting>
         <setting name="projectFiles.separate">false</setting>
