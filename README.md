@@ -192,7 +192,10 @@ In de dataset HH-N staan de featuretypes:
 # Habitats en biotops (HB)
 ## HB - ...
 
-# environmental monitoring facility (EF)
+# Environmental monitoring facility (EF)
 ## EF - SurfaceWater (EF-S)
 ## EF - Marien (EF-M)
 ## EF - UrbanWasteWater (EF-U)
+
+# Oceanographic geographical features (OG)
+## OG - ...
