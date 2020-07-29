@@ -43,9 +43,6 @@ In de dataset TN-CTN staan de featuretypes:
   * VerticalPosition
   * VerticalPosition (Kadaster)  
 
-### Target - TN-CTN
-* Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/14657c9b-91e4-4355-8563-2911ad0e78e4)
-
 ## TN - RoadTransportNetwork (TN-RTN)
 ### Source - TN-RTN
 In de dataset TN-RTN staan de featuretypes:
@@ -79,9 +76,7 @@ In de dataset TN-RO staan de featuretypes:
   * VehicleTrafficArea (Kadaster)
 
 ### Target - TN-RO
-* Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-cb527d-f6db-4835-b0cd-deb245241254)
-, (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-43fc1b3-6034-4eu-6-bb0d-2d1967c9ae48)
-
+* Description RWS (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-cb527d-f6db-4835-b0cd-deb245241254)
 
 
 ## TN - WaterTransportNetwork (TN-WTN)
@@ -111,7 +106,7 @@ In de dataset TN-W staan de featuretypes:
   * WaterwayNodeType
   
 ### Target - TN-W
-* Description RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-2c7040b-c448-451b-bf15-f2416ecaadd1), Kadaster (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/5951efa2-1ff3-4763-a966-a2f5497679ee)
+* Description RWS (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-2c7040b-c448-451b-bf15-f2416ecaadd1), Kadaster (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/5951efa2-1ff3-4763-a966-a2f5497679ee)
 
 # Hydrography (HY)
 ## HY - Network (HY-N)
@@ -122,7 +117,7 @@ In de dataset HY-N staan de featuretypes:
   * WatercourseLinkSequence
 
 ### Target - HY-N
- * Data RWS (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-f297898-2640-44c2-bbe9-c0480da83794)
+ * Data RWS (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-f297898-2640-44c2-bbe9-c0480da83794)
 
 ## HY - Physical Waters (HY-P)
 ### Source - HY-P
@@ -133,7 +128,7 @@ In de dataset HY-P staan de featuretypes:
   * ManMadeObject
  
 ### Target - HY-P
-* Description Kadaster (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/1c3afc74-cc34-44b7-938a-963e2350795a) 
+* Description Kadaster (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/1c3afc74-cc34-44b7-938a-963e2350795a) 
 
 ## HY-P - HY-PMO (ManMadeObject)
 ### Source - HY-PMO
@@ -152,7 +147,7 @@ In de dataset EL-T staan de featuretypes:
  
 ### Target - EL-T
 * Description (http://www.nationaalgeoregister.nl/)
-* Services  [Download](http://www.nationaalgeoregister.nl/) of [WFS service](http://www.nationaalgeoregister.nl/)
+* Services  [Download](https://www.nationaalgeoregister.nl/) of [WFS service](https://www.nationaalgeoregister.nl/)
  
 ## EL - InlandWater (EL-I)
 ### Source - EL-I
@@ -160,7 +155,7 @@ In de dataset EL-I staan de featuretypes:
   * ...
  
 ### Target - EL-I
-* Description (http://www.nationaalgeoregister.nl/)
+* Description (https://www.nationaalgeoregister.nl/)
 
 ## EL - MarienWater (EL-M)
 ### Source - EL-M
@@ -168,7 +163,7 @@ In de dataset EL-M staan de featuretypes:
   * ...
  
 ### Target - EL-M
-* Description (http://www.nationaalgeoregister.nl/) 
+* Description (https://www.nationaalgeoregister.nl/) 
 
 # Human Health and Safety(HH)
 ## HH - Noise (HH-N)
@@ -183,4 +178,6 @@ In de dataset HH-N staan de featuretypes:
   * Disease
 
 ### Target - HH-N
-* Description (http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/wt-3730-e750-485a-9c0c-39bf9be72cf9, http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/wt-f5eb-b09f-4f6d-8397-8878a1b86238, http://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/wt-83730-e750-485a-9c0c-39bf9be72cf8)
+* Description (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/wt-3730-e750-485a-9c0c-39bf9be72cf9, https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/wt-f5eb-b09f-4f6d-8397-8878a1b86238, https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/wt-83730-e750-485a-9c0c-39bf9be72cf8)
+
+
