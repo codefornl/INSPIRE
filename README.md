@@ -155,15 +155,15 @@ In de dataset EL-I staan de featuretypes:
   * ...
  
 ### Target - EL-I
-* Description (https://www.nationaalgeoregister.nl/)
+* Description (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/adn73c4a-ef03-4785-b7f6-942e86b385f7)
 
-## EL - MarienWater (EL-M)
-### Source - EL-M
-In de dataset EL-M staan de featuretypes:
+## EL - CoastalWater (EL-C)
+### Source - EL-C
+In de dataset EL-C staan de featuretypes:
   * ...
  
 ### Target - EL-M
-* Description (https://www.nationaalgeoregister.nl/) 
+* Description (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/adn73c4a-ef03-4785-b7f6-942e86b385f5) 
 
 # Human Health and Safety(HH)
 ## HH - Noise (HH-N)
@@ -180,4 +180,19 @@ In de dataset HH-N staan de featuretypes:
 ### Target - HH-N
 * Description (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/wt-3730-e750-485a-9c0c-39bf9be72cf9, https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/wt-f5eb-b09f-4f6d-8397-8878a1b86238, https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/wt-83730-e750-485a-9c0c-39bf9be72cf8)
 
+# Area management/restriction/regulation zones and reporting units (AM)
+## AM - SurfaceWater (AM-S)
+## AM - Marien (AM-M)
+## AM - UrbanWasteWater (AM-U)
 
+# Natural risk zones (NZ)
+## NZ - Floods (NZ-F)
+### Source - NZ-F
+
+# Habitats en biotops (HB)
+## HB - ...
+
+# environmental monitoring facility (EF)
+## EF - SurfaceWater (EF-S)
+## EF - Marien (EF-M)
+## EF - UrbanWasteWater (EF-U)
