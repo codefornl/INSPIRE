@@ -59,7 +59,10 @@
         </target>
         <complexParameter name="script">
             <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
-def coverageid = _project.vars.COVERAGE_ID&#xD;
+return [5000, 6250]&#xD;
+&#xD;
+//old approach replaced after call with Kathi Schleidt on Dec 19th, 2019&#xD;
+/*def coverageid = _project.vars.COVERAGE_ID&#xD;
 def list = []&#xD;
 &#xD;
 if (coverageid.equals('ahn1_100m')){&#xD;
@@ -78,7 +81,7 @@ if (coverageid.equals('ahn1_5m')){&#xD;
 	list &lt;&lt; 9999&#xD;
 	list &lt;&lt; 9999&#xD;
 	return list&#xD;
-}
+}*/
 </core:text>
         </complexParameter>
         <parameter value="false" name="variablesAsInstances"/>
@@ -306,6 +309,12 @@ if (coverageid.equals('ahn1_100m')){&#xD;
         <parameter value="degree degree" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C4c04bd79-5e44-44c2-a23a-e977616bfb41" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ahn1_bladindexType" ns="http://ahn1.geonovum.nl"/>
+                <child name="geom" ns="http://ahn1.geonovum.nl"/>
+            </property>
+        </source>
         <target name="result">
             <property>
                 <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
@@ -320,7 +329,51 @@ if (coverageid.equals('ahn1_100m')){&#xD;
         </target>
         <complexParameter name="script">
             <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
-def coverageid = _project.vars.COVERAGE_ID&#xD;
+def prop = _.geom.find(geom.p.first())&#xD;
+&#xD;
+def geoms&#xD;
+&#xD;
+if(prop) {&#xD;
+	geoms = prop.getGeometry()&#xD;
+}&#xD;
+&#xD;
+def x_left&#xD;
+def y_low&#xD;
+&#xD;
+geoms.getCoordinates().each{ geo -&gt;&#xD;
+	if (!x_left){&#xD;
+		x_left = geo.x&#xD;
+	}&#xD;
+	&#xD;
+	else if (geo.x &lt; x_left){&#xD;
+		x_left = geo.x&#xD;
+	}&#xD;
+}&#xD;
+_log.info('x_left ist ' + x_left)&#xD;
+&#xD;
+geoms.getCoordinates().each{ geo -&gt;&#xD;
+	if(!y_low){&#xD;
+		y_low = geo.y&#xD;
+	}&#xD;
+	&#xD;
+	else if (geo.y &lt; y_low){&#xD;
+		y_low = geo.y&#xD;
+	}&#xD;
+}&#xD;
+&#xD;
+_log.info('y_low ist ' + y_low)&#xD;
+&#xD;
+&#xD;
+return _.geom.with(geometry:"POINT(${x_left} ${y_low})", crs:28992)&#xD;
+//_.geom.with(gemetry:"POINT(" + x_left + " " + y_low + ")", crs:28992)&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+//old approach replaced as an outcome of a call with Kathi Schleidt on Dec 19th, 2019&#xD;
+/*def coverageid = _project.vars.COVERAGE_ID&#xD;
 &#xD;
 if (coverageid.equals('ahn1_5m')){&#xD;
 	return _.geom.with(geometry:"POINT(13579.66375 619562.92475)", crs:28992)&#xD;
@@ -332,10 +385,10 @@ if (coverageid.equals('ahn1_25m')){&#xD;
 &#xD;
 if (coverageid.equals('ahn1_100m')){&#xD;
 	return _.geom.with(geometry:"POINT(10050 619650)", crs:28992)&#xD;
-}
+}*/
 </core:text>
         </complexParameter>
-        <parameter value="false" name="variablesAsInstances"/>
+        <parameter value="true" name="variablesAsInstances"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="C51f182a7-7b7e-4225-89e5-c680c9df3751" priority="normal">
         <target>
@@ -537,7 +590,9 @@ if(x_left &amp;&amp; y_low){&#xD;
 	def x_right = (x_left as double) + 5000&#xD;
 	def y_high = (y_low as double) + 6250&#xD;
 &#xD;
-	return "https://geodata.nationaalgeoregister.nl/ahn1/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=getcoverage&amp;COVERAGEID=" + _project.vars.COVERAGE_ID + "&amp;FORMAT=image/tiff&amp;CRS=EPSG:28992&amp;SUBSET=x(${x_left},${x_right})&amp;SUBSET=y(${y_low},${y_high})"&#xD;
+	//old URL replaced as an outcome of call with Kathi Schleidt on December 19th, 2020 in order to align tif CRS with CRS for exported vector data&#xD;
+	//return "https://geodata.nationaalgeoregister.nl/ahn1/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=getcoverage&amp;COVERAGEID=" + _project.vars.COVERAGE_ID + "&amp;FORMAT=image/tiff&amp;CRS=EPSG:28992&amp;SUBSET=x(${x_left},${x_right})&amp;SUBSET=y(${y_low},${y_high})"&#xD;
+	return "https://geodata.nationaalgeoregister.nl/ahn1/wcs?SERVICE=WCS&amp;VERSION=1.0.0&amp;REQUEST=GetCoverage&amp;FORMAT=image/tiff&amp;COVERAGE=" + _project.vars.COVERAGE_ID + "&amp;BBOX=${x_left},${y_low},${x_right},${y_high}&amp;CRS=EPSG:28992&amp;RESPONSE_CRS=EPSG:4258&amp;WIDTH=500&amp;HEIGHT=625"&#xD;
 }
 </core:text>
         </complexParameter>
@@ -635,7 +690,9 @@ if(x_left &amp;&amp; y_low){&#xD;
 	def x_right = (x_left as double) + 5000&#xD;
 	def y_high = (y_low as double) + 6250&#xD;
 &#xD;
-	return "https://geodata.nationaalgeoregister.nl/ahn1/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=getcoverage&amp;COVERAGEID=" + _project.vars.COVERAGE_ID + "&amp;FORMAT=image/tiff&amp;CRS=EPSG:28992&amp;SUBSET=x(${x_left},${x_right})&amp;SUBSET=y(${y_low},${y_high})"&#xD;
+	//old URL replaced as an outcome of call with Kathi Schleidt on December 19th, 2020 in order to align tif CRS with CRS for exported vector data&#xD;
+	//return "https://geodata.nationaalgeoregister.nl/ahn1/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=getcoverage&amp;COVERAGEID=" + _project.vars.COVERAGE_ID + "&amp;FORMAT=image/tiff&amp;CRS=EPSG:28992&amp;SUBSET=x(${x_left},${x_right})&amp;SUBSET=y(${y_low},${y_high})"&#xD;
+	return "https://geodata.nationaalgeoregister.nl/ahn1/wcs?SERVICE=WCS&amp;VERSION=1.0.0&amp;REQUEST=GetCoverage&amp;FORMAT=image/tiff&amp;COVERAGE=" + _project.vars.COVERAGE_ID + "&amp;BBOX=${x_left},${y_low},${x_right},${y_high}&amp;CRS=EPSG:28992&amp;RESPONSE_CRS=EPSG:4258&amp;WIDTH=500&amp;HEIGHT=625"&#xD;
 }
 </core:text>
         </complexParameter>

@@ -57,7 +57,7 @@
                 <child name="high" ns="http://www.opengis.net/gml/3.2"/>
             </property>
         </target>
-        <parameter value="9999,9999" name="value"/>
+        <parameter value="5000,6250" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.hale.align.assign" id="C6ebabc60-0ab4-47b2-9f28-c235eb3f7ba6" priority="normal">
         <target>
@@ -276,6 +276,18 @@ if (coverageid[5].equals('0')){&#xD;
         <parameter value="degree degree" name="value"/>
     </cell>
     <cell relation="eu.esdihumboldt.cst.functions.groovy" id="C25adf1f1-aa1a-47d3-b21e-4dc9dc0589e2" priority="normal">
+        <source name="var">
+            <property>
+                <type name="ahn2_bladindexType" ns="http://ahn2.geonovum.nl"/>
+                <child name="lo_x" ns="http://ahn2.geonovum.nl"/>
+            </property>
+        </source>
+        <source name="var">
+            <property>
+                <type name="ahn2_bladindexType" ns="http://ahn2.geonovum.nl"/>
+                <child name="lo_y" ns="http://ahn2.geonovum.nl"/>
+            </property>
+        </source>
         <target name="result">
             <property>
                 <type name="ElevationGridCoverageType" ns="http://inspire.ec.europa.eu/schemas/el-cov/4.0"/>
@@ -292,13 +304,18 @@ if (coverageid[5].equals('0')){&#xD;
             <core:text xmlns:core="http://www.esdi-humboldt.eu/hale/core" xml:space="preserve">
 def coverageid = _project.vars.COVERAGE_ID&#xD;
 &#xD;
-if (coverageid[5].equals('5')){&#xD;
+return _.geom.with(geometry:"POINT(" + lo_x + " " + lo_y + ")", crs:28992)&#xD;
+&#xD;
+//old version where domainSet was indicated for whole area and not for each tile&#xD;
+//has been changed as outcome of a call with Kathi Schleidt on December 12th, 2019&#xD;
+&#xD;
+/*if (coverageid[5].equals('5')){&#xD;
 	return _.geom.with(geometry:"POINT(10014.812500 618733.062500)", crs:28992)&#xD;
 }&#xD;
 &#xD;
 if (coverageid[5].equals('0')){&#xD;
 	return _.geom.with(geometry:"POINT(13014.662500 616233.137500)", crs:28992)&#xD;
-}
+}*/
 </core:text>
         </complexParameter>
         <parameter value="false" name="variablesAsInstances"/>
@@ -478,7 +495,11 @@ def x_right = (lo_x as double) + 5000&#xD;
 def y_low = lo_y&#xD;
 def y_high = (lo_y as double) + 6250&#xD;
 &#xD;
-return "https://geodata.nationaalgeoregister.nl/ahn2/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=getcoverage&amp;COVERAGEID=" + _project.vars.COVERAGE_ID + "&amp;FORMAT=image/tiff&amp;CRS=EPSG:28992&amp;SUBSET=x(${x_left},${x_right})&amp;SUBSET=y(${y_low},${y_high})"
+&#xD;
+//old URL replaced as an outcome of call with Kathi Schleidt on December 19th, 2020 in order to align tif CRS with CRS for exported vector data&#xD;
+//return "https://geodata.nationaalgeoregister.nl/ahn2/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=getcoverage&amp;COVERAGEID=" + _project.vars.COVERAGE_ID + "&amp;FORMAT=image/tiff&amp;CRS=EPSG:28992&amp;SUBSET=x(${x_left},${x_right})&amp;SUBSET=y(${y_low},${y_high})"&#xD;
+return "https://geodata.nationaalgeoregister.nl/ahn2/wcs?SERVICE=WCS&amp;VERSION=1.0.0&amp;REQUEST=GetCoverage&amp;FORMAT=image/tiff&amp;COVERAGE=" + _project.vars.COVERAGE_ID + "&amp;BBOX=${x_left},${y_low},${x_right},${y_high}&amp;CRS=EPSG:28992&amp;RESPONSE_CRS=EPSG:4258&amp;WIDTH=500&amp;HEIGHT=625"&#xD;
+
 </core:text>
         </complexParameter>
         <parameter value="false" name="variablesAsInstances"/>
@@ -550,7 +571,9 @@ def x_right = (lo_x as double) + 5000&#xD;
 def y_low = lo_y&#xD;
 def y_high = (lo_y as double) + 6250&#xD;
 &#xD;
-return "https://geodata.nationaalgeoregister.nl/ahn2/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=getcoverage&amp;COVERAGEID=" + _project.vars.COVERAGE_ID + "&amp;FORMAT=image/tiff&amp;CRS=EPSG:28992&amp;SUBSET=x(${x_left},${x_right})&amp;SUBSET=y(${y_low},${y_high})"
+//old URL replaced as an outcome of call with Kathi Schleidt on December 19th, 2020 in order to align tif CRS with CRS for exported vector data&#xD;
+//return "https://geodata.nationaalgeoregister.nl/ahn2/wcs?VERSION=2.0.1&amp;SERVICE=WCS&amp;REQUEST=getcoverage&amp;COVERAGEID=" + _project.vars.COVERAGE_ID + "&amp;FORMAT=image/tiff&amp;CRS=EPSG:28992&amp;SUBSET=x(${x_left},${x_right})&amp;SUBSET=y(${y_low},${y_high})"&#xD;
+return "https://geodata.nationaalgeoregister.nl/ahn2/wcs?SERVICE=WCS&amp;VERSION=1.0.0&amp;REQUEST=GetCoverage&amp;FORMAT=image/tiff&amp;COVERAGE=" + _project.vars.COVERAGE_ID + "&amp;BBOX=${x_left},${y_low},${x_right},${y_high}&amp;CRS=EPSG:28992&amp;RESPONSE_CRS=EPSG:4258&amp;WIDTH=500&amp;HEIGHT=625"
 </core:text>
         </complexParameter>
         <parameter value="false" name="variablesAsInstances"/>

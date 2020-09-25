@@ -4,7 +4,7 @@
     <author>Johanna</author>
     <description></description>
     <created>2019-01-08T11:31:08.885+01:00</created>
-    <modified>2019-11-04T08:46:35.089+01:00</modified>
+    <modified>2020-09-25T09:10:30.095+02:00</modified>
     <save-config action-id="project.save" provider-id="eu.esdihumboldt.hale.io.project.hale25.xml.writer">
         <setting name="charset">UTF-8</setting>
         <setting name="projectFiles.separate">false</setting>
@@ -89,9 +89,14 @@
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageAggregationType/1">{http://inspire.ec.europa.eu/schemas/el-cov/4.0}contributingFootprint</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageAggregationType/2">{http://www.opengis.net/gml/3.2}MultiSurface</property>
     <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageAggregationType/count">2</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageType/1">{http://inspire.ec.europa.eu/schemas/el-cov/4.0}domainExtent</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageType/2">{http://www.isotc211.org/2005/gmd}EX_Extent</property>
-    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageType/count">2</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageType/1">{http://www.opengis.net/gml/3.2/domainSet}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageType/2">{http://www.opengis.net/gml/3.2}rectifiedGridDomain</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageType/3">{http://www.opengis.net/gml/3.2/DomainSetType/sequence_1}choice_1</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageType/4">{http://www.opengis.net/gml/3.2/AbstractGeometry}choice</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageType/5">{http://www.opengis.net/gml/3.2}RectifiedGrid</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageType/6">{http://www.opengis.net/gml/3.2}origin</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageType/7">{http://www.opengis.net/gml/3.2}Point</property>
+    <property name="defaultGeometry:{http://inspire.ec.europa.eu/schemas/el-cov/4.0}ElevationGridCoverageType/count">7</property>
     <property name="defaultGeometry:{http://www.esdi-humboldt.eu/hale/shp}ahn_units/1">the_geom</property>
     <property name="defaultGeometry:{http://www.esdi-humboldt.eu/hale/shp}ahn_units/count">1</property>
     <property name="defaultGeometry:{http://www.opengis.net/gml}AbstractContinuousCoverageType/1">{http://www.opengis.net/gml/domainSet}choice</property>
