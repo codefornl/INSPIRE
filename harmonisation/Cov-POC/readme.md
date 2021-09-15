@@ -2,7 +2,7 @@
 
 ## Goals
 1. Focus on NL Limburg and 5 mtr. grid
-1. Bathymetry/Elevation Data online with WCS following INSPIRE Good Practice (GP)
+1. Provide Bathymetry/Elevation Data online with WCS following INSPIRE Good Practice (GP)
    1. wetransform has agreed to use rasdaman 
    2. in line with initial demonstration in Spring 2021
       1. http://sandbox.datacove.eu:8080/rasdaman/ows#/services
@@ -16,6 +16,12 @@
       1. could be worthwhile doing a simple map download tool
 1. Working together for international goal providing raster data harmonized across MS
 
+## Timeline
+
+2021-09-07: Kickoff
+End September: Data Identified and Available 
+End October: First WCS Online
+2021-11-20: Workshop on INSPIRE WCS Proof-of-Concept
 
 ## Data Sources
 
@@ -31,3 +37,7 @@ https://www.rijkswaterstaat.nl/apps/geoservices/geodata/dmc/bodemhoogte_20mtr
 
 **Problem:** This page is still totally empty!
 
+
+## Servers
+
+DataCove: http://sandbox.datacove.eu:8080/rasdaman/ows#/services
