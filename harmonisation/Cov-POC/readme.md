@@ -20,6 +20,7 @@
       1. could be worthwhile doing a simple map download tool
 7. Workshop on how to both provide and use coverage data with WCS (including all INSPIRE Requirements)
 8. Working together for international goal providing raster data harmonized across MS
+   1. find agreement as to what resolutions are commonly provided by MS
 
 ## Timeline
 
