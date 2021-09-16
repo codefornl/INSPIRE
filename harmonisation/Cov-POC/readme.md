@@ -39,6 +39,11 @@ End October: First WCS Online
 
 ## Data Sources
 
+### Files bathymetry 1 mtr. bodemhoogte (recommended):
+
+https://www.rijkswaterstaat.nl/apps/geoservices/geodata/dmc/bodemhoogte_1mtr 
+
+
 ### Files bathymetry 5 mtr. bodemhoogte:
 https://www.rijkswaterstaat.nl/apps/geoservices/geodata/dmc/bodemhoogte_5mtr
 
