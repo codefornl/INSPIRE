@@ -11,7 +11,7 @@
    2. in line with initial demonstration in Spring 2021
       1. http://sandbox.datacove.eu:8080/rasdaman/ows#/services
 4. See what neighboring countries are also providing, see how to motivate them to do in a compatible manner
-5. Provide complementary data, (e.g. water levels) online? 
+5. Provide complementary data, (e.g. water levels, precipitation forecast) online? 
    1. Would recommend using OGC SensorThings API!
    1. Maybe start just with Limburg area
 6. Showing how to use
