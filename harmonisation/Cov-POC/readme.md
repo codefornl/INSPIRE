@@ -6,6 +6,7 @@
    2. Approach: Provide fully INSPIRE at 1 and 10m, continue to provide the 20m with whatever CRS they use as non-harmonized
    3. MD: should be multiple md records, one for each resolution, then another for the non-harmonized, see github issue:
       1. https://github.com/INSPIRE-MIF/gp-data-service-linking-simplification/issues/6#issuecomment-919766036
+   1. focus on the following file: https://www.rijkswaterstaat.nl/apps/geoservices/geodata/dmc/bodemhoogte_1mtr/ZN_zuid_oost_NAP.tif
 3. Provide Bathymetry/Elevation Data online with WCS following INSPIRE Good Practice (GP)
    1. wetransform has agreed to use rasdaman 
    2. in line with initial demonstration in Spring 2021
