@@ -20,8 +20,11 @@
 ## Timeline
 
 2021-09-07: Kickoff
+
 End September: Data Identified and Available 
+
 End October: First WCS Online
+
 2021-11-20: Workshop on INSPIRE WCS Proof-of-Concept
 
 ## Process
