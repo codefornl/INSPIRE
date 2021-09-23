@@ -62,6 +62,8 @@ https://www.rijkswaterstaat.nl/apps/geoservices/geodata/dmc/bodemhoogte_20mtr
 
 **Problem:** This page is still totally empty!
 
+### Elevation AHN3:
+https://www.rijkswaterstaat.nl/apps/geoservices/geodata/regios/civ/poc_coverages/AHN3/
 
 ## Servers
 
