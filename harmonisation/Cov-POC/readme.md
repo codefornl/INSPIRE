@@ -23,6 +23,8 @@
 8. Working together for international goal providing raster data harmonized across MS
    1. find agreement as to what resolutions are commonly provided by MS
 
+[Detailed overview of the PoC Goals](docs/goals.md)
+
 ## Timeline
 
 2021-09-07: Kickoff
