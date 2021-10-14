@@ -14,7 +14,7 @@ End September: Data Identified and Available
 
 End October: First WCS Online
 
-2021-11-20: Workshop on INSPIRE WCS Proof-of-Concept
+NOT! 2021-11-20: [Workshop on INSPIRE WCS Proof-of-Concept](docs/Workshop.md)
 
 ## Process
 
