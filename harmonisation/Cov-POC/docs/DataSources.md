@@ -34,7 +34,7 @@ https://ogc-demo.k8s.ilt-dmz.iosb.fraunhofer.de/v1.1/
 
 ### Web Viewer
 
-The HTML for the [STA Web Viewer](STAViewer.md) is available.
+The HTML for the [STA Web Viewer](STAViewer.html) is available.
 
 An online version has been provided at:
 
