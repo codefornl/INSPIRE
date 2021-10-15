@@ -1,11 +1,9 @@
 ## PoC Workshop
 
+Repository: https://github.com/codefornl/INSPIRE-coverages
 
-
-
-
-Waiting for new repository on codefornl, INSPIRE-Coverage. Once that is provided, will do the main page there with info and pictures
-this will be used to decide on the final date for the workshop
+Thats the Main page voor INSPIRE-coverages with info and pictures.
+It wille be used this will be used to decide on the final date for the workshop
 
 We would like to invite you to take note of our experiences.
 
