@@ -76,7 +76,7 @@ In de dataset TN-RO staan de featuretypes:
   * VehicleTrafficArea (Kadaster)
 
 ### Target - TN-RO
-* Description RWS (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-cb527d-f6db-4835-b0cd-deb245241254)
+* Description RWS (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/f4520ae7-9229-4132-8d42-37b4f962212a)
 
 
 ## TN - WaterTransportNetwork (TN-WTN)
@@ -106,7 +106,7 @@ In de dataset TN-W staan de featuretypes:
   * WaterwayNodeType
   
 ### Target - TN-W
-* Description RWS (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-2c7040b-c448-451b-bf15-f2416ecaadd1), Kadaster (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/5951efa2-1ff3-4763-a966-a2f5497679ee)
+* Description RWS (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/cfc800cb-e903-4364-9415-ddd3e0ecf49f), Kadaster (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/5951efa2-1ff3-4763-a966-a2f5497679ee)
 
 # Hydrography (HY)
 ## HY - Network (HY-N)
@@ -117,7 +117,7 @@ In de dataset HY-N staan de featuretypes:
   * WatercourseLinkSequence
 
 ### Target - HY-N
- * Data RWS (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/eu-f297898-2640-44c2-bbe9-c0480da83794)
+ * Data RWS (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/c3955762-73a3-4c16-a15c-f3869487a1ea)
 
 ## HY - Physical Waters (HY-P)
 ### Source - HY-P
@@ -165,37 +165,29 @@ In de dataset EL-C staan de featuretypes:
 ### Target - EL-M
 * Description (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/adn73c4a-ef03-4785-b7f6-942e86b385f5) 
 
-# Human Health and Safety(HH)
-## HH - Noise (HH-N)
-### Source - HH-N
-In de dataset HH-N staan de featuretypes:
-  * Biomarker
-  * EnvHealthDeterminantMeasure
-  * GeneralHealthStatistics
-  * HealthStatisticalData
-  * EnvHealthDeterminantStatisticalData
-  * HealthServicesStatistic
-  * Disease
-
-### Target - HH-N
-* Description (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/wt-3730-e750-485a-9c0c-39bf9be72cf9, https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/wt-f5eb-b09f-4f6d-8397-8878a1b86238, https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/wt-83730-e750-485a-9c0c-39bf9be72cf8)
-
 # Area management/restriction/regulation zones and reporting units (AM)
 ## AM - SurfaceWater (AM-S)
 ## AM - Marien (AM-M)
 ## AM - UrbanWasteWater (AM-U)
 
+### Target - AM
+* Description  AM-S (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/6b574ba3-3b1c-4f29-a631-0f160713d96d)
+* Description  AM-M (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/1bb6e186-633d-4a05-9fdf-b12a2f21fe6m)
+* Description  AM-U (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/2350b86b-3efd-47e4-883e-519bfa8d0abd)
+
 # Natural risk zones (NZ)
 ## NZ - Floods (NZ-F)
 ### Source - NZ-F
 
-# Habitats en biotops (HB)
-## HB - ...
+### Target - NZ - Floods
+* Description (https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/7c48322f-f9cf-4a08-aa63-c4de080c13aab)
 
 # Environmental monitoring facility (EF)
 ## EF - SurfaceWater (EF-S)
 ## EF - Marien (EF-M)
 ## EF - UrbanWasteWater (EF-U)
+
+### Target - EF
 
 # Oceanographic geographical features (OG)
 ## OG - ...
